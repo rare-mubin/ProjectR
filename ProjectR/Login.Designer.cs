@@ -37,6 +37,7 @@
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.pnlMain.SuspendLayout();
             this.pnlTittlebar.SuspendLayout();
             this.SuspendLayout();
@@ -45,6 +46,7 @@
             // 
             this.pnlMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
             this.pnlMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlMain.BackgroundImage")));
+            this.pnlMain.Controls.Add(this.label4);
             this.pnlMain.Controls.Add(this.label3);
             this.pnlMain.Controls.Add(this.label2);
             this.pnlMain.Controls.Add(this.label1);
@@ -145,6 +147,17 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "User-Id";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(94, 402);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 27);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Password";
+            // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,6 +187,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 
