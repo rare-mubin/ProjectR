@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllProductList.Designer.cs">
+      <DependentUpon>AllProductList.cs</DependentUpon>
+    </Compile>
     <Compile Include="DragableWindow.cs" />
     <Compile Include="DefaultForm.cs">
       <SubType>Form</SubType>
@@ -73,6 +79,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AllProductList.resx">
+      <DependentUpon>AllProductList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DefaultForm.resx">
       <DependentUpon>DefaultForm.cs</DependentUpon>
     </EmbeddedResource>
