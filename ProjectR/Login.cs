@@ -88,7 +88,7 @@ namespace ProjectR
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            this.lblLoginValidation.Text = "error";
+            //this.lblLoginValidation.Text = "error";
             if (this.txtPassword.Text == "Enter your Password" || this.txtUserID.Text == "Enter your User-Id")
             {
                 this.lblLoginValidation.Visible = true;
