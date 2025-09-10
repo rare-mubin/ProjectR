@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogIn));
             this.pnlMain = new System.Windows.Forms.Panel();
             this.ckbShowPassword = new System.Windows.Forms.CheckBox();
             this.lblLoginValidation = new System.Windows.Forms.Label();
@@ -53,7 +52,7 @@
             // pnlMain
             // 
             this.pnlMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
-            this.pnlMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlMain.BackgroundImage")));
+            this.pnlMain.BackgroundImage = global::ProjectR.Properties.Resources.main_panel;
             this.pnlMain.Controls.Add(this.ckbShowPassword);
             this.pnlMain.Controls.Add(this.lblLoginValidation);
             this.pnlMain.Controls.Add(this.btnLogIn);
@@ -76,10 +75,10 @@
             // 
             // ckbShowPassword
             // 
-            this.ckbShowPassword.AutoSize = true;
-            this.ckbShowPassword.Location = new System.Drawing.Point(428, 445);
+            this.ckbShowPassword.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ckbShowPassword.Location = new System.Drawing.Point(404, 445);
             this.ckbShowPassword.Name = "ckbShowPassword";
-            this.ckbShowPassword.Size = new System.Drawing.Size(15, 14);
+            this.ckbShowPassword.Size = new System.Drawing.Size(15, 15);
             this.ckbShowPassword.TabIndex = 14;
             this.ckbShowPassword.UseVisualStyleBackColor = true;
             this.ckbShowPassword.Visible = false;
@@ -101,7 +100,7 @@
             // 
             // btnLogIn
             // 
-            this.btnLogIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(53)))), ((int)(((byte)(74)))));
+            this.btnLogIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.btnLogIn.FlatAppearance.BorderSize = 0;
             this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogIn.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
@@ -118,7 +117,10 @@
             // btnForgotPass
             // 
             this.btnForgotPass.BackColor = System.Drawing.Color.Transparent;
+            this.btnForgotPass.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnForgotPass.FlatAppearance.BorderSize = 0;
+            this.btnForgotPass.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(29)))));
+            this.btnForgotPass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnForgotPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnForgotPass.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnForgotPass.ForeColor = System.Drawing.Color.White;
@@ -149,7 +151,7 @@
             this.txtPassword.Location = new System.Drawing.Point(95, 441);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(0);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(321, 19);
+            this.txtPassword.Size = new System.Drawing.Size(306, 19);
             this.txtPassword.TabIndex = 8;
             this.txtPassword.Text = "Enter your Password";
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
@@ -206,22 +208,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
-            this.label2.Location = new System.Drawing.Point(187, 187);
+            this.label2.Location = new System.Drawing.Point(166, 171);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(243, 24);
+            this.label2.Size = new System.Drawing.Size(179, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "Please enter your details";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
-            this.label1.Location = new System.Drawing.Point(151, 112);
+            this.label1.Location = new System.Drawing.Point(138, 111);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(314, 75);
+            this.label1.Size = new System.Drawing.Size(234, 56);
             this.label1.TabIndex = 2;
             this.label1.Text = "Welcome";
             // 

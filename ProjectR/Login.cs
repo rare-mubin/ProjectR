@@ -88,7 +88,8 @@ namespace ProjectR
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            if (this.txtPassword.Text == "Enter your Password" && this.txtUserID.Text == "Enter your User-Id")
+            this.lblLoginValidation.Text = "error";
+            if (this.txtPassword.Text == "Enter your Password" || this.txtUserID.Text == "Enter your User-Id")
             {
                 this.lblLoginValidation.Visible = true;
                 this.lblLoginValidation.Text = "Please enter user-id and password";
@@ -107,6 +108,9 @@ namespace ProjectR
             if (ds.Tables[0].Rows.Count == 1)
             {
                 this.lblLoginValidation.Text = "Valid user "+ ds.Tables[0].Rows[0][3].ToString();
+                HomePage a = new HomePage();
+                a.Show();
+                this.Hide();
             }
             else this.lblLoginValidation.Text = "Invalid User";
         }

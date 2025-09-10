@@ -1,6 +1,6 @@
 ﻿namespace ProjectR
 {
-    partial class DefaultForm
+    partial class ProfilePage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnMinimize = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlTittlebar = new System.Windows.Forms.Panel();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.pnlMain.SuspendLayout();
             this.pnlTittlebar.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 28);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1278, 1);
-            this.panel1.TabIndex = 1;
             // 
             // pnlMain
             // 
@@ -58,24 +48,28 @@
             this.pnlMain.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1278, 718);
-            this.pnlMain.TabIndex = 1;
+            this.pnlMain.TabIndex = 2;
             // 
-            // btnExit
+            // panel1
             // 
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(1250, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(28, 28);
-            this.btnExit.TabIndex = 1;
-            this.btnExit.Text = "X";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 28);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1278, 1);
+            this.panel1.TabIndex = 1;
+            // 
+            // pnlTittlebar
+            // 
+            this.pnlTittlebar.Controls.Add(this.btnMinimize);
+            this.pnlTittlebar.Controls.Add(this.btnExit);
+            this.pnlTittlebar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTittlebar.Location = new System.Drawing.Point(0, 0);
+            this.pnlTittlebar.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlTittlebar.Name = "pnlTittlebar";
+            this.pnlTittlebar.Size = new System.Drawing.Size(1278, 28);
+            this.pnlTittlebar.TabIndex = 0;
             // 
             // btnMinimize
             // 
@@ -96,29 +90,34 @@
             this.btnMinimize.UseVisualStyleBackColor = true;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // pnlTittlebar
+            // btnExit
             // 
-            this.pnlTittlebar.Controls.Add(this.btnMinimize);
-            this.pnlTittlebar.Controls.Add(this.btnExit);
-            this.pnlTittlebar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTittlebar.Location = new System.Drawing.Point(0, 0);
-            this.pnlTittlebar.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlTittlebar.Name = "pnlTittlebar";
-            this.pnlTittlebar.Size = new System.Drawing.Size(1278, 28);
-            this.pnlTittlebar.TabIndex = 0;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(1250, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(28, 28);
+            this.btnExit.TabIndex = 1;
+            this.btnExit.Text = "X";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // DefaultForm
+            // ProfilePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(0)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.pnlMain);
-            this.Cursor = System.Windows.Forms.Cursors.No;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "DefaultForm";
+            this.Name = "ProfilePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HomePage";
+            this.Text = "ProfilePage";
             this.pnlMain.ResumeLayout(false);
             this.pnlTittlebar.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -127,8 +126,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlTittlebar;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnExit;
