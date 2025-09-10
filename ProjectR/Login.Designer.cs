@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogIn));
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.ckbShowPassword = new System.Windows.Forms.CheckBox();
+            this.lblLoginValidation = new System.Windows.Forms.Label();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.btnForgotPass = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -52,6 +54,8 @@
             // 
             this.pnlMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
             this.pnlMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlMain.BackgroundImage")));
+            this.pnlMain.Controls.Add(this.ckbShowPassword);
+            this.pnlMain.Controls.Add(this.lblLoginValidation);
             this.pnlMain.Controls.Add(this.btnLogIn);
             this.pnlMain.Controls.Add(this.btnForgotPass);
             this.pnlMain.Controls.Add(this.panel3);
@@ -70,6 +74,31 @@
             this.pnlMain.Size = new System.Drawing.Size(1278, 718);
             this.pnlMain.TabIndex = 0;
             // 
+            // ckbShowPassword
+            // 
+            this.ckbShowPassword.AutoSize = true;
+            this.ckbShowPassword.Location = new System.Drawing.Point(428, 445);
+            this.ckbShowPassword.Name = "ckbShowPassword";
+            this.ckbShowPassword.Size = new System.Drawing.Size(15, 14);
+            this.ckbShowPassword.TabIndex = 14;
+            this.ckbShowPassword.UseVisualStyleBackColor = true;
+            this.ckbShowPassword.Visible = false;
+            this.ckbShowPassword.CheckedChanged += new System.EventHandler(this.ckbShowPassword_CheckedChanged);
+            // 
+            // lblLoginValidation
+            // 
+            this.lblLoginValidation.BackColor = System.Drawing.Color.Transparent;
+            this.lblLoginValidation.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoginValidation.ForeColor = System.Drawing.Color.Red;
+            this.lblLoginValidation.Location = new System.Drawing.Point(91, 527);
+            this.lblLoginValidation.Margin = new System.Windows.Forms.Padding(0);
+            this.lblLoginValidation.Name = "lblLoginValidation";
+            this.lblLoginValidation.Size = new System.Drawing.Size(325, 24);
+            this.lblLoginValidation.TabIndex = 12;
+            this.lblLoginValidation.Text = "Please enter your details";
+            this.lblLoginValidation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLoginValidation.Visible = false;
+            // 
             // btnLogIn
             // 
             this.btnLogIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(53)))), ((int)(((byte)(74)))));
@@ -84,6 +113,7 @@
             this.btnLogIn.TabIndex = 11;
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseVisualStyleBackColor = false;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
             // btnForgotPass
             // 
@@ -123,6 +153,7 @@
             this.txtPassword.TabIndex = 8;
             this.txtPassword.Text = "Enter your Password";
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // panel2
@@ -286,6 +317,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogIn;
+        private System.Windows.Forms.Label lblLoginValidation;
+        private System.Windows.Forms.CheckBox ckbShowPassword;
     }
 }
 
