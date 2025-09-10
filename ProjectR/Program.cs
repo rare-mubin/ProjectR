@@ -16,7 +16,7 @@ namespace ProjectR
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DefaultForm());
+            Application.Run(new LogIn());
         }
     }
 }
