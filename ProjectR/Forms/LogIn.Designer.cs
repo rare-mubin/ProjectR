@@ -1,13 +1,13 @@
-﻿namespace ProjectR
+﻿namespace ProjectR.Forms
 {
     partial class LogIn
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,10 +20,10 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -65,7 +65,7 @@
             this.pnlMain.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1278, 690);
-            this.pnlMain.TabIndex = 0;
+            this.pnlMain.TabIndex = 1;
             // 
             // ckbShowPassword
             // 
@@ -148,6 +148,7 @@
             this.txtPassword.Size = new System.Drawing.Size(306, 19);
             this.txtPassword.TabIndex = 8;
             this.txtPassword.Text = "Enter your Password";
+            this.txtPassword.AcceptsTabChanged += new System.EventHandler(this.txtPassword_Click);
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
@@ -226,13 +227,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(0)))), ((int)(((byte)(150)))));
-            this.ClientSize = new System.Drawing.Size(1278, 690);
             this.Controls.Add(this.pnlMain);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximizeBox = false;
             this.Name = "LogIn";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ProjectR";
+            this.Size = new System.Drawing.Size(1278, 690);
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             this.ResumeLayout(false);
@@ -242,18 +239,17 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlMain;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtUserID;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.CheckBox ckbShowPassword;
+        private System.Windows.Forms.Label lblLoginValidation;
+        private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.Button btnForgotPass;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button btnLogIn;
-        private System.Windows.Forms.Label lblLoginValidation;
-        private System.Windows.Forms.CheckBox ckbShowPassword;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txtUserID;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
-

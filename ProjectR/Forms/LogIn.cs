@@ -1,6 +1,4 @@
-﻿using ProjectR.Forms;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,17 +10,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFADBCRUDN;
 
-namespace ProjectR
+namespace ProjectR.Forms
 {
-    public partial class LogIn : Form
+    public partial class LogIn : UserControl
     {
         internal Form MainWindowF { get; set; }
 
-        private static bool txtUserIDClick = true , txtPassClick = true;
+        private static bool txtUserIDClick = true, txtPassClick = true;
         private void DraggableWindows(Form a)
         {
             DragableWindow.MakeDraggable(a);
-            DragableWindow.MakePanelDraggable(pnlMain, a);
+            DragableWindow.MakePanelDraggable(this.pnlMain, a);
         }
 
         public LogIn()
@@ -55,7 +53,7 @@ namespace ProjectR
 
         private void txtPassword_Click(object sender, EventArgs e)
         {
-            if(!ckbShowPassword.Checked)
+            if (!ckbShowPassword.Checked)
                 this.txtPassword.UseSystemPasswordChar = true;
 
             if (txtPassClick)
@@ -68,7 +66,7 @@ namespace ProjectR
 
         private void ckbShowPassword_CheckedChanged(object sender, EventArgs e)
         {
-            if (ckbShowPassword.Checked) 
+            if (ckbShowPassword.Checked)
             {
                 this.txtPassword.UseSystemPasswordChar = false;
             }
@@ -85,7 +83,6 @@ namespace ProjectR
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            //this.lblLoginValidation.Text = "error";
             if (this.txtPassword.Text == "Enter your Password" || this.txtUserID.Text == "Enter your User-Id")
             {
                 this.lblLoginValidation.Visible = true;
@@ -95,27 +92,23 @@ namespace ProjectR
 
             var query = "select * from SuperUser where UserId = '" + this.txtUserID.Text + "' and Password = '" + this.txtPassword.Text + "'";
 
-           
-
-            DataAccess da = new DataAccess();
-            var ds = da.ExecuteQueryTable(query);
-            
+            DataAccess dataAccess = new DataAccess();
+            var ds = dataAccess.ExecuteQueryTable(query);
 
             if (ds.Rows.Count == 1)
             {
-                //this.lblLoginValidation.Text = "Valid user " + ds.Tables[0].Rows[0][3].ToString();
-                HomePage homePage = new HomePage(MainWindowF, this);
-                homePage.Dock = DockStyle.Fill;
-                this.Hide();
-                MainWindow.MainWindowPanel.Controls.Add(homePage);
-                homePage.Show();
+                ProductList NextPage = new ProductList(MainWindowF);
+                NextPage.Dock = DockStyle.Fill;
+                MainWindow.MainWindowPanel.Controls.Clear();
+                MainWindow.SidePanel.Visible = true;
+                MainWindow.MainWindowPanel.Controls.Add(NextPage);
+                NextPage.Show();
                 ClearTxt();
-                this.lblLoginValidation.Visible = false;
             }
             else 
             {
                 this.lblLoginValidation.Text = "Invalid User";
-                this.lblLoginValidation.Visible= true;
+                this.lblLoginValidation.Visible = true ;
             }
         }
 
@@ -125,7 +118,7 @@ namespace ProjectR
             this.txtUserID.Text = "Enter your User-Id";
             this.txtPassword.UseSystemPasswordChar = false;
             this.ckbShowPassword.Visible = false;
-        } 
+        }
 
         private void txtPassword_Leave(object sender, EventArgs e)
         {

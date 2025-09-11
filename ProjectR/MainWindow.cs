@@ -13,8 +13,12 @@ namespace ProjectR
 {
     public partial class MainWindow : Form
     {
-        public static Panel MainWindowPanel {  get; set; }
+        internal static Panel MainWindowPanel {  get; set; }
+        internal static Panel SidePanel { get; set; }
+
         internal Form MainWindowF { get; set; }
+
+        internal LogIn LogINP { get; set; }
 
         private void DraggableWindows()
         {
@@ -26,6 +30,8 @@ namespace ProjectR
             InitializeComponent();
             DraggableWindows();
             MainWindowPanel = this.pnlForms;
+            SidePanel = this.pnlSideBarLeft;
+            this.LogINP = new LogIn(this);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -40,13 +46,18 @@ namespace ProjectR
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            LogIn homePage = new LogIn(this);
-            //ProductList homePage = new ProductList(this);
-            homePage.Dock = DockStyle.Fill;
-            homePage.TopLevel = false;
+            this.LogINP.Dock = DockStyle.Fill;
+            //NextPage.TopLevel = false;
             pnlForms.Controls.Clear();
-            pnlForms.Controls.Add(homePage);
-            homePage.Show();
+            pnlForms.Controls.Add(this.LogINP);
+            this.LogINP.Show();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.pnlSideBarLeft.Visible = false;
+            this.pnlForms.Controls.Clear();
+            pnlForms.Controls.Add(LogINP);
         }
     }
 }
