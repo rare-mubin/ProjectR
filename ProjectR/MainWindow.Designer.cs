@@ -125,6 +125,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(178, 690);
             this.panel2.TabIndex = 0;
+            this.panel2.Visible = false;
             // 
             // MainWindow
             // 

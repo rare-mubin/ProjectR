@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WFADBCRUDN;
 
 namespace ProjectR
 {
@@ -94,24 +95,28 @@ namespace ProjectR
 
             var query = "select * from SuperUser where UserId = '" + this.txtUserID.Text + "' and Password = '" + this.txtPassword.Text + "'";
 
-            SqlConnection sqlcon = new SqlConnection("Data Source=PROJECTR\\SQLEXPRESS;Initial Catalog=ProjectR_DB;Persist Security Info=True;User ID=sa;Password=12345;");
-            sqlcon.Open();
-            SqlCommand cmd = new SqlCommand(query, sqlcon);
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            adapter.Fill(ds);
+           
 
-            if (ds.Tables[0].Rows.Count == 1)
+            DataAccess da = new DataAccess();
+            var ds = da.ExecuteQueryTable(query);
+            
+
+            if (ds.Rows.Count == 1)
             {
-                this.lblLoginValidation.Text = "Valid user "+ ds.Tables[0].Rows[0][3].ToString();
-                HomePage homePage = new HomePage(MainWindowF,this);
+                //this.lblLoginValidation.Text = "Valid user " + ds.Tables[0].Rows[0][3].ToString();
+                HomePage homePage = new HomePage(MainWindowF, this);
                 homePage.Dock = DockStyle.Fill;
                 this.Hide();
                 MainWindow.MainWindowPanel.Controls.Add(homePage);
                 homePage.Show();
                 ClearTxt();
+                this.lblLoginValidation.Visible = false;
             }
-            else this.lblLoginValidation.Text = "Invalid User";
+            else 
+            {
+                this.lblLoginValidation.Text = "Invalid User";
+                this.lblLoginValidation.Visible= true;
+            }
         }
 
         private void ClearTxt()

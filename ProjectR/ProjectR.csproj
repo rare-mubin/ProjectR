@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess.cs" />
     <Compile Include="DragableWindow.cs" />
     <Compile Include="Forms\HomePage.cs">
       <SubType>UserControl</SubType>
