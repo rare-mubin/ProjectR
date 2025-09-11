@@ -356,7 +356,6 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.panel2.Size = new System.Drawing.Size(176, 95);
             this.panel2.TabIndex = 0;
-            this.panel2.Visible = false;
             // 
             // panel10
             // 
@@ -415,6 +414,7 @@
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // MainWindow
             // 

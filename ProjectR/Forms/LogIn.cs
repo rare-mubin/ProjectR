@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WFADBCRUDN;
 
 namespace ProjectR.Forms
 {
@@ -82,7 +83,6 @@ namespace ProjectR.Forms
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            //this.lblLoginValidation.Text = "error";
             if (this.txtPassword.Text == "Enter your Password" || this.txtUserID.Text == "Enter your User-Id")
             {
                 this.lblLoginValidation.Visible = true;
@@ -92,24 +92,24 @@ namespace ProjectR.Forms
 
             var query = "select * from SuperUser where UserId = '" + this.txtUserID.Text + "' and Password = '" + this.txtPassword.Text + "'";
 
-            SqlConnection sqlcon = new SqlConnection("Data Source=PROJECTR\\SQLEXPRESS;Initial Catalog=ProjectR_DB;Persist Security Info=True;User ID=sa;Password=12345;");
-            sqlcon.Open();
-            SqlCommand cmd = new SqlCommand(query, sqlcon);
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            adapter.Fill(ds);
+            DataAccess dataAccess = new DataAccess();
+            var ds = dataAccess.ExecuteQueryTable(query);
 
-            if (ds.Tables[0].Rows.Count == 1)
+            if (ds.Rows.Count == 1)
             {
-                this.lblLoginValidation.Text = "Valid user " + ds.Tables[0].Rows[0][3].ToString();
-                ProductList homePage = new ProductList(MainWindowF);
-                homePage.Dock = DockStyle.Fill;
-                this.Hide();
-                MainWindow.MainWindowPanel.Controls.Add(homePage);
-                homePage.Show();
+                ProductList NextPage = new ProductList(MainWindowF);
+                NextPage.Dock = DockStyle.Fill;
+                MainWindow.MainWindowPanel.Controls.Clear();
+                MainWindow.SidePanel.Visible = true;
+                MainWindow.MainWindowPanel.Controls.Add(NextPage);
+                NextPage.Show();
                 ClearTxt();
             }
-            else this.lblLoginValidation.Text = "Invalid User";
+            else 
+            {
+                this.lblLoginValidation.Text = "Invalid User";
+                this.lblLoginValidation.Visible = true ;
+            }
         }
 
         private void ClearTxt()
