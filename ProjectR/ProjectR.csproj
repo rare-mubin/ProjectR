@@ -53,17 +53,23 @@
     <Compile Include="Forms\HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\LogIn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ProductList.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\ProductList.Designer.cs">
       <DependentUpon>ProductList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="LoginA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="LoginA.Designer.cs">
+      <DependentUpon>LoginA.cs</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
@@ -76,11 +82,14 @@
     <EmbeddedResource Include="Forms\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="LoginA.resx">
+      <DependentUpon>LoginA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
@@ -110,6 +119,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\main panel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usercontrolBackground.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

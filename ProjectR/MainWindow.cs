@@ -40,12 +40,12 @@ namespace ProjectR
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            ProductList homePage = new ProductList(this);
-            homePage.Dock = DockStyle.Fill;
-            //homePage.TopLevel = false;
+            LogIn NextPage = new LogIn(this);
+            NextPage.Dock = DockStyle.Fill;
+            NextPage.TopLevel = false;
             pnlForms.Controls.Clear();
-            pnlForms.Controls.Add(homePage);
-            homePage.Show();
+            pnlForms.Controls.Add(NextPage);
+            NextPage.Show();
         }
     }
 }

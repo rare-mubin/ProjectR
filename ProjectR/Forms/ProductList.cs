@@ -36,8 +36,17 @@ namespace ProjectR.Forms
         {
             if (this.txtSearchProducts.Text == "")
             {
-                this.txtSearchProducts.Text = "Search Product...";
+                this.txtSearchProducts.Text = "Search product with name or id";
                 txtSearchProductsClick = true;
+            }
+        }
+
+        private void txtSearchProducts_Click(object sender, EventArgs e)
+        {
+            if (txtSearchProductsClick)
+            {
+                this.txtSearchProducts.Text = "";
+                txtSearchProductsClick = false;
             }
         }
     }
