@@ -33,7 +33,10 @@
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.pnlForms = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pnlTittlebar.SuspendLayout();
+            this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -97,12 +100,31 @@
             // pnlMain
             // 
             this.pnlMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.pnlMain.Controls.Add(this.pnlForms);
+            this.pnlMain.Controls.Add(this.panel2);
             this.pnlMain.Cursor = System.Windows.Forms.Cursors.Default;
             this.pnlMain.Location = new System.Drawing.Point(1, 29);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1278, 690);
             this.pnlMain.TabIndex = 3;
+            // 
+            // pnlForms
+            // 
+            this.pnlForms.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlForms.Location = new System.Drawing.Point(178, 0);
+            this.pnlForms.Name = "pnlForms";
+            this.pnlForms.Size = new System.Drawing.Size(1100, 690);
+            this.pnlForms.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(178, 690);
+            this.panel2.TabIndex = 0;
             // 
             // MainWindow
             // 
@@ -119,6 +141,7 @@
             this.Text = "MainWindow";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.pnlTittlebar.ResumeLayout(false);
+            this.pnlMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -130,5 +153,7 @@
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Panel pnlForms;
+        private System.Windows.Forms.Panel panel2;
     }
 }

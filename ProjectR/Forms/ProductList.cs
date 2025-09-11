@@ -12,11 +12,24 @@ namespace ProjectR.Forms
 {
     public partial class ProductList : UserControl
     {
-        private static bool txtSearchProductsClick = true, txtPassClick = true;
+        internal Form MainWindowF { get; set; }
+
+        private static bool txtSearchProductsClick = true;
+
+        private void DraggableWindows(Form a)
+        {
+            DragableWindow.MakeDraggable(a);
+            DragableWindow.MakePanelDraggable(this, a);
+        }
 
         public ProductList()
         {
             InitializeComponent();
+        }
+        public ProductList(Form a) : this()
+        {
+            DraggableWindows(a);
+            this.MainWindowF = a;
         }
 
         private void txtSearchProducts_Leave(object sender, EventArgs e)
