@@ -24,6 +24,7 @@ namespace ProjectR
             form.MouseDown += (sender, e) => DragWindow(form, e);
         }
 
+
         internal static void MakePanelDraggable(Control control, Form form)
         {
             control.MouseDown += (sender, e) => DragWindow(form, e);

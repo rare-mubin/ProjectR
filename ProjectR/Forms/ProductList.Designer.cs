@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pnlProductsSidebar = new System.Windows.Forms.Panel();
             this.cmbProductCategory = new System.Windows.Forms.ComboBox();
             this.txtProductStock = new System.Windows.Forms.TextBox();
@@ -51,21 +49,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtSearchProducts = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.grdPanel = new System.Windows.Forms.Panel();
+            this.pnlGridView = new System.Windows.Forms.Panel();
             this.grdProductList = new System.Windows.Forms.DataGridView();
             this.pnlProductsSidebar.SuspendLayout();
             this.pnlProductbtns.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.grdPanel.SuspendLayout();
+            this.pnlGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdProductList)).BeginInit();
             this.SuspendLayout();
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // pnlProductsSidebar
             // 
@@ -301,19 +293,14 @@
             this.txtSearchProducts.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSearchProducts.Leave += new System.EventHandler(this.txtSearchProducts_Leave);
             // 
-            // contextMenuStrip2
+            // pnlGridView
             // 
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
-            // 
-            // grdPanel
-            // 
-            this.grdPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
-            this.grdPanel.Controls.Add(this.grdProductList);
-            this.grdPanel.Location = new System.Drawing.Point(6, 55);
-            this.grdPanel.Name = "grdPanel";
-            this.grdPanel.Size = new System.Drawing.Size(800, 630);
-            this.grdPanel.TabIndex = 2;
+            this.pnlGridView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.pnlGridView.Controls.Add(this.grdProductList);
+            this.pnlGridView.Location = new System.Drawing.Point(6, 55);
+            this.pnlGridView.Name = "pnlGridView";
+            this.pnlGridView.Size = new System.Drawing.Size(800, 630);
+            this.pnlGridView.TabIndex = 2;
             // 
             // grdProductList
             // 
@@ -337,7 +324,7 @@
             this.BackgroundImage = global::ProjectR.Properties.Resources.main_panel;
             this.Controls.Add(this.pnlProductbtns);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.grdPanel);
+            this.Controls.Add(this.pnlGridView);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.pnlProductsSidebar);
             this.Name = "ProductList";
@@ -349,15 +336,13 @@
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.grdPanel.ResumeLayout(false);
+            this.pnlGridView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdProductList)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Panel pnlProductsSidebar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
@@ -379,8 +364,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtSearchProducts;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
-        private System.Windows.Forms.Panel grdPanel;
+        private System.Windows.Forms.Panel pnlGridView;
         private System.Windows.Forms.DataGridView grdProductList;
     }
 }
