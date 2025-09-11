@@ -12,17 +12,24 @@ namespace ProjectR
 {
     public partial class HomePage : Form
     {
+        internal Form MainWindowF { get; set; }
+        internal Form Previous { get; set; }
+
         public HomePage()
         {
             InitializeComponent();
-            DraggableWindows();
+        }
+        public HomePage(Form MainWindow, Form previous) : this()
+        {
+            DraggableWindows(MainWindow);
+            MainWindowF = MainWindow;
+            this.Previous = previous;
         }
 
-        private void DraggableWindows()
+        private void DraggableWindows(Form a)
         {
-            DragableWindow.MakeDraggable(this);
-            DragableWindow.MakePanelDraggable(pnlMain, this);
-            DragableWindow.MakePanelDraggable(pnlTittlebar, this);
+            DragableWindow.MakeDraggable(a);
+            DragableWindow.MakePanelDraggable(pnlMain, a);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -33,6 +40,13 @@ namespace ProjectR
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            MainWindow.MainWindowPanel.Controls.Add(Previous);
+            Previous.Show();
         }
     }
 }

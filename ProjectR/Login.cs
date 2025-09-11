@@ -14,28 +14,23 @@ namespace ProjectR
 {
     public partial class LogIn : Form
     {
+        internal Form MainWindowF { get; set; }
+
         private static bool txtUserIDClick = true , txtPassClick = true;
-        private void DraggableWindows()
+        private void DraggableWindows(Form a)
         {
-            DragableWindow.MakeDraggable(this);
-            DragableWindow.MakePanelDraggable(pnlMain, this);
-            DragableWindow.MakePanelDraggable(pnlTittlebar, this);
+            DragableWindow.MakeDraggable(a);
+            DragableWindow.MakePanelDraggable(pnlMain, a);
         }
 
         public LogIn()
         {
             InitializeComponent();
-            DraggableWindows();
         }
-
-        private void btnExit_Click(object sender, EventArgs e)
+        public LogIn(Form a) : this()
         {
-            Application.Exit();
-        }
-
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
+            DraggableWindows(a);
+            this.MainWindowF = a;
         }
 
         private void txtUserID_Leave(object sender, EventArgs e)
@@ -108,12 +103,24 @@ namespace ProjectR
             if (ds.Tables[0].Rows.Count == 1)
             {
                 this.lblLoginValidation.Text = "Valid user "+ ds.Tables[0].Rows[0][3].ToString();
-                HomePage a = new HomePage();
-                a.Show();
+                HomePage homePage = new HomePage(MainWindowF,this);
+                homePage.Dock = DockStyle.Fill;
+                homePage.TopLevel = false;
                 this.Hide();
+                MainWindow.MainWindowPanel.Controls.Add(homePage);
+                homePage.Show();
+                ClearTxt();
             }
             else this.lblLoginValidation.Text = "Invalid User";
         }
+
+        private void ClearTxt()
+        {
+            this.txtPassword.Text = "Enter your Password";
+            this.txtUserID.Text = "Enter your User-Id";
+            this.txtPassword.UseSystemPasswordChar = false;
+            this.ckbShowPassword.Visible = false;
+        } 
 
         private void txtPassword_Leave(object sender, EventArgs e)
         {

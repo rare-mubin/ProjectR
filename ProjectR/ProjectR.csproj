@@ -53,12 +53,6 @@
       <DependentUpon>AllProductList.cs</DependentUpon>
     </Compile>
     <Compile Include="DragableWindow.cs" />
-    <Compile Include="DefaultForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DefaultForm.Designer.cs">
-      <DependentUpon>DefaultForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +65,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProfilePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,14 +82,14 @@
     <EmbeddedResource Include="AllProductList.resx">
       <DependentUpon>AllProductList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DefaultForm.resx">
-      <DependentUpon>DefaultForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProfilePage.resx">
       <DependentUpon>ProfilePage.cs</DependentUpon>
