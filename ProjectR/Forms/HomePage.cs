@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjectR
+namespace ProjectR.Forms
 {
-    public partial class HomePage : Form
+    public partial class HomePage : UserControl
     {
         internal Form MainWindowF { get; set; }
         internal Form Previous { get; set; }
@@ -25,26 +25,15 @@ namespace ProjectR
             MainWindowF = MainWindow;
             this.Previous = previous;
         }
-
         private void DraggableWindows(Form a)
         {
             DragableWindow.MakeDraggable(a);
             DragableWindow.MakePanelDraggable(pnlMain, a);
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            this.Close();
+            MainWindow.MainWindowPanel.Controls.Clear();
             MainWindow.MainWindowPanel.Controls.Add(Previous);
             Previous.Show();
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectR.Forms;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -91,9 +92,9 @@ namespace ProjectR
                 return;
             }
 
-            var query = "select * from AppUser where UserId = '" + this.txtUserID.Text + "' and Password = '" + this.txtPassword.Text + "'";
+            var query = "select * from SuperUser where UserId = '" + this.txtUserID.Text + "' and Password = '" + this.txtPassword.Text + "'";
 
-            SqlConnection sqlcon = new SqlConnection("Data Source=RARE\\SQLEXPRESS;Initial Catalog=ProjectR_DB;Persist Security Info=True;User ID=ProjectR;Password=okay1;");
+            SqlConnection sqlcon = new SqlConnection("Data Source=PROJECTR\\SQLEXPRESS;Initial Catalog=ProjectR_DB;Persist Security Info=True;User ID=sa;Password=12345;");
             sqlcon.Open();
             SqlCommand cmd = new SqlCommand(query, sqlcon);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -105,7 +106,6 @@ namespace ProjectR
                 this.lblLoginValidation.Text = "Valid user "+ ds.Tables[0].Rows[0][3].ToString();
                 HomePage homePage = new HomePage(MainWindowF,this);
                 homePage.Dock = DockStyle.Fill;
-                homePage.TopLevel = false;
                 this.Hide();
                 MainWindow.MainWindowPanel.Controls.Add(homePage);
                 homePage.Show();
