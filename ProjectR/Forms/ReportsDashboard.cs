@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace ProjectR.Forms
+{
+    public partial class ReportsDashboard : UserControl
+    {
+        internal Form MainWindowF { get; set; }
+
+        public ReportsDashboard()
+        {
+            InitializeComponent();
+        }
+
+        public ReportsDashboard(Form a) : this()
+        {
+            this.MainWindowF = a;
+        }
+    }
+}

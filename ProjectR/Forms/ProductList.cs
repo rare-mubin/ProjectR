@@ -17,12 +17,6 @@ namespace ProjectR.Forms
 
         private static bool txtSearchProductsClick = true;
 
-        private void DraggableWindows(Form a)
-        {
-            DragableWindow.MakeDraggable(a);
-            DragableWindow.MakePanelDraggable(this, a);
-        }
-
         public ProductList()
         {
             InitializeComponent();
@@ -33,17 +27,23 @@ namespace ProjectR.Forms
         }
         public ProductList(Form a) : this()
         {
-            DraggableWindows(a);
             this.MainWindowF = a;
         }
 
         // Grid View Initialisation
         private void PopulateGridView(string sql = "select * from ProductList;")
         {
-            var ds = this.Da.ExecuteQuery(sql);
-
-            this.dgvProductList.AutoGenerateColumns = false;
-            this.dgvProductList.DataSource = ds.Tables[0];
+            try
+            {
+                var ds = this.Da.ExecuteQuery(sql);
+                this.dgvProductList.AutoGenerateColumns = false;
+                this.dgvProductList.DataSource = ds.Tables[0];
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Opps Error : " + exc.Message);
+            }
+            
             this.ClearAll();
         }
 
@@ -234,16 +234,6 @@ namespace ProjectR.Forms
             {
                 MessageBox.Show("An error has occured: " + exc.Message);
             }
-        }
-
-        private void dgvProductList_SelectionChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dgvProductList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void ProductList_Load(object sender, EventArgs e)

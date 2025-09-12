@@ -420,7 +420,6 @@
             this.dgvProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductList.Size = new System.Drawing.Size(800, 630);
             this.dgvProductList.TabIndex = 0;
-            this.dgvProductList.SelectionChanged += new System.EventHandler(this.dgvProductList_SelectionChanged);
             this.dgvProductList.DoubleClick += new System.EventHandler(this.dgvProductList_DoubleClick);
             // 
             // colProductId
