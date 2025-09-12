@@ -1,6 +1,6 @@
 ﻿namespace ProjectR.Forms
 {
-    partial class UserProfile
+    partial class MemberList
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // UserProfile
+            // MemberList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProjectR.Properties.Resources.usercontrolBackground;
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "UserProfile";
+            this.Name = "MemberList";
             this.Size = new System.Drawing.Size(1100, 690);
             this.ResumeLayout(false);
 

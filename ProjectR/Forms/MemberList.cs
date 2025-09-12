@@ -10,18 +10,17 @@ using System.Windows.Forms;
 
 namespace ProjectR.Forms
 {
-    public partial class UserProfile : UserControl
+    public partial class MemberList : UserControl
     {
         internal Form MainWindowF { get; set; }
-
-        public UserProfile()
+        public MemberList()
         {
             InitializeComponent();
         }
 
-        public UserProfile(Form a) : this()
+        public MemberList(Form a) : this()
         {
             this.MainWindowF = a;
         }
-    }
+}
 }

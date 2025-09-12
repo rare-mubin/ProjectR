@@ -107,5 +107,21 @@ namespace ProjectR
             ChangeWindow(NextPage);
             NextPage.Show();
         }
+
+        private void btnMyProfile_Click(object sender, EventArgs e)
+        {
+            UserProfile NextPage = new UserProfile(MainWindowF);
+            NextPage.Dock = DockStyle.Fill;
+            ChangeWindow(NextPage);
+            NextPage.Show();
+        }
+
+        private void btnMembersList_Click(object sender, EventArgs e)
+        {
+            MemberList NextPage = new MemberList(MainWindowF);
+            NextPage.Dock = DockStyle.Fill;
+            ChangeWindow(NextPage);
+            NextPage.Show();
+        }
     }
 }

@@ -232,6 +232,7 @@
             this.btnMembersList.Text = "Members List";
             this.btnMembersList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMembersList.UseVisualStyleBackColor = false;
+            this.btnMembersList.Click += new System.EventHandler(this.btnMembersList_Click);
             // 
             // panel7
             // 
@@ -390,6 +391,7 @@
             this.btnMyProfile.Text = "My Profile";
             this.btnMyProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMyProfile.UseVisualStyleBackColor = false;
+            this.btnMyProfile.Click += new System.EventHandler(this.btnMyProfile_Click);
             // 
             // panel11
             // 
