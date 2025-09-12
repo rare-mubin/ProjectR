@@ -89,8 +89,8 @@ namespace ProjectR.Forms
                 return;
             }
 
-            var query = "select * from SuperUser where UserId = '" + this.txtUserID.Text + "' and Password = '" + this.txtPassword.Text + "'";
-
+            //var query = "select * from UserList where UserId = '" + this.txtUserID.Text + "' and Password = '" + this.txtPassword.Text + "'";
+            var query = $"select * from UserList where UserId = '{this.txtUserID.Text}' and UserPassword = '{this.txtPassword.Text}';";
             DataAccess dataAccess = new DataAccess();
             var ds = dataAccess.ExecuteQueryTable(query);
 
@@ -103,6 +103,8 @@ namespace ProjectR.Forms
                 MainWindow.MainWindowPanel.Controls.Add(NextPage);
                 NextPage.Show();
                 ClearTxt();
+                txtPassClick = true;
+                txtUserIDClick = true;
             }
             else 
             {

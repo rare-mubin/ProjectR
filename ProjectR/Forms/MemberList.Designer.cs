@@ -381,6 +381,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "MemberList";
             this.Size = new System.Drawing.Size(1100, 690);
+            this.Load += new System.EventHandler(this.MemberList_Load);
             this.pnlSidebarRight.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -70,6 +70,7 @@ namespace ProjectR.Forms
             this.PopulateGridView(sql);
         }
 
+        // Add Member
         private void btnAddMember_Click(object sender, EventArgs e)
         {
             try
@@ -103,6 +104,7 @@ namespace ProjectR.Forms
             this.txtMemberPhone.Text = this.dgvMemberList.CurrentRow.Cells["colMemberPhone"].Value.ToString();
         }
 
+        // Update Member Information
         private void btnUpdateMember_Click(object sender, EventArgs e)
         {
             try
@@ -129,6 +131,7 @@ namespace ProjectR.Forms
             }
         }
 
+        // Remove Member
         private void btnRemoveMember_Click(object sender, EventArgs e)
         {
             try
@@ -161,6 +164,12 @@ namespace ProjectR.Forms
             {
                 MessageBox.Show("An error has occured: " + exc.Message);
             }
+        }
+
+        private void MemberList_Load(object sender, EventArgs e)
+        {
+            this.dgvMemberList.ClearSelection();
+
         }
     }
 }
