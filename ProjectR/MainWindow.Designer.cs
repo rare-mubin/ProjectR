@@ -43,7 +43,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnAllProductList = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.btnReports = new System.Windows.Forms.Button();
+            this.btnReportsDashboard = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnSells = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -203,6 +203,7 @@
             this.btnSellersList.Text = "Sellers List";
             this.btnSellersList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSellersList.UseVisualStyleBackColor = false;
+            this.btnSellersList.Click += new System.EventHandler(this.btnSellersList_Click);
             // 
             // panel8
             // 
@@ -259,10 +260,11 @@
             this.btnAllProductList.Text = "All Product List";
             this.btnAllProductList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAllProductList.UseVisualStyleBackColor = false;
+            this.btnAllProductList.Click += new System.EventHandler(this.btnAllProductList_Click);
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.btnReports);
+            this.panel6.Controls.Add(this.btnReportsDashboard);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 94);
             this.panel6.Margin = new System.Windows.Forms.Padding(0);
@@ -271,22 +273,23 @@
             this.panel6.Size = new System.Drawing.Size(176, 47);
             this.panel6.TabIndex = 2;
             // 
-            // btnReports
+            // btnReportsDashboard
             // 
-            this.btnReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.btnReports.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnReports.FlatAppearance.BorderSize = 0;
-            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReports.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.btnReports.Location = new System.Drawing.Point(7, 7);
-            this.btnReports.Name = "btnReports";
-            this.btnReports.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btnReports.Size = new System.Drawing.Size(162, 33);
-            this.btnReports.TabIndex = 0;
-            this.btnReports.Text = "Reports";
-            this.btnReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReportsDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.btnReportsDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnReportsDashboard.FlatAppearance.BorderSize = 0;
+            this.btnReportsDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportsDashboard.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnReportsDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.btnReportsDashboard.Location = new System.Drawing.Point(7, 7);
+            this.btnReportsDashboard.Name = "btnReportsDashboard";
+            this.btnReportsDashboard.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnReportsDashboard.Size = new System.Drawing.Size(162, 33);
+            this.btnReportsDashboard.TabIndex = 0;
+            this.btnReportsDashboard.Text = "Reports Dashboard";
+            this.btnReportsDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportsDashboard.UseVisualStyleBackColor = false;
+            this.btnReportsDashboard.Click += new System.EventHandler(this.btnReportsDashboard_Click);
             // 
             // panel5
             // 
@@ -315,6 +318,7 @@
             this.btnSells.Text = "Sells";
             this.btnSells.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSells.UseVisualStyleBackColor = false;
+            this.btnSells.Click += new System.EventHandler(this.btnSells_Click);
             // 
             // panel4
             // 
@@ -343,6 +347,7 @@
             this.btnProductBrowser.Text = "Product Browser";
             this.btnProductBrowser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProductBrowser.UseVisualStyleBackColor = false;
+            this.btnProductBrowser.Click += new System.EventHandler(this.btnProductBrowser_Click);
             // 
             // panel2
             // 
@@ -465,7 +470,7 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btnAllProductList;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button btnReports;
+        private System.Windows.Forms.Button btnReportsDashboard;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnSells;
         private System.Windows.Forms.Panel panel4;

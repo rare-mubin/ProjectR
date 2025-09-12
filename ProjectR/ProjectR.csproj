@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="DataAccess.cs" />
     <Compile Include="DragableWindow.cs" />
+    <Compile Include="Forms\HomePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LogIn.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -60,11 +66,23 @@
     <Compile Include="Forms\ProductList.Designer.cs">
       <DependentUpon>ProductList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UserProfile.cs">
+    <Compile Include="Forms\ReportsDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\UserProfile.Designer.cs">
-      <DependentUpon>UserProfile.cs</DependentUpon>
+    <Compile Include="Forms\ReportsDashboard.Designer.cs">
+      <DependentUpon>ReportsDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SellerList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\SellerList.Designer.cs">
+      <DependentUpon>SellerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sells.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Sells.Designer.cs">
+      <DependentUpon>Sells.cs</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
@@ -74,14 +92,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserProfile.resx">
-      <DependentUpon>UserProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
@@ -114,6 +133,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\usercontrolBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Games.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Laptops.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pcparts.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
