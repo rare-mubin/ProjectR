@@ -52,12 +52,60 @@ namespace ProjectR
             pnlForms.Controls.Add(this.LogINP);
             this.LogINP.Show();
         }
+        
+        private void ChangeWindow(UserControl NextPage)
+        {
+            MainWindow.MainWindowPanel.Controls.Clear();
+            MainWindow.SidePanel.Visible = true;
+            MainWindow.MainWindowPanel.Controls.Add(NextPage);
+        }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+            LogIn a = new LogIn();
             this.pnlSideBarLeft.Visible = false;
             this.pnlForms.Controls.Clear();
-            pnlForms.Controls.Add(LogINP);
+            pnlForms.Controls.Add(a);
+        }
+
+        private void btnProductBrowser_Click(object sender, EventArgs e)
+        {
+            HomePage NextPage = new HomePage(MainWindowF);
+            NextPage.Dock = DockStyle.Fill;
+            ChangeWindow(NextPage);
+            NextPage.Show();
+        }
+
+        private void btnAllProductList_Click(object sender, EventArgs e)
+        {
+            ProductList NextPage = new ProductList(MainWindowF);
+            NextPage.Dock = DockStyle.Fill;
+            ChangeWindow(NextPage);
+            NextPage.Show();
+        }
+
+        private void btnSellersList_Click(object sender, EventArgs e)
+        {
+            SellerList NextPage = new SellerList(MainWindowF);
+            NextPage.Dock = DockStyle.Fill;
+            ChangeWindow(NextPage);
+            NextPage.Show();
+        }
+
+        private void btnSells_Click(object sender, EventArgs e)
+        {
+            Sells NextPage = new Sells(MainWindowF);
+            NextPage.Dock = DockStyle.Fill;
+            ChangeWindow(NextPage);
+            NextPage.Show();
+        }
+
+        private void btnReportsDashboard_Click(object sender, EventArgs e)
+        {
+            ReportsDashboard NextPage = new ReportsDashboard(MainWindowF);
+            NextPage.Dock = DockStyle.Fill;
+            ChangeWindow(NextPage);
+            NextPage.Show();
         }
     }
 }

@@ -96,7 +96,7 @@ namespace ProjectR.Forms
 
             if (ds.Rows.Count == 1)
             {
-                ProductList NextPage = new ProductList(MainWindowF);
+                HomePage NextPage = new HomePage(MainWindowF);
                 NextPage.Dock = DockStyle.Fill;
                 MainWindow.MainWindowPanel.Controls.Clear();
                 MainWindow.SidePanel.Visible = true;
