@@ -38,7 +38,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtProductModel = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtPRoductName = new System.Windows.Forms.TextBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtProductId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,7 +54,13 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtSearchProducts = new System.Windows.Forms.TextBox();
             this.pnlGridView = new System.Windows.Forms.Panel();
-            this.grdProductList = new System.Windows.Forms.DataGridView();
+            this.dgvProductList = new System.Windows.Forms.DataGridView();
+            this.colProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlSidebarRight.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlProductbtns.SuspendLayout();
@@ -64,7 +70,7 @@
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.pnlGridView.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdProductList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSidebarRight
@@ -88,7 +94,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtProductModel);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txtPRoductName);
+            this.panel1.Controls.Add(this.txtProductName);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtProductId);
             this.panel1.Controls.Add(this.label2);
@@ -102,7 +108,12 @@
             // 
             this.cmbProductCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.cmbProductCategory.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.cmbProductCategory.ForeColor = System.Drawing.Color.White;
             this.cmbProductCategory.FormattingEnabled = true;
+            this.cmbProductCategory.Items.AddRange(new object[] {
+            "Laptop",
+            "Digital Store",
+            "Personal Computer"});
             this.cmbProductCategory.Location = new System.Drawing.Point(26, 262);
             this.cmbProductCategory.Name = "cmbProductCategory";
             this.cmbProductCategory.Size = new System.Drawing.Size(231, 28);
@@ -112,6 +123,7 @@
             // 
             this.txtProductStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.txtProductStock.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtProductStock.ForeColor = System.Drawing.Color.White;
             this.txtProductStock.Location = new System.Drawing.Point(26, 396);
             this.txtProductStock.Name = "txtProductStock";
             this.txtProductStock.Size = new System.Drawing.Size(231, 26);
@@ -132,6 +144,7 @@
             // 
             this.txtProductPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.txtProductPrice.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtProductPrice.ForeColor = System.Drawing.Color.White;
             this.txtProductPrice.Location = new System.Drawing.Point(26, 332);
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.Size = new System.Drawing.Size(231, 26);
@@ -163,6 +176,7 @@
             // 
             this.txtProductModel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.txtProductModel.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtProductModel.ForeColor = System.Drawing.Color.White;
             this.txtProductModel.Location = new System.Drawing.Point(26, 195);
             this.txtProductModel.Name = "txtProductModel";
             this.txtProductModel.Size = new System.Drawing.Size(231, 26);
@@ -179,14 +193,15 @@
             this.label4.TabIndex = 19;
             this.label4.Text = "Product Model";
             // 
-            // txtPRoductName
+            // txtProductName
             // 
-            this.txtPRoductName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txtPRoductName.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.txtPRoductName.Location = new System.Drawing.Point(26, 134);
-            this.txtPRoductName.Name = "txtPRoductName";
-            this.txtPRoductName.Size = new System.Drawing.Size(231, 26);
-            this.txtPRoductName.TabIndex = 16;
+            this.txtProductName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.txtProductName.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtProductName.ForeColor = System.Drawing.Color.White;
+            this.txtProductName.Location = new System.Drawing.Point(26, 134);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(231, 26);
+            this.txtProductName.TabIndex = 16;
             // 
             // label3
             // 
@@ -203,8 +218,10 @@
             // 
             this.txtProductId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.txtProductId.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtProductId.ForeColor = System.Drawing.Color.White;
             this.txtProductId.Location = new System.Drawing.Point(26, 68);
             this.txtProductId.Name = "txtProductId";
+            this.txtProductId.ReadOnly = true;
             this.txtProductId.Size = new System.Drawing.Size(231, 26);
             this.txtProductId.TabIndex = 14;
             // 
@@ -259,6 +276,7 @@
             this.btnAddProduct.TabIndex = 0;
             this.btnAddProduct.Text = "Add Product";
             this.btnAddProduct.UseVisualStyleBackColor = false;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // panel10
             // 
@@ -287,6 +305,7 @@
             this.btnUpdateProduct.TabIndex = 0;
             this.btnUpdateProduct.Text = "Update Product";
             this.btnUpdateProduct.UseVisualStyleBackColor = false;
+            this.btnUpdateProduct.Click += new System.EventHandler(this.btnUpdateProduct_Click);
             // 
             // panel11
             // 
@@ -315,6 +334,7 @@
             this.btnDeleteProduct.TabIndex = 0;
             this.btnDeleteProduct.Text = "Delete Product";
             this.btnDeleteProduct.UseVisualStyleBackColor = false;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
             // 
             // panel2
             // 
@@ -365,30 +385,97 @@
             this.txtSearchProducts.Text = "Search product with name or id";
             this.txtSearchProducts.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSearchProducts.Click += new System.EventHandler(this.txtSearchProducts_Click);
+            this.txtSearchProducts.TextChanged += new System.EventHandler(this.txtSearchProducts_TextChanged);
             this.txtSearchProducts.Leave += new System.EventHandler(this.txtSearchProducts_Leave);
             // 
             // pnlGridView
             // 
             this.pnlGridView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
-            this.pnlGridView.Controls.Add(this.grdProductList);
+            this.pnlGridView.Controls.Add(this.dgvProductList);
             this.pnlGridView.Location = new System.Drawing.Point(6, 55);
             this.pnlGridView.Name = "pnlGridView";
             this.pnlGridView.Size = new System.Drawing.Size(800, 630);
             this.pnlGridView.TabIndex = 2;
             // 
-            // grdProductList
+            // dgvProductList
             // 
-            this.grdProductList.AllowUserToAddRows = false;
-            this.grdProductList.AllowUserToDeleteRows = false;
-            this.grdProductList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
-            this.grdProductList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.grdProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdProductList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdProductList.Location = new System.Drawing.Point(0, 0);
-            this.grdProductList.Name = "grdProductList";
-            this.grdProductList.ReadOnly = true;
-            this.grdProductList.Size = new System.Drawing.Size(800, 630);
-            this.grdProductList.TabIndex = 0;
+            this.dgvProductList.AllowUserToAddRows = false;
+            this.dgvProductList.AllowUserToDeleteRows = false;
+            this.dgvProductList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
+            this.dgvProductList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colProductId,
+            this.colProductName,
+            this.colProductModel,
+            this.colProductCategory,
+            this.colProductPrice,
+            this.colProductStock});
+            this.dgvProductList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProductList.Location = new System.Drawing.Point(0, 0);
+            this.dgvProductList.Name = "dgvProductList";
+            this.dgvProductList.ReadOnly = true;
+            this.dgvProductList.RowHeadersWidth = 51;
+            this.dgvProductList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProductList.Size = new System.Drawing.Size(800, 630);
+            this.dgvProductList.TabIndex = 0;
+            this.dgvProductList.SelectionChanged += new System.EventHandler(this.dgvProductList_SelectionChanged);
+            this.dgvProductList.DoubleClick += new System.EventHandler(this.dgvProductList_DoubleClick);
+            // 
+            // colProductId
+            // 
+            this.colProductId.DataPropertyName = "ProductId";
+            this.colProductId.HeaderText = "ID";
+            this.colProductId.MinimumWidth = 6;
+            this.colProductId.Name = "colProductId";
+            this.colProductId.ReadOnly = true;
+            this.colProductId.Width = 125;
+            // 
+            // colProductName
+            // 
+            this.colProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colProductName.DataPropertyName = "ProductName";
+            this.colProductName.HeaderText = "Name";
+            this.colProductName.MinimumWidth = 6;
+            this.colProductName.Name = "colProductName";
+            this.colProductName.ReadOnly = true;
+            // 
+            // colProductModel
+            // 
+            this.colProductModel.DataPropertyName = "ProductModel";
+            this.colProductModel.HeaderText = "Model";
+            this.colProductModel.MinimumWidth = 6;
+            this.colProductModel.Name = "colProductModel";
+            this.colProductModel.ReadOnly = true;
+            this.colProductModel.Width = 125;
+            // 
+            // colProductCategory
+            // 
+            this.colProductCategory.DataPropertyName = "ProductCategory";
+            this.colProductCategory.HeaderText = "Category";
+            this.colProductCategory.MinimumWidth = 6;
+            this.colProductCategory.Name = "colProductCategory";
+            this.colProductCategory.ReadOnly = true;
+            this.colProductCategory.Width = 125;
+            // 
+            // colProductPrice
+            // 
+            this.colProductPrice.DataPropertyName = "ProductPrice";
+            this.colProductPrice.HeaderText = "Price";
+            this.colProductPrice.MinimumWidth = 6;
+            this.colProductPrice.Name = "colProductPrice";
+            this.colProductPrice.ReadOnly = true;
+            this.colProductPrice.Width = 125;
+            // 
+            // colProductStock
+            // 
+            this.colProductStock.DataPropertyName = "ProductStock";
+            this.colProductStock.HeaderText = "Stock";
+            this.colProductStock.MinimumWidth = 6;
+            this.colProductStock.Name = "colProductStock";
+            this.colProductStock.ReadOnly = true;
+            this.colProductStock.Width = 125;
             // 
             // ProductList
             // 
@@ -403,6 +490,7 @@
             this.Controls.Add(this.pnlSidebarRight);
             this.Name = "ProductList";
             this.Size = new System.Drawing.Size(1100, 690);
+            this.Load += new System.EventHandler(this.ProductList_Load);
             this.pnlSidebarRight.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -414,7 +502,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.pnlGridView.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grdProductList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -427,7 +515,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearchProducts;
         private System.Windows.Forms.Panel pnlGridView;
-        private System.Windows.Forms.DataGridView grdProductList;
+        private System.Windows.Forms.DataGridView dgvProductList;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cmbProductCategory;
         private System.Windows.Forms.TextBox txtProductStock;
@@ -437,7 +525,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtProductModel;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtPRoductName;
+        private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtProductId;
         private System.Windows.Forms.Label label2;
@@ -447,5 +535,11 @@
         private System.Windows.Forms.Button btnUpdateProduct;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button btnDeleteProduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductModel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductStock;
     }
 }
