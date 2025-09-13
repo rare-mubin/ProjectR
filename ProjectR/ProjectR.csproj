@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="DataAccess.cs" />
     <Compile Include="DragableWindow.cs" />
+    <Compile Include="Forms\EditUserProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\EditUserProfile.Designer.cs">
+      <DependentUpon>EditUserProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HomePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\EditUserProfile.resx">
+      <DependentUpon>EditUserProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SellerList.resx">
       <DependentUpon>SellerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sells.resx">
+      <DependentUpon>Sells.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserProfile.resx">
       <DependentUpon>UserProfile.cs</DependentUpon>
