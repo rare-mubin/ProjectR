@@ -30,6 +30,10 @@
         {
             this.pnlSidebarRight = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtProductDescription = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtProductType = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.cmbProductCategory = new System.Windows.Forms.ComboBox();
             this.txtProductStock = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -61,6 +65,8 @@
             this.colProductCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlSidebarRight.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlProductbtns.SuspendLayout();
@@ -86,6 +92,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.panel1.Controls.Add(this.txtProductDescription);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.txtProductType);
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.cmbProductCategory);
             this.panel1.Controls.Add(this.txtProductStock);
             this.panel1.Controls.Add(this.label7);
@@ -104,6 +114,48 @@
             this.panel1.Size = new System.Drawing.Size(281, 493);
             this.panel1.TabIndex = 0;
             // 
+            // txtProductDescription
+            // 
+            this.txtProductDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.txtProductDescription.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtProductDescription.ForeColor = System.Drawing.Color.White;
+            this.txtProductDescription.Location = new System.Drawing.Point(26, 423);
+            this.txtProductDescription.Name = "txtProductDescription";
+            this.txtProductDescription.Size = new System.Drawing.Size(231, 26);
+            this.txtProductDescription.TabIndex = 28;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.label9.Location = new System.Drawing.Point(26, 400);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(146, 18);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Product Description";
+            // 
+            // txtProductType
+            // 
+            this.txtProductType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.txtProductType.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtProductType.ForeColor = System.Drawing.Color.White;
+            this.txtProductType.Location = new System.Drawing.Point(26, 369);
+            this.txtProductType.Name = "txtProductType";
+            this.txtProductType.Size = new System.Drawing.Size(231, 26);
+            this.txtProductType.TabIndex = 26;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.label8.Location = new System.Drawing.Point(26, 346);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 18);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Product Type";
+            // 
             // cmbProductCategory
             // 
             this.cmbProductCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
@@ -114,7 +166,7 @@
             "Laptop",
             "Digital Store",
             "Personal Computer"});
-            this.cmbProductCategory.Location = new System.Drawing.Point(26, 262);
+            this.cmbProductCategory.Location = new System.Drawing.Point(26, 201);
             this.cmbProductCategory.Name = "cmbProductCategory";
             this.cmbProductCategory.Size = new System.Drawing.Size(231, 28);
             this.cmbProductCategory.TabIndex = 25;
@@ -124,7 +176,7 @@
             this.txtProductStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.txtProductStock.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.txtProductStock.ForeColor = System.Drawing.Color.White;
-            this.txtProductStock.Location = new System.Drawing.Point(26, 396);
+            this.txtProductStock.Location = new System.Drawing.Point(26, 316);
             this.txtProductStock.Name = "txtProductStock";
             this.txtProductStock.Size = new System.Drawing.Size(231, 26);
             this.txtProductStock.TabIndex = 23;
@@ -134,7 +186,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label7.Location = new System.Drawing.Point(26, 373);
+            this.label7.Location = new System.Drawing.Point(26, 293);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(106, 18);
             this.label7.TabIndex = 24;
@@ -145,7 +197,7 @@
             this.txtProductPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.txtProductPrice.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.txtProductPrice.ForeColor = System.Drawing.Color.White;
-            this.txtProductPrice.Location = new System.Drawing.Point(26, 332);
+            this.txtProductPrice.Location = new System.Drawing.Point(26, 263);
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.Size = new System.Drawing.Size(231, 26);
             this.txtProductPrice.TabIndex = 21;
@@ -155,7 +207,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label6.Location = new System.Drawing.Point(26, 309);
+            this.label6.Location = new System.Drawing.Point(26, 240);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(103, 18);
             this.label6.TabIndex = 22;
@@ -166,7 +218,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label5.Location = new System.Drawing.Point(26, 239);
+            this.label5.Location = new System.Drawing.Point(26, 178);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(130, 18);
             this.label5.TabIndex = 20;
@@ -177,7 +229,7 @@
             this.txtProductModel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.txtProductModel.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.txtProductModel.ForeColor = System.Drawing.Color.White;
-            this.txtProductModel.Location = new System.Drawing.Point(26, 195);
+            this.txtProductModel.Location = new System.Drawing.Point(26, 144);
             this.txtProductModel.Name = "txtProductModel";
             this.txtProductModel.Size = new System.Drawing.Size(231, 26);
             this.txtProductModel.TabIndex = 18;
@@ -187,7 +239,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label4.Location = new System.Drawing.Point(26, 172);
+            this.label4.Location = new System.Drawing.Point(26, 121);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(109, 18);
             this.label4.TabIndex = 19;
@@ -198,7 +250,7 @@
             this.txtProductName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.txtProductName.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.txtProductName.ForeColor = System.Drawing.Color.White;
-            this.txtProductName.Location = new System.Drawing.Point(26, 134);
+            this.txtProductName.Location = new System.Drawing.Point(26, 84);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(231, 26);
             this.txtProductName.TabIndex = 16;
@@ -208,7 +260,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label3.Location = new System.Drawing.Point(26, 111);
+            this.label3.Location = new System.Drawing.Point(26, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 18);
             this.label3.TabIndex = 17;
@@ -219,7 +271,7 @@
             this.txtProductId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.txtProductId.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.txtProductId.ForeColor = System.Drawing.Color.White;
-            this.txtProductId.Location = new System.Drawing.Point(26, 68);
+            this.txtProductId.Location = new System.Drawing.Point(26, 30);
             this.txtProductId.Name = "txtProductId";
             this.txtProductId.ReadOnly = true;
             this.txtProductId.Size = new System.Drawing.Size(231, 26);
@@ -230,7 +282,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label2.Location = new System.Drawing.Point(26, 45);
+            this.label2.Location = new System.Drawing.Point(26, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 18);
             this.label2.TabIndex = 15;
@@ -410,7 +462,9 @@
             this.colProductModel,
             this.colProductCategory,
             this.colProductPrice,
-            this.colProductStock});
+            this.colProductStock,
+            this.colProductType,
+            this.colProductDescription});
             this.dgvProductList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProductList.Location = new System.Drawing.Point(0, 0);
             this.dgvProductList.Name = "dgvProductList";
@@ -429,7 +483,7 @@
             this.colProductId.MinimumWidth = 6;
             this.colProductId.Name = "colProductId";
             this.colProductId.ReadOnly = true;
-            this.colProductId.Width = 125;
+            this.colProductId.Width = 50;
             // 
             // colProductName
             // 
@@ -447,7 +501,7 @@
             this.colProductModel.MinimumWidth = 6;
             this.colProductModel.Name = "colProductModel";
             this.colProductModel.ReadOnly = true;
-            this.colProductModel.Width = 125;
+            this.colProductModel.Width = 75;
             // 
             // colProductCategory
             // 
@@ -456,7 +510,6 @@
             this.colProductCategory.MinimumWidth = 6;
             this.colProductCategory.Name = "colProductCategory";
             this.colProductCategory.ReadOnly = true;
-            this.colProductCategory.Width = 125;
             // 
             // colProductPrice
             // 
@@ -465,7 +518,7 @@
             this.colProductPrice.MinimumWidth = 6;
             this.colProductPrice.Name = "colProductPrice";
             this.colProductPrice.ReadOnly = true;
-            this.colProductPrice.Width = 125;
+            this.colProductPrice.Width = 50;
             // 
             // colProductStock
             // 
@@ -474,7 +527,22 @@
             this.colProductStock.MinimumWidth = 6;
             this.colProductStock.Name = "colProductStock";
             this.colProductStock.ReadOnly = true;
-            this.colProductStock.Width = 125;
+            this.colProductStock.Width = 50;
+            // 
+            // colProductType
+            // 
+            this.colProductType.DataPropertyName = "ProductType";
+            this.colProductType.HeaderText = "Type";
+            this.colProductType.Name = "colProductType";
+            this.colProductType.ReadOnly = true;
+            this.colProductType.Width = 75;
+            // 
+            // colProductDescription
+            // 
+            this.colProductDescription.DataPropertyName = "ProductDescription";
+            this.colProductDescription.HeaderText = "Description";
+            this.colProductDescription.Name = "colProductDescription";
+            this.colProductDescription.ReadOnly = true;
             // 
             // ProductList
             // 
@@ -540,5 +608,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductDescription;
+        private System.Windows.Forms.TextBox txtProductDescription;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtProductType;
+        private System.Windows.Forms.Label label8;
     }
 }

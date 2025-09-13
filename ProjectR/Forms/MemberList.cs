@@ -20,7 +20,6 @@ namespace ProjectR.Forms
             InitializeComponent();
             this.Da = new DataAccess();
             this.PopulateGridView();
-
         }
 
         public MemberList(Form a) : this()
@@ -28,19 +27,20 @@ namespace ProjectR.Forms
             this.MainWindowF = a;
         }
 
-
-
-
-
-
         // Populate Grid view
         private void PopulateGridView(string sql = "select * from MemberList;")
         {
-            var ds = this.Da.ExecuteQuery(sql);
-
-            this.dgvMemberList.AutoGenerateColumns = false;
-            this.dgvMemberList.DataSource = ds.Tables[0];
-            this.ClearAll();
+            try
+            {
+                var ds = this.Da.ExecuteQuery(sql);
+                this.dgvMemberList.AutoGenerateColumns = false;
+                this.dgvMemberList.DataSource = ds.Tables[0];
+                this.ClearAll();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error:{ex.Message}");
+            }
         }
         // clear all
         private void ClearAll()
@@ -48,10 +48,8 @@ namespace ProjectR.Forms
             this.txtMemberName.Clear();
             this.txtMemberPhone.Clear();
             this.txtMemberPoints.Clear();
-            //this.cmbProductCategory.SelectedIndex = -1;       
             this.dgvMemberList.ClearSelection();
         }
-
 
         // [Fill All the Forms]
         private bool IsValidToSave()
@@ -66,8 +64,17 @@ namespace ProjectR.Forms
         // Search Box
         private void txtSearchMembers_TextChanged(object sender, EventArgs e)
         {
-            var sql = $"select * from MemberList where MemberName LIKE '%{this.txtSearchMembers.Text}%';";
-            this.PopulateGridView(sql);
+            try
+            {
+                string searchText = this.txtSearchMembers.Text.Trim();
+
+                string sql = $"select * from MemberList where MemberName LIKE '%{searchText}%';";
+                this.PopulateGridView(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error:{ex.Message}");
+            }
         }
 
         // Add Member
@@ -91,9 +98,9 @@ namespace ProjectR.Forms
                 this.ClearAll();
                 this.PopulateGridView();
             }
-            catch (Exception exc)
+            catch (Exception ex)
             {
-                MessageBox.Show("Eror: " + exc.Message);
+                MessageBox.Show($"Error:{ex.Message}");
             }
         }
 
@@ -125,9 +132,9 @@ namespace ProjectR.Forms
                 this.PopulateGridView();                
             }
 
-            catch (Exception exc)
+            catch (Exception ex)
             {
-                MessageBox.Show("Eror:" + exc.Message);
+                MessageBox.Show($"Error:{ex.Message}");
             }
         }
 
@@ -160,16 +167,15 @@ namespace ProjectR.Forms
                 this.PopulateGridView();
                 this.ClearAll();
             }
-            catch (Exception exc)
+            catch (Exception ex)
             {
-                MessageBox.Show("An error has occured: " + exc.Message);
+                MessageBox.Show($"Error:{ex.Message}");
             }
         }
 
         private void MemberList_Load(object sender, EventArgs e)
         {
             this.dgvMemberList.ClearSelection();
-
         }
     }
 }

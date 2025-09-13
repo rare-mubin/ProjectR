@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.dgvSellerList = new System.Windows.Forms.DataGridView();
+            this.colUserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUserDOB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUserPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUserNID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUserRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUserPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlGridView = new System.Windows.Forms.Panel();
             this.txtSearchSellers = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -46,24 +53,17 @@
             this.txtUserId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlSidebarRight = new System.Windows.Forms.Panel();
+            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtUserNID = new System.Windows.Forms.TextBox();
+            this.txtUserPassword = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbUserRole = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtUserPhone = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtUserPassword = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmbUserRole = new System.Windows.Forms.ComboBox();
-            this.txtUserNID = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
-            this.colUserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUserDOB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUserPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUserNID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUserRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUserPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlSidebarRight = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSellerList)).BeginInit();
             this.pnlGridView.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -102,6 +102,58 @@
             this.dgvSellerList.TabIndex = 0;
             this.dgvSellerList.DoubleClick += new System.EventHandler(this.dgvSellerList_DoubleClick);
             // 
+            // colUserId
+            // 
+            this.colUserId.DataPropertyName = "UserId";
+            this.colUserId.HeaderText = "User Id";
+            this.colUserId.Name = "colUserId";
+            this.colUserId.ReadOnly = true;
+            // 
+            // colUserName
+            // 
+            this.colUserName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colUserName.DataPropertyName = "UserName";
+            this.colUserName.HeaderText = "Name";
+            this.colUserName.Name = "colUserName";
+            this.colUserName.ReadOnly = true;
+            // 
+            // colUserDOB
+            // 
+            this.colUserDOB.DataPropertyName = "UserDOB";
+            this.colUserDOB.HeaderText = "Date of Birth";
+            this.colUserDOB.Name = "colUserDOB";
+            this.colUserDOB.ReadOnly = true;
+            // 
+            // colUserPhone
+            // 
+            this.colUserPhone.DataPropertyName = "UserPhone";
+            this.colUserPhone.HeaderText = "Phone Number";
+            this.colUserPhone.Name = "colUserPhone";
+            this.colUserPhone.ReadOnly = true;
+            this.colUserPhone.Width = 150;
+            // 
+            // colUserNID
+            // 
+            this.colUserNID.DataPropertyName = "UserNID";
+            this.colUserNID.HeaderText = "NID";
+            this.colUserNID.Name = "colUserNID";
+            this.colUserNID.ReadOnly = true;
+            // 
+            // colUserRole
+            // 
+            this.colUserRole.DataPropertyName = "Role";
+            this.colUserRole.HeaderText = "Role";
+            this.colUserRole.Name = "colUserRole";
+            this.colUserRole.ReadOnly = true;
+            // 
+            // colUserPassword
+            // 
+            this.colUserPassword.DataPropertyName = "UserPassword";
+            this.colUserPassword.HeaderText = "Password";
+            this.colUserPassword.Name = "colUserPassword";
+            this.colUserPassword.ReadOnly = true;
+            this.colUserPassword.Visible = false;
+            // 
             // pnlGridView
             // 
             this.pnlGridView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
@@ -122,8 +174,9 @@
             this.txtSearchSellers.Name = "txtSearchSellers";
             this.txtSearchSellers.Size = new System.Drawing.Size(738, 21);
             this.txtSearchSellers.TabIndex = 0;
-            this.txtSearchSellers.Text = "Search product with name or id";
+            this.txtSearchSellers.Text = "Search Users...";
             this.txtSearchSellers.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSearchSellers.TextChanged += new System.EventHandler(this.txtSearchSellers_TextChanged);
             // 
             // panel4
             // 
@@ -325,59 +378,35 @@
             this.panel1.Size = new System.Drawing.Size(281, 493);
             this.panel1.TabIndex = 0;
             // 
-            // pnlSidebarRight
+            // dtpDOB
             // 
-            this.pnlSidebarRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.pnlSidebarRight.Controls.Add(this.panel1);
-            this.pnlSidebarRight.Location = new System.Drawing.Point(812, 54);
-            this.pnlSidebarRight.Name = "pnlSidebarRight";
-            this.pnlSidebarRight.Padding = new System.Windows.Forms.Padding(1);
-            this.pnlSidebarRight.Size = new System.Drawing.Size(283, 495);
-            this.pnlSidebarRight.TabIndex = 8;
+            this.dtpDOB.CustomFormat = "yyyy-MM-dd";
+            this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDOB.Location = new System.Drawing.Point(26, 265);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(230, 20);
+            this.dtpDOB.TabIndex = 36;
             // 
-            // label4
+            // label8
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label4.Location = new System.Drawing.Point(26, 361);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 18);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "NID";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.label8.Location = new System.Drawing.Point(26, 411);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 18);
+            this.label8.TabIndex = 35;
+            this.label8.Text = "Role";
             // 
-            // txtUserPhone
+            // txtUserNID
             // 
-            this.txtUserPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txtUserPhone.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.txtUserPhone.ForeColor = System.Drawing.Color.White;
-            this.txtUserPhone.Location = new System.Drawing.Point(25, 323);
-            this.txtUserPhone.Name = "txtUserPhone";
-            this.txtUserPhone.Size = new System.Drawing.Size(231, 26);
-            this.txtUserPhone.TabIndex = 28;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label6.Location = new System.Drawing.Point(25, 300);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(121, 18);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "Contact Number";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label7.Location = new System.Drawing.Point(25, 234);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 18);
-            this.label7.TabIndex = 27;
-            this.label7.Text = "Date Of Birth";
+            this.txtUserNID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.txtUserNID.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtUserNID.ForeColor = System.Drawing.Color.White;
+            this.txtUserNID.Location = new System.Drawing.Point(25, 382);
+            this.txtUserNID.Name = "txtUserNID";
+            this.txtUserNID.Size = new System.Drawing.Size(231, 26);
+            this.txtUserNID.TabIndex = 34;
             // 
             // txtUserPassword
             // 
@@ -417,88 +446,60 @@
             this.cmbUserRole.Name = "cmbUserRole";
             this.cmbUserRole.Size = new System.Drawing.Size(231, 28);
             this.cmbUserRole.TabIndex = 31;
+            this.cmbUserRole.SelectedIndexChanged += new System.EventHandler(this.cmbUserRole_SelectedIndexChanged);
             // 
-            // txtUserNID
+            // label4
             // 
-            this.txtUserNID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txtUserNID.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.txtUserNID.ForeColor = System.Drawing.Color.White;
-            this.txtUserNID.Location = new System.Drawing.Point(25, 382);
-            this.txtUserNID.Name = "txtUserNID";
-            this.txtUserNID.Size = new System.Drawing.Size(231, 26);
-            this.txtUserNID.TabIndex = 34;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.label4.Location = new System.Drawing.Point(26, 361);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 18);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "NID";
             // 
-            // label8
+            // txtUserPhone
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label8.Location = new System.Drawing.Point(26, 411);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 18);
-            this.label8.TabIndex = 35;
-            this.label8.Text = "Role";
+            this.txtUserPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.txtUserPhone.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtUserPhone.ForeColor = System.Drawing.Color.White;
+            this.txtUserPhone.Location = new System.Drawing.Point(25, 323);
+            this.txtUserPhone.Name = "txtUserPhone";
+            this.txtUserPhone.Size = new System.Drawing.Size(231, 26);
+            this.txtUserPhone.TabIndex = 28;
             // 
-            // dtpDOB
+            // label6
             // 
-            this.dtpDOB.CustomFormat = "yyyy-MM-dd";
-            this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDOB.Location = new System.Drawing.Point(26, 265);
-            this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(230, 20);
-            this.dtpDOB.TabIndex = 36;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.label6.Location = new System.Drawing.Point(25, 300);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(121, 18);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Contact Number";
             // 
-            // colUserId
+            // label7
             // 
-            this.colUserId.DataPropertyName = "UserId";
-            this.colUserId.HeaderText = "User Id";
-            this.colUserId.Name = "colUserId";
-            this.colUserId.ReadOnly = true;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.label7.Location = new System.Drawing.Point(25, 234);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 18);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Date Of Birth";
             // 
-            // colUserName
+            // pnlSidebarRight
             // 
-            this.colUserName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colUserName.DataPropertyName = "UserName";
-            this.colUserName.HeaderText = "Name";
-            this.colUserName.Name = "colUserName";
-            this.colUserName.ReadOnly = true;
-            // 
-            // colUserDOB
-            // 
-            this.colUserDOB.DataPropertyName = "UserDOB";
-            this.colUserDOB.HeaderText = "Date of Birth";
-            this.colUserDOB.Name = "colUserDOB";
-            this.colUserDOB.ReadOnly = true;
-            // 
-            // colUserPhone
-            // 
-            this.colUserPhone.DataPropertyName = "UserPhone";
-            this.colUserPhone.HeaderText = "Phone Number";
-            this.colUserPhone.Name = "colUserPhone";
-            this.colUserPhone.ReadOnly = true;
-            this.colUserPhone.Width = 150;
-            // 
-            // colUserNID
-            // 
-            this.colUserNID.DataPropertyName = "UserNID";
-            this.colUserNID.HeaderText = "NID";
-            this.colUserNID.Name = "colUserNID";
-            this.colUserNID.ReadOnly = true;
-            // 
-            // colUserRole
-            // 
-            this.colUserRole.DataPropertyName = "Role";
-            this.colUserRole.HeaderText = "Role";
-            this.colUserRole.Name = "colUserRole";
-            this.colUserRole.ReadOnly = true;
-            // 
-            // colUserPassword
-            // 
-            this.colUserPassword.DataPropertyName = "UserPassword";
-            this.colUserPassword.HeaderText = "Password";
-            this.colUserPassword.Name = "colUserPassword";
-            this.colUserPassword.ReadOnly = true;
-            this.colUserPassword.Visible = false;
+            this.pnlSidebarRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.pnlSidebarRight.Controls.Add(this.panel1);
+            this.pnlSidebarRight.Location = new System.Drawing.Point(812, 54);
+            this.pnlSidebarRight.Name = "pnlSidebarRight";
+            this.pnlSidebarRight.Padding = new System.Windows.Forms.Padding(1);
+            this.pnlSidebarRight.Size = new System.Drawing.Size(283, 495);
+            this.pnlSidebarRight.TabIndex = 8;
             // 
             // SellerList
             // 
