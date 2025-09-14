@@ -121,6 +121,16 @@ namespace ProjectR.Forms
             this.ckbShowPassword.Visible = false;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ProductDetails NextPage = new ProductDetails("dsgfh");
+            //NextPage.Dock = DockStyle.Fill;
+            MainWindow.MainWindowPanel.Controls.Clear();
+            MainWindow.SidePanel.Visible = true;
+            MainWindow.MainWindowPanel.Controls.Add(NextPage);
+            NextPage.Show();
+        }
+
         private void txtPassword_Leave(object sender, EventArgs e)
         {
             if (this.txtPassword.Text == "")
