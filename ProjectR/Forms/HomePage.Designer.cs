@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlCatergory = new System.Windows.Forms.Panel();
+            this.pnlProductType = new System.Windows.Forms.Panel();
             this.btnPcParts = new System.Windows.Forms.Button();
             this.btnLaptops = new System.Windows.Forms.Button();
             this.btnGames = new System.Windows.Forms.Button();
             this.txtSearchProducts = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnDeleteProduct = new System.Windows.Forms.Button();
@@ -45,7 +46,8 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.pnlSidebarRight = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlCatergory.SuspendLayout();
+            this.pnlProducts = new System.Windows.Forms.Panel();
+            this.pnlProductType.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlProductbtns.SuspendLayout();
@@ -53,19 +55,21 @@
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             this.pnlSidebarRight.SuspendLayout();
+            this.pnlProducts.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlCatergory
+            // pnlProductType
             // 
-            this.pnlCatergory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
-            this.pnlCatergory.Controls.Add(this.btnPcParts);
-            this.pnlCatergory.Controls.Add(this.btnLaptops);
-            this.pnlCatergory.Controls.Add(this.btnGames);
-            this.pnlCatergory.Location = new System.Drawing.Point(5, 54);
-            this.pnlCatergory.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlCatergory.Name = "pnlCatergory";
-            this.pnlCatergory.Size = new System.Drawing.Size(800, 630);
-            this.pnlCatergory.TabIndex = 7;
+            this.pnlProductType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
+            this.pnlProductType.Controls.Add(this.btnPcParts);
+            this.pnlProductType.Controls.Add(this.btnLaptops);
+            this.pnlProductType.Controls.Add(this.btnGames);
+            this.pnlProductType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlProductType.Location = new System.Drawing.Point(1, 1);
+            this.pnlProductType.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlProductType.Name = "pnlProductType";
+            this.pnlProductType.Size = new System.Drawing.Size(798, 628);
+            this.pnlProductType.TabIndex = 7;
             // 
             // btnPcParts
             // 
@@ -83,6 +87,7 @@
             this.btnPcParts.Size = new System.Drawing.Size(249, 609);
             this.btnPcParts.TabIndex = 3;
             this.btnPcParts.UseVisualStyleBackColor = false;
+            this.btnPcParts.Click += new System.EventHandler(this.btnPcParts_Click);
             this.btnPcParts.MouseLeave += new System.EventHandler(this.btnPcParts_MouseLeave);
             this.btnPcParts.MouseHover += new System.EventHandler(this.btnPcParts_MouseHover);
             // 
@@ -102,6 +107,7 @@
             this.btnLaptops.Size = new System.Drawing.Size(249, 609);
             this.btnLaptops.TabIndex = 2;
             this.btnLaptops.UseVisualStyleBackColor = false;
+            this.btnLaptops.Click += new System.EventHandler(this.btnLaptops_Click);
             this.btnLaptops.MouseLeave += new System.EventHandler(this.btnLaptops_MouseLeave);
             this.btnLaptops.MouseHover += new System.EventHandler(this.btnLaptops_MouseHover);
             // 
@@ -121,6 +127,7 @@
             this.btnGames.Size = new System.Drawing.Size(249, 609);
             this.btnGames.TabIndex = 1;
             this.btnGames.UseVisualStyleBackColor = false;
+            this.btnGames.Click += new System.EventHandler(this.btnGames_Click);
             this.btnGames.MouseLeave += new System.EventHandler(this.btnGames_MouseLeave);
             this.btnGames.MouseHover += new System.EventHandler(this.btnGames_MouseHover);
             // 
@@ -135,19 +142,31 @@
             this.txtSearchProducts.Name = "txtSearchProducts";
             this.txtSearchProducts.Size = new System.Drawing.Size(738, 21);
             this.txtSearchProducts.TabIndex = 0;
-            this.txtSearchProducts.Text = "Search product with name or id";
+            this.txtSearchProducts.Text = "5";
             this.txtSearchProducts.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSearchProducts.TextChanged += new System.EventHandler(this.txtSearchProducts_TextChanged);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.txtSearchProducts);
             this.panel4.Location = new System.Drawing.Point(5, 6);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(30, 10, 30, 10);
             this.panel4.Size = new System.Drawing.Size(800, 44);
             this.panel4.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(42, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -289,13 +308,24 @@
             this.panel1.Size = new System.Drawing.Size(281, 493);
             this.panel1.TabIndex = 0;
             // 
+            // pnlProducts
+            // 
+            this.pnlProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.pnlProducts.Controls.Add(this.pnlProductType);
+            this.pnlProducts.Location = new System.Drawing.Point(5, 54);
+            this.pnlProducts.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlProducts.Name = "pnlProducts";
+            this.pnlProducts.Padding = new System.Windows.Forms.Padding(1);
+            this.pnlProducts.Size = new System.Drawing.Size(800, 630);
+            this.pnlProducts.TabIndex = 9;
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
             this.BackgroundImage = global::ProjectR.Properties.Resources.usercontrolBackground;
-            this.Controls.Add(this.pnlCatergory);
+            this.Controls.Add(this.pnlProducts);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlProductbtns);
@@ -303,7 +333,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "HomePage";
             this.Size = new System.Drawing.Size(1100, 690);
-            this.pnlCatergory.ResumeLayout(false);
+            this.pnlProductType.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -312,13 +342,14 @@
             this.panel10.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.pnlSidebarRight.ResumeLayout(false);
+            this.pnlProducts.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlCatergory;
+        private System.Windows.Forms.Panel pnlProductType;
         private System.Windows.Forms.TextBox txtSearchProducts;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
@@ -335,5 +366,7 @@
         private System.Windows.Forms.Button btnGames;
         private System.Windows.Forms.Button btnPcParts;
         private System.Windows.Forms.Button btnLaptops;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel pnlProducts;
     }
 }

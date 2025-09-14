@@ -84,6 +84,36 @@
     <Compile Include="Forms\ProductList.Designer.cs">
       <DependentUpon>ProductList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ProductTypes\AllProducts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductTypes\AllProducts.Designer.cs">
+      <DependentUpon>AllProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductTypes\Games.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductTypes\Games.Designer.cs">
+      <DependentUpon>Games.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductTypes\Laptops.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductTypes\Laptops.Designer.cs">
+      <DependentUpon>Laptops.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductTypes\PcParts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductTypes\PcParts.Designer.cs">
+      <DependentUpon>PcParts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductTypes\ProductsCards\ProductCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductTypes\ProductsCards\ProductCard.Designer.cs">
+      <DependentUpon>ProductCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ReportsDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -133,6 +163,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductTypes\AllProducts.resx">
+      <DependentUpon>AllProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductTypes\Games.resx">
+      <DependentUpon>Games.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductTypes\Laptops.resx">
+      <DependentUpon>Laptops.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductTypes\PcParts.resx">
+      <DependentUpon>PcParts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductTypes\ProductsCards\ProductCard.resx">
+      <DependentUpon>ProductCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SellerList.resx">
       <DependentUpon>SellerList.cs</DependentUpon>
