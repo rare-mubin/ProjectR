@@ -1,0 +1,53 @@
+﻿using ProjectR.Forms.ProductTypes.ProductsCards;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace ProjectR.Forms.ProductTypes
+{
+    public partial class Laptops : UserControl
+    {
+        internal DataAccess Da { get; set; }
+        internal string productId { get; set; }
+        internal string productName { get; set; }
+        internal string productType { get; set; }
+        internal string productCategory { get; set; }
+        internal string productPrice { get; set; }
+
+        public Laptops()
+        {
+            InitializeComponent();
+            this.Da = new DataAccess();
+        }
+
+        private void Laptops_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                string query = "select * from ProductList;";
+                var ProductsTable = this.Da.ExecuteQueryTable(query);
+
+                for (int Counter = 0; Counter < ProductsTable.Rows.Count; Counter++)
+                {
+                    this.productId = ProductsTable.Rows[Counter][0].ToString();
+                    this.productName = ProductsTable.Rows[Counter][1].ToString();
+                    this.productCategory = ProductsTable.Rows[Counter][3].ToString();
+                    this.productType = ProductsTable.Rows[Counter][2].ToString();
+                    this.productPrice = ProductsTable.Rows[Counter][4].ToString();
+
+                    ProductCard card = new ProductCard(this.productId, this.productName, this.productCategory, this.productType, this.productPrice);
+
+                    this.flpProducts.Controls.Add(card);
+                }
+
+            }
+            catch { }
+        }
+    }
+}
