@@ -17,7 +17,7 @@ namespace ProjectR.Forms
         public MemberList()
         {
             InitializeComponent();
-            this.Da = new DataAccess();
+            this.Da = MainWindow.SqlDataAccess;
             this.PopulateGridView();
         }
 
