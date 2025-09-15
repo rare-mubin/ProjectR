@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace ProjectR.Forms
     public partial class ProductList : UserControl
     {
         internal DataAccess Da { get; set; }
+
+        internal static string destinationFilePath { get; set; }
 
         private static bool txtSearchProductsClick = true;
 
@@ -92,6 +95,30 @@ namespace ProjectR.Forms
         }
 
 
+        //Copy file 
+        private void CopyFIle()
+        {
+            //string sourceFilePath = this.ofdChoseFile.FileName;
+            string sourceFilePath = this.txtFilePath.Text;
+            string fileName = $"{this.txtProductId.Text}.png";
+            destinationFilePath = Path.Combine(@"..\..\ProductImage", fileName);
+
+            string destinationDirectory = Path.GetDirectoryName(destinationFilePath);
+            if (!Directory.Exists(destinationDirectory))
+            {
+                Directory.CreateDirectory(destinationDirectory);
+            }
+
+            try
+            {
+                File.Copy(sourceFilePath, destinationFilePath, true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error copying file: {ex.Message}");
+            }
+        }
+
         // Add Product Button
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
@@ -102,7 +129,10 @@ namespace ProjectR.Forms
                     MessageBox.Show("PLEASE FILL ALL INFORMATION");
                     return;
                 }
-                var sql = $"INSERT INTO ProductList (ProductId, ProductName, ProductModel, ProductCategory, ProductPrice, ProductStock, ProductType, ProductDescription) VALUES ('{this.txtProductId.Text}','{this.txtProductName.Text}' , '{this.txtProductModel.Text}','{this.cmbProductCategory.Text}',{this.txtProductPrice.Text},{this.txtProductStock.Text},'{this.txtProductType.Text}','{this.txtProductDescription.Text}');";
+
+                this.CopyFIle();
+
+                var sql = $"INSERT INTO ProductList (ProductId, ProductName, ProductModel, ProductCategory, ProductPrice, ProductStock, ProductType, ProductDescription,ProductImagePath) VALUES ('{this.txtProductId.Text}','{this.txtProductName.Text}' , '{this.txtProductModel.Text}','{this.cmbProductCategory.Text}',{this.txtProductPrice.Text},{this.txtProductStock.Text},'{this.txtProductType.Text}','{this.txtProductDescription.Text}','{destinationFilePath}');";
                 var count = this.Da.ExecuteDMLQuery(sql);
 
                 if (count == 1)
@@ -130,6 +160,7 @@ namespace ProjectR.Forms
             this.txtProductStock.Clear();
             this.txtProductType.Clear();
             this.txtProductDescription.Clear();
+            this.txtFilePath.Clear();
             this.dgvProductList.ClearSelection();
 
             this.AutoIdGenerate();
@@ -141,7 +172,8 @@ namespace ProjectR.Forms
             if (string.IsNullOrEmpty(this.txtProductId.Text) || string.IsNullOrEmpty(this.txtProductName.Text) ||
                 string.IsNullOrEmpty(this.txtProductPrice.Text) || string.IsNullOrEmpty(this.txtProductModel.Text) ||
                 string.IsNullOrEmpty(this.cmbProductCategory.Text) || string.IsNullOrEmpty(this.txtProductStock.Text) ||
-                string.IsNullOrEmpty(this.txtProductType.Text)|| string.IsNullOrEmpty(this.txtProductDescription.Text))
+                string.IsNullOrEmpty(this.txtProductType.Text)|| string.IsNullOrEmpty(this.txtProductDescription.Text)||
+                string.IsNullOrEmpty(this.txtFilePath.Text))
                 return false;
             else
                 return true;
@@ -162,9 +194,11 @@ namespace ProjectR.Forms
                 var query = $"select * from ProductList where ProductId ='{this.txtProductId.Text}';";
                 var dt = this.Da.ExecuteQueryTable(query);
 
+                this.CopyFIle();
+
                 if (dt.Rows.Count == 1)
                 {
-                    var sql = $"Update ProductList SET ProductName = '{this.txtProductName.Text}', ProductModel = '{this.txtProductModel.Text}', ProductCategory = '{this.cmbProductCategory.Text}',ProductPrice = '{this.txtProductPrice.Text}', ProductStock = '{this.txtProductStock.Text}', ProductType = '{this.txtProductType.Text}', ProductDescription = '{this.txtProductDescription.Text}' WHERE ProductId = '{this.txtProductId.Text}';";
+                    var sql = $"Update ProductList SET ProductName = '{this.txtProductName.Text}', ProductModel = '{this.txtProductModel.Text}', ProductCategory = '{this.cmbProductCategory.Text}',ProductPrice = '{this.txtProductPrice.Text}', ProductStock = '{this.txtProductStock.Text}', ProductType = '{this.txtProductType.Text}', ProductDescription = '{this.txtProductDescription.Text}',ProductImagePath = '{destinationFilePath}' WHERE ProductId = '{this.txtProductId.Text}';";
                     var count = this.Da.ExecuteDMLQuery(sql);
 
                     if (count == 1)
@@ -185,8 +219,6 @@ namespace ProjectR.Forms
         // Selectin To Update Information
         private void dgvProductList_DoubleClick(object sender, EventArgs e)
         {
-            if (this.dgvProductList.CurrentRow == null)
-                return;
             this.txtProductId.Text = this.dgvProductList.CurrentRow.Cells["colProductId"].Value.ToString();
             this.txtProductName.Text = this.dgvProductList.CurrentRow.Cells["colProductName"].Value.ToString();
             this.txtProductModel.Text = this.dgvProductList.CurrentRow.Cells["colProductModel"].Value.ToString();
@@ -195,7 +227,7 @@ namespace ProjectR.Forms
             this.txtProductStock.Text = this.dgvProductList.CurrentRow.Cells["colProductStock"].Value.ToString();
             this.txtProductType.Text = this.dgvProductList.CurrentRow.Cells["colProductType"].Value.ToString();
             this.txtProductDescription.Text = this.dgvProductList.CurrentRow.Cells["colProductDescription"].Value.ToString();
-            this.AutoIdGenerate();
+            this.txtFilePath.Text = this.dgvProductList.CurrentRow.Cells["colFilePath"].Value.ToString();
         }
 
         // Auto Generate Id
@@ -235,6 +267,8 @@ namespace ProjectR.Forms
                 var sql = "delete from ProductList where ProductId = '" + id + "';";
                 var count = this.Da.ExecuteDMLQuery(sql);
 
+                File.Delete($@"{this.txtFilePath.Text}");
+
                 if (count == 1)
                     MessageBox.Show(title.ToUpper() + " has been removed from the list");
                 else
@@ -252,6 +286,16 @@ namespace ProjectR.Forms
         private void ProductList_Load(object sender, EventArgs e)
         {
             this.dgvProductList.ClearSelection();
+        }
+
+        private void btnChosePicture_Click(object sender, EventArgs e)
+        {
+            this.ofdChoseFile.ShowDialog();
+        }
+
+        private void ofdChoseFile_FileOk(object sender, CancelEventArgs e)
+        {
+            this.txtFilePath.Text = this.ofdChoseFile.FileName;
         }
     }
 }

@@ -229,5 +229,8 @@
   <ItemGroup>
     <None Include="Resources\Pcparts.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ProductImage\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

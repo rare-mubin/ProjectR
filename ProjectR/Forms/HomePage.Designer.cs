@@ -336,6 +336,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "HomePage";
             this.Size = new System.Drawing.Size(1100, 690);
+            this.Load += new System.EventHandler(this.HomePage_Load);
             this.pnlProductType.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

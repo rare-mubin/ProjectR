@@ -31,10 +31,13 @@ namespace ProjectR.Forms
             InitializeComponent();
             SearchString = this.txtSearchProducts.Text;
             storeProductPageName = "AllProduct";
-            pnlProductsP = this.pnlProducts;
             this.games = new Games();
             this.laptops = new Laptops();
             this.pcParts = new PcParts();
+        }
+        private void HomePage_Load(object sender, EventArgs e)
+        {
+            pnlProductsP = this.pnlProducts;
         }
 
         private void btnGames_MouseHover(object sender, EventArgs e)
@@ -70,8 +73,8 @@ namespace ProjectR.Forms
         private void showUserControl(UserControl NextPage)
         {
             NextPage.Dock = DockStyle.Fill;
-            pnlProductsP.Controls.Clear();
-            pnlProductsP.Controls.Add(NextPage);
+            this.pnlProducts.Controls.Clear();
+            this.pnlProducts.Controls.Add(NextPage);
             NextPage.Show();
         }
 
@@ -124,5 +127,6 @@ namespace ProjectR.Forms
                 showUserControl(this.allProducts);
             }
         }
+
     }
 }
