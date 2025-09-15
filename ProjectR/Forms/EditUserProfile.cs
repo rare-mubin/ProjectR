@@ -13,24 +13,15 @@ namespace ProjectR.Forms
 {
     public partial class EditUserProfile : UserControl
     {
-        internal Form MainWindowF {  get; set; }
         private DataAccess Da {  get; set; }
         public EditUserProfile()
         {
             InitializeComponent();
-            var Query = "select * from UserList where UserId LIKE 'A%';";
-            Da = new DataAccess();
-            var dt = Da.ExecuteQuery(Query);
-            this.lblUserNameHeader.Text = dt.Tables[0].Rows[0][2].ToString();
-            this.txtUserName.Text = dt.Tables[0].Rows[0][2].ToString();
-            this.txtNidNumber.Text = dt.Tables[0].Rows[0][5].ToString();
-            this.txtPhone.Text = dt.Tables[0].Rows[0][4].ToString();
-            this.txtUserDOB.Text = dt.Tables[0].Rows[0][3].ToString();
-        }
-
-        public EditUserProfile(Form mainWindow):this()
-        {
-
+            this.lblUserNameHeader.Text = MainWindow.LogInUser.Rows[0][2].ToString();
+            this.txtUserName.Text = MainWindow.LogInUser.Rows[0][2].ToString();
+            this.txtNidNumber.Text = MainWindow.LogInUser.Rows[0][5].ToString();
+            this.txtPhone.Text = MainWindow.LogInUser.Rows[0][4].ToString();
+            this.txtUserDOB.Text = MainWindow.LogInUser.Rows[0][3].ToString();
         }
 
         private void btnUpdateProfile_Click(object sender, EventArgs e)
@@ -41,11 +32,10 @@ namespace ProjectR.Forms
             }
             else {
                 var Query = "update UserList set UserName='" + this.txtUserName.Text + "',UserNID='" + this.txtNidNumber.Text + "',UserPhone='" + this.txtPhone.Text + "' where UserId='A-001';";
-                Da.ExecuteQuery(Query);
+                MainWindow.SqlDataAccess.ExecuteQuery(Query);
                 MessageBox.Show("Profile has been updated");
                 this.lblUserNameHeader.Text=this.txtUserName.Text;
             }
-               
         }
 
         private void ChangeWindow(UserControl userProfile)
@@ -57,11 +47,10 @@ namespace ProjectR.Forms
 
         private void btnBackToUserProfile_Click(object sender, EventArgs e)
         {
-            UserProfile userProfile = new UserProfile(MainWindowF);
+            UserProfile userProfile = new UserProfile();
             userProfile.Dock = DockStyle.Fill;
             ChangeWindow(userProfile);
             userProfile.Show();
-
         }
     }
 }

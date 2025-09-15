@@ -19,9 +19,5 @@ namespace ProjectR.Forms
             InitializeComponent();
         }
 
-        public ReportsDashboard(Form a) : this()
-        {
-            this.MainWindowF = a;
-        }
     }
 }

@@ -13,7 +13,6 @@ namespace ProjectR.Forms
 {
     public partial class SellerList : UserControl
     {
-        internal Form MainWindowF { get; set; }
         internal DataAccess Da { get; set; }
 
 
@@ -24,10 +23,6 @@ namespace ProjectR.Forms
             this.PopulateGridView();
             this.AutoIdGenerate();
 
-        }
-        public SellerList(Form a) : this()
-        {
-            this.MainWindowF = a;
         }
 
         // Grid View Initialisation
