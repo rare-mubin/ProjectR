@@ -14,17 +14,11 @@ namespace ProjectR.Forms
     {
         internal DataAccess Da { get; set; }
 
-        internal Form MainWindowF { get; set; }
         public MemberList()
         {
             InitializeComponent();
             this.Da = new DataAccess();
             this.PopulateGridView();
-        }
-
-        public MemberList(Form a) : this()
-        {
-            this.MainWindowF = a;
         }
 
         // Populate Grid view

@@ -15,6 +15,9 @@ namespace ProjectR
     {
         internal static Panel MainWindowPanel {  get; set; }
         internal static Panel SidePanel { get; set; }
+        internal static DataAccess SqlDataAccess { get; set; }
+        internal static DataTable LogInUser { get; set; }
+        internal static Button MyProfile {  get; set; }
 
         internal LogIn LogINP { get; set; }
 
@@ -22,6 +25,7 @@ namespace ProjectR
         {
             DragableWindow.MakeDraggable(this);
             DragableWindow.MakePanelDraggable(pnlTittlebar, this);
+            SqlDataAccess = new DataAccess();
         }
         public MainWindow()
         {
@@ -29,6 +33,7 @@ namespace ProjectR
             DraggableWindows();
             MainWindowPanel = this.pnlForms;
             SidePanel = this.pnlSideBarLeft;
+            MyProfile = this.btnMyProfile;
             this.LogINP = new LogIn(this);
         }
 
@@ -68,7 +73,7 @@ namespace ProjectR
 
         private void btnProductBrowser_Click(object sender, EventArgs e)
         {
-            HomePage NextPage = new HomePage(this);
+            HomePage NextPage = new HomePage();
             NextPage.Dock = DockStyle.Fill;
             ChangeWindow(NextPage);
             NextPage.Show();
@@ -76,7 +81,7 @@ namespace ProjectR
 
         private void btnAllProductList_Click(object sender, EventArgs e)
         {
-            ProductList NextPage = new ProductList(this);
+            ProductList NextPage = new ProductList();
             NextPage.Dock = DockStyle.Fill;
             ChangeWindow(NextPage);
             NextPage.Show();
@@ -84,7 +89,7 @@ namespace ProjectR
 
         private void btnSellersList_Click(object sender, EventArgs e)
         {
-            SellerList NextPage = new SellerList(this);
+            SellerList NextPage = new SellerList();
             NextPage.Dock = DockStyle.Fill;
             ChangeWindow(NextPage);
             NextPage.Show();
@@ -92,7 +97,7 @@ namespace ProjectR
 
         private void btnSells_Click(object sender, EventArgs e)
         {
-            Sells NextPage = new Sells(this);
+            Sells NextPage = new Sells();
             NextPage.Dock = DockStyle.Fill;
             ChangeWindow(NextPage);
             NextPage.Show();
@@ -100,7 +105,7 @@ namespace ProjectR
 
         private void btnReportsDashboard_Click(object sender, EventArgs e)
         {
-            ReportsDashboard NextPage = new ReportsDashboard(this);
+            ReportsDashboard NextPage = new ReportsDashboard();
             NextPage.Dock = DockStyle.Fill;
             ChangeWindow(NextPage);
             NextPage.Show();
@@ -108,7 +113,7 @@ namespace ProjectR
 
         private void btnMyProfile_Click(object sender, EventArgs e)
         {
-            UserProfile NextPage = new UserProfile(this);
+            UserProfile NextPage = new UserProfile();
             NextPage.Dock = DockStyle.Fill;
             ChangeWindow(NextPage);
             NextPage.Show();
@@ -116,7 +121,7 @@ namespace ProjectR
 
         private void btnMembersList_Click(object sender, EventArgs e)
         {
-            MemberList NextPage = new MemberList(this);
+            MemberList NextPage = new MemberList();
             NextPage.Dock = DockStyle.Fill;
             ChangeWindow(NextPage);
             NextPage.Show();

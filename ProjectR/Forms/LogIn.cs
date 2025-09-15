@@ -13,9 +13,10 @@ namespace ProjectR.Forms
 {
     public partial class LogIn : UserControl
     {
-        internal Form MainWindowF { get; set; }
 
         private static bool txtUserIDClick = true, txtPassClick = true;
+        private const String DefaultTextBoxID = "Enter your User-Id";
+        private const String DefaultTextBoxPassword = "Enter your Password";
         private void DraggableWindows(Form a)
         {
             DragableWindow.MakeDraggable(a);
@@ -29,7 +30,6 @@ namespace ProjectR.Forms
         public LogIn(Form a) : this()
         {
             DraggableWindows(a);
-            this.MainWindowF = a;
         }
 
         private void txtUserID_Leave(object sender, EventArgs e)
@@ -82,41 +82,49 @@ namespace ProjectR.Forms
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            if (this.txtPassword.Text == "Enter your Password" || this.txtUserID.Text == "Enter your User-Id")
+            if (this.txtPassword.Text == DefaultTextBoxPassword || this.txtUserID.Text == DefaultTextBoxID)
             {
                 this.lblLoginValidation.Visible = true;
                 this.lblLoginValidation.Text = "Please enter user-id and password";
                 return;
             }
 
-            //var query = "select * from UserList where UserId = '" + this.txtUserID.Text + "' and Password = '" + this.txtPassword.Text + "'";
-            var query = $"select * from UserList where UserId = '{this.txtUserID.Text}' and UserPassword = '{this.txtPassword.Text}';";
-            DataAccess dataAccess = new DataAccess();
-            var ds = dataAccess.ExecuteQueryTable(query);
+            try
+            {
+                var query = $"select * from UserList where UserId = '{this.txtUserID.Text}' and UserPassword = '{this.txtPassword.Text}';";
 
-            if (ds.Rows.Count == 1)
-            {
-                HomePage NextPage = new HomePage(MainWindowF);
-                NextPage.Dock = DockStyle.Fill;
-                MainWindow.MainWindowPanel.Controls.Clear();
-                MainWindow.SidePanel.Visible = true;
-                MainWindow.MainWindowPanel.Controls.Add(NextPage);
-                NextPage.Show();
-                ClearTxt();
-                txtPassClick = true;
-                txtUserIDClick = true;
+                var ds = MainWindow.SqlDataAccess.ExecuteQueryTable(query);
+                MainWindow.LogInUser = ds;
+
+                if (ds.Rows.Count == 1)
+                {
+                    HomePage NextPage = new HomePage();
+                    NextPage.Dock = DockStyle.Fill;
+                    MainWindow.MainWindowPanel.Controls.Clear();
+                    MainWindow.SidePanel.Visible = true;
+                    MainWindow.MyProfile.Text = ds.Rows[0][2].ToString();
+                    MainWindow.MainWindowPanel.Controls.Add(NextPage);
+                    NextPage.Show();
+                    ClearTxt();
+                    txtPassClick = true;
+                    txtUserIDClick = true;
+                }
+                else
+                {
+                    this.lblLoginValidation.Text = "Invalid User";
+                    this.lblLoginValidation.Visible = true;
+                }
             }
-            else 
+            catch (Exception ex)
             {
-                this.lblLoginValidation.Text = "Invalid User";
-                this.lblLoginValidation.Visible = true ;
+                MessageBox.Show($"Error:{ex.Message}");
             }
         }
 
         private void ClearTxt()
         {
-            this.txtPassword.Text = "Enter your Password";
-            this.txtUserID.Text = "Enter your User-Id";
+            this.txtPassword.Text = DefaultTextBoxPassword;
+            this.txtUserID.Text = DefaultTextBoxID;
             this.txtPassword.UseSystemPasswordChar = false;
             this.ckbShowPassword.Visible = false;
         }
@@ -126,7 +134,7 @@ namespace ProjectR.Forms
             if (this.txtPassword.Text == "")
             {
                 this.txtPassword.UseSystemPasswordChar = false;
-                this.txtPassword.Text = "Enter your Password";
+                this.txtPassword.Text = DefaultTextBoxPassword;
                 this.ckbShowPassword.Visible = false;
                 txtPassClick = true;
             }

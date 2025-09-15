@@ -12,7 +12,6 @@ namespace ProjectR.Forms
 {
     public partial class ProductList : UserControl
     {
-        internal Form MainWindowF { get; set; }
         internal DataAccess Da { get; set; }
 
         private static bool txtSearchProductsClick = true;
@@ -24,10 +23,6 @@ namespace ProjectR.Forms
 
             this.PopulateGridView();
             this.AutoIdGenerate();
-        }
-        public ProductList(Form a) : this()
-        {
-            this.MainWindowF = a;
         }
 
         // Grid View Initialisation

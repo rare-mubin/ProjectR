@@ -13,7 +13,6 @@ namespace ProjectR.Forms
 {
     public partial class Sells : UserControl
     {
-        internal Form MainWindowF { get; set; }
         internal DataAccess Da {  get; set; }
 
         public Sells()
@@ -31,13 +30,6 @@ namespace ProjectR.Forms
             this.dgvSellDetails.DataSource = ds.Tables[0];
             this.dgvSellDetails.AutoGenerateColumns = false;
         }
-
-        public Sells(Form a) : this()
-        {
-            this.MainWindowF = a;
-        }
-
-
 
         private void dgvSellDetails_RowEnter(object sender, DataGridViewCellEventArgs e)
         {

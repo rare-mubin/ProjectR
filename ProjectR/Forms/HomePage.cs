@@ -17,8 +17,6 @@ namespace ProjectR.Forms
 {
     public partial class HomePage : UserControl
     {
-        internal Form MainWindowF { get; set; }
-
         internal static Panel pnlProductsP {  get; set; }
 
         internal AllProducts allProducts {  get; set; }
@@ -33,11 +31,6 @@ namespace ProjectR.Forms
             InitializeComponent();
             SearchString = this.txtSearchProducts.Text;
             storeProductPageName = "AllProduct";
-        }
-
-        public HomePage(Form a) : this()
-        {
-            this.MainWindowF = a;
             pnlProductsP = this.pnlProducts;
             this.games = new Games();
             this.laptops = new Laptops();

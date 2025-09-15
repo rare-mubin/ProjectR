@@ -41,6 +41,11 @@
             this.lblTransactionID = new System.Windows.Forms.Label();
             this.pnlGridView = new System.Windows.Forms.Panel();
             this.dgvSellDetails = new System.Windows.Forms.DataGridView();
+            this.TransactionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SalesmanID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeAndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearchSellers = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,11 +53,6 @@
             this.pnlSellsCart = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnClear = new System.Windows.Forms.Button();
-            this.TransactionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SalesmanID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeAndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlSellsDetails.SuspendLayout();
             this.pnlGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSellDetails)).BeginInit();
@@ -208,6 +208,50 @@
             this.dgvSellDetails.TabIndex = 0;
             this.dgvSellDetails.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSellDetails_RowEnter);
             // 
+            // TransactionID
+            // 
+            this.TransactionID.DataPropertyName = "TransactionID";
+            this.TransactionID.FillWeight = 66.75568F;
+            this.TransactionID.HeaderText = "Transaction ID";
+            this.TransactionID.Name = "TransactionID";
+            this.TransactionID.ReadOnly = true;
+            // 
+            // SalesmanID
+            // 
+            this.SalesmanID.DataPropertyName = "SalesmanID";
+            this.SalesmanID.FillWeight = 85.74889F;
+            this.SalesmanID.HeaderText = "Salesman ID";
+            this.SalesmanID.Name = "SalesmanID";
+            this.SalesmanID.ReadOnly = true;
+            this.SalesmanID.Width = 128;
+            // 
+            // CustomerID
+            // 
+            this.CustomerID.DataPropertyName = "CustomerID";
+            this.CustomerID.FillWeight = 102.2063F;
+            this.CustomerID.HeaderText = "Customer ID";
+            this.CustomerID.Name = "CustomerID";
+            this.CustomerID.ReadOnly = true;
+            this.CustomerID.Width = 154;
+            // 
+            // TimeAndDate
+            // 
+            this.TimeAndDate.DataPropertyName = "TimeAndDate";
+            this.TimeAndDate.FillWeight = 116.4665F;
+            this.TimeAndDate.HeaderText = "Time And Date";
+            this.TimeAndDate.Name = "TimeAndDate";
+            this.TimeAndDate.ReadOnly = true;
+            this.TimeAndDate.Width = 174;
+            // 
+            // TotalAmount
+            // 
+            this.TotalAmount.DataPropertyName = "TotalAmount";
+            this.TotalAmount.FillWeight = 128.8227F;
+            this.TotalAmount.HeaderText = "Total Amount";
+            this.TotalAmount.Name = "TotalAmount";
+            this.TotalAmount.ReadOnly = true;
+            this.TotalAmount.Width = 193;
+            // 
             // txtSearchSellers
             // 
             this.txtSearchSellers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
@@ -290,50 +334,6 @@
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // TransactionID
-            // 
-            this.TransactionID.DataPropertyName = "TransactionID";
-            this.TransactionID.FillWeight = 66.75568F;
-            this.TransactionID.HeaderText = "Transaction ID";
-            this.TransactionID.Name = "TransactionID";
-            this.TransactionID.ReadOnly = true;
-            // 
-            // SalesmanID
-            // 
-            this.SalesmanID.DataPropertyName = "SalesmanID";
-            this.SalesmanID.FillWeight = 85.74889F;
-            this.SalesmanID.HeaderText = "Salesman ID";
-            this.SalesmanID.Name = "SalesmanID";
-            this.SalesmanID.ReadOnly = true;
-            this.SalesmanID.Width = 128;
-            // 
-            // CustomerID
-            // 
-            this.CustomerID.DataPropertyName = "CustomerID";
-            this.CustomerID.FillWeight = 102.2063F;
-            this.CustomerID.HeaderText = "Customer ID";
-            this.CustomerID.Name = "CustomerID";
-            this.CustomerID.ReadOnly = true;
-            this.CustomerID.Width = 154;
-            // 
-            // TimeAndDate
-            // 
-            this.TimeAndDate.DataPropertyName = "TimeAndDate";
-            this.TimeAndDate.FillWeight = 116.4665F;
-            this.TimeAndDate.HeaderText = "Time And Date";
-            this.TimeAndDate.Name = "TimeAndDate";
-            this.TimeAndDate.ReadOnly = true;
-            this.TimeAndDate.Width = 174;
-            // 
-            // TotalAmount
-            // 
-            this.TotalAmount.DataPropertyName = "TotalAmount";
-            this.TotalAmount.FillWeight = 128.8227F;
-            this.TotalAmount.HeaderText = "Total Amount";
-            this.TotalAmount.Name = "TotalAmount";
-            this.TotalAmount.ReadOnly = true;
-            this.TotalAmount.Width = 193;
             // 
             // Sells
             // 

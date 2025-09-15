@@ -12,19 +12,15 @@ namespace ProjectR.Forms
 {
     public partial class UserProfile : UserControl
     {
-        internal Form MainWindowF { get; set; }
         private DataAccess Da { get; set; }
 
         public UserProfile()
         {
             InitializeComponent();
-            var Query = "select * from UserList where UserId LIKE 'A%';";
-            Da= new DataAccess();
-            var dt=Da.ExecuteQuery(Query);
-            this.lblUserNameHeader.Text = dt.Tables[0].Rows[0][2].ToString();
-            this.lblUserDOBDetails.Text = dt.Tables[0].Rows[0][3].ToString();
-            this.lblNidNumberDetails.Text = dt.Tables[0].Rows[0][5].ToString();
-            this.lblPhoneDetails.Text = dt.Tables[0].Rows[0][4].ToString();
+            this.lblUserNameHeader.Text = MainWindow.LogInUser.Rows[0][2].ToString();
+            this.lblUserDOBDetails.Text = MainWindow.LogInUser.Rows[0][3].ToString();
+            this.lblNidNumberDetails.Text = MainWindow.LogInUser.Rows[0][5].ToString();
+            this.lblPhoneDetails.Text = MainWindow.LogInUser.Rows[0][4].ToString();
 
 
         }
@@ -36,20 +32,13 @@ namespace ProjectR.Forms
             MainWindow.MainWindowPanel.Controls.Add(NextPage);
         }
 
-        public UserProfile(Form a) : this()
-        {
-            this.MainWindowF = a;
-        }
-
         private void btnEditProfile_Click(object sender, EventArgs e)
         {
-            EditUserProfile editUserProfile = new EditUserProfile(MainWindowF);
+            EditUserProfile editUserProfile = new EditUserProfile();
 
             editUserProfile.Dock=DockStyle.Fill;
             ChangeWindow(editUserProfile);
             editUserProfile.Show();
-            
-
         }
     }
 }
