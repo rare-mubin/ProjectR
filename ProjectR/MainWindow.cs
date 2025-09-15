@@ -30,7 +30,7 @@ namespace ProjectR
         public MainWindow()
         {
             InitializeComponent();
-            DraggableWindows();
+            this.DraggableWindows();
             MainWindowPanel = this.pnlForms;
             SidePanel = this.pnlSideBarLeft;
             MyProfile = this.btnMyProfile;
@@ -58,9 +58,11 @@ namespace ProjectR
         
         private void ChangeWindow(UserControl NextPage)
         {
+            NextPage.Dock = DockStyle.Fill;
             MainWindow.MainWindowPanel.Controls.Clear();
             MainWindow.SidePanel.Visible = true;
             MainWindow.MainWindowPanel.Controls.Add(NextPage);
+            NextPage.Show();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -74,57 +76,43 @@ namespace ProjectR
         private void btnProductBrowser_Click(object sender, EventArgs e)
         {
             HomePage NextPage = new HomePage();
-            NextPage.Dock = DockStyle.Fill;
-            ChangeWindow(NextPage);
-            NextPage.Show();
+            this.ChangeWindow(NextPage);
         }
 
         private void btnAllProductList_Click(object sender, EventArgs e)
         {
             ProductList NextPage = new ProductList();
-            NextPage.Dock = DockStyle.Fill;
-            ChangeWindow(NextPage);
-            NextPage.Show();
+            this.ChangeWindow(NextPage);
         }
 
         private void btnSellersList_Click(object sender, EventArgs e)
         {
             SellerList NextPage = new SellerList();
-            NextPage.Dock = DockStyle.Fill;
-            ChangeWindow(NextPage);
-            NextPage.Show();
+            this.ChangeWindow(NextPage);
         }
 
         private void btnSells_Click(object sender, EventArgs e)
         {
             Sells NextPage = new Sells();
-            NextPage.Dock = DockStyle.Fill;
-            ChangeWindow(NextPage);
-            NextPage.Show();
+            this.ChangeWindow(NextPage);
         }
 
         private void btnReportsDashboard_Click(object sender, EventArgs e)
         {
             ReportsDashboard NextPage = new ReportsDashboard();
-            NextPage.Dock = DockStyle.Fill;
-            ChangeWindow(NextPage);
-            NextPage.Show();
+            this.ChangeWindow(NextPage);
         }
 
         private void btnMyProfile_Click(object sender, EventArgs e)
         {
             UserProfile NextPage = new UserProfile();
-            NextPage.Dock = DockStyle.Fill;
-            ChangeWindow(NextPage);
-            NextPage.Show();
+            this.ChangeWindow(NextPage);
         }
 
         private void btnMembersList_Click(object sender, EventArgs e)
         {
             MemberList NextPage = new MemberList();
-            NextPage.Dock = DockStyle.Fill;
-            ChangeWindow(NextPage);
-            NextPage.Show();
+            this.ChangeWindow(NextPage);
         }
     }
 }
