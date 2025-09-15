@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblUserName = new System.Windows.Forms.Label();
+            this.lblUserDOB = new System.Windows.Forms.Label();
             this.lblUserNameHeader = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblNidNumberDetails = new System.Windows.Forms.Label();
             this.lblPhoneDetails = new System.Windows.Forms.Label();
             this.lblTotalSellsDetails = new System.Windows.Forms.Label();
-            this.lblUserNameDetails = new System.Windows.Forms.Label();
+            this.lblUserDOBDetails = new System.Windows.Forms.Label();
             this.btnEditProfile = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.ldlNidNumber = new System.Windows.Forms.Label();
@@ -51,15 +51,15 @@
             this.panel2.Size = new System.Drawing.Size(190, 190);
             this.panel2.TabIndex = 3;
             // 
-            // lblUserName
+            // lblUserDOB
             // 
-            this.lblUserName.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
-            this.lblUserName.Location = new System.Drawing.Point(196, 223);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(179, 46);
-            this.lblUserName.TabIndex = 1;
-            this.lblUserName.Text = "User Name";
+            this.lblUserDOB.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserDOB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
+            this.lblUserDOB.Location = new System.Drawing.Point(196, 223);
+            this.lblUserDOB.Name = "lblUserDOB";
+            this.lblUserDOB.Size = new System.Drawing.Size(197, 46);
+            this.lblUserDOB.TabIndex = 1;
+            this.lblUserDOB.Text = "Date Of Birth";
             // 
             // lblUserNameHeader
             // 
@@ -78,13 +78,13 @@
             this.panel1.Controls.Add(this.lblNidNumberDetails);
             this.panel1.Controls.Add(this.lblPhoneDetails);
             this.panel1.Controls.Add(this.lblTotalSellsDetails);
-            this.panel1.Controls.Add(this.lblUserNameDetails);
+            this.panel1.Controls.Add(this.lblUserDOBDetails);
             this.panel1.Controls.Add(this.btnEditProfile);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.ldlNidNumber);
             this.panel1.Controls.Add(this.lblPhone);
             this.panel1.Controls.Add(this.lblTotalSells);
-            this.panel1.Controls.Add(this.lblUserName);
+            this.panel1.Controls.Add(this.lblUserDOB);
             this.panel1.Controls.Add(this.lblUserNameHeader);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(3, 137);
@@ -98,7 +98,7 @@
             this.lblNidNumberDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblNidNumberDetails.Location = new System.Drawing.Point(642, 292);
             this.lblNidNumberDetails.Name = "lblNidNumberDetails";
-            this.lblNidNumberDetails.Size = new System.Drawing.Size(179, 46);
+            this.lblNidNumberDetails.Size = new System.Drawing.Size(195, 46);
             this.lblNidNumberDetails.TabIndex = 14;
             this.lblNidNumberDetails.Text = "Nid Number";
             // 
@@ -108,7 +108,7 @@
             this.lblPhoneDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblPhoneDetails.Location = new System.Drawing.Point(642, 362);
             this.lblPhoneDetails.Name = "lblPhoneDetails";
-            this.lblPhoneDetails.Size = new System.Drawing.Size(179, 46);
+            this.lblPhoneDetails.Size = new System.Drawing.Size(195, 46);
             this.lblPhoneDetails.TabIndex = 13;
             this.lblPhoneDetails.Text = "Phone Number";
             // 
@@ -118,19 +118,19 @@
             this.lblTotalSellsDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblTotalSellsDetails.Location = new System.Drawing.Point(642, 430);
             this.lblTotalSellsDetails.Name = "lblTotalSellsDetails";
-            this.lblTotalSellsDetails.Size = new System.Drawing.Size(179, 46);
+            this.lblTotalSellsDetails.Size = new System.Drawing.Size(195, 46);
             this.lblTotalSellsDetails.TabIndex = 12;
             this.lblTotalSellsDetails.Text = "Total Sells";
             // 
-            // lblUserNameDetails
+            // lblUserDOBDetails
             // 
-            this.lblUserNameDetails.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserNameDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
-            this.lblUserNameDetails.Location = new System.Drawing.Point(642, 223);
-            this.lblUserNameDetails.Name = "lblUserNameDetails";
-            this.lblUserNameDetails.Size = new System.Drawing.Size(179, 46);
-            this.lblUserNameDetails.TabIndex = 11;
-            this.lblUserNameDetails.Text = "User Name";
+            this.lblUserDOBDetails.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserDOBDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
+            this.lblUserDOBDetails.Location = new System.Drawing.Point(642, 223);
+            this.lblUserDOBDetails.Name = "lblUserDOBDetails";
+            this.lblUserDOBDetails.Size = new System.Drawing.Size(195, 46);
+            this.lblUserDOBDetails.TabIndex = 11;
+            this.lblUserDOBDetails.Text = "Date Of Birth";
             // 
             // btnEditProfile
             // 
@@ -161,7 +161,7 @@
             this.ldlNidNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.ldlNidNumber.Location = new System.Drawing.Point(196, 292);
             this.ldlNidNumber.Name = "ldlNidNumber";
-            this.ldlNidNumber.Size = new System.Drawing.Size(179, 46);
+            this.ldlNidNumber.Size = new System.Drawing.Size(197, 46);
             this.ldlNidNumber.TabIndex = 4;
             this.ldlNidNumber.Text = "Nid Number";
             // 
@@ -171,7 +171,7 @@
             this.lblPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblPhone.Location = new System.Drawing.Point(196, 362);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(179, 46);
+            this.lblPhone.Size = new System.Drawing.Size(197, 46);
             this.lblPhone.TabIndex = 3;
             this.lblPhone.Text = "Phone Number";
             // 
@@ -181,7 +181,7 @@
             this.lblTotalSells.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblTotalSells.Location = new System.Drawing.Point(196, 430);
             this.lblTotalSells.Name = "lblTotalSells";
-            this.lblTotalSells.Size = new System.Drawing.Size(179, 46);
+            this.lblTotalSells.Size = new System.Drawing.Size(197, 46);
             this.lblTotalSells.TabIndex = 2;
             this.lblTotalSells.Text = "Total Sells";
             // 
@@ -203,7 +203,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Label lblUserDOB;
         private System.Windows.Forms.Label lblUserNameHeader;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnEditProfile;
@@ -214,6 +214,6 @@
         private System.Windows.Forms.Label lblNidNumberDetails;
         private System.Windows.Forms.Label lblPhoneDetails;
         private System.Windows.Forms.Label lblTotalSellsDetails;
-        private System.Windows.Forms.Label lblUserNameDetails;
+        private System.Windows.Forms.Label lblUserDOBDetails;
     }
 }

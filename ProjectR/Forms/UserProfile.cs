@@ -22,7 +22,7 @@ namespace ProjectR.Forms
             Da= new DataAccess();
             var dt=Da.ExecuteQuery(Query);
             this.lblUserNameHeader.Text = dt.Tables[0].Rows[0][2].ToString();
-            this.lblUserNameDetails.Text = dt.Tables[0].Rows[0][2].ToString();
+            this.lblUserDOBDetails.Text = dt.Tables[0].Rows[0][3].ToString();
             this.lblNidNumberDetails.Text = dt.Tables[0].Rows[0][5].ToString();
             this.lblPhoneDetails.Text = dt.Tables[0].Rows[0][4].ToString();
 
