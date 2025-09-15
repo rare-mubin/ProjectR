@@ -142,7 +142,7 @@
             this.txtSearchProducts.Name = "txtSearchProducts";
             this.txtSearchProducts.Size = new System.Drawing.Size(738, 21);
             this.txtSearchProducts.TabIndex = 0;
-            this.txtSearchProducts.Text = "5";
+            this.txtSearchProducts.Text = "Search by Product ID or Name";
             this.txtSearchProducts.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSearchProducts.TextChanged += new System.EventHandler(this.txtSearchProducts_TextChanged);
             // 
@@ -178,7 +178,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(281, 42);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Add or Update Product";
+            this.label1.Text = "Shoping Cart";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
@@ -207,6 +207,7 @@
             this.btnDeleteProduct.TabIndex = 0;
             this.btnDeleteProduct.Text = "Delete Product";
             this.btnDeleteProduct.UseVisualStyleBackColor = false;
+            this.btnDeleteProduct.Visible = false;
             // 
             // btnUpdateProduct
             // 
@@ -223,6 +224,7 @@
             this.btnUpdateProduct.TabIndex = 0;
             this.btnUpdateProduct.Text = "Update Product";
             this.btnUpdateProduct.UseVisualStyleBackColor = false;
+            this.btnUpdateProduct.Visible = false;
             // 
             // btnAddProduct
             // 
@@ -239,6 +241,7 @@
             this.btnAddProduct.TabIndex = 0;
             this.btnAddProduct.Text = "Add Product";
             this.btnAddProduct.UseVisualStyleBackColor = false;
+            this.btnAddProduct.Visible = false;
             // 
             // pnlProductbtns
             // 

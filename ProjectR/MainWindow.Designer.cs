@@ -316,7 +316,7 @@
             this.btnSells.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.btnSells.Size = new System.Drawing.Size(162, 33);
             this.btnSells.TabIndex = 0;
-            this.btnSells.Text = "Sells";
+            this.btnSells.Text = "Transactions";
             this.btnSells.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSells.UseVisualStyleBackColor = false;
             this.btnSells.Click += new System.EventHandler(this.btnSells_Click);
