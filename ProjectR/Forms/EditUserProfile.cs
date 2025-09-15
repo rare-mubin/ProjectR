@@ -25,6 +25,7 @@ namespace ProjectR.Forms
             this.txtUserName.Text = dt.Tables[0].Rows[0][2].ToString();
             this.txtNidNumber.Text = dt.Tables[0].Rows[0][5].ToString();
             this.txtPhone.Text = dt.Tables[0].Rows[0][4].ToString();
+            this.txtUserDOB.Text = dt.Tables[0].Rows[0][3].ToString();
         }
 
         public EditUserProfile(Form mainWindow):this()
@@ -42,6 +43,7 @@ namespace ProjectR.Forms
                 var Query = "update UserList set UserName='" + this.txtUserName.Text + "',UserNID='" + this.txtNidNumber.Text + "',UserPhone='" + this.txtPhone.Text + "' where UserId='A-001';";
                 Da.ExecuteQuery(Query);
                 MessageBox.Show("Profile has been updated");
+                this.lblUserNameHeader.Text=this.txtUserName.Text;
             }
                
         }

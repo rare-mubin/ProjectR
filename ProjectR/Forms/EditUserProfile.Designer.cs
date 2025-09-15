@@ -32,16 +32,16 @@
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblUserNameHeader = new System.Windows.Forms.Label();
             this.pnlEditUserProfile = new System.Windows.Forms.Panel();
+            this.btnBackToUserProfile = new System.Windows.Forms.Button();
             this.txtNidNumber = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
-            this.TextTotalSells = new System.Windows.Forms.TextBox();
+            this.txtUserDOB = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.btnUpdateProfile = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.ldlNidNumber = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
-            this.lblTotalSells = new System.Windows.Forms.Label();
-            this.btnBackToUserProfile = new System.Windows.Forms.Button();
+            this.lblUserDOB = new System.Windows.Forms.Label();
             this.pnlEditUserProfile.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +58,7 @@
             this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblUserName.Location = new System.Drawing.Point(196, 223);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(179, 46);
+            this.lblUserName.Size = new System.Drawing.Size(200, 46);
             this.lblUserName.TabIndex = 1;
             this.lblUserName.Text = "User Name";
             // 
@@ -79,13 +79,13 @@
             this.pnlEditUserProfile.Controls.Add(this.btnBackToUserProfile);
             this.pnlEditUserProfile.Controls.Add(this.txtNidNumber);
             this.pnlEditUserProfile.Controls.Add(this.txtPhone);
-            this.pnlEditUserProfile.Controls.Add(this.TextTotalSells);
+            this.pnlEditUserProfile.Controls.Add(this.txtUserDOB);
             this.pnlEditUserProfile.Controls.Add(this.txtUserName);
             this.pnlEditUserProfile.Controls.Add(this.btnUpdateProfile);
             this.pnlEditUserProfile.Controls.Add(this.label10);
             this.pnlEditUserProfile.Controls.Add(this.ldlNidNumber);
             this.pnlEditUserProfile.Controls.Add(this.lblPhone);
-            this.pnlEditUserProfile.Controls.Add(this.lblTotalSells);
+            this.pnlEditUserProfile.Controls.Add(this.lblUserDOB);
             this.pnlEditUserProfile.Controls.Add(this.lblUserName);
             this.pnlEditUserProfile.Controls.Add(this.lblUserNameHeader);
             this.pnlEditUserProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -93,6 +93,19 @@
             this.pnlEditUserProfile.Name = "pnlEditUserProfile";
             this.pnlEditUserProfile.Size = new System.Drawing.Size(1094, 540);
             this.pnlEditUserProfile.TabIndex = 4;
+            // 
+            // btnBackToUserProfile
+            // 
+            this.btnBackToUserProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            this.btnBackToUserProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToUserProfile.ForeColor = System.Drawing.Color.White;
+            this.btnBackToUserProfile.Location = new System.Drawing.Point(929, 447);
+            this.btnBackToUserProfile.Name = "btnBackToUserProfile";
+            this.btnBackToUserProfile.Size = new System.Drawing.Size(106, 29);
+            this.btnBackToUserProfile.TabIndex = 15;
+            this.btnBackToUserProfile.Text = "Go Back";
+            this.btnBackToUserProfile.UseVisualStyleBackColor = false;
+            this.btnBackToUserProfile.Click += new System.EventHandler(this.btnBackToUserProfile_Click);
             // 
             // txtNidNumber
             // 
@@ -112,14 +125,14 @@
             this.txtPhone.Size = new System.Drawing.Size(179, 46);
             this.txtPhone.TabIndex = 13;
             // 
-            // TextTotalSells
+            // txtUserDOB
             // 
-            this.TextTotalSells.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextTotalSells.Location = new System.Drawing.Point(642, 430);
-            this.TextTotalSells.Multiline = true;
-            this.TextTotalSells.Name = "TextTotalSells";
-            this.TextTotalSells.Size = new System.Drawing.Size(179, 46);
-            this.TextTotalSells.TabIndex = 12;
+            this.txtUserDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserDOB.Location = new System.Drawing.Point(642, 430);
+            this.txtUserDOB.Multiline = true;
+            this.txtUserDOB.Name = "txtUserDOB";
+            this.txtUserDOB.Size = new System.Drawing.Size(179, 46);
+            this.txtUserDOB.TabIndex = 12;
             // 
             // txtUserName
             // 
@@ -159,7 +172,7 @@
             this.ldlNidNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.ldlNidNumber.Location = new System.Drawing.Point(196, 292);
             this.ldlNidNumber.Name = "ldlNidNumber";
-            this.ldlNidNumber.Size = new System.Drawing.Size(179, 46);
+            this.ldlNidNumber.Size = new System.Drawing.Size(200, 46);
             this.ldlNidNumber.TabIndex = 4;
             this.ldlNidNumber.Text = "Nid Number";
             // 
@@ -169,32 +182,19 @@
             this.lblPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblPhone.Location = new System.Drawing.Point(196, 362);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(179, 46);
+            this.lblPhone.Size = new System.Drawing.Size(200, 46);
             this.lblPhone.TabIndex = 3;
             this.lblPhone.Text = "Phone Number";
             // 
-            // lblTotalSells
+            // lblUserDOB
             // 
-            this.lblTotalSells.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalSells.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
-            this.lblTotalSells.Location = new System.Drawing.Point(196, 430);
-            this.lblTotalSells.Name = "lblTotalSells";
-            this.lblTotalSells.Size = new System.Drawing.Size(179, 46);
-            this.lblTotalSells.TabIndex = 2;
-            this.lblTotalSells.Text = "Total Sells";
-            // 
-            // btnBackToUserProfile
-            // 
-            this.btnBackToUserProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
-            this.btnBackToUserProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackToUserProfile.ForeColor = System.Drawing.Color.White;
-            this.btnBackToUserProfile.Location = new System.Drawing.Point(929, 447);
-            this.btnBackToUserProfile.Name = "btnBackToUserProfile";
-            this.btnBackToUserProfile.Size = new System.Drawing.Size(106, 29);
-            this.btnBackToUserProfile.TabIndex = 15;
-            this.btnBackToUserProfile.Text = "Go Back";
-            this.btnBackToUserProfile.UseVisualStyleBackColor = false;
-            this.btnBackToUserProfile.Click += new System.EventHandler(this.btnBackToUserProfile_Click);
+            this.lblUserDOB.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserDOB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
+            this.lblUserDOB.Location = new System.Drawing.Point(196, 430);
+            this.lblUserDOB.Name = "lblUserDOB";
+            this.lblUserDOB.Size = new System.Drawing.Size(200, 46);
+            this.lblUserDOB.TabIndex = 2;
+            this.lblUserDOB.Text = "Date Of Birth";
             // 
             // EditUserProfile
             // 
@@ -221,11 +221,11 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label ldlNidNumber;
         private System.Windows.Forms.Label lblPhone;
-        private System.Windows.Forms.Label lblTotalSells;
+        private System.Windows.Forms.Label lblUserDOB;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TextBox txtNidNumber;
         private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.TextBox TextTotalSells;
+        private System.Windows.Forms.TextBox txtUserDOB;
         private System.Windows.Forms.Button btnBackToUserProfile;
     }
 }
