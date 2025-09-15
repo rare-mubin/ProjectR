@@ -19,7 +19,7 @@ namespace ProjectR.Forms
         public SellerList()
         {
             InitializeComponent();
-            this.Da = new DataAccess();
+            this.Da = MainWindow.SqlDataAccess;
             this.PopulateGridView();
             this.AutoIdGenerate();
 

@@ -19,7 +19,7 @@ namespace ProjectR.Forms
         public ProductList()
         {
             InitializeComponent();
-            this.Da = new DataAccess();
+            this.Da = MainWindow.SqlDataAccess;
 
             this.PopulateGridView();
             this.AutoIdGenerate();
@@ -48,6 +48,14 @@ namespace ProjectR.Forms
             {
                 this.txtSearchProducts.Text = "Search products";
                 txtSearchProductsClick = true;
+            }
+            try
+            {
+                this.PopulateGridView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error:{ex.Message}");
             }
         }
 

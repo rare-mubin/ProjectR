@@ -12,17 +12,9 @@ namespace ProjectR.Forms
 {
     public partial class UserProfile : UserControl
     {
-        private DataAccess Da { get; set; }
-
         public UserProfile()
         {
             InitializeComponent();
-            this.lblUserNameHeader.Text = MainWindow.LogInUser.Rows[0][2].ToString();
-            this.lblUserDOBDetails.Text = MainWindow.LogInUser.Rows[0][3].ToString();
-            this.lblNidNumberDetails.Text = MainWindow.LogInUser.Rows[0][5].ToString();
-            this.lblPhoneDetails.Text = MainWindow.LogInUser.Rows[0][4].ToString();
-
-
         }
 
         private void ChangeWindow(UserControl NextPage)
@@ -39,6 +31,21 @@ namespace ProjectR.Forms
             editUserProfile.Dock=DockStyle.Fill;
             ChangeWindow(editUserProfile);
             editUserProfile.Show();
+        }
+
+        private void UserProfile_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                this.lblUserNameHeader.Text = MainWindow.LogInUser.Rows[0][2].ToString();
+                this.lblUserDOBDetails.Text = MainWindow.LogInUser.Rows[0][3].ToString();
+                this.lblNidNumberDetails.Text = MainWindow.LogInUser.Rows[0][5].ToString();
+                this.lblPhoneDetails.Text = MainWindow.LogInUser.Rows[0][4].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
         }
     }
 }

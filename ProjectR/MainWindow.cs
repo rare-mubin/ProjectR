@@ -19,14 +19,15 @@ namespace ProjectR
         internal static DataTable LogInUser { get; set; }
         internal static Button MyProfile {  get; set; }
 
-        internal LogIn LogINP { get; set; }
+        internal LogIn ucLogIn { get; set; }
+        internal UserProfile ucUserProfile { get; set; }
+        internal SellerList ucSellerList { get; set; }
+        internal ReportsDashboard ucReportsDashboard { get; set; }
+        internal ProductList ucProductList { get; set; }
+        internal MemberList ucMemberList { get; set; }
+        internal HomePage ucHomePage { get; set; }
+        internal Sells ucSells { get; set; }
 
-        private void DraggableWindows()
-        {
-            DragableWindow.MakeDraggable(this);
-            DragableWindow.MakePanelDraggable(pnlTittlebar, this);
-            SqlDataAccess = new DataAccess();
-        }
         public MainWindow()
         {
             InitializeComponent();
@@ -34,8 +35,23 @@ namespace ProjectR
             MainWindowPanel = this.pnlForms;
             SidePanel = this.pnlSideBarLeft;
             MyProfile = this.btnMyProfile;
-            this.LogINP = new LogIn(this);
+            this.ucLogIn = new LogIn(this);
+            this.ucUserProfile = new UserProfile();
+            this.ucSellerList = new SellerList();
+            this.ucProductList = new ProductList();
+            this.ucMemberList = new MemberList();
+            this.ucReportsDashboard = new ReportsDashboard();
+            this.ucSells = new Sells();
+            this.ucHomePage = new HomePage();
         }
+
+        private void DraggableWindows()
+        {
+            DragableWindow.MakeDraggable(this);
+            DragableWindow.MakePanelDraggable(pnlTittlebar, this);
+            SqlDataAccess = new DataAccess();
+        }
+        
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -49,70 +65,56 @@ namespace ProjectR
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            this.LogINP.Dock = DockStyle.Fill;
-            //NextPage.TopLevel = false;
-            pnlForms.Controls.Clear();
-            pnlForms.Controls.Add(this.LogINP);
-            this.LogINP.Show();
+            this.ChangeWindow(this.ucLogIn);
         }
         
         private void ChangeWindow(UserControl NextPage)
         {
             NextPage.Dock = DockStyle.Fill;
-            MainWindow.MainWindowPanel.Controls.Clear();
-            MainWindow.SidePanel.Visible = true;
-            MainWindow.MainWindowPanel.Controls.Add(NextPage);
+            this.pnlForms.Controls.Clear();
+            this.pnlForms.Controls.Add(NextPage);
             NextPage.Show();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            LogIn a = new LogIn();
             this.pnlSideBarLeft.Visible = false;
-            this.pnlForms.Controls.Clear();
-            pnlForms.Controls.Add(a);
+            this.ChangeWindow(this.ucLogIn);
         }
 
         private void btnProductBrowser_Click(object sender, EventArgs e)
         {
-            HomePage NextPage = new HomePage();
-            this.ChangeWindow(NextPage);
+            this.ChangeWindow(this.ucHomePage);
         }
 
         private void btnAllProductList_Click(object sender, EventArgs e)
         {
-            ProductList NextPage = new ProductList();
-            this.ChangeWindow(NextPage);
+            this.ChangeWindow(this.ucProductList);
         }
 
         private void btnSellersList_Click(object sender, EventArgs e)
         {
-            SellerList NextPage = new SellerList();
-            this.ChangeWindow(NextPage);
+            this.ChangeWindow(this.ucSellerList);
         }
 
         private void btnSells_Click(object sender, EventArgs e)
         {
-            Sells NextPage = new Sells();
-            this.ChangeWindow(NextPage);
+            this.ChangeWindow(this.ucSells);
         }
 
         private void btnReportsDashboard_Click(object sender, EventArgs e)
         {
-            ReportsDashboard NextPage = new ReportsDashboard();
-            this.ChangeWindow(NextPage);
+            this.ChangeWindow(this.ucReportsDashboard);
         }
 
         private void btnMyProfile_Click(object sender, EventArgs e)
         {
-            UserProfile NextPage = new UserProfile();
-            this.ChangeWindow(NextPage);
+            this.ChangeWindow(this.ucUserProfile);
         }
 
         private void btnMembersList_Click(object sender, EventArgs e)
         {
-            MemberList NextPage = new MemberList();
-            this.ChangeWindow(NextPage);
+            this.ChangeWindow(this.ucMemberList);
         }
     }
 }

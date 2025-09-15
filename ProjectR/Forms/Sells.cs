@@ -67,5 +67,10 @@ namespace ProjectR.Forms
             this.lblTimeAndDateValue.Text = "";
             this.lblTotalAmountValue.Text = "";
         }
+
+        private void Sells_Load(object sender, EventArgs e)
+        {
+            this.dgvSellDetails.ClearSelection();
+        }
     }
 }

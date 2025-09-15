@@ -349,6 +349,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Sells";
             this.Size = new System.Drawing.Size(1100, 690);
+            this.Load += new System.EventHandler(this.Sells_Load);
             this.pnlSellsDetails.ResumeLayout(false);
             this.pnlGridView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSellDetails)).EndInit();
