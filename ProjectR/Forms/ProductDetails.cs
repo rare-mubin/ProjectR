@@ -25,7 +25,6 @@ namespace ProjectR.Forms
         public ProductDetails(string b) : this()
         {
             ProductId = b;
-            ProductId = "P-001";
             string sql = "select * from ProductList where ProductId='"+ProductId+"';";
             var ds = Da.ExecuteQuery(sql);
             this.lblProductCategoryValue.Text = ds.Tables[0].Rows[0][3].ToString();
@@ -33,6 +32,7 @@ namespace ProjectR.Forms
             this.lblProductModelValue.Text = ds.Tables[0].Rows[0][2].ToString();
             this.lblProductStocksValue.Text = ds.Tables[0].Rows[0][5].ToString();
             this.btnProductCost.Text = ds.Tables[0].Rows[0][4].ToString()+" BDT";
+            this.ptbProductPicture.Image = Image.FromFile(ds.Tables[0].Rows[0][8].ToString());
         }
     }
 }

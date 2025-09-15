@@ -17,13 +17,14 @@ namespace ProjectR.Forms.ProductTypes.ProductsCards
         {
             InitializeComponent();
         }
-        public ProductCard(string productId,string productName, string productCategory, string productType , string productPrice) : this()
+        public ProductCard(string productId,string productName, string productCategory, string productType , string productPrice ,string picturePath) : this()
         {
             this.lblProductName.Text = productName;
             this.lblProductCategory.Text = productCategory;
             this.lblProductType.Text = productType;
             this.lblPrice.Text = productPrice;
             this.ProductId = productId;
+            this.ptbProductImage.Image = Image.FromFile(picturePath);
         }
 
         private void pnlCard_Click(object sender, EventArgs e)
