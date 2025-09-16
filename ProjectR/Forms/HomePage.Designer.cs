@@ -52,7 +52,6 @@
             this.colProductQuantityHome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductPriceHome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlProducts = new System.Windows.Forms.Panel();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pnlProductType.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -437,7 +436,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel pnlProducts;
         private System.Windows.Forms.DataGridView dgvTempCart;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductNameHome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductQuantityHome;
