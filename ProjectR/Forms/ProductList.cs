@@ -130,18 +130,40 @@ namespace ProjectR.Forms
                     return;
                 }
 
-                this.CopyFIle();
+                string query = $"SELECT * FROM ProductList WHERE ProductId ='{this.txtProductId.Text}';";
+                DataTable dt = Da.ExecuteQueryTable(query);
+                if(dt.Rows.Count == 1)
+                {
+                  
+                    this.CopyFIle();
+                   
+                    var sql = $"Update ProductList SET ProductName = '{this.txtProductName.Text}', ProductModel = '{this.txtProductModel.Text}', ProductCategory = '{this.cmbProductCategory.Text}',ProductPrice = {this.txtProductPrice.Text}, ProductStock = {this.txtProductStock.Text}, ProductType = '{this.txtProductType.Text}', ProductDescription = '{this.txtProductDescription.Text}',ProductImagePath = '{destinationFilePath}' WHERE ProductId = '{this.txtProductId.Text}';";
+                    var count = this.Da.ExecuteDMLQuery(sql);
 
-                var sql = $"INSERT INTO ProductList (ProductId, ProductName, ProductModel, ProductCategory, ProductPrice, ProductStock, ProductType, ProductDescription,ProductImagePath) VALUES ('{this.txtProductId.Text}','{this.txtProductName.Text}' , '{this.txtProductModel.Text}','{this.cmbProductCategory.Text}',{this.txtProductPrice.Text},{this.txtProductStock.Text},'{this.txtProductType.Text}','{this.txtProductDescription.Text}','{destinationFilePath}');";
-                var count = this.Da.ExecuteDMLQuery(sql);
+                    if (count == 1)
+                        MessageBox.Show("Product Data Updated");
+                    else
+                        MessageBox.Show("Product Data was not Updated");
 
-                if (count == 1)
-                    MessageBox.Show("Product Added");
-                else
-                    MessageBox.Show("Product Was Not Added");
+                    this.PopulateGridView();                   
 
-                this.ClearAll();
-                this.PopulateGridView();
+                }
+
+               else
+                {
+                    this.CopyFIle();
+
+                    var sql2 = $"INSERT INTO ProductList (ProductId, ProductName, ProductModel, ProductCategory, ProductPrice, ProductStock, ProductType, ProductDescription,ProductImagePath) VALUES ('{this.txtProductId.Text}','{this.txtProductName.Text}' , '{this.txtProductModel.Text}','{this.cmbProductCategory.Text}',{this.txtProductPrice.Text},{this.txtProductStock.Text},'{this.txtProductType.Text}','{this.txtProductDescription.Text}','{destinationFilePath}');";
+                    var count2 = this.Da.ExecuteDMLQuery(sql2);
+
+                    if (count2 == 1)
+                        MessageBox.Show("Product Added");
+                    else
+                        MessageBox.Show("Product Was Not Added");
+
+                    this.ClearAll();
+                    this.PopulateGridView();
+                }
             }
             catch (Exception ex)
             {
@@ -179,35 +201,12 @@ namespace ProjectR.Forms
                 return true;
         }
 
-        // Update Product Button
+        // Clear All Button Added
         private void btnUpdateProduct_Click(object sender, EventArgs e)
         {
            try
             {
-                if (!this.IsValidToSave())
-                {
-                    MessageBox.Show("PLEASE FILL ALL INFORMATION");
-                    return;
-                }
-
-                // Correct column name
-                var query = $"select * from ProductList where ProductId ='{this.txtProductId.Text}';";
-                var dt = this.Da.ExecuteQueryTable(query);
-
-                this.CopyFIle();
-
-                if (dt.Rows.Count == 1)
-                {
-                    var sql = $"Update ProductList SET ProductName = '{this.txtProductName.Text}', ProductModel = '{this.txtProductModel.Text}', ProductCategory = '{this.cmbProductCategory.Text}',ProductPrice = '{this.txtProductPrice.Text}', ProductStock = '{this.txtProductStock.Text}', ProductType = '{this.txtProductType.Text}', ProductDescription = '{this.txtProductDescription.Text}',ProductImagePath = '{destinationFilePath}' WHERE ProductId = '{this.txtProductId.Text}';";
-                    var count = this.Da.ExecuteDMLQuery(sql);
-
-                    if (count == 1)
-                        MessageBox.Show("Product Data Updated");
-                    else
-                        MessageBox.Show("Product Data was not Updated");
-
-                    this.PopulateGridView();
-                }
+                this.ClearAll();
             }
             catch(Exception ex)
             {

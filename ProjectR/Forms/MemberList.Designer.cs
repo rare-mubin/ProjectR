@@ -171,14 +171,14 @@
             this.btnAddMember.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddMember.FlatAppearance.BorderSize = 0;
             this.btnAddMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddMember.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnAddMember.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnAddMember.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.btnAddMember.Location = new System.Drawing.Point(7, 7);
             this.btnAddMember.Name = "btnAddMember";
             this.btnAddMember.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.btnAddMember.Size = new System.Drawing.Size(267, 30);
             this.btnAddMember.TabIndex = 0;
-            this.btnAddMember.Text = "Add New Member";
+            this.btnAddMember.Text = "Save Information";
             this.btnAddMember.UseVisualStyleBackColor = false;
             this.btnAddMember.Click += new System.EventHandler(this.btnAddMember_Click);
             // 
@@ -213,14 +213,14 @@
             this.btnUpdateMember.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnUpdateMember.FlatAppearance.BorderSize = 0;
             this.btnUpdateMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateMember.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnUpdateMember.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnUpdateMember.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.btnUpdateMember.Location = new System.Drawing.Point(7, 7);
             this.btnUpdateMember.Name = "btnUpdateMember";
             this.btnUpdateMember.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.btnUpdateMember.Size = new System.Drawing.Size(267, 30);
             this.btnUpdateMember.TabIndex = 0;
-            this.btnUpdateMember.Text = "Update Member Information";
+            this.btnUpdateMember.Text = "Clear Information";
             this.btnUpdateMember.UseVisualStyleBackColor = false;
             this.btnUpdateMember.Click += new System.EventHandler(this.btnUpdateMember_Click);
             // 
@@ -242,7 +242,7 @@
             this.btnRemoveMember.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRemoveMember.FlatAppearance.BorderSize = 0;
             this.btnRemoveMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveMember.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnRemoveMember.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnRemoveMember.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.btnRemoveMember.Location = new System.Drawing.Point(7, 5);
             this.btnRemoveMember.Name = "btnRemoveMember";
@@ -301,7 +301,9 @@
             this.txtSearchMembers.TabIndex = 0;
             this.txtSearchMembers.Text = "Search Members...";
             this.txtSearchMembers.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSearchMembers.Click += new System.EventHandler(this.txtSearchMembers_Click);
             this.txtSearchMembers.TextChanged += new System.EventHandler(this.txtSearchMembers_TextChanged);
+            this.txtSearchMembers.Leave += new System.EventHandler(this.txtSearchMembers_Leave);
             // 
             // pnlGridView
             // 

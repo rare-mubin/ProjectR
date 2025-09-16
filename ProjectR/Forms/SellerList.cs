@@ -14,7 +14,7 @@ namespace ProjectR.Forms
     public partial class SellerList : UserControl
     {
         internal DataAccess Da { get; set; }
-
+        private static bool txtSearchSellersClick = true;
 
         public SellerList()
         {
@@ -22,7 +22,6 @@ namespace ProjectR.Forms
             this.Da = MainWindow.SqlDataAccess;
             this.PopulateGridView();
             this.AutoIdGenerate();
-
         }
 
         // Grid View Initialisation
@@ -97,25 +96,46 @@ namespace ProjectR.Forms
                 return true;
         }
 
-        // Add User
+        // Save User
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             try
             {
                 if (!this.IsValidToSave())
                 {
-                    MessageBox.Show("PLEASE FILL ALL THE INFORMATIONS");
+                    MessageBox.Show("PLEASE FILL ALL INFORMATION");
                     return;
                 }
-                var sql = $"INSERT INTO UserList (UserId, UserPassword,UserName,UserDOB,UserPhone,UserNID) VALUES ('{this.txtUserId.Text}','{this.txtUserPassword.Text}','{this.txtUserName.Text}','{this.dtpDOB.Text}','{this.txtUserPhone.Text}','{this.txtUserNID.Text}');";
-                var count = this.Da.ExecuteDMLQuery(sql);
-                var sql2 = $"INSERT INTO RoleList (UserId, Role) VALUES ('{this.txtUserId.Text}','{this.cmbUserRole.Text}');";
-                var count2 = this.Da.ExecuteDMLQuery(sql2);
 
-                if (count == 1 && count2 == 1)
-                    MessageBox.Show("New Member Added");
+                string userId = this.txtUserId.Text.Trim();
+
+                // check if user exists
+                string checkSql = $"SELECT * FROM UserList WHERE UserId = '{userId}';";
+                var dt = this.Da.ExecuteQueryTable(checkSql);
+
+                string sqlUser;
+                string sqlRole;
+
+                if (dt.Rows.Count == 1)
+                {
+                    // User exists → Update
+                    sqlUser = $"UPDATE UserList SET UserName = '{this.txtUserName.Text}', UserPassword = '{this.txtUserPassword.Text}', UserDOB = '{this.dtpDOB.Text}', UserPhone = '{this.txtUserPhone.Text}', UserNID = '{this.txtUserNID.Text}' WHERE UserId = '{userId}';";
+                    sqlRole = $"UPDATE RoleList SET Role = '{this.cmbUserRole.Text}' WHERE UserId = '{userId}';";
+                }
                 else
-                    MessageBox.Show("Member Was Not Added");
+                {
+                    // User does not exist → Insert
+                    sqlUser = $"INSERT INTO UserList (UserId, UserPassword, UserName, UserDOB, UserPhone, UserNID) VALUES ('{userId}', '{this.txtUserPassword.Text}', '{this.txtUserName.Text}', '{this.dtpDOB.Text}', '{this.txtUserPhone.Text}', '{this.txtUserNID.Text}');";
+                    sqlRole = $"INSERT INTO RoleList (UserId, Role) VALUES ('{userId}', '{this.cmbUserRole.Text}');";
+                }
+
+                var countUser = this.Da.ExecuteDMLQuery(sqlUser);
+                var countRole = this.Da.ExecuteDMLQuery(sqlRole);
+
+                if (countUser == 1 && countRole == 1)
+                    MessageBox.Show("User Information Saved Successfully");
+                else
+                    MessageBox.Show("User Information could not be saved");
 
                 this.ClearAll();
                 this.PopulateGridView();
@@ -129,7 +149,7 @@ namespace ProjectR.Forms
         private void dgvSellerList_DoubleClick(object sender, EventArgs e)
         {
             this.txtUserId.Text = this.dgvSellerList.CurrentRow.Cells["colUserId"].Value.ToString();
-            this.txtUserName.Text = this.dgvSellerList.CurrentRow.Cells["colUsername"].Value.ToString();
+            this.txtUserName.Text = this.dgvSellerList.CurrentRow.Cells["colUserName"].Value.ToString();
             this.txtUserPassword.Text = this.dgvSellerList.CurrentRow.Cells["colUserPassword"].Value.ToString() ;
             this.dtpDOB.Text = this.dgvSellerList.CurrentRow.Cells["colUserDOB"].Value.ToString();
             this.txtUserPhone.Text = this.dgvSellerList.CurrentRow.Cells["colUserPhone"].Value.ToString();
@@ -137,33 +157,10 @@ namespace ProjectR.Forms
             this.cmbUserRole.Text = this.dgvSellerList.CurrentRow.Cells["colUserRole"].Value.ToString();
         }
 
-        // Update User
+        // Clear User
         private void btnUpdateUser_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (!this.IsValidToSave())
-                {
-                    MessageBox.Show("PLEASE FILL ALL INFORMATION");
-                    return;
-                }
-                var sql = $"update RoleList set Role = '{this.cmbUserRole.Text}' where UserId = '{this.txtUserId.Text}';";
-                var count = this.Da.ExecuteDMLQuery(sql);
-                var sql2 = $"update UserList set UserName = '{this.txtUserName.Text}', UserPassword = '{this.txtUserPassword.Text}', UserDOB = '{this.dtpDOB.Text}', UserPhone = '{this.txtUserPhone.Text}', UserNID ='{this.txtUserNID.Text}' where UserId = '{this.txtUserId.Text}';";
-                var count2 = this.Da.ExecuteDMLQuery(sql2);
-
-                if (count == 1 && count2 == 1)
-                    MessageBox.Show("Member Information Updated");
-                else
-                    MessageBox.Show("Member Information was NOT updated");
-
-                this.PopulateGridView();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error:{ex.Message}");
-            }
+            this.ClearAll();
         }
 
         // Delete User
@@ -229,6 +226,32 @@ namespace ProjectR.Forms
             }
         }
 
-        
+        // UI
+        private void txtSearchSellers_Leave(object sender, EventArgs e)
+        {
+            if (this.txtSearchSellers.Text == "")
+            {
+                this.txtSearchSellers.Text = "Search Users...";
+                txtSearchSellersClick = true;
+            }
+            try
+            {
+                this.PopulateGridView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error:{ex.Message}");
+            }
+        }
+
+        // UI
+        private void txtSearchSellers_Click(object sender, EventArgs e)
+        {
+            if (txtSearchSellersClick)
+            {
+                this.txtSearchSellers.Text = "";
+                txtSearchSellersClick = false;
+            }
+        }
     }
 }
