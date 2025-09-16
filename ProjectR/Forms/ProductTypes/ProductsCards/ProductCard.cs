@@ -50,6 +50,7 @@ namespace ProjectR.Forms.ProductTypes.ProductsCards
                 HomePage.dgvTempCartP.AutoGenerateColumns = false;
                 HomePage.dgvTempCartP.DataSource = ds.Tables[0];
                 //this.ClearAll();
+                HomePage.dgvTempCartP.ClearSelection();
             }
             catch (Exception ex)
             {
@@ -92,7 +93,8 @@ namespace ProjectR.Forms.ProductTypes.ProductsCards
         {
             this.AddItem();
                 // this.ClearAll();
-                this.PopulateGridView();
+            this.PopulateGridView();
+
         }
     }
 }

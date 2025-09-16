@@ -41,6 +41,7 @@ namespace ProjectR.Forms
         private void HomePage_Load(object sender, EventArgs e)
         {
             pnlProductsP = this.pnlProducts;
+
         }
 
         private void btnGames_MouseHover(object sender, EventArgs e)

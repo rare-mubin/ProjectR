@@ -35,7 +35,7 @@ namespace ProjectR.Forms
             {
                 var ds = this.Da.ExecuteQuery(sql);
                 this.dgvProductList.AutoGenerateColumns = false;
-                this.dgvProductList.DataSource = ds.Tables[0];
+                this.dgvProductList.DataSource = ds.Tables[0];                
                 this.ClearAll();
             }
             catch (Exception ex)
@@ -137,7 +137,7 @@ namespace ProjectR.Forms
                   
                     this.CopyFIle();
                    
-                    var sql = $"Update ProductList SET ProductName = '{this.txtProductName.Text}', ProductModel = '{this.txtProductModel.Text}', ProductCategory = '{this.cmbProductCategory.Text}',ProductPrice = {this.txtProductPrice.Text}, ProductStock = {this.txtProductStock.Text}, ProductType = '{this.txtProductType.Text}', ProductDescription = '{this.txtProductDescription.Text}',ProductImagePath = '{destinationFilePath}' WHERE ProductId = '{this.txtProductId.Text}';";
+                    var sql = $"Update ProductList SET ProductName = '{this.txtProductName.Text}', ProductModel = '{this.txtProductModel.Text}', ProductCategory = '{this.cmbProductCategory.Text}',ProductPrice = {this.txtProductPrice.Text}, ProductStock = {this.txtProductStock.Text}, ProductType = '{this.cmbProductType.Text}', ProductDescription = '{this.txtProductDescription.Text}',ProductImagePath = '{destinationFilePath}' WHERE ProductId = '{this.txtProductId.Text}';";
                     var count = this.Da.ExecuteDMLQuery(sql);
 
                     if (count == 1)
@@ -153,7 +153,7 @@ namespace ProjectR.Forms
                 {
                     this.CopyFIle();
 
-                    var sql2 = $"INSERT INTO ProductList (ProductId, ProductName, ProductModel, ProductCategory, ProductPrice, ProductStock, ProductType, ProductDescription,ProductImagePath) VALUES ('{this.txtProductId.Text}','{this.txtProductName.Text}' , '{this.txtProductModel.Text}','{this.cmbProductCategory.Text}',{this.txtProductPrice.Text},{this.txtProductStock.Text},'{this.txtProductType.Text}','{this.txtProductDescription.Text}','{destinationFilePath}');";
+                    var sql2 = $"INSERT INTO ProductList (ProductId, ProductName, ProductModel, ProductCategory, ProductPrice, ProductStock, ProductType, ProductDescription,ProductImagePath) VALUES ('{this.txtProductId.Text}','{this.txtProductName.Text}' , '{this.txtProductModel.Text}','{this.cmbProductCategory.Text}',{this.txtProductPrice.Text},{this.txtProductStock.Text},'{this.cmbProductType.Text}','{this.txtProductDescription.Text}','{destinationFilePath}');";
                     var count2 = this.Da.ExecuteDMLQuery(sql2);
 
                     if (count2 == 1)
@@ -180,7 +180,7 @@ namespace ProjectR.Forms
             this.cmbProductCategory.SelectedIndex = -1;
             this.txtProductPrice.Clear();
             this.txtProductStock.Clear();
-            this.txtProductType.Clear();
+            this.cmbProductType.SelectedIndex = -1;
             this.txtProductDescription.Clear();
             this.txtFilePath.Clear();
             this.dgvProductList.ClearSelection();
@@ -194,7 +194,7 @@ namespace ProjectR.Forms
             if (string.IsNullOrEmpty(this.txtProductId.Text) || string.IsNullOrEmpty(this.txtProductName.Text) ||
                 string.IsNullOrEmpty(this.txtProductPrice.Text) || string.IsNullOrEmpty(this.txtProductModel.Text) ||
                 string.IsNullOrEmpty(this.cmbProductCategory.Text) || string.IsNullOrEmpty(this.txtProductStock.Text) ||
-                string.IsNullOrEmpty(this.txtProductType.Text)|| string.IsNullOrEmpty(this.txtProductDescription.Text)||
+                string.IsNullOrEmpty(this.cmbProductType.Text)|| string.IsNullOrEmpty(this.txtProductDescription.Text)||
                 string.IsNullOrEmpty(this.txtFilePath.Text))
                 return false;
             else
@@ -224,7 +224,7 @@ namespace ProjectR.Forms
             this.cmbProductCategory.Text = this.dgvProductList.CurrentRow.Cells["colProductCategory"].Value.ToString();
             this.txtProductPrice.Text = this.dgvProductList.CurrentRow.Cells["colProductPrice"].Value.ToString();
             this.txtProductStock.Text = this.dgvProductList.CurrentRow.Cells["colProductStock"].Value.ToString();
-            this.txtProductType.Text = this.dgvProductList.CurrentRow.Cells["colProductType"].Value.ToString();
+            this.cmbProductType.Text = this.dgvProductList.CurrentRow.Cells["colProductType"].Value.ToString();
             this.txtProductDescription.Text = this.dgvProductList.CurrentRow.Cells["colProductDescription"].Value.ToString();
             this.txtFilePath.Text = this.dgvProductList.CurrentRow.Cells["colFilePath"].Value.ToString();
         }
@@ -286,7 +286,7 @@ namespace ProjectR.Forms
 
         private void ProductList_Load(object sender, EventArgs e)
         {
-            this.dgvProductList.ClearSelection();
+            this.dgvProductList.ClearSelection();            
         }
 
         private void btnChosePicture_Click(object sender, EventArgs e)

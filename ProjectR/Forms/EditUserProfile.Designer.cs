@@ -54,16 +54,19 @@
             // 
             // lblUserName
             // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.BackColor = System.Drawing.Color.Transparent;
             this.lblUserName.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblUserName.Location = new System.Drawing.Point(196, 223);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(200, 46);
+            this.lblUserName.Size = new System.Drawing.Size(163, 33);
             this.lblUserName.TabIndex = 1;
             this.lblUserName.Text = "User Name";
             // 
             // lblUserNameHeader
             // 
+            this.lblUserNameHeader.BackColor = System.Drawing.Color.Transparent;
             this.lblUserNameHeader.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserNameHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblUserNameHeader.Location = new System.Drawing.Point(326, 35);
@@ -96,12 +99,12 @@
             // 
             // btnBackToUserProfile
             // 
-            this.btnBackToUserProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
-            this.btnBackToUserProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToUserProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.btnBackToUserProfile.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackToUserProfile.ForeColor = System.Drawing.Color.White;
-            this.btnBackToUserProfile.Location = new System.Drawing.Point(929, 447);
+            this.btnBackToUserProfile.Location = new System.Drawing.Point(880, 435);
             this.btnBackToUserProfile.Name = "btnBackToUserProfile";
-            this.btnBackToUserProfile.Size = new System.Drawing.Size(106, 29);
+            this.btnBackToUserProfile.Size = new System.Drawing.Size(161, 35);
             this.btnBackToUserProfile.TabIndex = 15;
             this.btnBackToUserProfile.Text = "Go Back";
             this.btnBackToUserProfile.UseVisualStyleBackColor = false;
@@ -110,47 +113,47 @@
             // txtNidNumber
             // 
             this.txtNidNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNidNumber.Location = new System.Drawing.Point(642, 292);
+            this.txtNidNumber.Location = new System.Drawing.Point(552, 292);
             this.txtNidNumber.Multiline = true;
             this.txtNidNumber.Name = "txtNidNumber";
-            this.txtNidNumber.Size = new System.Drawing.Size(179, 46);
+            this.txtNidNumber.Size = new System.Drawing.Size(244, 46);
             this.txtNidNumber.TabIndex = 14;
             // 
             // txtPhone
             // 
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(642, 362);
+            this.txtPhone.Location = new System.Drawing.Point(552, 362);
             this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(179, 46);
+            this.txtPhone.Size = new System.Drawing.Size(244, 46);
             this.txtPhone.TabIndex = 13;
             // 
             // txtUserDOB
             // 
             this.txtUserDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserDOB.Location = new System.Drawing.Point(642, 430);
+            this.txtUserDOB.Location = new System.Drawing.Point(552, 430);
             this.txtUserDOB.Multiline = true;
             this.txtUserDOB.Name = "txtUserDOB";
-            this.txtUserDOB.Size = new System.Drawing.Size(179, 46);
+            this.txtUserDOB.Size = new System.Drawing.Size(244, 46);
             this.txtUserDOB.TabIndex = 12;
             // 
             // txtUserName
             // 
             this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(642, 223);
+            this.txtUserName.Location = new System.Drawing.Point(552, 223);
             this.txtUserName.Multiline = true;
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(179, 46);
+            this.txtUserName.Size = new System.Drawing.Size(244, 46);
             this.txtUserName.TabIndex = 11;
             // 
             // btnUpdateProfile
             // 
-            this.btnUpdateProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
-            this.btnUpdateProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.btnUpdateProfile.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateProfile.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateProfile.Location = new System.Drawing.Point(929, 398);
+            this.btnUpdateProfile.Location = new System.Drawing.Point(880, 386);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
-            this.btnUpdateProfile.Size = new System.Drawing.Size(106, 29);
+            this.btnUpdateProfile.Size = new System.Drawing.Size(161, 35);
             this.btnUpdateProfile.TabIndex = 10;
             this.btnUpdateProfile.Text = "Update Profile";
             this.btnUpdateProfile.UseVisualStyleBackColor = false;
@@ -158,6 +161,7 @@
             // 
             // label10
             // 
+            this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.label10.Location = new System.Drawing.Point(328, 103);
@@ -168,31 +172,37 @@
             // 
             // ldlNidNumber
             // 
+            this.ldlNidNumber.AutoSize = true;
+            this.ldlNidNumber.BackColor = System.Drawing.Color.Transparent;
             this.ldlNidNumber.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ldlNidNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.ldlNidNumber.Location = new System.Drawing.Point(196, 292);
             this.ldlNidNumber.Name = "ldlNidNumber";
-            this.ldlNidNumber.Size = new System.Drawing.Size(200, 46);
+            this.ldlNidNumber.Size = new System.Drawing.Size(171, 33);
             this.ldlNidNumber.TabIndex = 4;
             this.ldlNidNumber.Text = "Nid Number";
             // 
             // lblPhone
             // 
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.BackColor = System.Drawing.Color.Transparent;
             this.lblPhone.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblPhone.Location = new System.Drawing.Point(196, 362);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(200, 46);
+            this.lblPhone.Size = new System.Drawing.Size(210, 33);
             this.lblPhone.TabIndex = 3;
             this.lblPhone.Text = "Phone Number";
             // 
             // lblUserDOB
             // 
+            this.lblUserDOB.AutoSize = true;
+            this.lblUserDOB.BackColor = System.Drawing.Color.Transparent;
             this.lblUserDOB.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserDOB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblUserDOB.Location = new System.Drawing.Point(196, 430);
             this.lblUserDOB.Name = "lblUserDOB";
-            this.lblUserDOB.Size = new System.Drawing.Size(200, 46);
+            this.lblUserDOB.Size = new System.Drawing.Size(183, 33);
             this.lblUserDOB.TabIndex = 2;
             this.lblUserDOB.Text = "Date Of Birth";
             // 

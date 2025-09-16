@@ -53,6 +53,7 @@
             // 
             // lblUserDOB
             // 
+            this.lblUserDOB.BackColor = System.Drawing.Color.Transparent;
             this.lblUserDOB.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserDOB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblUserDOB.Location = new System.Drawing.Point(196, 223);
@@ -63,6 +64,7 @@
             // 
             // lblUserNameHeader
             // 
+            this.lblUserNameHeader.BackColor = System.Drawing.Color.Transparent;
             this.lblUserNameHeader.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserNameHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblUserNameHeader.Location = new System.Drawing.Point(326, 35);
@@ -94,6 +96,7 @@
             // 
             // lblNidNumberDetails
             // 
+            this.lblNidNumberDetails.BackColor = System.Drawing.Color.Transparent;
             this.lblNidNumberDetails.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNidNumberDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblNidNumberDetails.Location = new System.Drawing.Point(642, 292);
@@ -104,6 +107,7 @@
             // 
             // lblPhoneDetails
             // 
+            this.lblPhoneDetails.BackColor = System.Drawing.Color.Transparent;
             this.lblPhoneDetails.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhoneDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblPhoneDetails.Location = new System.Drawing.Point(642, 362);
@@ -114,6 +118,7 @@
             // 
             // lblTotalSellsDetails
             // 
+            this.lblTotalSellsDetails.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalSellsDetails.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalSellsDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblTotalSellsDetails.Location = new System.Drawing.Point(642, 430);
@@ -124,6 +129,7 @@
             // 
             // lblUserDOBDetails
             // 
+            this.lblUserDOBDetails.BackColor = System.Drawing.Color.Transparent;
             this.lblUserDOBDetails.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserDOBDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblUserDOBDetails.Location = new System.Drawing.Point(642, 223);
@@ -134,12 +140,12 @@
             // 
             // btnEditProfile
             // 
-            this.btnEditProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
-            this.btnEditProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.btnEditProfile.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditProfile.ForeColor = System.Drawing.Color.White;
-            this.btnEditProfile.Location = new System.Drawing.Point(917, 447);
+            this.btnEditProfile.Location = new System.Drawing.Point(878, 430);
             this.btnEditProfile.Name = "btnEditProfile";
-            this.btnEditProfile.Size = new System.Drawing.Size(106, 29);
+            this.btnEditProfile.Size = new System.Drawing.Size(161, 35);
             this.btnEditProfile.TabIndex = 10;
             this.btnEditProfile.Text = "Edit Profile";
             this.btnEditProfile.UseVisualStyleBackColor = false;
@@ -147,6 +153,7 @@
             // 
             // label10
             // 
+            this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.label10.Location = new System.Drawing.Point(328, 103);
@@ -157,6 +164,7 @@
             // 
             // ldlNidNumber
             // 
+            this.ldlNidNumber.BackColor = System.Drawing.Color.Transparent;
             this.ldlNidNumber.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ldlNidNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.ldlNidNumber.Location = new System.Drawing.Point(196, 292);
@@ -167,6 +175,7 @@
             // 
             // lblPhone
             // 
+            this.lblPhone.BackColor = System.Drawing.Color.Transparent;
             this.lblPhone.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblPhone.Location = new System.Drawing.Point(196, 362);
@@ -177,6 +186,7 @@
             // 
             // lblTotalSells
             // 
+            this.lblTotalSells.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalSells.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalSells.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblTotalSells.Location = new System.Drawing.Point(196, 430);
