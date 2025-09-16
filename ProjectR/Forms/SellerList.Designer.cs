@@ -343,6 +343,7 @@
             this.txtUserId.ForeColor = System.Drawing.Color.White;
             this.txtUserId.Location = new System.Drawing.Point(26, 68);
             this.txtUserId.Name = "txtUserId";
+            this.txtUserId.ReadOnly = true;
             this.txtUserId.Size = new System.Drawing.Size(231, 26);
             this.txtUserId.TabIndex = 14;
             // 

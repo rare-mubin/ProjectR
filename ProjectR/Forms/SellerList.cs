@@ -161,6 +161,7 @@ namespace ProjectR.Forms
         private void btnUpdateUser_Click(object sender, EventArgs e)
         {
             this.ClearAll();
+            this.AutoIdGenerate();
         }
 
         // Delete User
