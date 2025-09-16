@@ -134,5 +134,36 @@ namespace ProjectR.Forms
             }
         }
 
+        // Grid View Initialisation
+        private void PopulateGridView(string sql = "select * from TempCart;")
+        {
+            try
+            {
+                var ds = MainWindow.SqlDataAccess.ExecuteQuery(sql);
+                HomePage.dgvTempCartP.AutoGenerateColumns = false;
+                HomePage.dgvTempCartP.DataSource = ds.Tables[0];
+                //this.ClearAll();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error:{ex.Message}");
+            }
+        }
+
+        private void btnRemoveFromCart_Click(object sender, EventArgs e)
+        {
+            if (this.dgvTempCart.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("Please select a row first to delete.");
+                return;
+            }
+            var id = this.dgvTempCart.CurrentRow.Cells["colProductId"].Value.ToString();
+            var sql = "delete from TempCart where ProductId = '" + id + "';";
+            //var count = this.Da.ExecuteDMLQuery(sql);
+            MainWindow.SqlDataAccess.ExecuteDMLQuery(sql);
+            this.PopulateGridView();
+            
+
+        }
     }
 }

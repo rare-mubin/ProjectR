@@ -57,11 +57,42 @@ namespace ProjectR.Forms.ProductTypes.ProductsCards
             }
         }
 
+        // Clear All
+        private void ClearAll()
+        {
+            
+
+            //this.AutoIdGenerate();
+        }
+
+        // Add Method
+        private void AddItem()
+        {
+            string sql = $"insert into TempCart VALUES ('{ProductId}','{ProductName}',1, {ProductPrice} , {ProductPrice}) ;";
+            string sql2 = $"select * from TempCart where ProductId = '{ProductId}'";
+            var dt = MainWindow.SqlDataAccess.ExecuteQueryTable(sql2);
+
+            if (dt.Rows.Count == 1)
+            {
+                int quantity = Convert.ToInt32(dt.Rows[0][2]);
+                quantity += 1;
+                int TotalAmount = Convert.ToInt32(ProductPrice) * quantity;
+
+                string sql3 = $"UPDATE TempCart SET ProductQuantity = {quantity}, TotalAmount = {TotalAmount} where ProductId = '{ProductId}'";
+                MainWindow.SqlDataAccess.ExecuteDMLQuery(sql3);
+                return;
+            }
+            MainWindow.SqlDataAccess.ExecuteDMLQuery(sql);
+        }
+
+
 
 
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
-            this.PopulateGridView();
+            this.AddItem();
+                // this.ClearAll();
+                this.PopulateGridView();
         }
     }
 }

@@ -37,19 +37,20 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnDeleteProduct = new System.Windows.Forms.Button();
-            this.btnUpdateProduct = new System.Windows.Forms.Button();
-            this.btnAddProduct = new System.Windows.Forms.Button();
+            this.btnCheckout = new System.Windows.Forms.Button();
+            this.btnRemoveFromCart = new System.Windows.Forms.Button();
+            this.btnChangeQuantity = new System.Windows.Forms.Button();
             this.pnlProductbtns = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.pnlSidebarRight = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlProducts = new System.Windows.Forms.Panel();
             this.dgvTempCart = new System.Windows.Forms.DataGridView();
+            this.pnlProducts = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.colProductNameHome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductQuantityHome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductPriceHome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlProductType.SuspendLayout();
@@ -61,8 +62,8 @@
             this.panel11.SuspendLayout();
             this.pnlSidebarRight.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.pnlProducts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTempCart)).BeginInit();
+            this.pnlProducts.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlProductType
@@ -199,56 +200,54 @@
             this.panel2.Size = new System.Drawing.Size(283, 44);
             this.panel2.TabIndex = 4;
             // 
-            // btnDeleteProduct
+            // btnCheckout
             // 
-            this.btnDeleteProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.btnDeleteProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleteProduct.FlatAppearance.BorderSize = 0;
-            this.btnDeleteProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteProduct.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnDeleteProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.btnDeleteProduct.Location = new System.Drawing.Point(7, 5);
-            this.btnDeleteProduct.Name = "btnDeleteProduct";
-            this.btnDeleteProduct.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btnDeleteProduct.Size = new System.Drawing.Size(267, 30);
-            this.btnDeleteProduct.TabIndex = 0;
-            this.btnDeleteProduct.Text = "Delete Product";
-            this.btnDeleteProduct.UseVisualStyleBackColor = false;
-            this.btnDeleteProduct.Visible = false;
+            this.btnCheckout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.btnCheckout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCheckout.FlatAppearance.BorderSize = 0;
+            this.btnCheckout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnCheckout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.btnCheckout.Location = new System.Drawing.Point(7, 5);
+            this.btnCheckout.Name = "btnCheckout";
+            this.btnCheckout.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnCheckout.Size = new System.Drawing.Size(267, 30);
+            this.btnCheckout.TabIndex = 0;
+            this.btnCheckout.Text = "Checkout";
+            this.btnCheckout.UseVisualStyleBackColor = false;
             // 
-            // btnUpdateProduct
+            // btnRemoveFromCart
             // 
-            this.btnUpdateProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.btnUpdateProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnUpdateProduct.FlatAppearance.BorderSize = 0;
-            this.btnUpdateProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateProduct.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnUpdateProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.btnUpdateProduct.Location = new System.Drawing.Point(7, 7);
-            this.btnUpdateProduct.Name = "btnUpdateProduct";
-            this.btnUpdateProduct.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btnUpdateProduct.Size = new System.Drawing.Size(267, 30);
-            this.btnUpdateProduct.TabIndex = 0;
-            this.btnUpdateProduct.Text = "Update Product";
-            this.btnUpdateProduct.UseVisualStyleBackColor = false;
-            this.btnUpdateProduct.Visible = false;
+            this.btnRemoveFromCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.btnRemoveFromCart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRemoveFromCart.FlatAppearance.BorderSize = 0;
+            this.btnRemoveFromCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveFromCart.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnRemoveFromCart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.btnRemoveFromCart.Location = new System.Drawing.Point(7, 7);
+            this.btnRemoveFromCart.Name = "btnRemoveFromCart";
+            this.btnRemoveFromCart.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnRemoveFromCart.Size = new System.Drawing.Size(267, 30);
+            this.btnRemoveFromCart.TabIndex = 0;
+            this.btnRemoveFromCart.Text = "Remove From Cart";
+            this.btnRemoveFromCart.UseVisualStyleBackColor = false;
+            this.btnRemoveFromCart.Click += new System.EventHandler(this.btnRemoveFromCart_Click);
             // 
-            // btnAddProduct
+            // btnChangeQuantity
             // 
-            this.btnAddProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.btnAddProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddProduct.FlatAppearance.BorderSize = 0;
-            this.btnAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddProduct.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnAddProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.btnAddProduct.Location = new System.Drawing.Point(7, 7);
-            this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btnAddProduct.Size = new System.Drawing.Size(267, 30);
-            this.btnAddProduct.TabIndex = 0;
-            this.btnAddProduct.Text = "Add Product";
-            this.btnAddProduct.UseVisualStyleBackColor = false;
-            this.btnAddProduct.Visible = false;
+            this.btnChangeQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.btnChangeQuantity.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnChangeQuantity.FlatAppearance.BorderSize = 0;
+            this.btnChangeQuantity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeQuantity.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnChangeQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.btnChangeQuantity.Location = new System.Drawing.Point(7, 7);
+            this.btnChangeQuantity.Name = "btnChangeQuantity";
+            this.btnChangeQuantity.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnChangeQuantity.Size = new System.Drawing.Size(267, 30);
+            this.btnChangeQuantity.TabIndex = 0;
+            this.btnChangeQuantity.Text = "Change Quantity";
+            this.btnChangeQuantity.UseVisualStyleBackColor = false;
             // 
             // pnlProductbtns
             // 
@@ -266,7 +265,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
-            this.panel3.Controls.Add(this.btnAddProduct);
+            this.panel3.Controls.Add(this.btnChangeQuantity);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(1, 1);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
@@ -278,7 +277,7 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
-            this.panel10.Controls.Add(this.btnUpdateProduct);
+            this.panel10.Controls.Add(this.btnRemoveFromCart);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel10.Location = new System.Drawing.Point(1, 43);
             this.panel10.Margin = new System.Windows.Forms.Padding(0);
@@ -290,7 +289,7 @@
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
-            this.panel11.Controls.Add(this.btnDeleteProduct);
+            this.panel11.Controls.Add(this.btnCheckout);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel11.Location = new System.Drawing.Point(1, 85);
             this.panel11.Margin = new System.Windows.Forms.Padding(0);
@@ -319,6 +318,26 @@
             this.panel1.Size = new System.Drawing.Size(281, 493);
             this.panel1.TabIndex = 0;
             // 
+            // dgvTempCart
+            // 
+            this.dgvTempCart.AllowUserToAddRows = false;
+            this.dgvTempCart.AllowUserToDeleteRows = false;
+            this.dgvTempCart.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.dgvTempCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTempCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colProductNameHome,
+            this.colProductId,
+            this.colProductQuantityHome,
+            this.colProductPriceHome});
+            this.dgvTempCart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTempCart.Location = new System.Drawing.Point(0, 0);
+            this.dgvTempCart.Name = "dgvTempCart";
+            this.dgvTempCart.ReadOnly = true;
+            this.dgvTempCart.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvTempCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTempCart.Size = new System.Drawing.Size(281, 493);
+            this.dgvTempCart.TabIndex = 0;
+            // 
             // pnlProducts
             // 
             this.pnlProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -330,23 +349,6 @@
             this.pnlProducts.Size = new System.Drawing.Size(800, 630);
             this.pnlProducts.TabIndex = 9;
             // 
-            // dgvTempCart
-            // 
-            this.dgvTempCart.AllowUserToAddRows = false;
-            this.dgvTempCart.AllowUserToDeleteRows = false;
-            this.dgvTempCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTempCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colProductNameHome,
-            this.colProductQuantityHome,
-            this.colProductPriceHome});
-            this.dgvTempCart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTempCart.Location = new System.Drawing.Point(0, 0);
-            this.dgvTempCart.Name = "dgvTempCart";
-            this.dgvTempCart.ReadOnly = true;
-            this.dgvTempCart.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvTempCart.Size = new System.Drawing.Size(281, 493);
-            this.dgvTempCart.TabIndex = 0;
-            // 
             // colProductNameHome
             // 
             this.colProductNameHome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -354,6 +356,14 @@
             this.colProductNameHome.HeaderText = "Name";
             this.colProductNameHome.Name = "colProductNameHome";
             this.colProductNameHome.ReadOnly = true;
+            // 
+            // colProductId
+            // 
+            this.colProductId.DataPropertyName = "ProductId";
+            this.colProductId.HeaderText = "ID";
+            this.colProductId.Name = "colProductId";
+            this.colProductId.ReadOnly = true;
+            this.colProductId.Visible = false;
             // 
             // colProductQuantityHome
             // 
@@ -365,7 +375,7 @@
             // 
             // colProductPriceHome
             // 
-            this.colProductPriceHome.DataPropertyName = "ProductPrice";
+            this.colProductPriceHome.DataPropertyName = "TotalAmount";
             this.colProductPriceHome.FillWeight = 1F;
             this.colProductPriceHome.HeaderText = "Price";
             this.colProductPriceHome.MinimumWidth = 25;
@@ -398,8 +408,8 @@
             this.panel11.ResumeLayout(false);
             this.pnlSidebarRight.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.pnlProducts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTempCart)).EndInit();
+            this.pnlProducts.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -411,9 +421,9 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnDeleteProduct;
-        private System.Windows.Forms.Button btnUpdateProduct;
-        private System.Windows.Forms.Button btnAddProduct;
+        private System.Windows.Forms.Button btnCheckout;
+        private System.Windows.Forms.Button btnRemoveFromCart;
+        private System.Windows.Forms.Button btnChangeQuantity;
         private System.Windows.Forms.Panel pnlProductbtns;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel10;
@@ -428,6 +438,7 @@
         private System.Windows.Forms.DataGridView dgvTempCart;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductNameHome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductQuantityHome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductPriceHome;
     }

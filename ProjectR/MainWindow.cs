@@ -55,6 +55,7 @@ namespace ProjectR
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            SqlDataAccess.ExecuteDMLQuery("Truncate TABLE TempCart");
             Application.Exit();
         }
 
