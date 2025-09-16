@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="DataAccess.cs" />
     <Compile Include="DragableWindow.cs" />
+    <Compile Include="Forms\Checkout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Checkout.Designer.cs">
+      <DependentUpon>Checkout.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EditUserProfile.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Checkout.resx">
+      <DependentUpon>Checkout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditUserProfile.resx">
       <DependentUpon>EditUserProfile.cs</DependentUpon>
     </EmbeddedResource>

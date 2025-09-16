@@ -312,11 +312,11 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
             this.panel3.Controls.Add(this.btnClear);
             this.panel3.Location = new System.Drawing.Point(812, 639);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(1);
+            this.panel3.Padding = new System.Windows.Forms.Padding(7);
             this.panel3.Size = new System.Drawing.Size(283, 45);
             this.panel3.TabIndex = 14;
             // 
@@ -325,11 +325,14 @@
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.btnClear.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(1, 1);
+            this.btnClear.Location = new System.Drawing.Point(7, 7);
             this.btnClear.Name = "btnClear";
             this.btnClear.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btnClear.Size = new System.Drawing.Size(281, 43);
+            this.btnClear.Size = new System.Drawing.Size(269, 31);
             this.btnClear.TabIndex = 0;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
