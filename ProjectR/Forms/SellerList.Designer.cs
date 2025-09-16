@@ -112,7 +112,7 @@
             // colUserName
             // 
             this.colUserName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colUserName.DataPropertyName = "UserName";
+            this.colUserName.DataPropertyName = "Username";
             this.colUserName.HeaderText = "Name";
             this.colUserName.Name = "colUserName";
             this.colUserName.ReadOnly = true;
@@ -176,7 +176,9 @@
             this.txtSearchSellers.TabIndex = 0;
             this.txtSearchSellers.Text = "Search Users...";
             this.txtSearchSellers.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSearchSellers.Click += new System.EventHandler(this.txtSearchSellers_Click);
             this.txtSearchSellers.TextChanged += new System.EventHandler(this.txtSearchSellers_TextChanged);
+            this.txtSearchSellers.Leave += new System.EventHandler(this.txtSearchSellers_Leave);
             // 
             // panel4
             // 
@@ -219,7 +221,7 @@
             this.btnDeleteUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDeleteUser.FlatAppearance.BorderSize = 0;
             this.btnDeleteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnDeleteUser.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnDeleteUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.btnDeleteUser.Location = new System.Drawing.Point(7, 5);
             this.btnDeleteUser.Name = "btnDeleteUser";
@@ -248,14 +250,14 @@
             this.btnUpdateUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnUpdateUser.FlatAppearance.BorderSize = 0;
             this.btnUpdateUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnUpdateUser.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnUpdateUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.btnUpdateUser.Location = new System.Drawing.Point(7, 7);
             this.btnUpdateUser.Name = "btnUpdateUser";
             this.btnUpdateUser.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.btnUpdateUser.Size = new System.Drawing.Size(267, 30);
             this.btnUpdateUser.TabIndex = 0;
-            this.btnUpdateUser.Text = "Update User Information";
+            this.btnUpdateUser.Text = "Clear";
             this.btnUpdateUser.UseVisualStyleBackColor = false;
             this.btnUpdateUser.Click += new System.EventHandler(this.btnUpdateUser_Click);
             // 
@@ -277,14 +279,14 @@
             this.btnAddUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddUser.FlatAppearance.BorderSize = 0;
             this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnAddUser.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnAddUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.btnAddUser.Location = new System.Drawing.Point(7, 7);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.btnAddUser.Size = new System.Drawing.Size(267, 30);
             this.btnAddUser.TabIndex = 0;
-            this.btnAddUser.Text = "Add Seller ";
+            this.btnAddUser.Text = "Save User Information";
             this.btnAddUser.UseVisualStyleBackColor = false;
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
@@ -341,6 +343,7 @@
             this.txtUserId.ForeColor = System.Drawing.Color.White;
             this.txtUserId.Location = new System.Drawing.Point(26, 68);
             this.txtUserId.Name = "txtUserId";
+            this.txtUserId.ReadOnly = true;
             this.txtUserId.Size = new System.Drawing.Size(231, 26);
             this.txtUserId.TabIndex = 14;
             // 

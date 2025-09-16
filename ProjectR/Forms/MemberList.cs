@@ -13,6 +13,8 @@ namespace ProjectR.Forms
     public partial class MemberList : UserControl
     {
         internal DataAccess Da { get; set; }
+        private static bool txtSearchMembersClick = true;
+
 
         public MemberList()
         {
@@ -71,23 +73,41 @@ namespace ProjectR.Forms
             }
         }
 
-        // Add Member
+        // Save Member Information
         private void btnAddMember_Click(object sender, EventArgs e)
         {
             try
             {
                 if (!this.IsValidToSave())
                 {
-                    MessageBox.Show("PLEASE FILL ALL THE INFORMATIONS");
+                    MessageBox.Show("PLEASE FILL ALL INFORMATION");
                     return;
                 }
-                var sql = $"insert into MemberList (MemberName,MemberPhone,MemberPoints) values ('{this.txtMemberName.Text}','{this.txtMemberPhone.Text}',{this.txtMemberPoints.Text});";
+
+                string phone = this.txtMemberPhone.Text.Trim();
+
+                // check if member exists
+                string checkSql = $"select * from MemberList where MemberPhone = '{phone}';";
+                var ds = this.Da.ExecuteQuery(checkSql);
+
+                string sql;
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    // Member exists → Update
+                    sql = $"update MemberList set MemberName = '{this.txtMemberName.Text}', MemberPoints = {this.txtMemberPoints.Text} where MemberPhone = '{phone}';";
+                }
+                else
+                {
+                    // Member does not exist → Insert
+                    sql = $"insert into MemberList (MemberName, MemberPhone, MemberPoints) values ('{this.txtMemberName.Text}', '{phone}', {this.txtMemberPoints.Text});";
+                }
+
                 var count = this.Da.ExecuteDMLQuery(sql);
 
                 if (count == 1)
-                    MessageBox.Show("New Member Added");
+                    MessageBox.Show("Member Information Saved Successfully");
                 else
-                    MessageBox.Show("Member Was Not Added");
+                    MessageBox.Show("Member Information could not be saved");
 
                 this.ClearAll();
                 this.PopulateGridView();
@@ -105,25 +125,12 @@ namespace ProjectR.Forms
             this.txtMemberPhone.Text = this.dgvMemberList.CurrentRow.Cells["colMemberPhone"].Value.ToString();
         }
 
-        // Update Member Information
+        // Clear All 
         private void btnUpdateMember_Click(object sender, EventArgs e)
         {
             try
             {
-                if (!this.IsValidToSave())
-                {
-                    MessageBox.Show("PLEASE FILL ALL INFORMATION");
-                    return;
-                }
-                var sql = $"update MemberList set MemberName = '{this.txtMemberName.Text}' , MemberPoints = {this.txtMemberPoints.Text} where MemberPhone = '{this.txtMemberPhone.Text}';";
-                var count = this.Da.ExecuteDMLQuery(sql);
-
-                if (count == 1)
-                    MessageBox.Show("Member Information Updated");
-                else
-                    MessageBox.Show("Member Information was NOT updated");
-
-                this.PopulateGridView();                
+                this.ClearAll();
             }
 
             catch (Exception ex)
@@ -170,6 +177,33 @@ namespace ProjectR.Forms
         private void MemberList_Load(object sender, EventArgs e)
         {
             this.dgvMemberList.ClearSelection();
+        }
+
+        private void txtSearchMembers_Leave(object sender, EventArgs e)
+        {
+            if (this.txtSearchMembers.Text == "")
+            {
+                this.txtSearchMembers.Text = "Search Users...";
+                txtSearchMembersClick = true;
+            }
+            try
+            {
+                this.PopulateGridView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error:{ex.Message}");
+            }
+
+        }
+
+        private void txtSearchMembers_Click(object sender, EventArgs e)
+        {
+            if (txtSearchMembersClick)
+            {
+                this.txtSearchMembers.Text = "";
+                txtSearchMembersClick = false;
+            }
         }
     }
 }

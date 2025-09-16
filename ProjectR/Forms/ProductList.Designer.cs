@@ -373,14 +373,14 @@
             this.btnAddProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddProduct.FlatAppearance.BorderSize = 0;
             this.btnAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddProduct.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnAddProduct.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnAddProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.btnAddProduct.Location = new System.Drawing.Point(7, 7);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.btnAddProduct.Size = new System.Drawing.Size(267, 30);
             this.btnAddProduct.TabIndex = 0;
-            this.btnAddProduct.Text = "Add Product";
+            this.btnAddProduct.Text = "Save";
             this.btnAddProduct.UseVisualStyleBackColor = false;
             this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
@@ -402,14 +402,14 @@
             this.btnUpdateProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnUpdateProduct.FlatAppearance.BorderSize = 0;
             this.btnUpdateProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateProduct.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnUpdateProduct.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnUpdateProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.btnUpdateProduct.Location = new System.Drawing.Point(7, 7);
             this.btnUpdateProduct.Name = "btnUpdateProduct";
             this.btnUpdateProduct.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.btnUpdateProduct.Size = new System.Drawing.Size(267, 30);
             this.btnUpdateProduct.TabIndex = 0;
-            this.btnUpdateProduct.Text = "Update Product";
+            this.btnUpdateProduct.Text = "Clear";
             this.btnUpdateProduct.UseVisualStyleBackColor = false;
             this.btnUpdateProduct.Click += new System.EventHandler(this.btnUpdateProduct_Click);
             // 
@@ -431,14 +431,14 @@
             this.btnDeleteProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDeleteProduct.FlatAppearance.BorderSize = 0;
             this.btnDeleteProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteProduct.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnDeleteProduct.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.btnDeleteProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.btnDeleteProduct.Location = new System.Drawing.Point(7, 5);
             this.btnDeleteProduct.Name = "btnDeleteProduct";
             this.btnDeleteProduct.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.btnDeleteProduct.Size = new System.Drawing.Size(267, 30);
             this.btnDeleteProduct.TabIndex = 0;
-            this.btnDeleteProduct.Text = "Delete Product";
+            this.btnDeleteProduct.Text = "Delete ";
             this.btnDeleteProduct.UseVisualStyleBackColor = false;
             this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
             // 
