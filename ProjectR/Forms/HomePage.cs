@@ -18,6 +18,8 @@ namespace ProjectR.Forms
     public partial class HomePage : UserControl
     {
         internal static Panel pnlProductsP {  get; set; }
+        //internal DataAccess Da {  get; set; }
+        internal static DataGridView dgvTempCartP { get; set; }
 
         internal AllProducts allProducts {  get; set; }
         internal Games games {  get; set; }
@@ -34,6 +36,7 @@ namespace ProjectR.Forms
             this.games = new Games();
             this.laptops = new Laptops();
             this.pcParts = new PcParts();
+            dgvTempCartP = this.dgvTempCart;
         }
         private void HomePage_Load(object sender, EventArgs e)
         {
@@ -104,6 +107,9 @@ namespace ProjectR.Forms
             storeProductPageName = "AllProduct";
         }
 
+       
+
+        // Search Box
         private void txtSearchProducts_TextChanged(object sender, EventArgs e)
         {
             if (storeProductPageName == "Games")

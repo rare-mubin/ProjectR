@@ -31,7 +31,7 @@
             this.pnlCard = new System.Windows.Forms.Panel();
             this.lblProductName = new System.Windows.Forms.Label();
             this.lblProductType = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddToCart = new System.Windows.Forms.Button();
             this.lblProductCategory = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -46,7 +46,7 @@
             this.pnlCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.pnlCard.Controls.Add(this.lblProductName);
             this.pnlCard.Controls.Add(this.lblProductType);
-            this.pnlCard.Controls.Add(this.button1);
+            this.pnlCard.Controls.Add(this.btnAddToCart);
             this.pnlCard.Controls.Add(this.lblProductCategory);
             this.pnlCard.Controls.Add(this.lblPrice);
             this.pnlCard.Controls.Add(this.panel4);
@@ -88,19 +88,20 @@
             this.lblProductType.Text = "Product Type";
             this.lblProductType.Click += new System.EventHandler(this.pnlCard_Click);
             // 
-            // button1
+            // btnAddToCart
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.button1.Location = new System.Drawing.Point(257, 78);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Add to cart";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAddToCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnAddToCart.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnAddToCart.FlatAppearance.BorderSize = 0;
+            this.btnAddToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddToCart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.btnAddToCart.Location = new System.Drawing.Point(257, 78);
+            this.btnAddToCart.Name = "btnAddToCart";
+            this.btnAddToCart.Size = new System.Drawing.Size(70, 23);
+            this.btnAddToCart.TabIndex = 7;
+            this.btnAddToCart.Text = "Add to cart";
+            this.btnAddToCart.UseVisualStyleBackColor = false;
+            this.btnAddToCart.Click += new System.EventHandler(this.btnAddToCart_Click);
             // 
             // lblProductCategory
             // 
@@ -192,6 +193,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblPrice;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddToCart;
     }
 }

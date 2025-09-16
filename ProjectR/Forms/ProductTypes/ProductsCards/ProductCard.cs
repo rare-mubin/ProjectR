@@ -13,6 +13,9 @@ namespace ProjectR.Forms.ProductTypes.ProductsCards
     public partial class ProductCard : UserControl
     {
         internal string ProductId {  get; set; }
+        internal string ProductName {  get; set; }
+        internal string ProductPrice {  get; set; }
+
         public ProductCard()
         {
             InitializeComponent();
@@ -25,6 +28,8 @@ namespace ProjectR.Forms.ProductTypes.ProductsCards
             this.lblPrice.Text = productPrice;
             this.ProductId = productId;
             this.ptbProductImage.Image = Image.FromFile(picturePath);
+            this.ProductName = productName;
+            this.ProductPrice = productPrice;
         }
 
         private void pnlCard_Click(object sender, EventArgs e)
@@ -34,6 +39,29 @@ namespace ProjectR.Forms.ProductTypes.ProductsCards
             HomePage.pnlProductsP.Controls.Clear();
             HomePage.pnlProductsP.Controls.Add(details);
             details.Show();
+        }
+
+        // Grid View Initialisation
+        private void PopulateGridView(string sql = "select * from TempCart;")
+        {
+            try
+            {
+                var ds = MainWindow.SqlDataAccess.ExecuteQuery(sql);
+                HomePage.dgvTempCartP.AutoGenerateColumns = false;
+                HomePage.dgvTempCartP.DataSource = ds.Tables[0];
+                //this.ClearAll();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error:{ex.Message}");
+            }
+        }
+
+
+
+        private void btnAddToCart_Click(object sender, EventArgs e)
+        {
+            this.PopulateGridView();
         }
     }
 }
