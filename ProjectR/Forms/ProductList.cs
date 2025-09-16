@@ -263,10 +263,12 @@ namespace ProjectR.Forms
                 if (res == DialogResult.No)
                     return;
 
+                File.Delete($@"..\..\ProductImage\{id}.png");
+
                 var sql = "delete from ProductList where ProductId = '" + id + "';";
                 var count = this.Da.ExecuteDMLQuery(sql);
 
-                File.Delete($@"{this.txtFilePath.Text}");
+                
 
                 if (count == 1)
                     MessageBox.Show(title.ToUpper() + " has been removed from the list");
