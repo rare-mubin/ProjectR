@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlSidebarRight = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnChoosePicture = new System.Windows.Forms.Button();
@@ -63,6 +64,8 @@
             this.txtSearchProducts = new System.Windows.Forms.TextBox();
             this.pnlGridView = new System.Windows.Forms.Panel();
             this.dgvProductList = new System.Windows.Forms.DataGridView();
+            this.ofdChoseFile = new System.Windows.Forms.OpenFileDialog();
+            this.cmbProductType = new System.Windows.Forms.ComboBox();
             this.colProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,8 +75,6 @@
             this.colProductType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ofdChoseFile = new System.Windows.Forms.OpenFileDialog();
-            this.cmbProductType = new System.Windows.Forms.ComboBox();
             this.pnlSidebarRight.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlProductbtns.SuspendLayout();
@@ -187,7 +188,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(26, 275);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 15);
@@ -499,10 +500,11 @@
             // 
             // pnlGridView
             // 
-            this.pnlGridView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.pnlGridView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
             this.pnlGridView.Controls.Add(this.dgvProductList);
             this.pnlGridView.Location = new System.Drawing.Point(6, 55);
             this.pnlGridView.Name = "pnlGridView";
+            this.pnlGridView.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.pnlGridView.Size = new System.Drawing.Size(800, 630);
             this.pnlGridView.TabIndex = 2;
             // 
@@ -510,17 +512,20 @@
             // 
             this.dgvProductList.AllowUserToAddRows = false;
             this.dgvProductList.AllowUserToDeleteRows = false;
-            this.dgvProductList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
+            this.dgvProductList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
             this.dgvProductList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvProductList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvProductList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductList.ColumnHeadersHeight = 40;
+            this.dgvProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvProductList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colProductId,
             this.colProductName,
@@ -531,24 +536,56 @@
             this.colProductType,
             this.colProductDescription,
             this.colFilePath});
-            this.dgvProductList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProductList.Location = new System.Drawing.Point(0, 0);
-            this.dgvProductList.Name = "dgvProductList";
-            this.dgvProductList.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProductList.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProductList.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvProductList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProductList.EnableHeadersVisualStyles = false;
+            this.dgvProductList.Location = new System.Drawing.Point(20, 0);
+            this.dgvProductList.Name = "dgvProductList";
+            this.dgvProductList.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvProductList.RowHeadersVisible = false;
             this.dgvProductList.RowHeadersWidth = 51;
+            this.dgvProductList.RowTemplate.Height = 40;
             this.dgvProductList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductList.Size = new System.Drawing.Size(800, 630);
+            this.dgvProductList.Size = new System.Drawing.Size(780, 630);
             this.dgvProductList.TabIndex = 0;
             this.dgvProductList.DoubleClick += new System.EventHandler(this.dgvProductList_DoubleClick);
+            // 
+            // ofdChoseFile
+            // 
+            this.ofdChoseFile.FileOk += new System.ComponentModel.CancelEventHandler(this.ofdChoseFile_FileOk);
+            // 
+            // cmbProductType
+            // 
+            this.cmbProductType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.cmbProductType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbProductType.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbProductType.ForeColor = System.Drawing.Color.White;
+            this.cmbProductType.FormattingEnabled = true;
+            this.cmbProductType.ItemHeight = 18;
+            this.cmbProductType.Items.AddRange(new object[] {
+            "PcParts",
+            "Laptop",
+            "Games"});
+            this.cmbProductType.Location = new System.Drawing.Point(26, 343);
+            this.cmbProductType.Name = "cmbProductType";
+            this.cmbProductType.Size = new System.Drawing.Size(231, 26);
+            this.cmbProductType.TabIndex = 33;
             // 
             // colProductId
             // 
@@ -624,27 +661,7 @@
             this.colFilePath.HeaderText = "PicturePath";
             this.colFilePath.Name = "colFilePath";
             this.colFilePath.ReadOnly = true;
-            // 
-            // ofdChoseFile
-            // 
-            this.ofdChoseFile.FileOk += new System.ComponentModel.CancelEventHandler(this.ofdChoseFile_FileOk);
-            // 
-            // cmbProductType
-            // 
-            this.cmbProductType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.cmbProductType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbProductType.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.cmbProductType.ForeColor = System.Drawing.Color.White;
-            this.cmbProductType.FormattingEnabled = true;
-            this.cmbProductType.ItemHeight = 18;
-            this.cmbProductType.Items.AddRange(new object[] {
-            "PcParts",
-            "Laptop",
-            "Games"});
-            this.cmbProductType.Location = new System.Drawing.Point(26, 343);
-            this.cmbProductType.Name = "cmbProductType";
-            this.cmbProductType.Size = new System.Drawing.Size(231, 26);
-            this.cmbProductType.TabIndex = 33;
+            this.colFilePath.Visible = false;
             // 
             // ProductList
             // 
@@ -711,6 +728,7 @@
         private System.Windows.Forms.TextBox txtFilePath;
         private System.Windows.Forms.Button btnChoosePicture;
         private System.Windows.Forms.OpenFileDialog ofdChoseFile;
+        private System.Windows.Forms.ComboBox cmbProductType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductModel;
@@ -720,6 +738,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFilePath;
-        private System.Windows.Forms.ComboBox cmbProductType;
     }
 }

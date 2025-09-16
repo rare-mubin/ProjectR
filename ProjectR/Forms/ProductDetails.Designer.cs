@@ -102,6 +102,7 @@
             this.btnAddToCart.TabIndex = 14;
             this.btnAddToCart.Text = "Add to cart";
             this.btnAddToCart.UseVisualStyleBackColor = false;
+            this.btnAddToCart.Click += new System.EventHandler(this.btnAddToCart_Click);
             // 
             // btnProductCost
             // 

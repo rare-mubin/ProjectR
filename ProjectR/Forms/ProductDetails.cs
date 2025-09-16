@@ -14,11 +14,14 @@ namespace ProjectR.Forms
     {
         internal DataAccess Da {  get; set; }
         private static string ProductId {  get; set; }
+        //internal string ProductId { get; set; }
+        internal string ProductName { get; set; }
+        internal string ProductPrice { get; set; }
 
         public ProductDetails()
         {
             InitializeComponent();
-            Da=new DataAccess();
+            Da = MainWindow.SqlDataAccess;           
         }
 
         
@@ -33,6 +36,59 @@ namespace ProjectR.Forms
             this.lblProductStocksValue.Text = ds.Tables[0].Rows[0][5].ToString();
             this.btnProductCost.Text = ds.Tables[0].Rows[0][4].ToString()+" BDT";
             this.ptbProductPicture.Image = Image.FromFile(ds.Tables[0].Rows[0][8].ToString());
+            ProductName = this.lblProductNameValue.Text;
+            ProductPrice = ds.Tables[0].Rows[0][4].ToString();
+        }
+
+        // Grid View Initialisation
+        private void PopulateGridView(string sql = "select * from TempCart;")
+        {
+            try
+            {
+                var ds = MainWindow.SqlDataAccess.ExecuteQuery(sql);
+                HomePage.dgvTempCartP.AutoGenerateColumns = false;
+                HomePage.dgvTempCartP.DataSource = ds.Tables[0];
+                //this.ClearAll();
+                HomePage.dgvTempCartP.ClearSelection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error:{ex.Message}");
+            }
+        }
+
+        // Add Method
+        private void AddItem()
+        {
+           try
+            {
+                string sql = $"insert into TempCart VALUES ('{ProductId}','{ProductName}',1, {ProductPrice} , {ProductPrice}) ;";
+                string sql2 = $"select * from TempCart where ProductId = '{ProductId}'";
+                var dt = MainWindow.SqlDataAccess.ExecuteQueryTable(sql2);
+
+                if (dt.Rows.Count == 1)
+                {
+                    int quantity = Convert.ToInt32(dt.Rows[0][2]);
+                    quantity += 1;
+                    int TotalAmount = Convert.ToInt32(ProductPrice) * quantity;
+
+                    string sql3 = $"UPDATE TempCart SET ProductQuantity = {quantity}, TotalAmount = {TotalAmount} where ProductId = '{ProductId}'";
+                    MainWindow.SqlDataAccess.ExecuteDMLQuery(sql3);
+                    return;
+                }
+                MainWindow.SqlDataAccess.ExecuteDMLQuery(sql);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Error:{ex.Message}");
+            }
+        }
+
+        private void btnAddToCart_Click(object sender, EventArgs e)
+        {
+            this.AddItem();
+            // this.ClearAll();
+            this.PopulateGridView();
         }
     }
 }

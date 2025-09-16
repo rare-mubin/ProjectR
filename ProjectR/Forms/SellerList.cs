@@ -32,6 +32,8 @@ namespace ProjectR.Forms
                 var ds = this.Da.ExecuteQuery(sql);
                 this.dgvSellerList.AutoGenerateColumns = false;
                 this.dgvSellerList.DataSource = ds.Tables[0];
+                this.dgvSellerList.EnableHeadersVisualStyles = false;
+                dgvSellerList.RowHeadersVisible = false;
                 this.ClearAll();
             }
             catch (Exception ex)
@@ -204,6 +206,8 @@ namespace ProjectR.Forms
         private void SellerList_Load(object sender, EventArgs e)
         {
             this.dgvSellerList.ClearSelection();
+            this.dgvSellerList.EnableHeadersVisualStyles = false;
+            dgvSellerList.RowHeadersVisible = false;
         }
 
         private void cmbUserRole_SelectedIndexChanged(object sender, EventArgs e)

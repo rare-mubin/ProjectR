@@ -31,6 +31,8 @@ namespace ProjectR.Forms
                 var ds = this.Da.ExecuteQuery(sql);
                 this.dgvMemberList.AutoGenerateColumns = false;
                 this.dgvMemberList.DataSource = ds.Tables[0];
+                this.dgvMemberList.EnableHeadersVisualStyles = false;
+                dgvMemberList.RowHeadersVisible = false;
                 this.ClearAll();
             }
             catch (Exception ex)
@@ -177,6 +179,8 @@ namespace ProjectR.Forms
         private void MemberList_Load(object sender, EventArgs e)
         {
             this.dgvMemberList.ClearSelection();
+            this.dgvMemberList.EnableHeadersVisualStyles = false;
+            dgvMemberList.RowHeadersVisible = false;
         }
 
         private void txtSearchMembers_Leave(object sender, EventArgs e)

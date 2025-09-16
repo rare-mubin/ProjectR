@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlSellsDetails = new System.Windows.Forms.Panel();
             this.lblTotalAmountValue = new System.Windows.Forms.Label();
             this.lblTimeAndDateValue = new System.Windows.Forms.Label();
@@ -41,11 +43,6 @@
             this.lblTransactionID = new System.Windows.Forms.Label();
             this.pnlGridView = new System.Windows.Forms.Panel();
             this.dgvSellDetails = new System.Windows.Forms.DataGridView();
-            this.TransactionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SalesmanID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeAndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearchSellers = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,6 +50,11 @@
             this.pnlSellsCart = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnClear = new System.Windows.Forms.Button();
+            this.TransactionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SalesmanID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeAndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlSellsDetails.SuspendLayout();
             this.pnlGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSellDetails)).BeginInit();
@@ -177,10 +179,11 @@
             // 
             // pnlGridView
             // 
-            this.pnlGridView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.pnlGridView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
             this.pnlGridView.Controls.Add(this.dgvSellDetails);
             this.pnlGridView.Location = new System.Drawing.Point(5, 54);
             this.pnlGridView.Name = "pnlGridView";
+            this.pnlGridView.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.pnlGridView.Size = new System.Drawing.Size(800, 630);
             this.pnlGridView.TabIndex = 12;
             // 
@@ -188,69 +191,48 @@
             // 
             this.dgvSellDetails.AllowUserToAddRows = false;
             this.dgvSellDetails.AllowUserToDeleteRows = false;
-            this.dgvSellDetails.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
+            this.dgvSellDetails.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
             this.dgvSellDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvSellDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSellDetails.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvSellDetails.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSellDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSellDetails.ColumnHeadersHeight = 40;
+            this.dgvSellDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvSellDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TransactionID,
             this.SalesmanID,
             this.CustomerID,
             this.TimeAndDate,
             this.TotalAmount});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSellDetails.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSellDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSellDetails.Location = new System.Drawing.Point(0, 0);
+            this.dgvSellDetails.EnableHeadersVisualStyles = false;
+            this.dgvSellDetails.Location = new System.Drawing.Point(20, 0);
             this.dgvSellDetails.Name = "dgvSellDetails";
             this.dgvSellDetails.ReadOnly = true;
+            this.dgvSellDetails.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvSellDetails.RowHeadersVisible = false;
             this.dgvSellDetails.RowHeadersWidth = 51;
+            this.dgvSellDetails.RowTemplate.Height = 40;
             this.dgvSellDetails.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvSellDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSellDetails.Size = new System.Drawing.Size(800, 630);
+            this.dgvSellDetails.Size = new System.Drawing.Size(780, 630);
             this.dgvSellDetails.TabIndex = 0;
             this.dgvSellDetails.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSellDetails_RowEnter);
-            // 
-            // TransactionID
-            // 
-            this.TransactionID.DataPropertyName = "TransactionID";
-            this.TransactionID.FillWeight = 66.75568F;
-            this.TransactionID.HeaderText = "Transaction ID";
-            this.TransactionID.Name = "TransactionID";
-            this.TransactionID.ReadOnly = true;
-            // 
-            // SalesmanID
-            // 
-            this.SalesmanID.DataPropertyName = "SalesmanID";
-            this.SalesmanID.FillWeight = 85.74889F;
-            this.SalesmanID.HeaderText = "Salesman ID";
-            this.SalesmanID.Name = "SalesmanID";
-            this.SalesmanID.ReadOnly = true;
-            this.SalesmanID.Width = 128;
-            // 
-            // CustomerID
-            // 
-            this.CustomerID.DataPropertyName = "CustomerID";
-            this.CustomerID.FillWeight = 102.2063F;
-            this.CustomerID.HeaderText = "Customer ID";
-            this.CustomerID.Name = "CustomerID";
-            this.CustomerID.ReadOnly = true;
-            this.CustomerID.Width = 154;
-            // 
-            // TimeAndDate
-            // 
-            this.TimeAndDate.DataPropertyName = "TimeAndDate";
-            this.TimeAndDate.FillWeight = 116.4665F;
-            this.TimeAndDate.HeaderText = "Time And Date";
-            this.TimeAndDate.Name = "TimeAndDate";
-            this.TimeAndDate.ReadOnly = true;
-            this.TimeAndDate.Width = 174;
-            // 
-            // TotalAmount
-            // 
-            this.TotalAmount.DataPropertyName = "TotalAmount";
-            this.TotalAmount.FillWeight = 128.8227F;
-            this.TotalAmount.HeaderText = "Total Amount";
-            this.TotalAmount.Name = "TotalAmount";
-            this.TotalAmount.ReadOnly = true;
-            this.TotalAmount.Width = 193;
             // 
             // txtSearchSellers
             // 
@@ -341,6 +323,50 @@
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // TransactionID
+            // 
+            this.TransactionID.DataPropertyName = "TransactionID";
+            this.TransactionID.FillWeight = 66.75568F;
+            this.TransactionID.HeaderText = "Transaction ID";
+            this.TransactionID.Name = "TransactionID";
+            this.TransactionID.ReadOnly = true;
+            // 
+            // SalesmanID
+            // 
+            this.SalesmanID.DataPropertyName = "SalesmanID";
+            this.SalesmanID.FillWeight = 85.74889F;
+            this.SalesmanID.HeaderText = "Salesman ID";
+            this.SalesmanID.Name = "SalesmanID";
+            this.SalesmanID.ReadOnly = true;
+            this.SalesmanID.Width = 128;
+            // 
+            // CustomerID
+            // 
+            this.CustomerID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CustomerID.DataPropertyName = "CustomerID";
+            this.CustomerID.FillWeight = 102.2063F;
+            this.CustomerID.HeaderText = "Customer ID";
+            this.CustomerID.Name = "CustomerID";
+            this.CustomerID.ReadOnly = true;
+            // 
+            // TimeAndDate
+            // 
+            this.TimeAndDate.DataPropertyName = "TimeAndDate";
+            this.TimeAndDate.FillWeight = 116.4665F;
+            this.TimeAndDate.HeaderText = "Time And Date";
+            this.TimeAndDate.Name = "TimeAndDate";
+            this.TimeAndDate.ReadOnly = true;
+            this.TimeAndDate.Width = 174;
+            // 
+            // TotalAmount
+            // 
+            this.TotalAmount.DataPropertyName = "TotalAmount";
+            this.TotalAmount.FillWeight = 128.8227F;
+            this.TotalAmount.HeaderText = "Total Amount";
+            this.TotalAmount.Name = "TotalAmount";
+            this.TotalAmount.ReadOnly = true;
+            this.TotalAmount.Width = 193;
             // 
             // Sells
             // 

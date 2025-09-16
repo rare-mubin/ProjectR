@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvSellerList = new System.Windows.Forms.DataGridView();
             this.colUserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,9 +82,20 @@
             // 
             this.dgvSellerList.AllowUserToAddRows = false;
             this.dgvSellerList.AllowUserToDeleteRows = false;
-            this.dgvSellerList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
+            this.dgvSellerList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
             this.dgvSellerList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvSellerList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSellerList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvSellerList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSellerList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSellerList.ColumnHeadersHeight = 40;
+            this.dgvSellerList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvSellerList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colUserId,
             this.colUserName,
@@ -91,14 +104,26 @@
             this.colUserNID,
             this.colUserRole,
             this.colUserPassword});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSellerList.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSellerList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSellerList.Location = new System.Drawing.Point(0, 0);
+            this.dgvSellerList.EnableHeadersVisualStyles = false;
+            this.dgvSellerList.Location = new System.Drawing.Point(20, 0);
             this.dgvSellerList.Name = "dgvSellerList";
             this.dgvSellerList.ReadOnly = true;
+            this.dgvSellerList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvSellerList.RowHeadersVisible = false;
             this.dgvSellerList.RowHeadersWidth = 51;
+            this.dgvSellerList.RowTemplate.Height = 40;
             this.dgvSellerList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvSellerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSellerList.Size = new System.Drawing.Size(800, 630);
+            this.dgvSellerList.Size = new System.Drawing.Size(780, 630);
             this.dgvSellerList.TabIndex = 0;
             this.dgvSellerList.DoubleClick += new System.EventHandler(this.dgvSellerList_DoubleClick);
             // 
@@ -156,10 +181,11 @@
             // 
             // pnlGridView
             // 
-            this.pnlGridView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.pnlGridView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
             this.pnlGridView.Controls.Add(this.dgvSellerList);
             this.pnlGridView.Location = new System.Drawing.Point(5, 54);
             this.pnlGridView.Name = "pnlGridView";
+            this.pnlGridView.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.pnlGridView.Size = new System.Drawing.Size(800, 630);
             this.pnlGridView.TabIndex = 7;
             // 

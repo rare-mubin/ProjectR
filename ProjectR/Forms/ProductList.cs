@@ -35,7 +35,7 @@ namespace ProjectR.Forms
             {
                 var ds = this.Da.ExecuteQuery(sql);
                 this.dgvProductList.AutoGenerateColumns = false;
-                this.dgvProductList.DataSource = ds.Tables[0];
+                this.dgvProductList.DataSource = ds.Tables[0];                
                 this.ClearAll();
             }
             catch (Exception ex)
@@ -286,7 +286,7 @@ namespace ProjectR.Forms
 
         private void ProductList_Load(object sender, EventArgs e)
         {
-            this.dgvProductList.ClearSelection();
+            this.dgvProductList.ClearSelection();            
         }
 
         private void btnChosePicture_Click(object sender, EventArgs e)
