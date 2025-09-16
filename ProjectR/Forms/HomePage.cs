@@ -165,5 +165,14 @@ namespace ProjectR.Forms
             
 
         }
+
+        private void btnCheckout_Click(object sender, EventArgs e)
+        {
+            Checkout NextPage = new Checkout();
+            NextPage.Dock = DockStyle.Fill;
+            MainWindow.MainWindowPanel.Controls.Clear();
+            MainWindow.MainWindowPanel.Controls.Add(NextPage);
+            NextPage.Show();
+        }
     }
 }

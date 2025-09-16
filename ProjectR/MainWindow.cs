@@ -55,7 +55,12 @@ namespace ProjectR
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            SqlDataAccess.ExecuteDMLQuery("Truncate TABLE TempCart");
+            try
+            {
+                SqlDataAccess.ExecuteDMLQuery("Truncate TABLE TempCart");
+            }
+            catch { }
+            
             Application.Exit();
         }
 
@@ -85,6 +90,7 @@ namespace ProjectR
 
         private void btnProductBrowser_Click(object sender, EventArgs e)
         {
+            this.ucHomePage = new HomePage();
             this.ChangeWindow(this.ucHomePage);
         }
 
