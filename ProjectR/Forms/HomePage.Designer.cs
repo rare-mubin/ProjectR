@@ -47,6 +47,11 @@
             this.pnlSidebarRight = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlProducts = new System.Windows.Forms.Panel();
+            this.dgvTempCart = new System.Windows.Forms.DataGridView();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.colProductNameHome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductQuantityHome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductPriceHome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlProductType.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -55,7 +60,9 @@
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             this.pnlSidebarRight.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.pnlProducts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTempCart)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlProductType
@@ -305,6 +312,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.panel1.Controls.Add(this.dgvTempCart);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
@@ -321,6 +329,49 @@
             this.pnlProducts.Padding = new System.Windows.Forms.Padding(1);
             this.pnlProducts.Size = new System.Drawing.Size(800, 630);
             this.pnlProducts.TabIndex = 9;
+            // 
+            // dgvTempCart
+            // 
+            this.dgvTempCart.AllowUserToAddRows = false;
+            this.dgvTempCart.AllowUserToDeleteRows = false;
+            this.dgvTempCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTempCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colProductNameHome,
+            this.colProductQuantityHome,
+            this.colProductPriceHome});
+            this.dgvTempCart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTempCart.Location = new System.Drawing.Point(0, 0);
+            this.dgvTempCart.Name = "dgvTempCart";
+            this.dgvTempCart.ReadOnly = true;
+            this.dgvTempCart.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvTempCart.Size = new System.Drawing.Size(281, 493);
+            this.dgvTempCart.TabIndex = 0;
+            // 
+            // colProductNameHome
+            // 
+            this.colProductNameHome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colProductNameHome.DataPropertyName = "ProductName";
+            this.colProductNameHome.HeaderText = "Name";
+            this.colProductNameHome.Name = "colProductNameHome";
+            this.colProductNameHome.ReadOnly = true;
+            // 
+            // colProductQuantityHome
+            // 
+            this.colProductQuantityHome.DataPropertyName = "ProductQuantity";
+            this.colProductQuantityHome.HeaderText = "Quantity";
+            this.colProductQuantityHome.Name = "colProductQuantityHome";
+            this.colProductQuantityHome.ReadOnly = true;
+            this.colProductQuantityHome.Width = 50;
+            // 
+            // colProductPriceHome
+            // 
+            this.colProductPriceHome.DataPropertyName = "ProductPrice";
+            this.colProductPriceHome.FillWeight = 1F;
+            this.colProductPriceHome.HeaderText = "Price";
+            this.colProductPriceHome.MinimumWidth = 25;
+            this.colProductPriceHome.Name = "colProductPriceHome";
+            this.colProductPriceHome.ReadOnly = true;
+            this.colProductPriceHome.Width = 75;
             // 
             // HomePage
             // 
@@ -346,7 +397,9 @@
             this.panel10.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.pnlSidebarRight.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.pnlProducts.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTempCart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -372,5 +425,10 @@
         private System.Windows.Forms.Button btnLaptops;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel pnlProducts;
+        private System.Windows.Forms.DataGridView dgvTempCart;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductNameHome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductQuantityHome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductPriceHome;
     }
 }
