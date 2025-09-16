@@ -41,6 +41,11 @@
             this.lblTransactionID = new System.Windows.Forms.Label();
             this.pnlGridView = new System.Windows.Forms.Panel();
             this.dgvSellDetails = new System.Windows.Forms.DataGridView();
+            this.TransactionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SalesmanID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeAndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearchSellers = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,11 +53,6 @@
             this.pnlSellsCart = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnClear = new System.Windows.Forms.Button();
-            this.TransactionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SalesmanID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeAndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlSellsDetails.SuspendLayout();
             this.pnlGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSellDetails)).BeginInit();
@@ -82,8 +82,8 @@
             // 
             // lblTotalAmountValue
             // 
-            this.lblTotalAmountValue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAmountValue.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTotalAmountValue.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalAmountValue.ForeColor = System.Drawing.SystemColors.Control;
             this.lblTotalAmountValue.Location = new System.Drawing.Point(135, 154);
             this.lblTotalAmountValue.Name = "lblTotalAmountValue";
             this.lblTotalAmountValue.Size = new System.Drawing.Size(133, 24);
@@ -91,8 +91,8 @@
             // 
             // lblTimeAndDateValue
             // 
-            this.lblTimeAndDateValue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimeAndDateValue.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTimeAndDateValue.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimeAndDateValue.ForeColor = System.Drawing.SystemColors.Control;
             this.lblTimeAndDateValue.Location = new System.Drawing.Point(135, 117);
             this.lblTimeAndDateValue.Name = "lblTimeAndDateValue";
             this.lblTimeAndDateValue.Size = new System.Drawing.Size(133, 24);
@@ -100,8 +100,8 @@
             // 
             // lblCustomerIDValue
             // 
-            this.lblCustomerIDValue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomerIDValue.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblCustomerIDValue.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerIDValue.ForeColor = System.Drawing.SystemColors.Control;
             this.lblCustomerIDValue.Location = new System.Drawing.Point(135, 80);
             this.lblCustomerIDValue.Name = "lblCustomerIDValue";
             this.lblCustomerIDValue.Size = new System.Drawing.Size(133, 24);
@@ -109,8 +109,8 @@
             // 
             // lblSalesmanIDValue
             // 
-            this.lblSalesmanIDValue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalesmanIDValue.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblSalesmanIDValue.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalesmanIDValue.ForeColor = System.Drawing.SystemColors.Control;
             this.lblSalesmanIDValue.Location = new System.Drawing.Point(135, 46);
             this.lblSalesmanIDValue.Name = "lblSalesmanIDValue";
             this.lblSalesmanIDValue.Size = new System.Drawing.Size(133, 24);
@@ -118,8 +118,8 @@
             // 
             // lblTransactionIDValue
             // 
-            this.lblTransactionIDValue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransactionIDValue.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTransactionIDValue.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTransactionIDValue.ForeColor = System.Drawing.SystemColors.Control;
             this.lblTransactionIDValue.Location = new System.Drawing.Point(135, 15);
             this.lblTransactionIDValue.Name = "lblTransactionIDValue";
             this.lblTransactionIDValue.Size = new System.Drawing.Size(133, 24);
@@ -128,7 +128,7 @@
             // lblSalesmanID
             // 
             this.lblSalesmanID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalesmanID.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblSalesmanID.ForeColor = System.Drawing.SystemColors.Control;
             this.lblSalesmanID.Location = new System.Drawing.Point(18, 49);
             this.lblSalesmanID.Name = "lblSalesmanID";
             this.lblSalesmanID.Size = new System.Drawing.Size(250, 21);
@@ -138,7 +138,7 @@
             // lblCustomerID
             // 
             this.lblCustomerID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomerID.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblCustomerID.ForeColor = System.Drawing.SystemColors.Control;
             this.lblCustomerID.Location = new System.Drawing.Point(18, 84);
             this.lblCustomerID.Name = "lblCustomerID";
             this.lblCustomerID.Size = new System.Drawing.Size(250, 20);
@@ -148,7 +148,7 @@
             // lblTotalAmount
             // 
             this.lblTotalAmount.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAmount.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTotalAmount.ForeColor = System.Drawing.SystemColors.Control;
             this.lblTotalAmount.Location = new System.Drawing.Point(18, 154);
             this.lblTotalAmount.Name = "lblTotalAmount";
             this.lblTotalAmount.Size = new System.Drawing.Size(250, 24);
@@ -158,7 +158,7 @@
             // lblTimeAndDate
             // 
             this.lblTimeAndDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimeAndDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTimeAndDate.ForeColor = System.Drawing.SystemColors.Control;
             this.lblTimeAndDate.Location = new System.Drawing.Point(18, 117);
             this.lblTimeAndDate.Name = "lblTimeAndDate";
             this.lblTimeAndDate.Size = new System.Drawing.Size(250, 20);
@@ -168,7 +168,7 @@
             // lblTransactionID
             // 
             this.lblTransactionID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransactionID.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTransactionID.ForeColor = System.Drawing.SystemColors.Control;
             this.lblTransactionID.Location = new System.Drawing.Point(18, 15);
             this.lblTransactionID.Name = "lblTransactionID";
             this.lblTransactionID.Size = new System.Drawing.Size(250, 24);
@@ -208,6 +208,50 @@
             this.dgvSellDetails.TabIndex = 0;
             this.dgvSellDetails.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSellDetails_RowEnter);
             // 
+            // TransactionID
+            // 
+            this.TransactionID.DataPropertyName = "TransactionID";
+            this.TransactionID.FillWeight = 66.75568F;
+            this.TransactionID.HeaderText = "Transaction ID";
+            this.TransactionID.Name = "TransactionID";
+            this.TransactionID.ReadOnly = true;
+            // 
+            // SalesmanID
+            // 
+            this.SalesmanID.DataPropertyName = "SalesmanID";
+            this.SalesmanID.FillWeight = 85.74889F;
+            this.SalesmanID.HeaderText = "Salesman ID";
+            this.SalesmanID.Name = "SalesmanID";
+            this.SalesmanID.ReadOnly = true;
+            this.SalesmanID.Width = 128;
+            // 
+            // CustomerID
+            // 
+            this.CustomerID.DataPropertyName = "CustomerID";
+            this.CustomerID.FillWeight = 102.2063F;
+            this.CustomerID.HeaderText = "Customer ID";
+            this.CustomerID.Name = "CustomerID";
+            this.CustomerID.ReadOnly = true;
+            this.CustomerID.Width = 154;
+            // 
+            // TimeAndDate
+            // 
+            this.TimeAndDate.DataPropertyName = "TimeAndDate";
+            this.TimeAndDate.FillWeight = 116.4665F;
+            this.TimeAndDate.HeaderText = "Time And Date";
+            this.TimeAndDate.Name = "TimeAndDate";
+            this.TimeAndDate.ReadOnly = true;
+            this.TimeAndDate.Width = 174;
+            // 
+            // TotalAmount
+            // 
+            this.TotalAmount.DataPropertyName = "TotalAmount";
+            this.TotalAmount.FillWeight = 128.8227F;
+            this.TotalAmount.HeaderText = "Total Amount";
+            this.TotalAmount.Name = "TotalAmount";
+            this.TotalAmount.ReadOnly = true;
+            this.TotalAmount.Width = 193;
+            // 
             // txtSearchSellers
             // 
             this.txtSearchSellers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
@@ -219,8 +263,12 @@
             this.txtSearchSellers.Name = "txtSearchSellers";
             this.txtSearchSellers.Size = new System.Drawing.Size(738, 21);
             this.txtSearchSellers.TabIndex = 0;
+            this.txtSearchSellers.TabStop = false;
             this.txtSearchSellers.Text = "Search Sells...";
             this.txtSearchSellers.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSearchSellers.Click += new System.EventHandler(this.txtSearchSellers_Click);
+            this.txtSearchSellers.TextChanged += new System.EventHandler(this.txtSearchSellers_TextChanged);
+            this.txtSearchSellers.Leave += new System.EventHandler(this.txtSearchSellers_Leave);
             // 
             // panel4
             // 
@@ -290,50 +338,6 @@
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // TransactionID
-            // 
-            this.TransactionID.DataPropertyName = "TransactionID";
-            this.TransactionID.FillWeight = 66.75568F;
-            this.TransactionID.HeaderText = "Transaction ID";
-            this.TransactionID.Name = "TransactionID";
-            this.TransactionID.ReadOnly = true;
-            // 
-            // SalesmanID
-            // 
-            this.SalesmanID.DataPropertyName = "SalesmanID";
-            this.SalesmanID.FillWeight = 85.74889F;
-            this.SalesmanID.HeaderText = "Salesman ID";
-            this.SalesmanID.Name = "SalesmanID";
-            this.SalesmanID.ReadOnly = true;
-            this.SalesmanID.Width = 128;
-            // 
-            // CustomerID
-            // 
-            this.CustomerID.DataPropertyName = "CustomerID";
-            this.CustomerID.FillWeight = 102.2063F;
-            this.CustomerID.HeaderText = "Customer ID";
-            this.CustomerID.Name = "CustomerID";
-            this.CustomerID.ReadOnly = true;
-            this.CustomerID.Width = 154;
-            // 
-            // TimeAndDate
-            // 
-            this.TimeAndDate.DataPropertyName = "TimeAndDate";
-            this.TimeAndDate.FillWeight = 116.4665F;
-            this.TimeAndDate.HeaderText = "Time And Date";
-            this.TimeAndDate.Name = "TimeAndDate";
-            this.TimeAndDate.ReadOnly = true;
-            this.TimeAndDate.Width = 174;
-            // 
-            // TotalAmount
-            // 
-            this.TotalAmount.DataPropertyName = "TotalAmount";
-            this.TotalAmount.FillWeight = 128.8227F;
-            this.TotalAmount.HeaderText = "Total Amount";
-            this.TotalAmount.Name = "TotalAmount";
-            this.TotalAmount.ReadOnly = true;
-            this.TotalAmount.Width = 193;
             // 
             // Sells
             // 
