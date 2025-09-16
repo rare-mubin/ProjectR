@@ -72,5 +72,34 @@ namespace ProjectR.Forms
         {
             this.dgvSellDetails.ClearSelection();
         }
+
+        
+
+        private void txtSearchSellers_Leave(object sender, EventArgs e)
+        {
+            if (this.txtSearchSellers.Text == "")
+            {
+                this.txtSearchSellers.Text = "Search Sells...";
+                this.PopulateGridView();
+            }
+        }
+
+        private void txtSearchSellers_Click(object sender, EventArgs e)
+        {
+            if (this.txtSearchSellers.Text == "Search Sells...")
+            {
+                this.txtSearchSellers.Text = "";
+                this.PopulateGridView();
+
+            }
+            /*var sql = "select * from TransactionList where TransactionID = '" + this.txtSearchSellers.Text + "' OR SalesmanID = '" + this.txtSearchSellers.Text + "' OR CustomerID = '" + this.txtSearchSellers.Text + "';";
+            this.PopulateGridView(sql);*/
+        }
+
+        private void txtSearchSellers_TextChanged(object sender, EventArgs e)
+        {
+            var sql = "select * from TransactionList where TransactionID LIKE '%"+this.txtSearchSellers.Text+ "%' OR SalesmanID LIKE '%"+this.txtSearchSellers.Text+ "%' OR CustomerID LIKE '"+this.txtSearchSellers.Text+"';";
+            this.PopulateGridView(sql);
+        }
     }
 }
