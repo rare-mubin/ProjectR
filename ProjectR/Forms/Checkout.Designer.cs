@@ -31,7 +31,6 @@
             this.pnlProducts = new System.Windows.Forms.Panel();
             this.pnlProductType = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnRedeemPoint = new System.Windows.Forms.Button();
