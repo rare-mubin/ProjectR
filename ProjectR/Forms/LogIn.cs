@@ -138,6 +138,15 @@ namespace ProjectR.Forms
             this.ckbShowPassword.Visible = false;
         }
 
+        private void btnForgotPass_Click(object sender, EventArgs e)
+        {
+            ForgotPassword NextPage = new ForgotPassword();
+            NextPage.Dock = DockStyle.Fill;
+            MainWindow.MainWindowPanel.Controls.Clear();
+            MainWindow.MainWindowPanel.Controls.Add(NextPage);
+            NextPage.Show();
+        }
+
         private void txtPassword_Leave(object sender, EventArgs e)
         {
             if (this.txtPassword.Text == "")

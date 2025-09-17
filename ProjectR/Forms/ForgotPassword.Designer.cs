@@ -1,6 +1,6 @@
 ﻿namespace ProjectR.Forms
 {
-    partial class LogIn
+    partial class ForgotPassword
     {
         /// <summary> 
         /// Required designer variable.
@@ -65,7 +65,7 @@
             this.pnlMain.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1278, 690);
-            this.pnlMain.TabIndex = 1;
+            this.pnlMain.TabIndex = 2;
             // 
             // ckbShowPassword
             // 
@@ -76,7 +76,6 @@
             this.ckbShowPassword.TabIndex = 14;
             this.ckbShowPassword.UseVisualStyleBackColor = true;
             this.ckbShowPassword.Visible = false;
-            this.ckbShowPassword.CheckedChanged += new System.EventHandler(this.ckbShowPassword_CheckedChanged);
             // 
             // lblLoginValidation
             // 
@@ -106,7 +105,6 @@
             this.btnLogIn.TabIndex = 11;
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseVisualStyleBackColor = false;
-            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
             // btnForgotPass
             // 
@@ -126,7 +124,6 @@
             this.btnForgotPass.Text = "Forgot your password?";
             this.btnForgotPass.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnForgotPass.UseVisualStyleBackColor = false;
-            this.btnForgotPass.Click += new System.EventHandler(this.btnForgotPass_Click);
             // 
             // panel3
             // 
@@ -149,10 +146,6 @@
             this.txtPassword.Size = new System.Drawing.Size(306, 19);
             this.txtPassword.TabIndex = 8;
             this.txtPassword.Text = "Enter your Password";
-            this.txtPassword.AcceptsTabChanged += new System.EventHandler(this.txtPassword_Click);
-            this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
-            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // panel2
             // 
@@ -175,8 +168,6 @@
             this.txtUserID.Size = new System.Drawing.Size(321, 19);
             this.txtUserID.TabIndex = 6;
             this.txtUserID.Text = "Enter your User-Id";
-            this.txtUserID.Click += new System.EventHandler(this.txtUserID_Click);
-            this.txtUserID.Leave += new System.EventHandler(this.txtUserID_Leave);
             // 
             // label4
             // 
@@ -215,21 +206,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
-            this.label1.Location = new System.Drawing.Point(138, 111);
+            this.label1.Location = new System.Drawing.Point(104, 116);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(234, 56);
+            this.label1.Size = new System.Drawing.Size(303, 41);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Welcome";
+            this.label1.Text = "Forgot Password";
             // 
-            // LogIn
+            // ForgotPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(0)))), ((int)(((byte)(150)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
             this.Controls.Add(this.pnlMain);
-            this.Name = "LogIn";
+            this.Name = "ForgotPassword";
             this.Size = new System.Drawing.Size(1278, 690);
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
