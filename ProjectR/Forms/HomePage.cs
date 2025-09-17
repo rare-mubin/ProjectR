@@ -42,6 +42,8 @@ namespace ProjectR.Forms
         {
             pnlProductsP = this.pnlProducts;
 
+            this.PopulateGridView("select * from TempCart;");
+
         }
 
         private void btnGames_MouseHover(object sender, EventArgs e)
@@ -141,9 +143,8 @@ namespace ProjectR.Forms
             try
             {
                 var ds = MainWindow.SqlDataAccess.ExecuteQuery(sql);
-                HomePage.dgvTempCartP.AutoGenerateColumns = false;
-                HomePage.dgvTempCartP.DataSource = ds.Tables[0];
-                //this.ClearAll();
+                dgvTempCartP.AutoGenerateColumns = false;
+                dgvTempCartP.DataSource = ds.Tables[0];
             }
             catch (Exception ex)
             {

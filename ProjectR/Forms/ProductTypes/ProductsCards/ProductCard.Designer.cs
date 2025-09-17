@@ -62,14 +62,13 @@
             // 
             // lblProductName
             // 
-            this.lblProductName.AutoSize = true;
             this.lblProductName.BackColor = System.Drawing.Color.Transparent;
             this.lblProductName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblProductName.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblProductName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
             this.lblProductName.Location = new System.Drawing.Point(86, 21);
             this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(108, 18);
+            this.lblProductName.Size = new System.Drawing.Size(154, 18);
             this.lblProductName.TabIndex = 1;
             this.lblProductName.Text = "Product Name";
             this.lblProductName.Click += new System.EventHandler(this.pnlCard_Click);
