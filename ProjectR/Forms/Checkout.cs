@@ -7,14 +7,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjectR.Forms.ProductTypes.ProductsCards;
 
 namespace ProjectR.Forms
 {
     public partial class Checkout : UserControl
     {
+        internal DataAccess Da;
+        internal string ProductId { get; set; }        
+        internal string ProductName { get; set; }        
+        internal string ProductQuantity { get; set; }
+        internal string ProductPrice { get; set; }
+        internal string UserId { get; set; }
+        internal string MemberPhone { get; set; }
+        internal string MemberPoint { get; set; }
         public Checkout()
         {
             InitializeComponent();
+            Da = MainWindow.SqlDataAccess;
+
+            this.AutoIdGenerate();
+            this.LoadCartItems();
+            this.PopulateGridView();
+
+        }
+
+        public Checkout(string str):  this()
+        {
+            
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -24,6 +45,490 @@ namespace ProjectR.Forms
             MainWindow.MainWindowPanel.Controls.Clear();
             MainWindow.MainWindowPanel.Controls.Add(homePage);
             homePage.Show();
+        }
+
+
+        // Update Quantity
+        private void AddItem()
+        {
+            string sql = $"insert into TempCart VALUES ('{ProductId}','{ProductName}',1, {ProductPrice} , {ProductPrice}) ;";
+            string sql2 = $"select * from TempCart where ProductId = '{ProductId}'";
+            var dt = MainWindow.SqlDataAccess.ExecuteQueryTable(sql2);
+
+            if (dt.Rows.Count == 1)
+            {
+                int quantity = Convert.ToInt32(dt.Rows[0][2]);
+                quantity += 1;
+                int TotalAmount = Convert.ToInt32(ProductPrice) * quantity;
+
+                string sql3 = $"UPDATE TempCart SET ProductQuantity = {quantity}, TotalAmount = {TotalAmount} where ProductId = '{ProductId}'";
+                MainWindow.SqlDataAccess.ExecuteDMLQuery(sql3);
+                return;
+            }
+            MainWindow.SqlDataAccess.ExecuteDMLQuery(sql);
+        }
+
+        // Fetch Data from TempCart
+        private void LoadCartItems()
+        {
+            try
+            {
+                this.UserId = MainWindow.LogInUser.Rows[0][0].ToString(); ;
+                this.lblSellerID.Text = $"Seller ID: {this.UserId}";
+                this.MemberPhone = this.txtMemberPhone.Text.Trim();
+                this.MemberPoint = this.txtMemberPoints.Text.Trim();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading cart: {ex.Message}");
+            }
+        }
+
+
+        // Change Quantity Button Event
+        private void btnChangeQuantity_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.dgvTempCart.SelectedRows.Count < 1)
+                {
+                    MessageBox.Show("Please select a row first to change quantity.");
+                    return;
+                }
+
+                // 1️⃣ Get selected row values
+                var row = dgvTempCart.CurrentRow;
+                string productId = row.Cells["colProductIdTemp"].Value.ToString();
+                int unitPrice = Convert.ToInt32(row.Cells["colProductUnitPrice"].Value);
+
+                // 2️⃣ Get new quantity from user input
+                int newQuantity = Convert.ToInt32(this.txtNewQuantity.Text);
+
+                // 3️⃣ Calculate new total amount
+                int newTotalAmount = unitPrice * newQuantity;
+
+                // 4️⃣ Update TempCart in DB
+                string updateSql = $"UPDATE TempCart SET ProductQuantity = {newQuantity}, TotalAmount = {newTotalAmount} WHERE ProductId = '{productId}'";
+                Da.ExecuteDMLQuery(updateSql);
+
+                // 5️⃣ Refresh UI
+                PopulateGridView();       
+                UpdateTotalItems();       
+                UpdateTotalAmount();      
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating quantity: {ex.Message}");
+            }
+
+        }
+
+        // Update Total Amount
+        private void UpdateTotalAmount()
+        {
+            try
+            {
+                string sql = "SELECT SUM(TotalAmount) FROM TempCart;";
+                var dt = Da.ExecuteQueryTable(sql);
+                if (dt.Rows.Count > 0 && dt.Rows[0][0] != DBNull.Value)
+                {
+                    lblTotalAmount.Text = $"Total Amount: {dt.Rows[0][0].ToString()}";
+                }
+                else
+                {
+                    lblTotalAmount.Text = $"Total Amount: 0";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error calculating total amount: {ex.Message}");
+            }
+        }
+
+        // Auto Genarate Transaction Id
+        private string AutoIdGenerate()
+        {
+            var query = "select max(TransactionId) from TransactionList;";
+            var dt = this.Da.ExecuteQueryTable(query);
+            if (dt.Rows[0][0] == DBNull.Value)
+                return "T-001";
+
+            var oldId = dt.Rows[0][0].ToString();
+            var s = oldId.Split('-');
+            var temp = Convert.ToInt32(s[1]);
+            return "T-" + (++temp).ToString("d3");
+        }
+
+
+        private void lblSellerID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // Grid View Initialisation
+        private void PopulateGridView(string sql = "select * from TempCart;")
+        {
+            try
+            {
+                var ds = this.Da.ExecuteQuery(sql);
+                this.dgvTempCart.AutoGenerateColumns = false;
+                this.dgvTempCart.DataSource = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error:{ex.Message}");
+            }
+        }
+
+
+        // Redem Point btn // here i iwll take the input from txt box then Reduce it from the MemberPoint where MemberPhone = '{this.MemberPhone}'
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string sql = "SELECT SUM(TotalAmount) FROM TempCart;";
+                var dt = Da.ExecuteQueryTable(sql);
+                double totalAmount = Convert.ToDouble(dt.Rows[0][0]);
+
+                double redeemPoints = Convert.ToDouble(this.txtMemberPoints.Text);           
+               
+
+                double totalAfterDiscount = totalAmount - redeemPoints;
+                if (totalAfterDiscount < 0) totalAfterDiscount = 0; 
+
+                lblTotaAfterDiscount.Text = totalAfterDiscount.ToString();
+                this.lblDiscount.Text = $"Discount: {this.txtMemberPoints.Text}";
+                this.RefreshCartUI();
+                this.UpdateTotalAmount();
+                this.UpdateTotalItems();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error applying discount: {ex.Message}");
+            }
+        }
+        // Item Count
+        private void UpdateTotalItems()
+        {
+            try
+            {
+                string sql = "SELECT COUNT(*) FROM TempCart;";
+                var dt = Da.ExecuteQueryTable(sql);
+
+                if (dt.Rows.Count > 0)
+                {
+                    int totalItems = Convert.ToInt32(dt.Rows[0][0]);
+                    lblTotalItem.Text = $"Total Item :{totalItems.ToString()}";
+                }
+                else
+                {
+                    lblTotalItem.Text = "Total Item: 0";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error counting cart items: {ex.Message}");
+            }
+        }
+        // Load
+        private void Checkout_Load(object sender, EventArgs e)
+        {
+            this.UpdateTotalItems();
+            this.UpdateTotalAmount();
+        }
+
+        // Double Click to show info
+        private void dgvTempCart_DoubleClick(object sender, EventArgs e)
+        {
+           // Nothing Yet
+        }
+
+
+        // Label Minupulations
+        private void RefreshCartUI()
+        {
+            try
+            {
+                // 1. Re-populate grid
+                PopulateGridView();
+
+                // 2. Update total items
+                string countSql = "SELECT COUNT(*) FROM TempCart;";
+                var dtCount = Da.ExecuteQueryTable(countSql);
+                int totalItems = Convert.ToInt32(dtCount.Rows[0][0]);
+                lblTotalItem.Text = totalItems.ToString();
+
+                // 3. Update total amount
+                string sumSql = "SELECT SUM(TotalAmount) FROM TempCart;";
+                var dtSum = Da.ExecuteQueryTable(sumSql);
+                double totalAmount = dtSum.Rows[0][0] == DBNull.Value ? 0 : Convert.ToDouble(dtSum.Rows[0][0]);
+                lblTotalAmount.Text = totalAmount.ToString();
+
+                // 4. Update total after discount (redeem points)
+                double redeemPoints = 0;
+                if (double.TryParse(txtMemberPoints.Text, out double points))
+                    redeemPoints = points;
+
+                double totalAfterDiscount = totalAmount - redeemPoints;
+                if (totalAfterDiscount < 0) totalAfterDiscount = 0;
+                lblTotaAfterDiscount.Text = totalAfterDiscount.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error refreshing cart: {ex.Message}");
+            }
+        }
+
+
+
+        // Delte Button
+        private void btnRemoveFromCart_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.dgvTempCart.SelectedRows.Count < 1)
+                {
+                    MessageBox.Show("Please select a row first to delete.");
+                    return;
+                }
+
+                var id = this.dgvTempCart.CurrentRow.Cells["colProductIdTemp"].Value.ToString();
+
+                DialogResult res = MessageBox.Show("Are you sure to remove Item" , "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (res == DialogResult.No)
+                    return;
+
+
+                var sql = "delete from TempCart where ProductId = '" + id + "';";
+                var count = this.Da.ExecuteDMLQuery(sql);
+
+
+
+                if (count == 1)
+                    MessageBox.Show(" Item has been removed from the list");
+                else
+                    MessageBox.Show("Item Has not been removed");
+
+                this.RefreshCartUI();
+                this.UpdateTotalAmount();
+                this.UpdateTotalItems();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error:{ex.Message}");
+            }
+        }
+
+        // Confirm Button Helper Methods
+        // Transaction list Update
+        private void UpdateTransactionList(string transactionId, string memberPhone, double redeemPoints, string paymentMethod)
+        {
+            // Calculate totals
+            string sqlTotal = "SELECT SUM(TotalAmount) FROM TempCart;";
+            var dtTotal = Da.ExecuteQueryTable(sqlTotal);
+            double totalAmount = Convert.ToDouble(dtTotal.Rows[0][0]);
+            double finalAmount = Math.Max(0, totalAmount - redeemPoints);
+
+            // Insert into TransactionList
+            string sql = $@"
+            INSERT INTO TransactionList 
+            (TransactionId, SalesmanId, CustomerId, TimeAndDate, TotalAmount, PaymentOption)
+            VALUES 
+            ('{transactionId}', '{UserId}', '{memberPhone}', GETDATE(), {finalAmount}, '{paymentMethod}');";
+
+            Da.ExecuteDMLQuery(sql);
+        }
+
+        // Product list Update
+        private void UpdateProductList()
+        {
+            try
+            {
+                // Get all items from TempCart
+                string sql = "SELECT ProductId, ProductQuantity FROM TempCart";
+                var dt = Da.ExecuteQueryTable(sql);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    string productId = row["ProductId"].ToString();
+                    int quantity = Convert.ToInt32(row["ProductQuantity"]);
+
+                    // Subtract 1 from ProductStock for each unit
+                    for (int i = 0; i < quantity; i++)
+                    {
+                        string sqlUpdate = $@"
+                                            UPDATE ProductList 
+                                            SET ProductStock = ProductStock - 1 
+                                            WHERE ProductId = '{productId}'";
+
+                        Da.ExecuteDMLQuery(sqlUpdate);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating product list: {ex.Message}");
+            }
+        }
+
+        // Transaction Detail Update
+
+        private void UpdateTransactionDetails(string transactionId)
+        {
+            try
+            {
+                // Fetch all items from TempCart
+                string sql = "SELECT ProductId, ProductQuantity, ProductUnitPrice FROM TempCart";
+                var dt = Da.ExecuteQueryTable(sql);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    string productId = row["ProductId"].ToString();
+                    int quantity = Convert.ToInt32(row["ProductQuantity"]);
+                    int unitPrice = Convert.ToInt32(row["ProductUnitPrice"]);
+
+                    // For each unit, create a separate row
+                    for (int i = 0; i < quantity; i++)
+                    {
+                        string detailId = GenerateTransactionDetailId();
+
+                        string insertSql = $@"
+                                            INSERT INTO TransactionDetails
+                                            (TransactionDetailId, TransactionId, ProductId, Quantity, UnitPrice)
+                                            VALUES ('{detailId}', '{transactionId}', '{productId}', 1, {unitPrice})";
+
+                        Da.ExecuteDMLQuery(insertSql);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating transaction details: {ex.Message}");
+            }
+        }
+        // Transaction Id Auto Genarate
+        private string GenerateTransactionDetailId()
+        {
+            string query = "SELECT MAX(TransactionDetailId) FROM TransactionDetails;";
+            var dt = Da.ExecuteQueryTable(query);
+
+            if (dt.Rows[0][0] == DBNull.Value)
+                return "TD-001";
+
+            var oldId = dt.Rows[0][0].ToString();
+            var s = oldId.Split('-');
+            var temp = Convert.ToInt32(s[1]);
+            return "TD-" + (++temp).ToString("d3");
+        }
+
+
+
+
+        // Member list Update
+        private void UpdateMemberList(string memberPhone, double redeemPoints, double finalAmount)
+        {
+            try
+            {
+                // Check if member exists
+                string sqlCheck = $"SELECT MemberPoints FROM MemberList WHERE MemberPhone = '{memberPhone}'";
+                var dt = Da.ExecuteQueryTable(sqlCheck);
+
+                if (dt.Rows.Count == 1)
+                {
+                    // Existing member → adjust points
+                    double currentPoints = Convert.ToDouble(dt.Rows[0]["MemberPoints"]);
+
+                    // 1 point for every 100 spent (example logic, change if needed)
+                    double earnedPoints = Math.Floor(finalAmount / 100);
+
+                    double newPoints = currentPoints - redeemPoints + earnedPoints;
+                    if (newPoints < 0) newPoints = 0;
+
+                    string sqlUpdate = $"UPDATE MemberList SET MemberPoints = {newPoints} WHERE MemberPhone = '{memberPhone}'";
+                    Da.ExecuteDMLQuery(sqlUpdate);
+                }
+                else
+                {
+                    // New member → insert
+                    double earnedPoints = Math.Floor(finalAmount / 100);
+
+                    string sqlInsert = $@"
+                INSERT INTO MemberList (MemberPhone, MemberPoints)
+                VALUES ('{memberPhone}', {earnedPoints});";
+
+                    Da.ExecuteDMLQuery(sqlInsert);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating member list: {ex.Message}");
+            }
+        }
+
+        // Not Empty
+        private bool IsValidToSave()
+        {
+            if (string.IsNullOrEmpty(this.cmbSelectPaymentMethod.Text) || string.IsNullOrEmpty(this.txtMemberPhone.Text) ||
+                string.IsNullOrEmpty(this.txtMemberPoints.Text))
+                return false;
+            else
+                return true;
+        }
+
+
+        // Confirm Transaction
+        private void btnConfirmTransaction_Click(object sender, EventArgs e)
+        {
+            if(!IsValidToSave())
+            {
+                MessageBox.Show("Please Fill All the Information");
+                return;
+            }
+
+            try
+            {
+                // 1️ Generate Transaction ID
+                string transactionId = AutoIdGenerate();
+                lblGenerateTransitionID.Text = transactionId;
+
+                // 2️⃣ Get member input
+                string memberPhone = txtMemberPhone.Text.Trim();
+                double redeemPoints = 0;
+                redeemPoints = Convert.ToDouble(txtMemberPoints.Text.Trim());
+                string paymentMethod = cmbSelectPaymentMethod.SelectedItem?.ToString() ?? "Cash";
+                paymentMethod = this.cmbSelectPaymentMethod.Text.Trim();
+
+                // 3️⃣ Calculate final amount after discount
+                string sqlTotal = "SELECT SUM(TotalAmount) FROM TempCart;";
+                var dtTotal = Da.ExecuteQueryTable(sqlTotal);
+                double totalAmount = dtTotal.Rows[0][0] == DBNull.Value ? 0 : Convert.ToDouble(dtTotal.Rows[0][0]);
+                double finalAmount = Math.Max(0, totalAmount - redeemPoints);
+
+                // 4️⃣ Update all tables
+                UpdateTransactionList(transactionId, memberPhone, redeemPoints, paymentMethod);
+                UpdateProductList();
+                UpdateTransactionDetails(transactionId);
+                UpdateMemberList(memberPhone, redeemPoints, finalAmount);
+
+                // 5️⃣ Clear TempCart
+                Da.ExecuteDMLQuery("DELETE FROM TempCart;");
+
+                // 6️⃣ Refresh UI
+                RefreshCartUI();
+
+                // 7️⃣ Show success message
+                MessageBox.Show("Transaction completed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error completing transaction: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
         }
     }
 }
