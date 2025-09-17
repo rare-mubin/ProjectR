@@ -499,8 +499,7 @@ namespace ProjectR.Forms
                 string memberPhone = txtMemberPhone.Text.Trim();
                 double redeemPoints = 0;
                 redeemPoints = Convert.ToDouble(txtMemberPoints.Text.Trim());
-                string paymentMethod = cmbSelectPaymentMethod.SelectedItem?.ToString() ?? "Cash";
-                paymentMethod = this.cmbSelectPaymentMethod.Text.Trim();
+                string paymentMethod = this.cmbSelectPaymentMethod.Text.Trim();
 
                 // 3️⃣ Calculate final amount after discount
                 string sqlTotal = "SELECT SUM(TotalAmount) FROM TempCart;";
@@ -529,6 +528,29 @@ namespace ProjectR.Forms
             }
 
 
+        }
+
+        private void txtMemberPoints_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMemberPhone_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string sql = $"Select MemberPoints from MemberList WHERE MemberPhone = {this.txtMemberPhone.Text}";
+                var dt = Da.ExecuteQueryTable(sql);
+                if (dt.Rows.Count == 1)
+                {
+                    this.lblMembershipPoints.Text += dt.Rows[0][0].ToString();
+                }
+            }
+            catch(Exception ex)
+            {
+                
+            }
+            
         }
     }
 }
