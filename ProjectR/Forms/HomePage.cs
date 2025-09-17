@@ -17,8 +17,8 @@ namespace ProjectR.Forms
 {
     public partial class HomePage : UserControl
     {
+        internal static bool SearchBoxClick = true;
         internal static Panel pnlProductsP {  get; set; }
-        //internal DataAccess Da {  get; set; }
         internal static DataGridView dgvTempCartP { get; set; }
 
         internal AllProducts allProducts {  get; set; }
@@ -33,17 +33,10 @@ namespace ProjectR.Forms
             InitializeComponent();
             SearchString = this.txtSearchProducts.Text;
             storeProductPageName = "AllProduct";
-            this.games = new Games();
-            this.laptops = new Laptops();
-            this.pcParts = new PcParts();
             dgvTempCartP = this.dgvTempCart;
-        }
-        private void HomePage_Load(object sender, EventArgs e)
-        {
+
             pnlProductsP = this.pnlProducts;
-
             this.PopulateGridView("select * from TempCart;");
-
         }
 
         private void btnGames_MouseHover(object sender, EventArgs e)
@@ -86,43 +79,37 @@ namespace ProjectR.Forms
 
         private void btnGames_Click(object sender, EventArgs e)
         {
+            this.games = new Games();
             showUserControl(this.games);
             storeProductPageName = "Games";
         }
 
         private void btnLaptops_Click(object sender, EventArgs e)
         {
+            this.laptops = new Laptops();
             showUserControl(this.laptops);
             storeProductPageName = "Laptops";
         }
 
         private void btnPcParts_Click(object sender, EventArgs e)
         {
+            this.pcParts = new PcParts();
             showUserControl(this.pcParts);
             storeProductPageName = "PcParts";
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.pnlProductType.Dock = DockStyle.Fill;
-            pnlProductsP.Controls.Clear();
-            pnlProductsP.Controls.Add(this.pnlProductType);
-            storeProductPageName = "AllProduct";
-        }
-
-       
-
-        // Search Box
-        private void txtSearchProducts_TextChanged(object sender, EventArgs e)
+        private void Search_TextChanged()
         {
             if (storeProductPageName == "Games")
             {
-                this.games = new Games();
+                string search = $@"select * from ProductList Where ProductType = 'Games' and (ProductId LIKE '{txtSearchProducts.Text}%' or ProductName LIKE '{txtSearchProducts.Text}%');";
+                this.games = new Games(search);
                 showUserControl(this.games);
             }
             else if (storeProductPageName == "Laptops")
             {
-                this.laptops = new Laptops();
+                string search = $@"select * from ProductList Where ProductType = 'Laptop' and (ProductId LIKE '{txtSearchProducts.Text}%' or ProductName LIKE '{txtSearchProducts.Text}%');";
+                this.laptops = new Laptops(search);
                 showUserControl(this.laptops);
             }
             else if (storeProductPageName == "PcParts")
@@ -130,11 +117,18 @@ namespace ProjectR.Forms
                 this.pcParts = new PcParts();
                 showUserControl(this.pcParts);
             }
-            else 
+            else
             {
-                this.allProducts = new AllProducts();
+                string search = $@"select * from ProductList Where ProductId LIKE '{txtSearchProducts.Text}%' or ProductName LIKE '{txtSearchProducts.Text}%';";
+                this.allProducts = new AllProducts(search);
                 showUserControl(this.allProducts);
             }
+        }
+
+        // Search Box
+        private void txtSearchProducts_TextChanged(object sender, EventArgs e)
+        {
+            this.Search_TextChanged();
         }
 
         // Grid View Initialisation
@@ -161,11 +155,8 @@ namespace ProjectR.Forms
             }
             var id = this.dgvTempCart.CurrentRow.Cells["colProductId"].Value.ToString();
             var sql = "delete from TempCart where ProductId = '" + id + "';";
-            //var count = this.Da.ExecuteDMLQuery(sql);
             MainWindow.SqlDataAccess.ExecuteDMLQuery(sql);
             this.PopulateGridView();
-            
-
         }
 
         private void btnCheckout_Click(object sender, EventArgs e)
@@ -175,6 +166,35 @@ namespace ProjectR.Forms
             MainWindow.MainWindowPanel.Controls.Clear();
             MainWindow.MainWindowPanel.Controls.Add(NextPage);
             NextPage.Show();
+        }
+
+        private void txtSearchProducts_Click(object sender, EventArgs e)
+        {
+            if (SearchBoxClick)
+            {
+                this.txtSearchProducts.Text = "";
+                SearchBoxClick = false;
+            }
+        }
+
+        private void txtSearchProducts_Leave(object sender, EventArgs e)
+        {
+            if (this.txtSearchProducts.Text == "")
+            {
+                this.txtSearchProducts.Text = "Search by Product ID or Name";
+                SearchBoxClick = true;
+
+                this.allProducts = new AllProducts();
+                showUserControl(this.allProducts);
+            }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.pnlProductType.Dock = DockStyle.Fill;
+            pnlProductsP.Controls.Clear();
+            pnlProductsP.Controls.Add(this.pnlProductType);
+            storeProductPageName = "AllProduct";
         }
     }
 }

@@ -18,13 +18,12 @@ namespace ProjectR.Forms
         public Sells()
         {
             InitializeComponent();
-            string sql = "select * from TransactionList;";
             Da=new DataAccess();
             this.PopulateGridView();
             
         }
 
-        public void PopulateGridView(string sql = "select * from TransactionList;")
+        private void PopulateGridView(string sql = "select * from TransactionList;")
         {
             var ds = Da.ExecuteQuery(sql);
             this.dgvSellDetails.DataSource = ds.Tables[0];
@@ -38,6 +37,7 @@ namespace ProjectR.Forms
             {
                 if (this.dgvSellDetails.SelectedRows.Count==1)
                 {
+                    
                     this.lblTransactionIDValue.Text = this.dgvSellDetails.SelectedRows[0].Cells["TransactionID"].Value.ToString();
                     this.lblSalesmanIDValue.Text = this.dgvSellDetails.SelectedRows[0].Cells["SalesmanID"].Value.ToString();
                     this.lblCustomerIDValue.Text = this.dgvSellDetails.SelectedRows[0].Cells["CustomerID"].Value.ToString();
@@ -49,7 +49,7 @@ namespace ProjectR.Forms
                 {
                     MessageBox.Show("Select a single row");
                 }
-                                
+
 
 
             }
@@ -59,18 +59,31 @@ namespace ProjectR.Forms
             }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void ClearAll()
         {
             this.lblTransactionIDValue.Text = "";
             this.lblSalesmanIDValue.Text = "";
             this.lblCustomerIDValue.Text = "";
             this.lblTimeAndDateValue.Text = "";
             this.lblTotalAmountValue.Text = "";
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+            this.txtSearchSellers.Text = "Search Sells...";
+            this.ClearAll();
+            this.PopulateGridView();
+            this.dgvSellDetails.ClearSelection();
+            this.txtSearchSellers.Text = "Search Sells...";
+            
+            
         }
 
         private void Sells_Load(object sender, EventArgs e)
         {
-            this.dgvSellDetails.ClearSelection();
+            //this.dgvSellDetails.ClearSelection();
         }
 
         
@@ -81,6 +94,7 @@ namespace ProjectR.Forms
             {
                 this.txtSearchSellers.Text = "Search Sells...";
                 this.PopulateGridView();
+                this.dgvSellDetails.ClearSelection();
             }
         }
 
@@ -90,16 +104,16 @@ namespace ProjectR.Forms
             {
                 this.txtSearchSellers.Text = "";
                 this.PopulateGridView();
+                this.dgvSellDetails.ClearSelection();
 
             }
-            /*var sql = "select * from TransactionList where TransactionID = '" + this.txtSearchSellers.Text + "' OR SalesmanID = '" + this.txtSearchSellers.Text + "' OR CustomerID = '" + this.txtSearchSellers.Text + "';";
-            this.PopulateGridView(sql);*/
         }
 
         private void txtSearchSellers_TextChanged(object sender, EventArgs e)
         {
-            var sql = "select * from TransactionList where TransactionID LIKE '%"+this.txtSearchSellers.Text+ "%' OR SalesmanID LIKE '%"+this.txtSearchSellers.Text+ "%' OR CustomerID LIKE '"+this.txtSearchSellers.Text+"';";
+            var sql = "select * from TransactionList where TransactionID LIKE '%" + this.txtSearchSellers.Text + "%' OR SalesmanID LIKE '%" + this.txtSearchSellers.Text + "%' OR CustomerID LIKE '" + this.txtSearchSellers.Text + "';";
             this.PopulateGridView(sql);
+            
         }
     }
 }

@@ -31,23 +31,31 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblUserNameHeader = new System.Windows.Forms.Label();
-            this.pnlEditUserProfile = new System.Windows.Forms.Panel();
+            this.dtp = new System.Windows.Forms.Panel();
             this.btnBackToUserProfile = new System.Windows.Forms.Button();
             this.txtNidNumber = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtUserDOB = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.btnUpdateProfile = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblUserRole1 = new System.Windows.Forms.Label();
             this.ldlNidNumber = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblUserDOB = new System.Windows.Forms.Label();
-            this.pnlEditUserProfile.SuspendLayout();
+            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
+            this.btnChoosePicture = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtFilePath = new System.Windows.Forms.TextBox();
+            this.ofdChoseFile = new System.Windows.Forms.OpenFileDialog();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dtp.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(79, 26);
+            this.panel2.Location = new System.Drawing.Point(77, 48);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(190, 190);
             this.panel2.TabIndex = 5;
@@ -58,7 +66,7 @@
             this.lblUserName.BackColor = System.Drawing.Color.Transparent;
             this.lblUserName.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
-            this.lblUserName.Location = new System.Drawing.Point(196, 223);
+            this.lblUserName.Location = new System.Drawing.Point(197, 224);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(163, 33);
             this.lblUserName.TabIndex = 1;
@@ -75,33 +83,43 @@
             this.lblUserNameHeader.TabIndex = 0;
             this.lblUserNameHeader.Text = "User Name";
             // 
-            // pnlEditUserProfile
+            // dtp
             // 
-            this.pnlEditUserProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))), ((int)(((byte)(204)))));
-            this.pnlEditUserProfile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlEditUserProfile.Controls.Add(this.btnBackToUserProfile);
-            this.pnlEditUserProfile.Controls.Add(this.txtNidNumber);
-            this.pnlEditUserProfile.Controls.Add(this.txtPhone);
-            this.pnlEditUserProfile.Controls.Add(this.txtUserDOB);
-            this.pnlEditUserProfile.Controls.Add(this.txtUserName);
-            this.pnlEditUserProfile.Controls.Add(this.btnUpdateProfile);
-            this.pnlEditUserProfile.Controls.Add(this.label10);
-            this.pnlEditUserProfile.Controls.Add(this.ldlNidNumber);
-            this.pnlEditUserProfile.Controls.Add(this.lblPhone);
-            this.pnlEditUserProfile.Controls.Add(this.lblUserDOB);
-            this.pnlEditUserProfile.Controls.Add(this.lblUserName);
-            this.pnlEditUserProfile.Controls.Add(this.lblUserNameHeader);
-            this.pnlEditUserProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlEditUserProfile.Location = new System.Drawing.Point(3, 125);
-            this.pnlEditUserProfile.Name = "pnlEditUserProfile";
-            this.pnlEditUserProfile.Size = new System.Drawing.Size(1094, 540);
-            this.pnlEditUserProfile.TabIndex = 4;
+            this.dtp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.dtp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dtp.Controls.Add(this.panel6);
+            this.dtp.Controls.Add(this.panel5);
+            this.dtp.Controls.Add(this.panel4);
+            this.dtp.Controls.Add(this.panel3);
+            this.dtp.Controls.Add(this.btnChoosePicture);
+            this.dtp.Controls.Add(this.label10);
+            this.dtp.Controls.Add(this.txtFilePath);
+            this.dtp.Controls.Add(this.dtpDOB);
+            this.dtp.Controls.Add(this.btnBackToUserProfile);
+            this.dtp.Controls.Add(this.txtNidNumber);
+            this.dtp.Controls.Add(this.txtPhone);
+            this.dtp.Controls.Add(this.txtUserName);
+            this.dtp.Controls.Add(this.btnUpdateProfile);
+            this.dtp.Controls.Add(this.lblUserRole1);
+            this.dtp.Controls.Add(this.ldlNidNumber);
+            this.dtp.Controls.Add(this.lblPhone);
+            this.dtp.Controls.Add(this.lblUserDOB);
+            this.dtp.Controls.Add(this.lblUserName);
+            this.dtp.Controls.Add(this.lblUserNameHeader);
+            this.dtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp.Location = new System.Drawing.Point(3, 147);
+            this.dtp.Name = "dtp";
+            this.dtp.Padding = new System.Windows.Forms.Padding(1);
+            this.dtp.Size = new System.Drawing.Size(1094, 540);
+            this.dtp.TabIndex = 4;
             // 
             // btnBackToUserProfile
             // 
             this.btnBackToUserProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.btnBackToUserProfile.FlatAppearance.BorderSize = 0;
+            this.btnBackToUserProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToUserProfile.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackToUserProfile.ForeColor = System.Drawing.Color.White;
+            this.btnBackToUserProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.btnBackToUserProfile.Location = new System.Drawing.Point(880, 435);
             this.btnBackToUserProfile.Name = "btnBackToUserProfile";
             this.btnBackToUserProfile.Size = new System.Drawing.Size(161, 35);
@@ -112,45 +130,47 @@
             // 
             // txtNidNumber
             // 
+            this.txtNidNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.txtNidNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNidNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNidNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.txtNidNumber.Location = new System.Drawing.Point(552, 292);
             this.txtNidNumber.Multiline = true;
             this.txtNidNumber.Name = "txtNidNumber";
-            this.txtNidNumber.Size = new System.Drawing.Size(244, 46);
+            this.txtNidNumber.Size = new System.Drawing.Size(244, 40);
             this.txtNidNumber.TabIndex = 14;
             // 
             // txtPhone
             // 
+            this.txtPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.txtPhone.Location = new System.Drawing.Point(552, 362);
             this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(244, 46);
+            this.txtPhone.Size = new System.Drawing.Size(244, 40);
             this.txtPhone.TabIndex = 13;
-            // 
-            // txtUserDOB
-            // 
-            this.txtUserDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserDOB.Location = new System.Drawing.Point(552, 430);
-            this.txtUserDOB.Multiline = true;
-            this.txtUserDOB.Name = "txtUserDOB";
-            this.txtUserDOB.Size = new System.Drawing.Size(244, 46);
-            this.txtUserDOB.TabIndex = 12;
             // 
             // txtUserName
             // 
+            this.txtUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.txtUserName.Location = new System.Drawing.Point(552, 223);
             this.txtUserName.Multiline = true;
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(244, 46);
+            this.txtUserName.Size = new System.Drawing.Size(244, 40);
             this.txtUserName.TabIndex = 11;
             // 
             // btnUpdateProfile
             // 
             this.btnUpdateProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.btnUpdateProfile.FlatAppearance.BorderSize = 0;
+            this.btnUpdateProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateProfile.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateProfile.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.btnUpdateProfile.Location = new System.Drawing.Point(880, 386);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
             this.btnUpdateProfile.Size = new System.Drawing.Size(161, 35);
@@ -159,16 +179,16 @@
             this.btnUpdateProfile.UseVisualStyleBackColor = false;
             this.btnUpdateProfile.Click += new System.EventHandler(this.btnUpdateProfile_Click);
             // 
-            // label10
+            // lblUserRole1
             // 
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
-            this.label10.Location = new System.Drawing.Point(328, 103);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(130, 46);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Admin";
+            this.lblUserRole1.BackColor = System.Drawing.Color.Transparent;
+            this.lblUserRole1.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserRole1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
+            this.lblUserRole1.Location = new System.Drawing.Point(328, 103);
+            this.lblUserRole1.Name = "lblUserRole1";
+            this.lblUserRole1.Size = new System.Drawing.Size(130, 46);
+            this.lblUserRole1.TabIndex = 9;
+            this.lblUserRole1.Text = "Admin";
             // 
             // ldlNidNumber
             // 
@@ -176,7 +196,7 @@
             this.ldlNidNumber.BackColor = System.Drawing.Color.Transparent;
             this.ldlNidNumber.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ldlNidNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
-            this.ldlNidNumber.Location = new System.Drawing.Point(196, 292);
+            this.ldlNidNumber.Location = new System.Drawing.Point(197, 293);
             this.ldlNidNumber.Name = "ldlNidNumber";
             this.ldlNidNumber.Size = new System.Drawing.Size(171, 33);
             this.ldlNidNumber.TabIndex = 4;
@@ -188,7 +208,7 @@
             this.lblPhone.BackColor = System.Drawing.Color.Transparent;
             this.lblPhone.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
-            this.lblPhone.Location = new System.Drawing.Point(196, 362);
+            this.lblPhone.Location = new System.Drawing.Point(197, 363);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(210, 33);
             this.lblPhone.TabIndex = 3;
@@ -200,11 +220,95 @@
             this.lblUserDOB.BackColor = System.Drawing.Color.Transparent;
             this.lblUserDOB.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserDOB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
-            this.lblUserDOB.Location = new System.Drawing.Point(196, 430);
+            this.lblUserDOB.Location = new System.Drawing.Point(197, 431);
             this.lblUserDOB.Name = "lblUserDOB";
             this.lblUserDOB.Size = new System.Drawing.Size(183, 33);
             this.lblUserDOB.TabIndex = 2;
             this.lblUserDOB.Text = "Date Of Birth";
+            // 
+            // dtpDOB
+            // 
+            this.dtpDOB.CalendarMonthBackground = System.Drawing.SystemColors.WindowFrame;
+            this.dtpDOB.CustomFormat = "yyyy-MM-dd";
+            this.dtpDOB.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDOB.Location = new System.Drawing.Point(552, 430);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(244, 26);
+            this.dtpDOB.TabIndex = 16;
+            // 
+            // btnChoosePicture
+            // 
+            this.btnChoosePicture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.btnChoosePicture.FlatAppearance.BorderSize = 0;
+            this.btnChoosePicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChoosePicture.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.btnChoosePicture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.btnChoosePicture.Location = new System.Drawing.Point(73, 174);
+            this.btnChoosePicture.Name = "btnChoosePicture";
+            this.btnChoosePicture.Size = new System.Drawing.Size(190, 21);
+            this.btnChoosePicture.TabIndex = 35;
+            this.btnChoosePicture.Text = "Choose";
+            this.btnChoosePicture.UseVisualStyleBackColor = false;
+            this.btnChoosePicture.Click += new System.EventHandler(this.btnChoosePicture_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.label10.Location = new System.Drawing.Point(103, 118);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(130, 15);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Choose Profile Picture";
+            // 
+            // txtFilePath
+            // 
+            this.txtFilePath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.txtFilePath.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFilePath.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtFilePath.ForeColor = System.Drawing.Color.White;
+            this.txtFilePath.Location = new System.Drawing.Point(73, 137);
+            this.txtFilePath.Name = "txtFilePath";
+            this.txtFilePath.Size = new System.Drawing.Size(190, 19);
+            this.txtFilePath.TabIndex = 34;
+            // 
+            // ofdChoseFile
+            // 
+            this.ofdChoseFile.FileOk += new System.ComponentModel.CancelEventHandler(this.ofdChoseFile_FileOk);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.panel6.Location = new System.Drawing.Point(501, 224);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1, 256);
+            this.panel6.TabIndex = 39;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.panel5.Location = new System.Drawing.Point(197, 415);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(602, 1);
+            this.panel5.TabIndex = 38;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.panel4.Location = new System.Drawing.Point(197, 345);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(602, 1);
+            this.panel4.TabIndex = 37;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.panel3.Location = new System.Drawing.Point(197, 276);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(602, 1);
+            this.panel3.TabIndex = 36;
             // 
             // EditUserProfile
             // 
@@ -212,11 +316,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProjectR.Properties.Resources.usercontrolBackground;
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pnlEditUserProfile);
+            this.Controls.Add(this.dtp);
             this.Name = "EditUserProfile";
             this.Size = new System.Drawing.Size(1100, 690);
-            this.pnlEditUserProfile.ResumeLayout(false);
-            this.pnlEditUserProfile.PerformLayout();
+            this.dtp.ResumeLayout(false);
+            this.dtp.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -226,16 +330,24 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label lblUserNameHeader;
-        private System.Windows.Forms.Panel pnlEditUserProfile;
+        private System.Windows.Forms.Panel dtp;
         private System.Windows.Forms.Button btnUpdateProfile;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblUserRole1;
         private System.Windows.Forms.Label ldlNidNumber;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblUserDOB;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TextBox txtNidNumber;
         private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.TextBox txtUserDOB;
         private System.Windows.Forms.Button btnBackToUserProfile;
+        private System.Windows.Forms.DateTimePicker dtpDOB;
+        private System.Windows.Forms.Button btnChoosePicture;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtFilePath;
+        private System.Windows.Forms.OpenFileDialog ofdChoseFile;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
     }
 }

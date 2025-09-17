@@ -287,21 +287,20 @@
             this.cmbProductCategory.FormattingEnabled = true;
             this.cmbProductCategory.ItemHeight = 18;
             this.cmbProductCategory.Items.AddRange(new object[] {
-            "Digital",
-            "Keyboard",
-            "Mouse",
-            "Head Phones",
-            "Speakers",
-            "Cpu",
-            "Gpu",
-            "Webcam",
-            "Mouse Pad",
-            "TV Box",
-            "Router",
-            "Printer",
-            "Projector",
-            "Laptops",
-            "Pre Built Desktops"});
+            "Pc Games",
+            "X-Box",
+            "PS5",
+            "BusinessLaptop",
+            "CreatorLaptop",
+            "GamingLaptop",
+            "MacBook",
+            "Accessories",
+            "GPU",
+            "Proccessor",
+            "Motherboard",
+            "RAM",
+            "Storage",
+            "PSU"});
             this.cmbProductCategory.Location = new System.Drawing.Point(26, 187);
             this.cmbProductCategory.Name = "cmbProductCategory";
             this.cmbProductCategory.Size = new System.Drawing.Size(231, 26);
