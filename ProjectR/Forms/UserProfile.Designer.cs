@@ -41,6 +41,10 @@
             this.ldlNidNumber = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblTotalSells = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,8 +79,12 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))), ((int)(((byte)(204)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel6);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.lblNidNumberDetails);
             this.panel1.Controls.Add(this.lblPhoneDetails);
             this.panel1.Controls.Add(this.lblTotalSellsDetails);
@@ -89,8 +97,10 @@
             this.panel1.Controls.Add(this.lblUserDOB);
             this.panel1.Controls.Add(this.lblUserNameHeader);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(3, 137);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Location = new System.Drawing.Point(3, 147);
             this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(1);
             this.panel1.Size = new System.Drawing.Size(1094, 540);
             this.panel1.TabIndex = 2;
             // 
@@ -141,8 +151,10 @@
             // btnEditProfile
             // 
             this.btnEditProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.btnEditProfile.FlatAppearance.BorderSize = 0;
+            this.btnEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditProfile.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditProfile.ForeColor = System.Drawing.Color.White;
+            this.btnEditProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.btnEditProfile.Location = new System.Drawing.Point(878, 430);
             this.btnEditProfile.Name = "btnEditProfile";
             this.btnEditProfile.Size = new System.Drawing.Size(161, 35);
@@ -195,6 +207,38 @@
             this.lblTotalSells.TabIndex = 2;
             this.lblTotalSells.Text = "Total Sells";
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.panel3.Location = new System.Drawing.Point(202, 272);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(613, 1);
+            this.panel3.TabIndex = 15;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.panel4.Location = new System.Drawing.Point(202, 341);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(613, 1);
+            this.panel4.TabIndex = 16;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.panel5.Location = new System.Drawing.Point(202, 411);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(613, 1);
+            this.panel5.TabIndex = 17;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.panel6.Location = new System.Drawing.Point(506, 220);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1, 256);
+            this.panel6.TabIndex = 18;
+            // 
             // UserProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,5 +270,9 @@
         private System.Windows.Forms.Label lblPhoneDetails;
         private System.Windows.Forms.Label lblTotalSellsDetails;
         private System.Windows.Forms.Label lblUserDOBDetails;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel6;
     }
 }

@@ -34,7 +34,7 @@ namespace ProjectR.Forms
             this.lblProductNameValue.Text = ds.Tables[0].Rows[0][1].ToString();
             this.lblProductModelValue.Text = ds.Tables[0].Rows[0][2].ToString();
             this.lblProductStocksValue.Text = ds.Tables[0].Rows[0][5].ToString();
-            this.btnProductCost.Text = ds.Tables[0].Rows[0][4].ToString()+" BDT";
+            this.lblProductAmount.Text = ds.Tables[0].Rows[0][4].ToString()+" BDT";
             this.ptbProductPicture.Image = Image.FromFile(ds.Tables[0].Rows[0][8].ToString());
             ProductName = this.lblProductNameValue.Text;
             ProductPrice = ds.Tables[0].Rows[0][4].ToString();
