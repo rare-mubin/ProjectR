@@ -33,13 +33,9 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnRedeemPoint = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMemberPoints = new System.Windows.Forms.TextBox();
             this.lblTotalAmount = new System.Windows.Forms.Label();
             this.lblDiscount = new System.Windows.Forms.Label();
             this.lblSellerID = new System.Windows.Forms.Label();
@@ -49,11 +45,11 @@
             this.pnlSidebarRight = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnChangeQuantity = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNewQuantity = new System.Windows.Forms.TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnRemoveFromCart = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.btnCheckout = new System.Windows.Forms.Button();
+            this.btnConfirmTransaction = new System.Windows.Forms.Button();
             this.pnlProductbtns = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,13 +57,22 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblTotaAfterDiscount = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbSelectPaymentMethod = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtMemberPhone = new System.Windows.Forms.TextBox();
+            this.dgvTempCart = new System.Windows.Forms.DataGridView();
+            this.colProductIdTemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductNameTemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductQuantityTemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalAmountTemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlProducts.SuspendLayout();
             this.pnlProductType.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.pnlSidebarRight.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -77,6 +82,7 @@
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTempCart)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlProducts
@@ -104,9 +110,11 @@
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
-            this.panel12.Location = new System.Drawing.Point(3, 3);
+            this.panel12.Controls.Add(this.dgvTempCart);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel12.Location = new System.Drawing.Point(0, 0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(792, 625);
+            this.panel12.Size = new System.Drawing.Size(798, 628);
             this.panel12.TabIndex = 0;
             // 
             // panel1
@@ -114,9 +122,11 @@
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txtMemberPhone);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.cmbSelectPaymentMethod);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.panel9);
-            this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.lblTotalAmount);
             this.panel1.Controls.Add(this.lblDiscount);
@@ -133,88 +143,48 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.button1);
+            this.panel9.Controls.Add(this.btnRedeemPoint);
             this.panel9.Location = new System.Drawing.Point(135, 231);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(128, 30);
             this.panel9.TabIndex = 14;
             // 
-            // button1
+            // btnRedeemPoint
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Redeem Point";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.button2);
-            this.panel7.Location = new System.Drawing.Point(19, 144);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(244, 30);
-            this.panel7.TabIndex = 13;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(244, 30);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Select Payment Method";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.comboBox1);
-            this.panel6.Location = new System.Drawing.Point(19, 99);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(244, 22);
-            this.panel6.TabIndex = 12;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(0, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(244, 21);
-            this.comboBox1.TabIndex = 0;
+            this.btnRedeemPoint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.btnRedeemPoint.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRedeemPoint.FlatAppearance.BorderSize = 0;
+            this.btnRedeemPoint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRedeemPoint.ForeColor = System.Drawing.Color.White;
+            this.btnRedeemPoint.Location = new System.Drawing.Point(0, 0);
+            this.btnRedeemPoint.Name = "btnRedeemPoint";
+            this.btnRedeemPoint.Size = new System.Drawing.Size(128, 30);
+            this.btnRedeemPoint.TabIndex = 0;
+            this.btnRedeemPoint.Text = "Redeem Point";
+            this.btnRedeemPoint.UseVisualStyleBackColor = false;
+            this.btnRedeemPoint.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.textBox1);
+            this.panel8.Controls.Add(this.txtMemberPoints);
             this.panel8.Location = new System.Drawing.Point(18, 231);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(101, 30);
             this.panel8.TabIndex = 11;
             // 
-            // textBox1
+            // txtMemberPoints
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(101, 30);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "6";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMemberPoints.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.txtMemberPoints.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMemberPoints.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMemberPoints.ForeColor = System.Drawing.Color.White;
+            this.txtMemberPoints.Location = new System.Drawing.Point(0, 0);
+            this.txtMemberPoints.Multiline = true;
+            this.txtMemberPoints.Name = "txtMemberPoints";
+            this.txtMemberPoints.Size = new System.Drawing.Size(101, 30);
+            this.txtMemberPoints.TabIndex = 0;
+            this.txtMemberPoints.Text = "000";
+            this.txtMemberPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblTotalAmount
             // 
@@ -242,12 +212,13 @@
             // 
             this.lblSellerID.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSellerID.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblSellerID.Location = new System.Drawing.Point(48, 59);
+            this.lblSellerID.Location = new System.Drawing.Point(48, 39);
             this.lblSellerID.Name = "lblSellerID";
             this.lblSellerID.Size = new System.Drawing.Size(179, 23);
             this.lblSellerID.TabIndex = 6;
             this.lblSellerID.Text = "Seller ID";
             this.lblSellerID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSellerID.Click += new System.EventHandler(this.lblSellerID_Click);
             // 
             // lblMembershipPoints
             // 
@@ -275,7 +246,7 @@
             // 
             this.lblGenerateTransitionID.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenerateTransitionID.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblGenerateTransitionID.Location = new System.Drawing.Point(48, 22);
+            this.lblGenerateTransitionID.Location = new System.Drawing.Point(48, 12);
             this.lblGenerateTransitionID.Name = "lblGenerateTransitionID";
             this.lblGenerateTransitionID.Size = new System.Drawing.Size(179, 23);
             this.lblGenerateTransitionID.TabIndex = 1;
@@ -297,7 +268,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
             this.panel3.Controls.Add(this.btnChangeQuantity);
-            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.txtNewQuantity);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(1, 1);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
@@ -320,19 +291,20 @@
             this.btnChangeQuantity.TabIndex = 0;
             this.btnChangeQuantity.Text = "Change Quantity";
             this.btnChangeQuantity.UseVisualStyleBackColor = false;
+            this.btnChangeQuantity.Click += new System.EventHandler(this.btnChangeQuantity_Click);
             // 
-            // textBox2
+            // txtNewQuantity
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(7, 7);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(118, 30);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "6";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNewQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.txtNewQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNewQuantity.ForeColor = System.Drawing.Color.White;
+            this.txtNewQuantity.Location = new System.Drawing.Point(7, 7);
+            this.txtNewQuantity.Multiline = true;
+            this.txtNewQuantity.Name = "txtNewQuantity";
+            this.txtNewQuantity.Size = new System.Drawing.Size(118, 30);
+            this.txtNewQuantity.TabIndex = 1;
+            this.txtNewQuantity.Text = "6";
+            this.txtNewQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel10
             // 
@@ -361,11 +333,12 @@
             this.btnRemoveFromCart.TabIndex = 0;
             this.btnRemoveFromCart.Text = "Delete Item From Cart";
             this.btnRemoveFromCart.UseVisualStyleBackColor = false;
+            this.btnRemoveFromCart.Click += new System.EventHandler(this.btnRemoveFromCart_Click);
             // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
-            this.panel11.Controls.Add(this.btnCheckout);
+            this.panel11.Controls.Add(this.btnConfirmTransaction);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel11.Location = new System.Drawing.Point(1, 85);
             this.panel11.Margin = new System.Windows.Forms.Padding(0);
@@ -374,21 +347,22 @@
             this.panel11.Size = new System.Drawing.Size(281, 42);
             this.panel11.TabIndex = 8;
             // 
-            // btnCheckout
+            // btnConfirmTransaction
             // 
-            this.btnCheckout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.btnCheckout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCheckout.FlatAppearance.BorderSize = 0;
-            this.btnCheckout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnCheckout.ForeColor = System.Drawing.Color.White;
-            this.btnCheckout.Location = new System.Drawing.Point(7, 5);
-            this.btnCheckout.Name = "btnCheckout";
-            this.btnCheckout.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btnCheckout.Size = new System.Drawing.Size(267, 30);
-            this.btnCheckout.TabIndex = 0;
-            this.btnCheckout.Text = "Confirm Transaction";
-            this.btnCheckout.UseVisualStyleBackColor = false;
+            this.btnConfirmTransaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.btnConfirmTransaction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnConfirmTransaction.FlatAppearance.BorderSize = 0;
+            this.btnConfirmTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmTransaction.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnConfirmTransaction.ForeColor = System.Drawing.Color.White;
+            this.btnConfirmTransaction.Location = new System.Drawing.Point(7, 5);
+            this.btnConfirmTransaction.Name = "btnConfirmTransaction";
+            this.btnConfirmTransaction.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnConfirmTransaction.Size = new System.Drawing.Size(267, 30);
+            this.btnConfirmTransaction.TabIndex = 0;
+            this.btnConfirmTransaction.Text = "Confirm Transaction";
+            this.btnConfirmTransaction.UseVisualStyleBackColor = false;
+            this.btnConfirmTransaction.Click += new System.EventHandler(this.btnConfirmTransaction_Click);
             // 
             // pnlProductbtns
             // 
@@ -464,7 +438,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.lblTotaAfterDiscount);
             this.panel5.Location = new System.Drawing.Point(812, 505);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
@@ -472,18 +446,114 @@
             this.panel5.Size = new System.Drawing.Size(283, 44);
             this.panel5.TabIndex = 11;
             // 
-            // label3
+            // lblTotaAfterDiscount
             // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(1, 1);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(281, 42);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Total Amount";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTotaAfterDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.lblTotaAfterDiscount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotaAfterDiscount.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblTotaAfterDiscount.ForeColor = System.Drawing.Color.White;
+            this.lblTotaAfterDiscount.Location = new System.Drawing.Point(1, 1);
+            this.lblTotaAfterDiscount.Name = "lblTotaAfterDiscount";
+            this.lblTotaAfterDiscount.Size = new System.Drawing.Size(281, 42);
+            this.lblTotaAfterDiscount.TabIndex = 2;
+            this.lblTotaAfterDiscount.Text = "Total Amount";
+            this.lblTotaAfterDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(48, 68);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(179, 23);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Select Payment Method";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cmbSelectPaymentMethod
+            // 
+            this.cmbSelectPaymentMethod.FormattingEnabled = true;
+            this.cmbSelectPaymentMethod.Items.AddRange(new object[] {
+            "Cash",
+            "Card",
+            "Digital Payment"});
+            this.cmbSelectPaymentMethod.Location = new System.Drawing.Point(32, 95);
+            this.cmbSelectPaymentMethod.Name = "cmbSelectPaymentMethod";
+            this.cmbSelectPaymentMethod.Size = new System.Drawing.Size(230, 21);
+            this.cmbSelectPaymentMethod.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(48, 123);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(179, 23);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Member Phone ";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtMemberPhone
+            // 
+            this.txtMemberPhone.Location = new System.Drawing.Point(32, 151);
+            this.txtMemberPhone.Name = "txtMemberPhone";
+            this.txtMemberPhone.Size = new System.Drawing.Size(229, 20);
+            this.txtMemberPhone.TabIndex = 18;
+            // 
+            // dgvTempCart
+            // 
+            this.dgvTempCart.AllowUserToAddRows = false;
+            this.dgvTempCart.AllowUserToDeleteRows = false;
+            this.dgvTempCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTempCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colProductIdTemp,
+            this.colProductNameTemp,
+            this.colProductQuantityTemp,
+            this.colTotalAmountTemp,
+            this.colProductUnitPrice});
+            this.dgvTempCart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTempCart.Location = new System.Drawing.Point(0, 0);
+            this.dgvTempCart.Name = "dgvTempCart";
+            this.dgvTempCart.ReadOnly = true;
+            this.dgvTempCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTempCart.Size = new System.Drawing.Size(798, 628);
+            this.dgvTempCart.TabIndex = 0;
+            this.dgvTempCart.DoubleClick += new System.EventHandler(this.dgvTempCart_DoubleClick);
+            // 
+            // colProductIdTemp
+            // 
+            this.colProductIdTemp.DataPropertyName = "ProductId";
+            this.colProductIdTemp.HeaderText = "ID";
+            this.colProductIdTemp.Name = "colProductIdTemp";
+            this.colProductIdTemp.ReadOnly = true;
+            // 
+            // colProductNameTemp
+            // 
+            this.colProductNameTemp.DataPropertyName = "ProductName";
+            this.colProductNameTemp.HeaderText = "Product Name";
+            this.colProductNameTemp.Name = "colProductNameTemp";
+            this.colProductNameTemp.ReadOnly = true;
+            // 
+            // colProductQuantityTemp
+            // 
+            this.colProductQuantityTemp.DataPropertyName = "ProductQuantity";
+            this.colProductQuantityTemp.HeaderText = "Quantity";
+            this.colProductQuantityTemp.Name = "colProductQuantityTemp";
+            this.colProductQuantityTemp.ReadOnly = true;
+            // 
+            // colTotalAmountTemp
+            // 
+            this.colTotalAmountTemp.DataPropertyName = "TotalAmount";
+            this.colTotalAmountTemp.HeaderText = "Total";
+            this.colTotalAmountTemp.Name = "colTotalAmountTemp";
+            this.colTotalAmountTemp.ReadOnly = true;
+            // 
+            // colProductUnitPrice
+            // 
+            this.colProductUnitPrice.DataPropertyName = "ProductUnitPrice";
+            this.colProductUnitPrice.HeaderText = "Unit Price";
+            this.colProductUnitPrice.Name = "colProductUnitPrice";
+            this.colProductUnitPrice.ReadOnly = true;
             // 
             // Checkout
             // 
@@ -500,12 +570,13 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Checkout";
             this.Size = new System.Drawing.Size(1100, 690);
+            this.Load += new System.EventHandler(this.Checkout_Load);
             this.pnlProducts.ResumeLayout(false);
             this.pnlProductType.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel9.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.pnlSidebarRight.ResumeLayout(false);
@@ -518,6 +589,7 @@
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTempCart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -533,7 +605,7 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button btnRemoveFromCart;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button btnCheckout;
+        private System.Windows.Forms.Button btnConfirmTransaction;
         private System.Windows.Forms.Panel pnlProductbtns;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
@@ -541,7 +613,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTotaAfterDiscount;
         private System.Windows.Forms.Label lblSellerID;
         private System.Windows.Forms.Label lblMembershipPoints;
         private System.Windows.Forms.Label lblTotalItem;
@@ -549,14 +621,20 @@
         private System.Windows.Forms.Label lblTotalAmount;
         private System.Windows.Forms.Label lblDiscount;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtNewQuantity;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtMemberPoints;
+        private System.Windows.Forms.Button btnRedeemPoint;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbSelectPaymentMethod;
+        private System.Windows.Forms.TextBox txtMemberPhone;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dgvTempCart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductIdTemp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductNameTemp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductQuantityTemp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTotalAmountTemp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductUnitPrice;
     }
 }

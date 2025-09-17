@@ -78,6 +78,7 @@ namespace ProjectR.Forms
         // Save Member Information
         private void btnAddMember_Click(object sender, EventArgs e)
         {
+       
             try
             {
                 if (!this.IsValidToSave())
@@ -88,19 +89,23 @@ namespace ProjectR.Forms
 
                 string phone = this.txtMemberPhone.Text.Trim();
 
-                // check if member exists
-                string checkSql = $"select * from MemberList where MemberPhone = '{phone}';";
+                // Check if this phone already exists
+                string checkSql = $"SELECT COUNT(*) FROM MemberList WHERE MemberPhone = '{phone}';";
                 var ds = this.Da.ExecuteQuery(checkSql);
 
                 string sql;
-                if (ds.Tables[0].Rows.Count > 0)
+                if (Convert.ToInt32(ds.Tables[0].Rows[0][0]) > 0)
                 {
-                    sql = $"update MemberList set MemberName = '{this.txtMemberName.Text}', MemberPoints = {this.txtMemberPoints.Text} where MemberPhone = '{phone}';";
+                    sql = $@"UPDATE MemberList
+                    SET MemberName = '{this.txtMemberName.Text}',
+                        MemberPoints = {this.txtMemberPoints.Text}
+                    WHERE MemberPhone = '{phone}';";
                 }
                 else
                 {
-                    // Member does not exist → Insert
-                    sql = $"insert into MemberList (MemberName, MemberPhone, MemberPoints) values ('{this.txtMemberName.Text}', '{phone}', {this.txtMemberPoints.Text});";
+                    sql = $@"INSERT INTO
+                            MemberList (MemberName, MemberPhone, MemberPoints)
+                            VALUES ('{this.txtMemberName.Text}', '{phone}', {this.txtMemberPoints.Text});";
                 }
 
                 var count = this.Da.ExecuteDMLQuery(sql);
