@@ -23,6 +23,23 @@ namespace ProjectR.Forms
             
         }
 
+        // Grid View Initialisation
+        private void PopulateGridView2(string sql = "select * from ProductList;")
+        {
+            try
+            {
+                sql = "select ProductList.ProductName, TransactionDetails.Quantity, TransactionDetails.UnitPrice from ProductList , TransactionDetails , TransactionList WHERE ProductList.ProductId = TransactionDetails.ProductId AND TransactionList.TransactionID = TransactionDetails.TransactionId";
+                var ds = this.Da.ExecuteQuery(sql);
+                this.dgvMini.AutoGenerateColumns = false;
+                this.dgvMini.DataSource = ds.Tables[0];
+                //this.ClearAll();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error:{ex.Message}");
+            }
+        }
+
         private void PopulateGridView(string sql = "select * from TransactionList;")
         {
             var ds = Da.ExecuteQuery(sql);
@@ -43,6 +60,8 @@ namespace ProjectR.Forms
                     this.lblCustomerIDValue.Text = this.dgvSellDetails.SelectedRows[0].Cells["CustomerID"].Value.ToString();
                     this.lblTimeAndDateValue.Text = this.dgvSellDetails.SelectedRows[0].Cells["TimeAndDate"].Value.ToString();
                     this.lblTotalAmountValue.Text = this.dgvSellDetails.SelectedRows[0].Cells["TotalAmount"].Value.ToString();
+
+                    this.PopulateGridView2();
                 }
 
                 else if(this.dgvSellDetails.SelectedRows.Count > 1)

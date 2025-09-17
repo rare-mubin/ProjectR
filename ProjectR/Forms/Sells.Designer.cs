@@ -30,6 +30,8 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlSellsDetails = new System.Windows.Forms.Panel();
             this.lblTotalAmountValue = new System.Windows.Forms.Label();
             this.lblTimeAndDateValue = new System.Windows.Forms.Label();
@@ -55,12 +57,18 @@
             this.pnlSellsCart = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnClear = new System.Windows.Forms.Button();
+            this.dgvMini = new System.Windows.Forms.DataGridView();
+            this.colProductNameT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductQuantityt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUnitPriceT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlSellsDetails.SuspendLayout();
             this.pnlGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSellDetails)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.pnlSellsCart.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMini)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSellsDetails
@@ -228,6 +236,7 @@
             this.dgvSellDetails.RowHeadersVisible = false;
             this.dgvSellDetails.RowHeadersWidth = 51;
             this.dgvSellDetails.RowTemplate.Height = 40;
+            this.dgvSellDetails.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSellDetails.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvSellDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSellDetails.Size = new System.Drawing.Size(780, 630);
@@ -334,6 +343,7 @@
             // pnlSellsCart
             // 
             this.pnlSellsCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.pnlSellsCart.Controls.Add(this.dgvMini);
             this.pnlSellsCart.Location = new System.Drawing.Point(812, 263);
             this.pnlSellsCart.Name = "pnlSellsCart";
             this.pnlSellsCart.Padding = new System.Windows.Forms.Padding(1);
@@ -368,6 +378,73 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // dgvMini
+            // 
+            this.dgvMini.AllowUserToAddRows = false;
+            this.dgvMini.AllowUserToDeleteRows = false;
+            this.dgvMini.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.dgvMini.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMini.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvMini.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMini.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvMini.ColumnHeadersHeight = 40;
+            this.dgvMini.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvMini.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colProductNameT,
+            this.colProductQuantityt,
+            this.colUnitPriceT});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMini.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvMini.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMini.EnableHeadersVisualStyles = false;
+            this.dgvMini.Location = new System.Drawing.Point(1, 1);
+            this.dgvMini.Name = "dgvMini";
+            this.dgvMini.ReadOnly = true;
+            this.dgvMini.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvMini.RowHeadersVisible = false;
+            this.dgvMini.RowHeadersWidth = 51;
+            this.dgvMini.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvMini.RowTemplate.Height = 40;
+            this.dgvMini.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMini.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvMini.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMini.Size = new System.Drawing.Size(281, 368);
+            this.dgvMini.TabIndex = 1;
+            // 
+            // colProductNameT
+            // 
+            this.colProductNameT.DataPropertyName = "ProductName";
+            this.colProductNameT.HeaderText = "Product Name";
+            this.colProductNameT.Name = "colProductNameT";
+            this.colProductNameT.ReadOnly = true;
+            // 
+            // colProductQuantityt
+            // 
+            this.colProductQuantityt.DataPropertyName = "Quantity";
+            this.colProductQuantityt.HeaderText = "Quantity";
+            this.colProductQuantityt.Name = "colProductQuantityt";
+            this.colProductQuantityt.ReadOnly = true;
+            // 
+            // colUnitPriceT
+            // 
+            this.colUnitPriceT.DataPropertyName = "UnitPrice";
+            this.colUnitPriceT.HeaderText = "Unit Price";
+            this.colUnitPriceT.Name = "colUnitPriceT";
+            this.colUnitPriceT.ReadOnly = true;
+            // 
             // Sells
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,7 +466,9 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.pnlSellsCart.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMini)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -420,5 +499,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeAndDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalAmount;
+        private System.Windows.Forms.DataGridView dgvMini;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductNameT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductQuantityt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUnitPriceT;
     }
 }
