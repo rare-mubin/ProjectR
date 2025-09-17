@@ -36,8 +36,9 @@ namespace ProjectR.Forms
             this.lblProductStocksValue.Text = ds.Tables[0].Rows[0][5].ToString();
             this.lblProductAmount.Text = ds.Tables[0].Rows[0][4].ToString()+" BDT";
             this.ptbProductPicture.Image = Image.FromFile(ds.Tables[0].Rows[0][8].ToString());
-            ProductName = this.lblProductNameValue.Text;
-            ProductPrice = ds.Tables[0].Rows[0][4].ToString();
+            this.lblProductDescriptionValue.Text = ds.Tables[0].Rows[0][7].ToString();
+            this.ProductName = this.lblProductNameValue.Text;
+            this.ProductPrice = ds.Tables[0].Rows[0][4].ToString();
         }
 
         // Grid View Initialisation

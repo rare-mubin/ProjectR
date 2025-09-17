@@ -20,39 +20,79 @@ namespace ProjectR.Forms.ProductTypes
         internal string productCategory { get; set; }
         internal string productPrice { get; set; }
         internal string picturePath { get; set; }
+        internal string query { get; set; }
 
-        public Laptops()
+        public Laptops(string query = "select * from ProductList Where ProductType = 'Laptop';")
         {
             InitializeComponent();
-            this.Da = new DataAccess();
+            this.Da = MainWindow.SqlDataAccess;
+            this.query = query;
         }
 
-        private void Laptops_Load(object sender, EventArgs e)
+        private void LoadProduct()
         {
             try
             {
-                string query = "select * from ProductList;";
                 var ProductsTable = this.Da.ExecuteQueryTable(query);
-
-                for (int Counter = 0; Counter < ProductsTable.Rows.Count; Counter++)
+                int Counter = 0;
+                while (Counter < ProductsTable.Rows.Count)
                 {
                     this.productId = ProductsTable.Rows[Counter][0].ToString();
                     this.productName = ProductsTable.Rows[Counter][1].ToString();
                     this.productCategory = ProductsTable.Rows[Counter][3].ToString();
                     this.productType = ProductsTable.Rows[Counter][2].ToString();
                     this.productPrice = ProductsTable.Rows[Counter][4].ToString();
-                    this.picturePath = ProductsTable.Rows[Counter][8].ToString();
+                    this.picturePath = ProductsTable.Rows[Counter++][8].ToString();
 
                     ProductCard card = new ProductCard(this.productId, this.productName, this.productCategory, this.productType, this.productPrice, this.picturePath);
 
                     this.flpProducts.Controls.Add(card);
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error:{ex.Message}");
             }
+        }
+
+        private void Laptops_Load(object sender, EventArgs e)
+        {
+            this.LoadProduct();
+        }
+
+        private void btnAllLaptops_Click(object sender, EventArgs e)
+        {
+            this.flpProducts.Controls.Clear();
+            this.query = "select * from ProductList Where ProductType = 'Laptop';";
+            this.LoadProduct();
+        }
+
+        private void btnBusiness_Click(object sender, EventArgs e)
+        {
+            this.flpProducts.Controls.Clear();
+            this.query = "select * from ProductList Where ProductType = 'Laptop' and ProductCategory = 'BusinessLaptop';";
+            this.LoadProduct();
+        }
+
+        private void btnCreator_Click(object sender, EventArgs e)
+        {
+            this.flpProducts.Controls.Clear();
+            this.query = "select * from ProductList Where ProductType = 'Laptop' and ProductCategory = 'CreatorLaptop';";
+            this.LoadProduct();
+        }
+
+        private void btnGaming_Click(object sender, EventArgs e)
+        {
+            this.flpProducts.Controls.Clear();
+            this.query = "select * from ProductList Where ProductType = 'Laptop' and ProductCategory = 'GamingLaptop';";
+            this.LoadProduct();
+        }
+
+        private void btnMacBook_Click(object sender, EventArgs e)
+        {
+            this.flpProducts.Controls.Clear();
+            this.query = "select * from ProductList Where ProductType = 'Laptop' and ProductCategory = 'MacBookLaptop';";
+            this.LoadProduct();
         }
     }
 }

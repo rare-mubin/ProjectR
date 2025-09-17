@@ -20,40 +20,72 @@ namespace ProjectR.Forms.ProductTypes
         internal string productCategory {  get; set; }
         internal string productPrice { get; set; }
         internal string picturePath { get; set; }
+        internal string query { get; set; }
 
-        public Games()
+        public Games(string query = "select * from ProductList Where ProductType = 'Games';")
         {
             InitializeComponent();
-            this.Da = new DataAccess();
+            this.Da = MainWindow.SqlDataAccess;
+            this.query = query;
         }
 
-        private void Games_Load(object sender, EventArgs e)
+        private void LoadProduct()
         {
             try
             {
-                string query = "select * from ProductList;";
                 var ProductsTable = this.Da.ExecuteQueryTable(query);
-                
-                for (int Counter = 0; Counter < ProductsTable.Rows.Count; Counter++)
+                int Counter = 0;
+                while (Counter < ProductsTable.Rows.Count)
                 {
                     this.productId = ProductsTable.Rows[Counter][0].ToString();
                     this.productName = ProductsTable.Rows[Counter][1].ToString();
                     this.productCategory = ProductsTable.Rows[Counter][3].ToString();
                     this.productType = ProductsTable.Rows[Counter][2].ToString();
                     this.productPrice = ProductsTable.Rows[Counter][4].ToString();
-                    this.picturePath = ProductsTable.Rows[Counter][8].ToString();
+                    this.picturePath = ProductsTable.Rows[Counter++][8].ToString();
 
-                    ProductCard card = new ProductCard(this.productId, this.productName, this.productCategory, this.productType, this.productPrice ,this.picturePath);
+                    ProductCard card = new ProductCard(this.productId, this.productName, this.productCategory, this.productType, this.productPrice, this.picturePath);
 
                     this.flpProducts.Controls.Add(card);
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error:{ex.Message}");
             }
+        }
 
+        private void btnPcGameC_Click(object sender, EventArgs e)
+        {
+            this.flpProducts.Controls.Clear();
+            this.query = "select * from ProductList Where ProductType = 'Games' and ProductCategory = 'Pc Games';";
+            this.LoadProduct();
+        }
+
+        private void btnAllGames_Click(object sender, EventArgs e)
+        {
+            this.flpProducts.Controls.Clear();
+            this.query = "select * from ProductList Where ProductType = 'Games';";
+            this.LoadProduct();
+        }
+
+        private void btnXboxC_Click(object sender, EventArgs e)
+        {
+            this.flpProducts.Controls.Clear();
+            this.query = "select * from ProductList Where ProductType = 'Games' and ProductCategory = 'X-Box';";
+            this.LoadProduct();
+        }
+
+        private void btnPS5C_Click(object sender, EventArgs e)
+        {
+            this.flpProducts.Controls.Clear();
+            this.query = "select * from ProductList Where ProductType = 'Games' and ProductCategory = 'PS5';";
+            this.LoadProduct();
+        }
+
+        private void Games_Load(object sender, EventArgs e)
+        {
+            this.LoadProduct();
         }
     }
 }

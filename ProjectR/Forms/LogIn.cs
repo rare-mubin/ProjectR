@@ -13,7 +13,6 @@ namespace ProjectR.Forms
 {
     public partial class LogIn : UserControl
     {
-
         private static bool txtUserIDClick = true, txtPassClick = true;
         private const String DefaultTextBoxID = "Enter your User-Id";
         private const String DefaultTextBoxPassword = "Enter your Password";
@@ -36,7 +35,7 @@ namespace ProjectR.Forms
         {
             if (this.txtUserID.Text == "")
             {
-                this.txtUserID.Text = "Enter your User-Id";
+                this.txtUserID.Text = DefaultTextBoxID;
                 txtUserIDClick = true;
             }
         }

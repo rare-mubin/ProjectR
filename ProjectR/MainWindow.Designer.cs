@@ -36,13 +36,13 @@
             this.pnlForms = new System.Windows.Forms.Panel();
             this.pnlSideBarLeft = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.pnlBtnAdminOnly3 = new System.Windows.Forms.Panel();
             this.btnSellersList = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.btnMembersList = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.pnlBtnAdminOnly2 = new System.Windows.Forms.Panel();
             this.btnAllProductList = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.pnlBtnAdminOnly1 = new System.Windows.Forms.Panel();
             this.btnReportsDashboard = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnSells = new System.Windows.Forms.Button();
@@ -53,14 +53,20 @@
             this.btnMyProfile = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.pnlIndicator1 = new System.Windows.Forms.Panel();
+            this.pnlIndicator2 = new System.Windows.Forms.Panel();
+            this.pnlIndicator3 = new System.Windows.Forms.Panel();
+            this.pnlIndicator4 = new System.Windows.Forms.Panel();
+            this.pnlIndicator5 = new System.Windows.Forms.Panel();
+            this.pnlIndicator6 = new System.Windows.Forms.Panel();
             this.pnlTittlebar.SuspendLayout();
             this.pnlMain.SuspendLayout();
             this.pnlSideBarLeft.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel9.SuspendLayout();
+            this.pnlBtnAdminOnly3.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.pnlBtnAdminOnly2.SuspendLayout();
+            this.pnlBtnAdminOnly1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -164,10 +170,10 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
-            this.panel3.Controls.Add(this.panel9);
+            this.panel3.Controls.Add(this.pnlBtnAdminOnly3);
             this.panel3.Controls.Add(this.panel8);
-            this.panel3.Controls.Add(this.panel7);
-            this.panel3.Controls.Add(this.panel6);
+            this.panel3.Controls.Add(this.pnlBtnAdminOnly2);
+            this.panel3.Controls.Add(this.pnlBtnAdminOnly1);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -176,16 +182,17 @@
             this.panel3.Size = new System.Drawing.Size(176, 593);
             this.panel3.TabIndex = 1;
             // 
-            // panel9
+            // pnlBtnAdminOnly3
             // 
-            this.panel9.Controls.Add(this.btnSellersList);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 235);
-            this.panel9.Margin = new System.Windows.Forms.Padding(0);
-            this.panel9.Name = "panel9";
-            this.panel9.Padding = new System.Windows.Forms.Padding(7);
-            this.panel9.Size = new System.Drawing.Size(176, 47);
-            this.panel9.TabIndex = 5;
+            this.pnlBtnAdminOnly3.Controls.Add(this.pnlIndicator6);
+            this.pnlBtnAdminOnly3.Controls.Add(this.btnSellersList);
+            this.pnlBtnAdminOnly3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlBtnAdminOnly3.Location = new System.Drawing.Point(0, 235);
+            this.pnlBtnAdminOnly3.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlBtnAdminOnly3.Name = "pnlBtnAdminOnly3";
+            this.pnlBtnAdminOnly3.Padding = new System.Windows.Forms.Padding(7);
+            this.pnlBtnAdminOnly3.Size = new System.Drawing.Size(176, 47);
+            this.pnlBtnAdminOnly3.TabIndex = 5;
             // 
             // btnSellersList
             // 
@@ -207,6 +214,7 @@
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.pnlIndicator5);
             this.panel8.Controls.Add(this.btnMembersList);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 188);
@@ -234,16 +242,17 @@
             this.btnMembersList.UseVisualStyleBackColor = false;
             this.btnMembersList.Click += new System.EventHandler(this.btnMembersList_Click);
             // 
-            // panel7
+            // pnlBtnAdminOnly2
             // 
-            this.panel7.Controls.Add(this.btnAllProductList);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 141);
-            this.panel7.Margin = new System.Windows.Forms.Padding(0);
-            this.panel7.Name = "panel7";
-            this.panel7.Padding = new System.Windows.Forms.Padding(7);
-            this.panel7.Size = new System.Drawing.Size(176, 47);
-            this.panel7.TabIndex = 3;
+            this.pnlBtnAdminOnly2.Controls.Add(this.pnlIndicator4);
+            this.pnlBtnAdminOnly2.Controls.Add(this.btnAllProductList);
+            this.pnlBtnAdminOnly2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlBtnAdminOnly2.Location = new System.Drawing.Point(0, 141);
+            this.pnlBtnAdminOnly2.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlBtnAdminOnly2.Name = "pnlBtnAdminOnly2";
+            this.pnlBtnAdminOnly2.Padding = new System.Windows.Forms.Padding(7);
+            this.pnlBtnAdminOnly2.Size = new System.Drawing.Size(176, 47);
+            this.pnlBtnAdminOnly2.TabIndex = 3;
             // 
             // btnAllProductList
             // 
@@ -263,16 +272,17 @@
             this.btnAllProductList.UseVisualStyleBackColor = false;
             this.btnAllProductList.Click += new System.EventHandler(this.btnAllProductList_Click);
             // 
-            // panel6
+            // pnlBtnAdminOnly1
             // 
-            this.panel6.Controls.Add(this.btnReportsDashboard);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 94);
-            this.panel6.Margin = new System.Windows.Forms.Padding(0);
-            this.panel6.Name = "panel6";
-            this.panel6.Padding = new System.Windows.Forms.Padding(7);
-            this.panel6.Size = new System.Drawing.Size(176, 47);
-            this.panel6.TabIndex = 2;
+            this.pnlBtnAdminOnly1.Controls.Add(this.pnlIndicator3);
+            this.pnlBtnAdminOnly1.Controls.Add(this.btnReportsDashboard);
+            this.pnlBtnAdminOnly1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlBtnAdminOnly1.Location = new System.Drawing.Point(0, 94);
+            this.pnlBtnAdminOnly1.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlBtnAdminOnly1.Name = "pnlBtnAdminOnly1";
+            this.pnlBtnAdminOnly1.Padding = new System.Windows.Forms.Padding(7);
+            this.pnlBtnAdminOnly1.Size = new System.Drawing.Size(176, 47);
+            this.pnlBtnAdminOnly1.TabIndex = 2;
             // 
             // btnReportsDashboard
             // 
@@ -294,6 +304,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.pnlIndicator2);
             this.panel5.Controls.Add(this.btnSells);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 47);
@@ -323,6 +334,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.pnlIndicator1);
             this.panel4.Controls.Add(this.btnProductBrowser);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
@@ -423,6 +435,65 @@
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // pnlIndicator1
+            // 
+            this.pnlIndicator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(0)))), ((int)(((byte)(150)))));
+            this.pnlIndicator1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlIndicator1.Location = new System.Drawing.Point(164, 7);
+            this.pnlIndicator1.Name = "pnlIndicator1";
+            this.pnlIndicator1.Size = new System.Drawing.Size(5, 33);
+            this.pnlIndicator1.TabIndex = 1;
+            // 
+            // pnlIndicator2
+            // 
+            this.pnlIndicator2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(0)))), ((int)(((byte)(150)))));
+            this.pnlIndicator2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlIndicator2.Location = new System.Drawing.Point(164, 7);
+            this.pnlIndicator2.Name = "pnlIndicator2";
+            this.pnlIndicator2.Size = new System.Drawing.Size(5, 33);
+            this.pnlIndicator2.TabIndex = 2;
+            this.pnlIndicator2.Visible = false;
+            // 
+            // pnlIndicator3
+            // 
+            this.pnlIndicator3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(0)))), ((int)(((byte)(150)))));
+            this.pnlIndicator3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlIndicator3.Location = new System.Drawing.Point(164, 7);
+            this.pnlIndicator3.Name = "pnlIndicator3";
+            this.pnlIndicator3.Size = new System.Drawing.Size(5, 33);
+            this.pnlIndicator3.TabIndex = 2;
+            this.pnlIndicator3.Visible = false;
+            // 
+            // pnlIndicator4
+            // 
+            this.pnlIndicator4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(0)))), ((int)(((byte)(150)))));
+            this.pnlIndicator4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlIndicator4.Location = new System.Drawing.Point(164, 7);
+            this.pnlIndicator4.Name = "pnlIndicator4";
+            this.pnlIndicator4.Size = new System.Drawing.Size(5, 33);
+            this.pnlIndicator4.TabIndex = 2;
+            this.pnlIndicator4.Visible = false;
+            // 
+            // pnlIndicator5
+            // 
+            this.pnlIndicator5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(0)))), ((int)(((byte)(150)))));
+            this.pnlIndicator5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlIndicator5.Location = new System.Drawing.Point(164, 7);
+            this.pnlIndicator5.Name = "pnlIndicator5";
+            this.pnlIndicator5.Size = new System.Drawing.Size(5, 33);
+            this.pnlIndicator5.TabIndex = 2;
+            this.pnlIndicator5.Visible = false;
+            // 
+            // pnlIndicator6
+            // 
+            this.pnlIndicator6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(0)))), ((int)(((byte)(150)))));
+            this.pnlIndicator6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlIndicator6.Location = new System.Drawing.Point(164, 7);
+            this.pnlIndicator6.Name = "pnlIndicator6";
+            this.pnlIndicator6.Size = new System.Drawing.Size(5, 33);
+            this.pnlIndicator6.TabIndex = 2;
+            this.pnlIndicator6.Visible = false;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,10 +512,10 @@
             this.pnlMain.ResumeLayout(false);
             this.pnlSideBarLeft.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
+            this.pnlBtnAdminOnly3.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
+            this.pnlBtnAdminOnly2.ResumeLayout(false);
+            this.pnlBtnAdminOnly1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -465,13 +536,13 @@
         private System.Windows.Forms.Panel pnlSideBarLeft;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel pnlBtnAdminOnly3;
         private System.Windows.Forms.Button btnSellersList;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button btnMembersList;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel pnlBtnAdminOnly2;
         private System.Windows.Forms.Button btnAllProductList;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel pnlBtnAdminOnly1;
         private System.Windows.Forms.Button btnReportsDashboard;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnSells;
@@ -481,5 +552,11 @@
         private System.Windows.Forms.Button btnMyProfile;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Panel pnlIndicator1;
+        private System.Windows.Forms.Panel pnlIndicator6;
+        private System.Windows.Forms.Panel pnlIndicator5;
+        private System.Windows.Forms.Panel pnlIndicator4;
+        private System.Windows.Forms.Panel pnlIndicator3;
+        private System.Windows.Forms.Panel pnlIndicator2;
     }
 }
