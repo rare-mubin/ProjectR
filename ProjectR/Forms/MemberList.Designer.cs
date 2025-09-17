@@ -355,6 +355,7 @@
             this.dgvMemberList.RowHeadersVisible = false;
             this.dgvMemberList.RowHeadersWidth = 51;
             this.dgvMemberList.RowTemplate.Height = 40;
+            this.dgvMemberList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvMemberList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvMemberList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMemberList.Size = new System.Drawing.Size(780, 630);

@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlSidebarRight = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbProductType = new System.Windows.Forms.ComboBox();
             this.btnChoosePicture = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -64,8 +65,6 @@
             this.txtSearchProducts = new System.Windows.Forms.TextBox();
             this.pnlGridView = new System.Windows.Forms.Panel();
             this.dgvProductList = new System.Windows.Forms.DataGridView();
-            this.ofdChoseFile = new System.Windows.Forms.OpenFileDialog();
-            this.cmbProductType = new System.Windows.Forms.ComboBox();
             this.colProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,6 +74,7 @@
             this.colProductType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ofdChoseFile = new System.Windows.Forms.OpenFileDialog();
             this.pnlSidebarRight.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlProductbtns.SuspendLayout();
@@ -124,6 +124,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(281, 493);
             this.panel1.TabIndex = 0;
+            // 
+            // cmbProductType
+            // 
+            this.cmbProductType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.cmbProductType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbProductType.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbProductType.ForeColor = System.Drawing.Color.White;
+            this.cmbProductType.FormattingEnabled = true;
+            this.cmbProductType.ItemHeight = 18;
+            this.cmbProductType.Items.AddRange(new object[] {
+            "PcParts",
+            "Laptop",
+            "Games"});
+            this.cmbProductType.Location = new System.Drawing.Point(26, 343);
+            this.cmbProductType.Name = "cmbProductType";
+            this.cmbProductType.Size = new System.Drawing.Size(231, 26);
+            this.cmbProductType.TabIndex = 33;
             // 
             // btnChoosePicture
             // 
@@ -560,32 +577,12 @@
             this.dgvProductList.RowHeadersVisible = false;
             this.dgvProductList.RowHeadersWidth = 51;
             this.dgvProductList.RowTemplate.Height = 40;
+            this.dgvProductList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProductList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductList.Size = new System.Drawing.Size(780, 630);
             this.dgvProductList.TabIndex = 0;
             this.dgvProductList.DoubleClick += new System.EventHandler(this.dgvProductList_DoubleClick);
-            // 
-            // ofdChoseFile
-            // 
-            this.ofdChoseFile.FileOk += new System.ComponentModel.CancelEventHandler(this.ofdChoseFile_FileOk);
-            // 
-            // cmbProductType
-            // 
-            this.cmbProductType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.cmbProductType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbProductType.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.cmbProductType.ForeColor = System.Drawing.Color.White;
-            this.cmbProductType.FormattingEnabled = true;
-            this.cmbProductType.ItemHeight = 18;
-            this.cmbProductType.Items.AddRange(new object[] {
-            "PcParts",
-            "Laptop",
-            "Games"});
-            this.cmbProductType.Location = new System.Drawing.Point(26, 343);
-            this.cmbProductType.Name = "cmbProductType";
-            this.cmbProductType.Size = new System.Drawing.Size(231, 26);
-            this.cmbProductType.TabIndex = 33;
             // 
             // colProductId
             // 
@@ -662,6 +659,10 @@
             this.colFilePath.Name = "colFilePath";
             this.colFilePath.ReadOnly = true;
             this.colFilePath.Visible = false;
+            // 
+            // ofdChoseFile
+            // 
+            this.ofdChoseFile.FileOk += new System.ComponentModel.CancelEventHandler(this.ofdChoseFile_FileOk);
             // 
             // ProductList
             // 
