@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlProducts = new System.Windows.Forms.Panel();
             this.pnlProductType = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.dgvTempCart = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtMemberPhone = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbSelectPaymentMethod = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnRedeemPoint = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -58,11 +66,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblTotaAfterDiscount = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbSelectPaymentMethod = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtMemberPhone = new System.Windows.Forms.TextBox();
-            this.dgvTempCart = new System.Windows.Forms.DataGridView();
             this.colProductIdTemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductNameTemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductQuantityTemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +74,7 @@
             this.pnlProducts.SuspendLayout();
             this.pnlProductType.SuspendLayout();
             this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTempCart)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -82,17 +86,16 @@
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTempCart)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlProducts
             // 
-            this.pnlProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.pnlProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
             this.pnlProducts.Controls.Add(this.pnlProductType);
             this.pnlProducts.Location = new System.Drawing.Point(5, 54);
             this.pnlProducts.Margin = new System.Windows.Forms.Padding(0);
             this.pnlProducts.Name = "pnlProducts";
-            this.pnlProducts.Padding = new System.Windows.Forms.Padding(1);
+            this.pnlProducts.Padding = new System.Windows.Forms.Padding(10, 1, 1, 1);
             this.pnlProducts.Size = new System.Drawing.Size(800, 630);
             this.pnlProducts.TabIndex = 14;
             // 
@@ -101,10 +104,10 @@
             this.pnlProductType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(58)))));
             this.pnlProductType.Controls.Add(this.panel12);
             this.pnlProductType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlProductType.Location = new System.Drawing.Point(1, 1);
+            this.pnlProductType.Location = new System.Drawing.Point(10, 1);
             this.pnlProductType.Margin = new System.Windows.Forms.Padding(0);
             this.pnlProductType.Name = "pnlProductType";
-            this.pnlProductType.Size = new System.Drawing.Size(798, 628);
+            this.pnlProductType.Size = new System.Drawing.Size(789, 628);
             this.pnlProductType.TabIndex = 7;
             // 
             // panel12
@@ -114,8 +117,62 @@
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(0, 0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(798, 628);
+            this.panel12.Size = new System.Drawing.Size(789, 628);
             this.panel12.TabIndex = 0;
+            // 
+            // dgvTempCart
+            // 
+            this.dgvTempCart.AllowUserToAddRows = false;
+            this.dgvTempCart.AllowUserToDeleteRows = false;
+            this.dgvTempCart.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvTempCart.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTempCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvTempCart.ColumnHeadersHeight = 40;
+            this.dgvTempCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvTempCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colProductIdTemp,
+            this.colProductNameTemp,
+            this.colProductQuantityTemp,
+            this.colTotalAmountTemp,
+            this.colProductUnitPrice});
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTempCart.DefaultCellStyle = dataGridViewCellStyle17;
+            this.dgvTempCart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTempCart.EnableHeadersVisualStyles = false;
+            this.dgvTempCart.Location = new System.Drawing.Point(0, 0);
+            this.dgvTempCart.Name = "dgvTempCart";
+            this.dgvTempCart.ReadOnly = true;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTempCart.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            this.dgvTempCart.RowHeadersVisible = false;
+            this.dgvTempCart.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvTempCart.RowTemplate.Height = 40;
+            this.dgvTempCart.RowTemplate.ReadOnly = true;
+            this.dgvTempCart.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTempCart.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvTempCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTempCart.Size = new System.Drawing.Size(789, 628);
+            this.dgvTempCart.TabIndex = 0;
+            this.dgvTempCart.DoubleClick += new System.EventHandler(this.dgvTempCart_DoubleClick);
             // 
             // panel1
             // 
@@ -140,6 +197,48 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(281, 441);
             this.panel1.TabIndex = 0;
+            // 
+            // txtMemberPhone
+            // 
+            this.txtMemberPhone.Location = new System.Drawing.Point(32, 151);
+            this.txtMemberPhone.Name = "txtMemberPhone";
+            this.txtMemberPhone.Size = new System.Drawing.Size(229, 20);
+            this.txtMemberPhone.TabIndex = 18;
+            this.txtMemberPhone.TextChanged += new System.EventHandler(this.txtMemberPhone_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(48, 123);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(179, 23);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Member Phone ";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cmbSelectPaymentMethod
+            // 
+            this.cmbSelectPaymentMethod.FormattingEnabled = true;
+            this.cmbSelectPaymentMethod.Items.AddRange(new object[] {
+            "Cash",
+            "Card",
+            "Digital"});
+            this.cmbSelectPaymentMethod.Location = new System.Drawing.Point(32, 95);
+            this.cmbSelectPaymentMethod.Name = "cmbSelectPaymentMethod";
+            this.cmbSelectPaymentMethod.Size = new System.Drawing.Size(230, 21);
+            this.cmbSelectPaymentMethod.TabIndex = 16;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(48, 68);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(179, 23);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Select Payment Method";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel9
             // 
@@ -177,14 +276,15 @@
             this.txtMemberPoints.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
             this.txtMemberPoints.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMemberPoints.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMemberPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.txtMemberPoints.ForeColor = System.Drawing.Color.White;
             this.txtMemberPoints.Location = new System.Drawing.Point(0, 0);
-            this.txtMemberPoints.Multiline = true;
             this.txtMemberPoints.Name = "txtMemberPoints";
             this.txtMemberPoints.Size = new System.Drawing.Size(101, 30);
             this.txtMemberPoints.TabIndex = 0;
             this.txtMemberPoints.Text = "000";
             this.txtMemberPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMemberPoints.TextChanged += new System.EventHandler(this.txtMemberPoints_TextChanged);
             // 
             // lblTotalAmount
             // 
@@ -226,9 +326,9 @@
             this.lblMembershipPoints.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblMembershipPoints.Location = new System.Drawing.Point(16, 189);
             this.lblMembershipPoints.Name = "lblMembershipPoints";
-            this.lblMembershipPoints.Size = new System.Drawing.Size(179, 23);
+            this.lblMembershipPoints.Size = new System.Drawing.Size(245, 23);
             this.lblMembershipPoints.TabIndex = 3;
-            this.lblMembershipPoints.Text = "Membership Points : ";
+            this.lblMembershipPoints.Text = "Membership Points :   ";
             this.lblMembershipPoints.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblTotalItem
@@ -297,9 +397,9 @@
             // 
             this.txtNewQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
             this.txtNewQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNewQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.txtNewQuantity.ForeColor = System.Drawing.Color.White;
             this.txtNewQuantity.Location = new System.Drawing.Point(7, 7);
-            this.txtNewQuantity.Multiline = true;
             this.txtNewQuantity.Name = "txtNewQuantity";
             this.txtNewQuantity.Size = new System.Drawing.Size(118, 30);
             this.txtNewQuantity.TabIndex = 1;
@@ -459,67 +559,6 @@
             this.lblTotaAfterDiscount.Text = "Total Amount";
             this.lblTotaAfterDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(48, 68);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(179, 23);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Select Payment Method";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cmbSelectPaymentMethod
-            // 
-            this.cmbSelectPaymentMethod.FormattingEnabled = true;
-            this.cmbSelectPaymentMethod.Items.AddRange(new object[] {
-            "Cash",
-            "Card",
-            "Digital Payment"});
-            this.cmbSelectPaymentMethod.Location = new System.Drawing.Point(32, 95);
-            this.cmbSelectPaymentMethod.Name = "cmbSelectPaymentMethod";
-            this.cmbSelectPaymentMethod.Size = new System.Drawing.Size(230, 21);
-            this.cmbSelectPaymentMethod.TabIndex = 16;
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(48, 123);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(179, 23);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Member Phone ";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtMemberPhone
-            // 
-            this.txtMemberPhone.Location = new System.Drawing.Point(32, 151);
-            this.txtMemberPhone.Name = "txtMemberPhone";
-            this.txtMemberPhone.Size = new System.Drawing.Size(229, 20);
-            this.txtMemberPhone.TabIndex = 18;
-            // 
-            // dgvTempCart
-            // 
-            this.dgvTempCart.AllowUserToAddRows = false;
-            this.dgvTempCart.AllowUserToDeleteRows = false;
-            this.dgvTempCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTempCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colProductIdTemp,
-            this.colProductNameTemp,
-            this.colProductQuantityTemp,
-            this.colTotalAmountTemp,
-            this.colProductUnitPrice});
-            this.dgvTempCart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTempCart.Location = new System.Drawing.Point(0, 0);
-            this.dgvTempCart.Name = "dgvTempCart";
-            this.dgvTempCart.ReadOnly = true;
-            this.dgvTempCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTempCart.Size = new System.Drawing.Size(798, 628);
-            this.dgvTempCart.TabIndex = 0;
-            this.dgvTempCart.DoubleClick += new System.EventHandler(this.dgvTempCart_DoubleClick);
-            // 
             // colProductIdTemp
             // 
             this.colProductIdTemp.DataPropertyName = "ProductId";
@@ -529,6 +568,7 @@
             // 
             // colProductNameTemp
             // 
+            this.colProductNameTemp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colProductNameTemp.DataPropertyName = "ProductName";
             this.colProductNameTemp.HeaderText = "Product Name";
             this.colProductNameTemp.Name = "colProductNameTemp";
@@ -574,6 +614,7 @@
             this.pnlProducts.ResumeLayout(false);
             this.pnlProductType.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTempCart)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel9.ResumeLayout(false);
@@ -589,7 +630,6 @@
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTempCart)).EndInit();
             this.ResumeLayout(false);
 
         }
