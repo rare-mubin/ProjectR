@@ -1,41 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using ProjectR.Forms.ProductTypes.ProductsCards;
 
 namespace ProjectR.Forms
 {
     public partial class Checkout : UserControl
     {
         internal DataAccess Da;
-        internal string ProductId { get; set; }        
-        internal string ProductName { get; set; }        
+        internal string ProductId { get; set; }
         internal string ProductQuantity { get; set; }
         internal string ProductPrice { get; set; }
         internal string UserId { get; set; }
         internal string MemberPhone { get; set; }
         internal string MemberPoint { get; set; }
+
         public Checkout()
         {
             InitializeComponent();
             Da = MainWindow.SqlDataAccess;
 
+            this.UserId = MainWindow.LogInUser.Rows[0][0].ToString();
             this.AutoIdGenerate();
             this.LoadCartItems();
             this.PopulateGridView();
-
-        }
-
-        public Checkout(string str):  this()
-        {
-            
-
+            this.UpdateTotalAmount();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -46,7 +34,6 @@ namespace ProjectR.Forms
             MainWindow.MainWindowPanel.Controls.Add(homePage);
             homePage.Show();
         }
-
 
         // Update Quantity
         private void AddItem()
@@ -73,10 +60,10 @@ namespace ProjectR.Forms
         {
             try
             {
-                this.UserId = MainWindow.LogInUser.Rows[0][0].ToString(); ;
                 this.lblSellerID.Text = $"Seller ID: {this.UserId}";
                 this.MemberPhone = this.txtMemberPhone.Text.Trim();
                 this.MemberPoint = this.txtMemberPoints.Text.Trim();
+                this.UpdateTotalAmount();
             }
             catch (Exception ex)
             {
@@ -96,25 +83,20 @@ namespace ProjectR.Forms
                     return;
                 }
 
-                // 1️⃣ Get selected row values
                 var row = dgvTempCart.CurrentRow;
                 string productId = row.Cells["colProductIdTemp"].Value.ToString();
                 int unitPrice = Convert.ToInt32(row.Cells["colProductUnitPrice"].Value);
 
-                // 2️⃣ Get new quantity from user input
                 int newQuantity = Convert.ToInt32(this.txtNewQuantity.Text);
 
-                // 3️⃣ Calculate new total amount
                 int newTotalAmount = unitPrice * newQuantity;
 
-                // 4️⃣ Update TempCart in DB
                 string updateSql = $"UPDATE TempCart SET ProductQuantity = {newQuantity}, TotalAmount = {newTotalAmount} WHERE ProductId = '{productId}'";
                 Da.ExecuteDMLQuery(updateSql);
 
-                // 5️⃣ Refresh UI
-                PopulateGridView();       
-                UpdateTotalItems();       
-                UpdateTotalAmount();      
+                PopulateGridView();
+                UpdateTotalItems();
+                UpdateTotalAmount();
             }
             catch (Exception ex)
             {
@@ -132,11 +114,11 @@ namespace ProjectR.Forms
                 var dt = Da.ExecuteQueryTable(sql);
                 if (dt.Rows.Count > 0 && dt.Rows[0][0] != DBNull.Value)
                 {
-                    lblTotalAmount.Text = $"Total Amount: {dt.Rows[0][0].ToString()}";
+                    this.lblTotalAmount.Text = $"Total Amount: {dt.Rows[0][0].ToString()}";
                 }
                 else
                 {
-                    lblTotalAmount.Text = $"Total Amount: 0";
+                    this.lblTotalAmount.Text = $"Total Amount: 0";
                 }
             }
             catch (Exception ex)
@@ -156,12 +138,9 @@ namespace ProjectR.Forms
             var oldId = dt.Rows[0][0].ToString();
             var s = oldId.Split('-');
             var temp = Convert.ToInt32(s[1]);
-            return "T-" + (++temp).ToString("d3");
-        }
-
-
-        private void lblSellerID_Click(object sender, EventArgs e)
-        {
+            string newid = "T-" + (++temp).ToString("d3");
+            this.lblGenerateTransitionID.Text = newid;
+            return newid;
 
         }
 
@@ -180,8 +159,7 @@ namespace ProjectR.Forms
             }
         }
 
-
-        // Redem Point btn // here i iwll take the input from txt box then Reduce it from the MemberPoint where MemberPhone = '{this.MemberPhone}'
+        // Redeem Button
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -190,11 +168,11 @@ namespace ProjectR.Forms
                 var dt = Da.ExecuteQueryTable(sql);
                 double totalAmount = Convert.ToDouble(dt.Rows[0][0]);
 
-                double redeemPoints = Convert.ToDouble(this.txtMemberPoints.Text);           
-               
+                double redeemPoints = Convert.ToDouble(this.txtMemberPoints.Text);
+
 
                 double totalAfterDiscount = totalAmount - redeemPoints;
-                if (totalAfterDiscount < 0) totalAfterDiscount = 0; 
+                if (totalAfterDiscount < 0) totalAfterDiscount = 0;
 
                 lblTotaAfterDiscount.Text = totalAfterDiscount.ToString();
                 this.lblDiscount.Text = $"Discount: {this.txtMemberPoints.Text}";
@@ -235,53 +213,44 @@ namespace ProjectR.Forms
         private void Checkout_Load(object sender, EventArgs e)
         {
             this.UpdateTotalItems();
+            this.AutoIdGenerate();
+            this.dgvTempCart.ClearSelection();
             this.UpdateTotalAmount();
+            string sql = "SELECT SUM(TotalAmount) FROM TempCart;";
+            var dt = Da.ExecuteQueryTable(sql);
+            double totalAmount = Convert.ToDouble(dt.Rows[0][0]);
+            this.lblTotaAfterDiscount.Text = $"{totalAmount} BDT";
         }
-
-        // Double Click to show info
-        private void dgvTempCart_DoubleClick(object sender, EventArgs e)
-        {
-           // Nothing Yet
-        }
-
 
         // Label Minupulations
         private void RefreshCartUI()
         {
             try
             {
-                // 1. Re-populate grid
                 PopulateGridView();
-
-                // 2. Update total items
                 string countSql = "SELECT COUNT(*) FROM TempCart;";
                 var dtCount = Da.ExecuteQueryTable(countSql);
                 int totalItems = Convert.ToInt32(dtCount.Rows[0][0]);
                 lblTotalItem.Text = totalItems.ToString();
-
-                // 3. Update total amount
                 string sumSql = "SELECT SUM(TotalAmount) FROM TempCart;";
                 var dtSum = Da.ExecuteQueryTable(sumSql);
                 double totalAmount = dtSum.Rows[0][0] == DBNull.Value ? 0 : Convert.ToDouble(dtSum.Rows[0][0]);
                 lblTotalAmount.Text = totalAmount.ToString();
 
-                // 4. Update total after discount (redeem points)
                 double redeemPoints = 0;
                 if (double.TryParse(txtMemberPoints.Text, out double points))
                     redeemPoints = points;
 
                 double totalAfterDiscount = totalAmount - redeemPoints;
-                if (totalAfterDiscount < 0) totalAfterDiscount = 0;
+                if (totalAfterDiscount < 0)
+                    totalAfterDiscount = 0;
                 lblTotaAfterDiscount.Text = totalAfterDiscount.ToString();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error refreshing cart: {ex.Message}");
             }
         }
-
-
 
         // Delte Button
         private void btnRemoveFromCart_Click(object sender, EventArgs e)
@@ -296,7 +265,7 @@ namespace ProjectR.Forms
 
                 var id = this.dgvTempCart.CurrentRow.Cells["colProductIdTemp"].Value.ToString();
 
-                DialogResult res = MessageBox.Show("Are you sure to remove Item" , "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult res = MessageBox.Show("Are you sure to remove Item", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (res == DialogResult.No)
                     return;
 
@@ -314,8 +283,6 @@ namespace ProjectR.Forms
                 this.RefreshCartUI();
                 this.UpdateTotalAmount();
                 this.UpdateTotalItems();
-
-
             }
             catch (Exception ex)
             {
@@ -327,19 +294,15 @@ namespace ProjectR.Forms
         // Transaction list Update
         private void UpdateTransactionList(string transactionId, string memberPhone, double redeemPoints, string paymentMethod)
         {
-            // Calculate totals
             string sqlTotal = "SELECT SUM(TotalAmount) FROM TempCart;";
             var dtTotal = Da.ExecuteQueryTable(sqlTotal);
             double totalAmount = Convert.ToDouble(dtTotal.Rows[0][0]);
             double finalAmount = Math.Max(0, totalAmount - redeemPoints);
-
-            // Insert into TransactionList
             string sql = $@"
-            INSERT INTO TransactionList 
-            (TransactionId, SalesmanId, CustomerId, TimeAndDate, TotalAmount, PaymentOption)
-            VALUES 
-            ('{transactionId}', '{UserId}', '{memberPhone}', GETDATE(), {finalAmount}, '{paymentMethod}');";
-
+                        INSERT INTO TransactionList 
+                        (TransactionId, SalesmanId, CustomerId, TimeAndDate, TotalAmount, PaymentOption)
+                        VALUES 
+                        ('{transactionId}', '{UserId}', '{memberPhone}', GETDATE(), {finalAmount}, '{paymentMethod}');";
             Da.ExecuteDMLQuery(sql);
         }
 
@@ -348,7 +311,6 @@ namespace ProjectR.Forms
         {
             try
             {
-                // Get all items from TempCart
                 string sql = "SELECT ProductId, ProductQuantity FROM TempCart";
                 var dt = Da.ExecuteQueryTable(sql);
 
@@ -356,8 +318,6 @@ namespace ProjectR.Forms
                 {
                     string productId = row["ProductId"].ToString();
                     int quantity = Convert.ToInt32(row["ProductQuantity"]);
-
-                    // Subtract 1 from ProductStock for each unit
                     for (int i = 0; i < quantity; i++)
                     {
                         string sqlUpdate = $@"
@@ -376,12 +336,10 @@ namespace ProjectR.Forms
         }
 
         // Transaction Detail Update
-
         private void UpdateTransactionDetails(string transactionId)
         {
             try
             {
-                // Fetch all items from TempCart
                 string sql = "SELECT ProductId, ProductQuantity, ProductUnitPrice FROM TempCart";
                 var dt = Da.ExecuteQueryTable(sql);
 
@@ -395,7 +353,6 @@ namespace ProjectR.Forms
                     for (int i = 0; i < quantity; i++)
                     {
                         string detailId = GenerateTransactionDetailId();
-
                         string insertSql = $@"
                                             INSERT INTO TransactionDetails
                                             (TransactionDetailId, TransactionId, ProductId, Quantity, UnitPrice)
@@ -410,7 +367,7 @@ namespace ProjectR.Forms
                 MessageBox.Show($"Error updating transaction details: {ex.Message}");
             }
         }
-        // Transaction Id Auto Genarate
+        // Transaction Details Id Auto Genarate
         private string GenerateTransactionDetailId()
         {
             string query = "SELECT MAX(TransactionDetailId) FROM TransactionDetails;";
@@ -424,42 +381,29 @@ namespace ProjectR.Forms
             var temp = Convert.ToInt32(s[1]);
             return "TD-" + (++temp).ToString("d3");
         }
-
-
-
-
         // Member list Update
         private void UpdateMemberList(string memberPhone, double redeemPoints, double finalAmount)
         {
             try
             {
-                // Check if member exists
                 string sqlCheck = $"SELECT MemberPoints FROM MemberList WHERE MemberPhone = '{memberPhone}'";
                 var dt = Da.ExecuteQueryTable(sqlCheck);
 
                 if (dt.Rows.Count == 1)
                 {
-                    // Existing member → adjust points
                     double currentPoints = Convert.ToDouble(dt.Rows[0]["MemberPoints"]);
-
-                    // 1 point for every 100 spent (example logic, change if needed)
                     double earnedPoints = Math.Floor(finalAmount / 100);
-
                     double newPoints = currentPoints - redeemPoints + earnedPoints;
                     if (newPoints < 0) newPoints = 0;
-
                     string sqlUpdate = $"UPDATE MemberList SET MemberPoints = {newPoints} WHERE MemberPhone = '{memberPhone}'";
                     Da.ExecuteDMLQuery(sqlUpdate);
                 }
                 else
                 {
-                    // New member → insert
                     double earnedPoints = Math.Floor(finalAmount / 100);
-
                     string sqlInsert = $@"
-                INSERT INTO MemberList (MemberPhone, MemberPoints)
-                VALUES ('{memberPhone}', {earnedPoints});";
-
+                                        INSERT INTO MemberList (MemberPhone, MemberPoints)
+                                        VALUES ('{memberPhone}', {earnedPoints});";
                     Da.ExecuteDMLQuery(sqlInsert);
                 }
             }
@@ -483,43 +427,34 @@ namespace ProjectR.Forms
         // Confirm Transaction
         private void btnConfirmTransaction_Click(object sender, EventArgs e)
         {
-            if(!IsValidToSave())
-            {
-                MessageBox.Show("Please Fill All the Information");
-                return;
-            }
 
             try
             {
-                // 1️ Generate Transaction ID
+                if (!IsValidToSave())
+                {
+                    MessageBox.Show("Please Fill All the Information");
+                    return;
+                }
                 string transactionId = AutoIdGenerate();
                 lblGenerateTransitionID.Text = transactionId;
 
-                // 2️⃣ Get member input
                 string memberPhone = txtMemberPhone.Text.Trim();
                 double redeemPoints = 0;
                 redeemPoints = Convert.ToDouble(txtMemberPoints.Text.Trim());
                 string paymentMethod = this.cmbSelectPaymentMethod.Text.Trim();
 
-                // 3️⃣ Calculate final amount after discount
                 string sqlTotal = "SELECT SUM(TotalAmount) FROM TempCart;";
                 var dtTotal = Da.ExecuteQueryTable(sqlTotal);
                 double totalAmount = dtTotal.Rows[0][0] == DBNull.Value ? 0 : Convert.ToDouble(dtTotal.Rows[0][0]);
                 double finalAmount = Math.Max(0, totalAmount - redeemPoints);
 
-                // 4️⃣ Update all tables
                 UpdateTransactionList(transactionId, memberPhone, redeemPoints, paymentMethod);
                 UpdateProductList();
                 UpdateTransactionDetails(transactionId);
                 UpdateMemberList(memberPhone, redeemPoints, finalAmount);
 
-                // 5️⃣ Clear TempCart
                 Da.ExecuteDMLQuery("DELETE FROM TempCart;");
-
-                // 6️⃣ Refresh UI
                 RefreshCartUI();
-
-                // 7️⃣ Show success message
                 MessageBox.Show("Transaction completed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -530,10 +465,6 @@ namespace ProjectR.Forms
 
         }
 
-        private void txtMemberPoints_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void txtMemberPhone_TextChanged(object sender, EventArgs e)
         {
@@ -546,11 +477,11 @@ namespace ProjectR.Forms
                     this.lblMembershipPoints.Text += dt.Rows[0][0].ToString();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                
+                MessageBox.Show($"Error:{ex.Message}");
             }
-            
+
         }
     }
 }
