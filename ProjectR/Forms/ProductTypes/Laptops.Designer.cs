@@ -30,11 +30,12 @@
         {
             this.flpProducts = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlCategory = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnMacBook = new System.Windows.Forms.Button();
+            this.btnGaming = new System.Windows.Forms.Button();
+            this.btnCreator = new System.Windows.Forms.Button();
+            this.btnBusiness = new System.Windows.Forms.Button();
+            this.btnAllLaptops = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlCategory.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,11 +53,11 @@
             // 
             // pnlCategory
             // 
-            this.pnlCategory.Controls.Add(this.button5);
-            this.pnlCategory.Controls.Add(this.button4);
-            this.pnlCategory.Controls.Add(this.button3);
-            this.pnlCategory.Controls.Add(this.button2);
-            this.pnlCategory.Controls.Add(this.button1);
+            this.pnlCategory.Controls.Add(this.btnMacBook);
+            this.pnlCategory.Controls.Add(this.btnGaming);
+            this.pnlCategory.Controls.Add(this.btnCreator);
+            this.pnlCategory.Controls.Add(this.btnBusiness);
+            this.pnlCategory.Controls.Add(this.btnAllLaptops);
             this.pnlCategory.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCategory.Location = new System.Drawing.Point(0, 0);
             this.pnlCategory.Margin = new System.Windows.Forms.Padding(0);
@@ -64,71 +65,86 @@
             this.pnlCategory.Size = new System.Drawing.Size(800, 69);
             this.pnlCategory.TabIndex = 3;
             // 
-            // button5
+            // btnMacBook
             // 
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(583, 22);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnMacBook.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnMacBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMacBook.ForeColor = System.Drawing.Color.White;
+            this.btnMacBook.Location = new System.Drawing.Point(580, 23);
+            this.btnMacBook.Name = "btnMacBook";
+            this.btnMacBook.Size = new System.Drawing.Size(75, 23);
+            this.btnMacBook.TabIndex = 4;
+            this.btnMacBook.Text = "MacBook";
+            this.btnMacBook.UseVisualStyleBackColor = true;
+            this.btnMacBook.Click += new System.EventHandler(this.btnMacBook_Click);
             // 
-            // button4
+            // btnGaming
             // 
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(466, 22);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnGaming.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnGaming.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGaming.ForeColor = System.Drawing.Color.White;
+            this.btnGaming.Location = new System.Drawing.Point(467, 23);
+            this.btnGaming.Name = "btnGaming";
+            this.btnGaming.Size = new System.Drawing.Size(75, 23);
+            this.btnGaming.TabIndex = 3;
+            this.btnGaming.Text = "Gaming";
+            this.btnGaming.UseVisualStyleBackColor = true;
+            this.btnGaming.Click += new System.EventHandler(this.btnGaming_Click);
             // 
-            // button3
+            // btnCreator
             // 
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(333, 22);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCreator.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnCreator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreator.ForeColor = System.Drawing.Color.White;
+            this.btnCreator.Location = new System.Drawing.Point(354, 23);
+            this.btnCreator.Name = "btnCreator";
+            this.btnCreator.Size = new System.Drawing.Size(75, 23);
+            this.btnCreator.TabIndex = 2;
+            this.btnCreator.Text = "Creator";
+            this.btnCreator.UseVisualStyleBackColor = true;
+            this.btnCreator.Click += new System.EventHandler(this.btnCreator_Click);
             // 
-            // button2
+            // btnBusiness
             // 
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(201, 22);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnBusiness.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnBusiness.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBusiness.ForeColor = System.Drawing.Color.White;
+            this.btnBusiness.Location = new System.Drawing.Point(241, 23);
+            this.btnBusiness.Name = "btnBusiness";
+            this.btnBusiness.Size = new System.Drawing.Size(75, 23);
+            this.btnBusiness.TabIndex = 1;
+            this.btnBusiness.Text = "Business";
+            this.btnBusiness.UseVisualStyleBackColor = true;
+            this.btnBusiness.Click += new System.EventHandler(this.btnBusiness_Click);
             // 
-            // button1
+            // btnAllLaptops
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(93, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAllLaptops.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAllLaptops.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAllLaptops.ForeColor = System.Drawing.Color.White;
+            this.btnAllLaptops.Location = new System.Drawing.Point(128, 23);
+            this.btnAllLaptops.Name = "btnAllLaptops";
+            this.btnAllLaptops.Size = new System.Drawing.Size(75, 23);
+            this.btnAllLaptops.TabIndex = 0;
+            this.btnAllLaptops.Text = "All Laptops";
+            this.btnAllLaptops.UseVisualStyleBackColor = true;
+            this.btnAllLaptops.Click += new System.EventHandler(this.btnAllLaptops_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 69);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 1);
+            this.panel1.TabIndex = 4;
             // 
             // Laptops
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.flpProducts);
             this.Controls.Add(this.pnlCategory);
             this.Name = "Laptops";
@@ -143,10 +159,11 @@
 
         private System.Windows.Forms.FlowLayoutPanel flpProducts;
         private System.Windows.Forms.Panel pnlCategory;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMacBook;
+        private System.Windows.Forms.Button btnGaming;
+        private System.Windows.Forms.Button btnCreator;
+        private System.Windows.Forms.Button btnBusiness;
+        private System.Windows.Forms.Button btnAllLaptops;
+        private System.Windows.Forms.Panel panel1;
     }
 }

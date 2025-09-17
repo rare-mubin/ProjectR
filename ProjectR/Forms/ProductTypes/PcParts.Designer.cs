@@ -30,11 +30,15 @@
         {
             this.flpProducts = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlCategory = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnMotherboard = new System.Windows.Forms.Button();
+            this.btnProccessor = new System.Windows.Forms.Button();
+            this.btnGPU = new System.Windows.Forms.Button();
+            this.btnAccessories = new System.Windows.Forms.Button();
+            this.btnAllPcParts = new System.Windows.Forms.Button();
+            this.btnPSU = new System.Windows.Forms.Button();
+            this.btnStorage = new System.Windows.Forms.Button();
+            this.btnRAM = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlCategory.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,11 +56,14 @@
             // 
             // pnlCategory
             // 
-            this.pnlCategory.Controls.Add(this.button5);
-            this.pnlCategory.Controls.Add(this.button4);
-            this.pnlCategory.Controls.Add(this.button3);
-            this.pnlCategory.Controls.Add(this.button2);
-            this.pnlCategory.Controls.Add(this.button1);
+            this.pnlCategory.Controls.Add(this.btnPSU);
+            this.pnlCategory.Controls.Add(this.btnStorage);
+            this.pnlCategory.Controls.Add(this.btnRAM);
+            this.pnlCategory.Controls.Add(this.btnMotherboard);
+            this.pnlCategory.Controls.Add(this.btnProccessor);
+            this.pnlCategory.Controls.Add(this.btnGPU);
+            this.pnlCategory.Controls.Add(this.btnAccessories);
+            this.pnlCategory.Controls.Add(this.btnAllPcParts);
             this.pnlCategory.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCategory.Location = new System.Drawing.Point(0, 0);
             this.pnlCategory.Margin = new System.Windows.Forms.Padding(0);
@@ -64,71 +71,125 @@
             this.pnlCategory.Size = new System.Drawing.Size(800, 69);
             this.pnlCategory.TabIndex = 5;
             // 
-            // button5
+            // btnMotherboard
             // 
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(583, 22);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnMotherboard.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnMotherboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMotherboard.ForeColor = System.Drawing.Color.White;
+            this.btnMotherboard.Location = new System.Drawing.Point(394, 23);
+            this.btnMotherboard.Name = "btnMotherboard";
+            this.btnMotherboard.Size = new System.Drawing.Size(75, 23);
+            this.btnMotherboard.TabIndex = 4;
+            this.btnMotherboard.Text = "Motherboard";
+            this.btnMotherboard.UseVisualStyleBackColor = true;
+            this.btnMotherboard.Click += new System.EventHandler(this.btnMotherboard_Click);
             // 
-            // button4
+            // btnProccessor
             // 
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(466, 22);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnProccessor.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnProccessor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProccessor.ForeColor = System.Drawing.Color.White;
+            this.btnProccessor.Location = new System.Drawing.Point(313, 23);
+            this.btnProccessor.Name = "btnProccessor";
+            this.btnProccessor.Size = new System.Drawing.Size(75, 23);
+            this.btnProccessor.TabIndex = 3;
+            this.btnProccessor.Text = "Proccessor";
+            this.btnProccessor.UseVisualStyleBackColor = true;
+            this.btnProccessor.Click += new System.EventHandler(this.btnProccessor_Click);
             // 
-            // button3
+            // btnGPU
             // 
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(333, 22);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnGPU.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnGPU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGPU.ForeColor = System.Drawing.Color.White;
+            this.btnGPU.Location = new System.Drawing.Point(232, 23);
+            this.btnGPU.Name = "btnGPU";
+            this.btnGPU.Size = new System.Drawing.Size(75, 23);
+            this.btnGPU.TabIndex = 2;
+            this.btnGPU.Text = "GPU";
+            this.btnGPU.UseVisualStyleBackColor = true;
+            this.btnGPU.Click += new System.EventHandler(this.btnGPU_Click);
             // 
-            // button2
+            // btnAccessories
             // 
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(201, 22);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAccessories.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAccessories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccessories.ForeColor = System.Drawing.Color.White;
+            this.btnAccessories.Location = new System.Drawing.Point(151, 23);
+            this.btnAccessories.Name = "btnAccessories";
+            this.btnAccessories.Size = new System.Drawing.Size(75, 23);
+            this.btnAccessories.TabIndex = 1;
+            this.btnAccessories.Text = "Accessories";
+            this.btnAccessories.UseVisualStyleBackColor = true;
+            this.btnAccessories.Click += new System.EventHandler(this.btnAccessories_Click);
             // 
-            // button1
+            // btnAllPcParts
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(93, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAllPcParts.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAllPcParts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAllPcParts.ForeColor = System.Drawing.Color.White;
+            this.btnAllPcParts.Location = new System.Drawing.Point(70, 23);
+            this.btnAllPcParts.Name = "btnAllPcParts";
+            this.btnAllPcParts.Size = new System.Drawing.Size(75, 23);
+            this.btnAllPcParts.TabIndex = 0;
+            this.btnAllPcParts.Text = "All Pc Parts";
+            this.btnAllPcParts.UseVisualStyleBackColor = true;
+            this.btnAllPcParts.Click += new System.EventHandler(this.btnAllPcParts_Click);
+            // 
+            // btnPSU
+            // 
+            this.btnPSU.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnPSU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPSU.ForeColor = System.Drawing.Color.White;
+            this.btnPSU.Location = new System.Drawing.Point(639, 23);
+            this.btnPSU.Name = "btnPSU";
+            this.btnPSU.Size = new System.Drawing.Size(75, 23);
+            this.btnPSU.TabIndex = 7;
+            this.btnPSU.Text = "PSU";
+            this.btnPSU.UseVisualStyleBackColor = true;
+            this.btnPSU.Click += new System.EventHandler(this.btnPSU_Click);
+            // 
+            // btnStorage
+            // 
+            this.btnStorage.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnStorage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStorage.ForeColor = System.Drawing.Color.White;
+            this.btnStorage.Location = new System.Drawing.Point(558, 23);
+            this.btnStorage.Name = "btnStorage";
+            this.btnStorage.Size = new System.Drawing.Size(75, 23);
+            this.btnStorage.TabIndex = 6;
+            this.btnStorage.Text = "Storage";
+            this.btnStorage.UseVisualStyleBackColor = true;
+            this.btnStorage.Click += new System.EventHandler(this.btnStorage_Click);
+            // 
+            // btnRAM
+            // 
+            this.btnRAM.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnRAM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRAM.ForeColor = System.Drawing.Color.White;
+            this.btnRAM.Location = new System.Drawing.Point(477, 23);
+            this.btnRAM.Name = "btnRAM";
+            this.btnRAM.Size = new System.Drawing.Size(75, 23);
+            this.btnRAM.TabIndex = 5;
+            this.btnRAM.Text = "RAM";
+            this.btnRAM.UseVisualStyleBackColor = true;
+            this.btnRAM.Click += new System.EventHandler(this.btnRAM_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 69);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 1);
+            this.panel1.TabIndex = 6;
             // 
             // PcParts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.flpProducts);
             this.Controls.Add(this.pnlCategory);
             this.Name = "PcParts";
@@ -143,10 +204,14 @@
 
         private System.Windows.Forms.FlowLayoutPanel flpProducts;
         private System.Windows.Forms.Panel pnlCategory;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMotherboard;
+        private System.Windows.Forms.Button btnProccessor;
+        private System.Windows.Forms.Button btnGPU;
+        private System.Windows.Forms.Button btnAccessories;
+        private System.Windows.Forms.Button btnAllPcParts;
+        private System.Windows.Forms.Button btnPSU;
+        private System.Windows.Forms.Button btnStorage;
+        private System.Windows.Forms.Button btnRAM;
+        private System.Windows.Forms.Panel panel1;
     }
 }

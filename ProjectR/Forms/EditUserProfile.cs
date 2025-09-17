@@ -19,22 +19,49 @@ namespace ProjectR.Forms
             InitializeComponent();
             this.lblUserNameHeader.Text = MainWindow.LogInUser.Rows[0][2].ToString();
             this.txtUserName.Text = MainWindow.LogInUser.Rows[0][2].ToString();
+            this.lblUserRole1.Text = MainWindow.LogInUser.Rows[0][6].ToString();
             this.txtNidNumber.Text = MainWindow.LogInUser.Rows[0][5].ToString();
             this.txtPhone.Text = MainWindow.LogInUser.Rows[0][4].ToString();
-            this.txtUserDOB.Text = MainWindow.LogInUser.Rows[0][3].ToString();
+            this.dtpDOB.Text = MainWindow.LogInUser.Rows[0][3].ToString();
         }
 
         private void btnUpdateProfile_Click(object sender, EventArgs e)
         {
-            if(this.txtUserName.Text ==""|| this.txtNidNumber.Text == ""|| this.txtPhone.Text == "")
+            try
             {
-                MessageBox.Show("Please fill up all the required fields");
+                if (this.txtUserName.Text == "" || this.txtNidNumber.Text == "" || this.txtPhone.Text == "")
+                {
+                    MessageBox.Show("Please fill up all the required fields");
+                }
+                else
+                {
+                    var Query = "update UserList set UserName='" + this.txtUserName.Text + "',UserNID='" + this.txtNidNumber.Text + "',UserPhone='" + this.txtPhone.Text + "' where UserId='" + MainWindow.LogInUser.Rows[0][0].ToString() + "';";
+                    MainWindow.SqlDataAccess.ExecuteQuery(Query);
+                    
+                    MessageBox.Show("Profile has been updated");
+                    var query = $@"select UserList.UserId,
+                                UserList.UserPassword,
+                                UserList.Username,
+                                UserList.UserDOB,
+                                UserList.UserPhone,
+                                UserList.UserNID,
+                                RoleList.Role from 
+                                UserList,RoleList 
+                                where UserList.UserId = '{MainWindow.LogInUser.Rows[0][0].ToString()}'  
+                                and UserList.UserId = RoleList.UserId;";
+
+                    var ds = MainWindow.SqlDataAccess.ExecuteQueryTable(query);
+                    MainWindow.LogInUser = ds;
+                    EditUserProfile NextPage = new EditUserProfile();
+                    NextPage.Dock = DockStyle.Fill;
+                    MainWindow.MainWindowPanel.Controls.Clear();
+                    MainWindow.MainWindowPanel.Controls.Add(NextPage);
+                    NextPage.Show();
+                }
             }
-            else {
-                var Query = "update UserList set UserName='" + this.txtUserName.Text + "',UserNID='" + this.txtNidNumber.Text + "',UserPhone='" + this.txtPhone.Text + "' where UserId='A-001';";
-                MainWindow.SqlDataAccess.ExecuteQuery(Query);
-                MessageBox.Show("Profile has been updated");
-                this.lblUserNameHeader.Text=this.txtUserName.Text;
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error:"+ex.Message);
             }
         }
 
@@ -51,6 +78,16 @@ namespace ProjectR.Forms
             userProfile.Dock = DockStyle.Fill;
             ChangeWindow(userProfile);
             userProfile.Show();
+        }
+
+        private void btnChoosePicture_Click(object sender, EventArgs e)
+        {
+            this.ofdChoseFile.ShowDialog();
+        }
+
+        private void ofdChoseFile_FileOk(object sender, CancelEventArgs e)
+        {
+            this.txtFilePath.Text = this.ofdChoseFile.FileName;
         }
     }
 }

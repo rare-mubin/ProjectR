@@ -29,31 +29,68 @@
         private void InitializeComponent()
         {
             this.pnlCategory = new System.Windows.Forms.Panel();
+            this.btnPcGameC = new System.Windows.Forms.Button();
+            this.btnPS5C = new System.Windows.Forms.Button();
+            this.btnXboxC = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.pnlProducts = new System.Windows.Forms.Panel();
             this.flpProducts = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnAllGames = new System.Windows.Forms.Button();
             this.pnlCategory.SuspendLayout();
             this.pnlProducts.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlCategory
             // 
-            this.pnlCategory.Controls.Add(this.button5);
-            this.pnlCategory.Controls.Add(this.button4);
-            this.pnlCategory.Controls.Add(this.button3);
-            this.pnlCategory.Controls.Add(this.button2);
-            this.pnlCategory.Controls.Add(this.button1);
+            this.pnlCategory.Controls.Add(this.btnAllGames);
+            this.pnlCategory.Controls.Add(this.btnPcGameC);
+            this.pnlCategory.Controls.Add(this.btnPS5C);
+            this.pnlCategory.Controls.Add(this.btnXboxC);
             this.pnlCategory.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCategory.Location = new System.Drawing.Point(0, 0);
             this.pnlCategory.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCategory.Name = "pnlCategory";
             this.pnlCategory.Size = new System.Drawing.Size(800, 69);
             this.pnlCategory.TabIndex = 1;
+            // 
+            // btnPcGameC
+            // 
+            this.btnPcGameC.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnPcGameC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPcGameC.ForeColor = System.Drawing.Color.White;
+            this.btnPcGameC.Location = new System.Drawing.Point(538, 22);
+            this.btnPcGameC.Name = "btnPcGameC";
+            this.btnPcGameC.Size = new System.Drawing.Size(75, 23);
+            this.btnPcGameC.TabIndex = 2;
+            this.btnPcGameC.Text = "Pc Game";
+            this.btnPcGameC.UseVisualStyleBackColor = true;
+            this.btnPcGameC.Click += new System.EventHandler(this.btnPcGameC_Click);
+            // 
+            // btnPS5C
+            // 
+            this.btnPS5C.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnPS5C.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPS5C.ForeColor = System.Drawing.Color.White;
+            this.btnPS5C.Location = new System.Drawing.Point(416, 22);
+            this.btnPS5C.Name = "btnPS5C";
+            this.btnPS5C.Size = new System.Drawing.Size(75, 23);
+            this.btnPS5C.TabIndex = 1;
+            this.btnPS5C.Text = "PS5";
+            this.btnPS5C.UseVisualStyleBackColor = true;
+            this.btnPS5C.Click += new System.EventHandler(this.btnPS5C_Click);
+            // 
+            // btnXboxC
+            // 
+            this.btnXboxC.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnXboxC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXboxC.ForeColor = System.Drawing.Color.White;
+            this.btnXboxC.Location = new System.Drawing.Point(294, 22);
+            this.btnXboxC.Name = "btnXboxC";
+            this.btnXboxC.Size = new System.Drawing.Size(75, 23);
+            this.btnXboxC.TabIndex = 0;
+            this.btnXboxC.Text = "X-Box";
+            this.btnXboxC.UseVisualStyleBackColor = true;
+            this.btnXboxC.Click += new System.EventHandler(this.btnXboxC_Click);
             // 
             // panel1
             // 
@@ -63,66 +100,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 1);
             this.panel1.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(93, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(201, 22);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(333, 22);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(466, 22);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(583, 22);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // pnlProducts
             // 
@@ -145,6 +122,19 @@
             this.flpProducts.Size = new System.Drawing.Size(800, 560);
             this.flpProducts.TabIndex = 0;
             // 
+            // btnAllGames
+            // 
+            this.btnAllGames.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAllGames.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAllGames.ForeColor = System.Drawing.Color.White;
+            this.btnAllGames.Location = new System.Drawing.Point(172, 22);
+            this.btnAllGames.Name = "btnAllGames";
+            this.btnAllGames.Size = new System.Drawing.Size(75, 23);
+            this.btnAllGames.TabIndex = 3;
+            this.btnAllGames.Text = "All Games";
+            this.btnAllGames.UseVisualStyleBackColor = true;
+            this.btnAllGames.Click += new System.EventHandler(this.btnAllGames_Click);
+            // 
             // Games
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,12 +155,11 @@
         #endregion
         private System.Windows.Forms.Panel pnlCategory;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnXboxC;
+        private System.Windows.Forms.Button btnPcGameC;
+        private System.Windows.Forms.Button btnPS5C;
         private System.Windows.Forms.Panel pnlProducts;
         private System.Windows.Forms.FlowLayoutPanel flpProducts;
+        private System.Windows.Forms.Button btnAllGames;
     }
 }

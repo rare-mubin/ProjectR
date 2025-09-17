@@ -30,10 +30,26 @@
         {
             this.pnlProducts = new System.Windows.Forms.Panel();
             this.pnlProductType = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblTotalAmount = new System.Windows.Forms.Label();
+            this.lblDiscount = new System.Windows.Forms.Label();
+            this.lblSellerID = new System.Windows.Forms.Label();
+            this.lblMembershipPoints = new System.Windows.Forms.Label();
+            this.lblTotalItem = new System.Windows.Forms.Label();
+            this.lblGenerateTransitionID = new System.Windows.Forms.Label();
             this.pnlSidebarRight = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnChangeQuantity = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnRemoveFromCart = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -46,25 +62,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblGenerateTransitionID = new System.Windows.Forms.Label();
-            this.lblTotalItem = new System.Windows.Forms.Label();
-            this.lblMembershipPoints = new System.Windows.Forms.Label();
-            this.lblSellerID = new System.Windows.Forms.Label();
-            this.lblDiscount = new System.Windows.Forms.Label();
-            this.lblTotalAmount = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.pnlProducts.SuspendLayout();
             this.pnlProductType.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.pnlSidebarRight.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -73,10 +77,6 @@
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlProducts
@@ -101,6 +101,14 @@
             this.pnlProductType.Size = new System.Drawing.Size(798, 628);
             this.pnlProductType.TabIndex = 7;
             // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.panel12.Location = new System.Drawing.Point(3, 3);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(792, 625);
+            this.panel12.TabIndex = 0;
+            // 
             // panel1
             // 
             this.panel1.AutoSize = true;
@@ -122,6 +130,157 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(281, 441);
             this.panel1.TabIndex = 0;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.button1);
+            this.panel9.Location = new System.Drawing.Point(135, 231);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(128, 30);
+            this.panel9.TabIndex = 14;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 30);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Redeem Point";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.button2);
+            this.panel7.Location = new System.Drawing.Point(19, 144);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(244, 30);
+            this.panel7.TabIndex = 13;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(244, 30);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Select Payment Method";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.comboBox1);
+            this.panel6.Location = new System.Drawing.Point(19, 99);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(244, 22);
+            this.panel6.TabIndex = 12;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(0, 0);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(244, 21);
+            this.comboBox1.TabIndex = 0;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.textBox1);
+            this.panel8.Location = new System.Drawing.Point(18, 231);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(101, 30);
+            this.panel8.TabIndex = 11;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(101, 30);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "6";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblTotalAmount
+            // 
+            this.lblTotalAmount.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalAmount.ForeColor = System.Drawing.Color.White;
+            this.lblTotalAmount.Location = new System.Drawing.Point(15, 336);
+            this.lblTotalAmount.Name = "lblTotalAmount";
+            this.lblTotalAmount.Size = new System.Drawing.Size(179, 23);
+            this.lblTotalAmount.TabIndex = 8;
+            this.lblTotalAmount.Text = "Total Amount : ";
+            this.lblTotalAmount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblDiscount
+            // 
+            this.lblDiscount.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiscount.ForeColor = System.Drawing.Color.White;
+            this.lblDiscount.Location = new System.Drawing.Point(16, 381);
+            this.lblDiscount.Name = "lblDiscount";
+            this.lblDiscount.Size = new System.Drawing.Size(179, 23);
+            this.lblDiscount.TabIndex = 7;
+            this.lblDiscount.Text = "Discount : ";
+            this.lblDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblSellerID
+            // 
+            this.lblSellerID.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSellerID.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblSellerID.Location = new System.Drawing.Point(48, 59);
+            this.lblSellerID.Name = "lblSellerID";
+            this.lblSellerID.Size = new System.Drawing.Size(179, 23);
+            this.lblSellerID.TabIndex = 6;
+            this.lblSellerID.Text = "Seller ID";
+            this.lblSellerID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMembershipPoints
+            // 
+            this.lblMembershipPoints.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMembershipPoints.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblMembershipPoints.Location = new System.Drawing.Point(16, 189);
+            this.lblMembershipPoints.Name = "lblMembershipPoints";
+            this.lblMembershipPoints.Size = new System.Drawing.Size(179, 23);
+            this.lblMembershipPoints.TabIndex = 3;
+            this.lblMembershipPoints.Text = "Membership Points : ";
+            this.lblMembershipPoints.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblTotalItem
+            // 
+            this.lblTotalItem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalItem.ForeColor = System.Drawing.Color.White;
+            this.lblTotalItem.Location = new System.Drawing.Point(15, 290);
+            this.lblTotalItem.Name = "lblTotalItem";
+            this.lblTotalItem.Size = new System.Drawing.Size(179, 23);
+            this.lblTotalItem.TabIndex = 2;
+            this.lblTotalItem.Text = "Total Item : ";
+            this.lblTotalItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblGenerateTransitionID
+            // 
+            this.lblGenerateTransitionID.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenerateTransitionID.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblGenerateTransitionID.Location = new System.Drawing.Point(48, 22);
+            this.lblGenerateTransitionID.Name = "lblGenerateTransitionID";
+            this.lblGenerateTransitionID.Size = new System.Drawing.Size(179, 23);
+            this.lblGenerateTransitionID.TabIndex = 1;
+            this.lblGenerateTransitionID.Text = "Generate Transaction ID";
+            this.lblGenerateTransitionID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlSidebarRight
             // 
@@ -161,6 +320,19 @@
             this.btnChangeQuantity.TabIndex = 0;
             this.btnChangeQuantity.Text = "Change Quantity";
             this.btnChangeQuantity.UseVisualStyleBackColor = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.ForeColor = System.Drawing.Color.White;
+            this.textBox2.Location = new System.Drawing.Point(7, 7);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(118, 30);
+            this.textBox2.TabIndex = 1;
+            this.textBox2.Text = "6";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel10
             // 
@@ -313,178 +485,6 @@
             this.label3.Text = "Total Amount";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblGenerateTransitionID
-            // 
-            this.lblGenerateTransitionID.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenerateTransitionID.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblGenerateTransitionID.Location = new System.Drawing.Point(48, 22);
-            this.lblGenerateTransitionID.Name = "lblGenerateTransitionID";
-            this.lblGenerateTransitionID.Size = new System.Drawing.Size(179, 23);
-            this.lblGenerateTransitionID.TabIndex = 1;
-            this.lblGenerateTransitionID.Text = "Generate Transaction ID";
-            this.lblGenerateTransitionID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblTotalItem
-            // 
-            this.lblTotalItem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalItem.ForeColor = System.Drawing.Color.White;
-            this.lblTotalItem.Location = new System.Drawing.Point(15, 290);
-            this.lblTotalItem.Name = "lblTotalItem";
-            this.lblTotalItem.Size = new System.Drawing.Size(179, 23);
-            this.lblTotalItem.TabIndex = 2;
-            this.lblTotalItem.Text = "Total Item : ";
-            this.lblTotalItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblMembershipPoints
-            // 
-            this.lblMembershipPoints.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMembershipPoints.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblMembershipPoints.Location = new System.Drawing.Point(16, 189);
-            this.lblMembershipPoints.Name = "lblMembershipPoints";
-            this.lblMembershipPoints.Size = new System.Drawing.Size(179, 23);
-            this.lblMembershipPoints.TabIndex = 3;
-            this.lblMembershipPoints.Text = "Membership Points : ";
-            this.lblMembershipPoints.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblSellerID
-            // 
-            this.lblSellerID.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSellerID.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblSellerID.Location = new System.Drawing.Point(48, 59);
-            this.lblSellerID.Name = "lblSellerID";
-            this.lblSellerID.Size = new System.Drawing.Size(179, 23);
-            this.lblSellerID.TabIndex = 6;
-            this.lblSellerID.Text = "Seller ID";
-            this.lblSellerID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblDiscount
-            // 
-            this.lblDiscount.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiscount.ForeColor = System.Drawing.Color.White;
-            this.lblDiscount.Location = new System.Drawing.Point(16, 381);
-            this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(179, 23);
-            this.lblDiscount.TabIndex = 7;
-            this.lblDiscount.Text = "Discount : ";
-            this.lblDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblTotalAmount
-            // 
-            this.lblTotalAmount.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAmount.ForeColor = System.Drawing.Color.White;
-            this.lblTotalAmount.Location = new System.Drawing.Point(15, 336);
-            this.lblTotalAmount.Name = "lblTotalAmount";
-            this.lblTotalAmount.Size = new System.Drawing.Size(179, 23);
-            this.lblTotalAmount.TabIndex = 8;
-            this.lblTotalAmount.Text = "Total Amount : ";
-            this.lblTotalAmount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.textBox1);
-            this.panel8.Location = new System.Drawing.Point(18, 231);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(101, 30);
-            this.panel8.TabIndex = 11;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(7, 7);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(118, 30);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "6";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.comboBox1);
-            this.panel6.Location = new System.Drawing.Point(19, 99);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(244, 22);
-            this.panel6.TabIndex = 12;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.button2);
-            this.panel7.Location = new System.Drawing.Point(19, 144);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(244, 30);
-            this.panel7.TabIndex = 13;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(0, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(244, 21);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.button1);
-            this.panel9.Location = new System.Drawing.Point(135, 231);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(128, 30);
-            this.panel9.TabIndex = 14;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
-            this.panel12.Location = new System.Drawing.Point(3, 3);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(792, 625);
-            this.panel12.TabIndex = 0;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(244, 30);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Select Payment Method";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(101, 30);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "6";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Redeem Point";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // Checkout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -503,6 +503,11 @@
             this.pnlProducts.ResumeLayout(false);
             this.pnlProductType.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.pnlSidebarRight.ResumeLayout(false);
             this.pnlSidebarRight.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -513,11 +518,6 @@
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
