@@ -71,6 +71,7 @@ namespace ProjectR
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            this.ucLogIn = new LogIn();
             this.ChangeWindow(this.ucLogIn);
         }
         
@@ -96,31 +97,37 @@ namespace ProjectR
 
         private void btnAllProductList_Click(object sender, EventArgs e)
         {
+            this.ucProductList = new ProductList();
             this.ChangeWindow(this.ucProductList);
         }
 
         private void btnSellersList_Click(object sender, EventArgs e)
         {
+            this.ucSellerList = new SellerList();
             this.ChangeWindow(this.ucSellerList);
         }
 
         private void btnSells_Click(object sender, EventArgs e)
         {
+            this.ucSells = new Sells();
             this.ChangeWindow(this.ucSells);
         }
 
         private void btnReportsDashboard_Click(object sender, EventArgs e)
         {
+            this.ucReportsDashboard = new ReportsDashboard();
             this.ChangeWindow(this.ucReportsDashboard);
         }
 
         private void btnMyProfile_Click(object sender, EventArgs e)
         {
+            this.ucUserProfile = new UserProfile();
             this.ChangeWindow(this.ucUserProfile);
         }
 
         private void btnMembersList_Click(object sender, EventArgs e)
         {
+            this.ucMemberList = new MemberList();
             this.ChangeWindow(this.ucMemberList);
         }
     }

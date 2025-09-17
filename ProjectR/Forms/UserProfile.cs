@@ -41,6 +41,7 @@ namespace ProjectR.Forms
                 this.lblUserDOBDetails.Text = MainWindow.LogInUser.Rows[0][3].ToString();
                 this.lblNidNumberDetails.Text = MainWindow.LogInUser.Rows[0][5].ToString();
                 this.lblPhoneDetails.Text = MainWindow.LogInUser.Rows[0][4].ToString();
+                this.lblUserRole.Text = MainWindow.LogInUser.Rows[0][6].ToString();
             }
             catch (Exception ex)
             {
