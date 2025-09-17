@@ -49,7 +49,6 @@ namespace ProjectR.Forms.ProductTypes.ProductsCards
                 var ds = MainWindow.SqlDataAccess.ExecuteQuery(sql);
                 HomePage.dgvTempCartP.AutoGenerateColumns = false;
                 HomePage.dgvTempCartP.DataSource = ds.Tables[0];
-                //this.ClearAll();
                 HomePage.dgvTempCartP.ClearSelection();
             }
             catch (Exception ex)
