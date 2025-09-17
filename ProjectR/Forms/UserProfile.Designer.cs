@@ -37,7 +37,7 @@
             this.lblTotalSellsDetails = new System.Windows.Forms.Label();
             this.lblUserDOBDetails = new System.Windows.Forms.Label();
             this.btnEditProfile = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblUserRole = new System.Windows.Forms.Label();
             this.ldlNidNumber = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblTotalSells = new System.Windows.Forms.Label();
@@ -82,7 +82,7 @@
             this.panel1.Controls.Add(this.lblTotalSellsDetails);
             this.panel1.Controls.Add(this.lblUserDOBDetails);
             this.panel1.Controls.Add(this.btnEditProfile);
-            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.lblUserRole);
             this.panel1.Controls.Add(this.ldlNidNumber);
             this.panel1.Controls.Add(this.lblPhone);
             this.panel1.Controls.Add(this.lblTotalSells);
@@ -151,16 +151,16 @@
             this.btnEditProfile.UseVisualStyleBackColor = false;
             this.btnEditProfile.Click += new System.EventHandler(this.btnEditProfile_Click);
             // 
-            // label10
+            // lblUserRole
             // 
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
-            this.label10.Location = new System.Drawing.Point(328, 103);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(130, 46);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Admin";
+            this.lblUserRole.BackColor = System.Drawing.Color.Transparent;
+            this.lblUserRole.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
+            this.lblUserRole.Location = new System.Drawing.Point(328, 103);
+            this.lblUserRole.Name = "lblUserRole";
+            this.lblUserRole.Size = new System.Drawing.Size(130, 46);
+            this.lblUserRole.TabIndex = 9;
+            this.lblUserRole.Text = "Admin";
             // 
             // ldlNidNumber
             // 
@@ -218,7 +218,7 @@
         private System.Windows.Forms.Label lblUserNameHeader;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnEditProfile;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblUserRole;
         private System.Windows.Forms.Label ldlNidNumber;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblTotalSells;

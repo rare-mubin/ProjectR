@@ -95,7 +95,6 @@ namespace ProjectR.Forms
                 string sql;
                 if (ds.Tables[0].Rows.Count > 0)
                 {
-                    // Member exists → Update
                     sql = $"update MemberList set MemberName = '{this.txtMemberName.Text}', MemberPoints = {this.txtMemberPoints.Text} where MemberPhone = '{phone}';";
                 }
                 else

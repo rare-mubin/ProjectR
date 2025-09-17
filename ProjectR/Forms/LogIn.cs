@@ -91,7 +91,17 @@ namespace ProjectR.Forms
 
             try
             {
-                var query = $"select * from UserList where UserId = '{this.txtUserID.Text}' and UserPassword = '{this.txtPassword.Text}';";
+                var query = $@"select UserList.UserId,
+                                UserList.UserPassword,
+                                UserList.Username,
+                                UserList.UserDOB,
+                                UserList.UserPhone,
+                                UserList.UserNID,
+                                RoleList.Role from 
+                                UserList,RoleList 
+                                where UserList.UserId = '{this.txtUserID.Text}' 
+                                and UserList.UserPassword = '{this.txtPassword.Text}' 
+                                and UserList.UserId = RoleList.UserId;";
 
                 var ds = MainWindow.SqlDataAccess.ExecuteQueryTable(query);
                 MainWindow.LogInUser = ds;

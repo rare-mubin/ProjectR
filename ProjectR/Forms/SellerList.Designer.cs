@@ -121,6 +121,7 @@
             this.dgvSellerList.RowHeadersVisible = false;
             this.dgvSellerList.RowHeadersWidth = 51;
             this.dgvSellerList.RowTemplate.Height = 40;
+            this.dgvSellerList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSellerList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvSellerList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSellerList.Size = new System.Drawing.Size(780, 630);
