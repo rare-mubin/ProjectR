@@ -118,6 +118,7 @@
             this.txtMemberPoints.ReadOnly = true;
             this.txtMemberPoints.Size = new System.Drawing.Size(231, 21);
             this.txtMemberPoints.TabIndex = 18;
+            this.txtMemberPoints.Text = "0";
             // 
             // label4
             // 

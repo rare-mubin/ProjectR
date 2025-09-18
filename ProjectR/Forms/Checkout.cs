@@ -57,6 +57,11 @@ namespace ProjectR.Forms
         {
             try
             {
+                if (this.txtNewQuantity.Text == "0")
+                {
+                    MessageBox.Show("Quantity can not be Zero");
+                    return;
+                }
                 if (this.dgvTempCart.SelectedRows.Count < 1)
                 {
                     MessageBox.Show("Please select a row first to change quantity.");

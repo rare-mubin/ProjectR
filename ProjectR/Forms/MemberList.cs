@@ -45,7 +45,7 @@ namespace ProjectR.Forms
         {
             this.txtMemberName.Clear();
             this.txtMemberPhone.Clear();
-            this.txtMemberPoints.Clear();
+            this.txtMemberPoints.Text = "0";
             this.dgvMemberList.ClearSelection();
         }
 
