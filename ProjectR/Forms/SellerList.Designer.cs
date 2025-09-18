@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvSellerList = new System.Windows.Forms.DataGridView();
             this.colUserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +66,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlSidebarRight = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSellerList)).BeginInit();
             this.pnlGridView.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -86,14 +87,14 @@
             this.dgvSellerList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvSellerList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvSellerList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSellerList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSellerList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSellerList.ColumnHeadersHeight = 40;
             this.dgvSellerList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvSellerList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -104,14 +105,14 @@
             this.colUserNID,
             this.colUserRole,
             this.colUserPassword});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSellerList.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(47)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSellerList.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSellerList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSellerList.EnableHeadersVisualStyles = false;
             this.dgvSellerList.Location = new System.Drawing.Point(20, 0);
@@ -345,11 +346,12 @@
             // txtUserName
             // 
             this.txtUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txtUserName.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.txtUserName.ForeColor = System.Drawing.Color.White;
-            this.txtUserName.Location = new System.Drawing.Point(26, 134);
+            this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUserName.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtUserName.Location = new System.Drawing.Point(26, 116);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(231, 26);
+            this.txtUserName.Size = new System.Drawing.Size(231, 21);
             this.txtUserName.TabIndex = 16;
             // 
             // label3
@@ -357,7 +359,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label3.Location = new System.Drawing.Point(26, 111);
+            this.label3.Location = new System.Drawing.Point(26, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 18);
             this.label3.TabIndex = 17;
@@ -366,12 +368,13 @@
             // txtUserId
             // 
             this.txtUserId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txtUserId.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.txtUserId.ForeColor = System.Drawing.Color.White;
-            this.txtUserId.Location = new System.Drawing.Point(26, 68);
+            this.txtUserId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUserId.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtUserId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtUserId.Location = new System.Drawing.Point(26, 50);
             this.txtUserId.Name = "txtUserId";
             this.txtUserId.ReadOnly = true;
-            this.txtUserId.Size = new System.Drawing.Size(231, 26);
+            this.txtUserId.Size = new System.Drawing.Size(231, 21);
             this.txtUserId.TabIndex = 14;
             // 
             // label2
@@ -379,7 +382,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label2.Location = new System.Drawing.Point(26, 45);
+            this.label2.Location = new System.Drawing.Point(26, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 18);
             this.label2.TabIndex = 15;
@@ -388,6 +391,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.dtpDOB);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txtUserNID);
@@ -412,7 +416,7 @@
             // 
             this.dtpDOB.CustomFormat = "yyyy-MM-dd";
             this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDOB.Location = new System.Drawing.Point(26, 265);
+            this.dtpDOB.Location = new System.Drawing.Point(26, 241);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(230, 20);
             this.dtpDOB.TabIndex = 36;
@@ -422,7 +426,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label8.Location = new System.Drawing.Point(26, 411);
+            this.label8.Location = new System.Drawing.Point(26, 393);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 18);
             this.label8.TabIndex = 35;
@@ -431,22 +435,24 @@
             // txtUserNID
             // 
             this.txtUserNID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txtUserNID.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.txtUserNID.ForeColor = System.Drawing.Color.White;
-            this.txtUserNID.Location = new System.Drawing.Point(25, 382);
+            this.txtUserNID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUserNID.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtUserNID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtUserNID.Location = new System.Drawing.Point(25, 364);
             this.txtUserNID.Name = "txtUserNID";
-            this.txtUserNID.Size = new System.Drawing.Size(231, 26);
+            this.txtUserNID.Size = new System.Drawing.Size(231, 21);
             this.txtUserNID.TabIndex = 34;
             // 
             // txtUserPassword
             // 
             this.txtUserPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txtUserPassword.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.txtUserPassword.ForeColor = System.Drawing.Color.White;
-            this.txtUserPassword.Location = new System.Drawing.Point(25, 199);
+            this.txtUserPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUserPassword.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtUserPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtUserPassword.Location = new System.Drawing.Point(25, 181);
             this.txtUserPassword.Name = "txtUserPassword";
             this.txtUserPassword.PasswordChar = '*';
-            this.txtUserPassword.Size = new System.Drawing.Size(231, 26);
+            this.txtUserPassword.Size = new System.Drawing.Size(231, 21);
             this.txtUserPassword.TabIndex = 32;
             // 
             // label5
@@ -454,7 +460,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label5.Location = new System.Drawing.Point(25, 176);
+            this.label5.Location = new System.Drawing.Point(25, 158);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 18);
             this.label5.TabIndex = 33;
@@ -466,13 +472,14 @@
             "Admin",
             "Seller"});
             this.cmbUserRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.cmbUserRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbUserRole.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.cmbUserRole.ForeColor = System.Drawing.Color.White;
             this.cmbUserRole.FormattingEnabled = true;
             this.cmbUserRole.Items.AddRange(new object[] {
             "Admin",
             "Salesman"});
-            this.cmbUserRole.Location = new System.Drawing.Point(26, 444);
+            this.cmbUserRole.Location = new System.Drawing.Point(26, 426);
             this.cmbUserRole.Name = "cmbUserRole";
             this.cmbUserRole.Size = new System.Drawing.Size(231, 28);
             this.cmbUserRole.TabIndex = 31;
@@ -483,7 +490,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label4.Location = new System.Drawing.Point(26, 361);
+            this.label4.Location = new System.Drawing.Point(26, 343);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 18);
             this.label4.TabIndex = 30;
@@ -492,11 +499,12 @@
             // txtUserPhone
             // 
             this.txtUserPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txtUserPhone.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.txtUserPhone.ForeColor = System.Drawing.Color.White;
-            this.txtUserPhone.Location = new System.Drawing.Point(25, 323);
+            this.txtUserPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUserPhone.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtUserPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtUserPhone.Location = new System.Drawing.Point(25, 305);
             this.txtUserPhone.Name = "txtUserPhone";
-            this.txtUserPhone.Size = new System.Drawing.Size(231, 26);
+            this.txtUserPhone.Size = new System.Drawing.Size(231, 21);
             this.txtUserPhone.TabIndex = 28;
             // 
             // label6
@@ -504,7 +512,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label6.Location = new System.Drawing.Point(25, 300);
+            this.label6.Location = new System.Drawing.Point(25, 282);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 18);
             this.label6.TabIndex = 29;
@@ -515,7 +523,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label7.Location = new System.Drawing.Point(25, 234);
+            this.label7.Location = new System.Drawing.Point(25, 216);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 18);
             this.label7.TabIndex = 27;
@@ -530,6 +538,20 @@
             this.pnlSidebarRight.Padding = new System.Windows.Forms.Padding(1);
             this.pnlSidebarRight.Size = new System.Drawing.Size(283, 495);
             this.pnlSidebarRight.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.label9.Location = new System.Drawing.Point(0, 468);
+            this.label9.Name = "label9";
+            this.label9.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.label9.Size = new System.Drawing.Size(281, 25);
+            this.label9.TabIndex = 37;
+            this.label9.Text = "Double Click Row For Update/Delete";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // SellerList
             // 
@@ -600,5 +622,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colUserNID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUserRole;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUserPassword;
+        private System.Windows.Forms.Label label9;
     }
 }

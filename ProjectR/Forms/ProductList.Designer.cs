@@ -75,6 +75,7 @@
             this.colProductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ofdChoseFile = new System.Windows.Forms.OpenFileDialog();
+            this.label11 = new System.Windows.Forms.Label();
             this.pnlSidebarRight.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlProductbtns.SuspendLayout();
@@ -100,6 +101,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.cmbProductType);
             this.panel1.Controls.Add(this.btnChoosePicture);
             this.panel1.Controls.Add(this.label6);
@@ -205,7 +207,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.label7.Location = new System.Drawing.Point(26, 275);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 15);
@@ -664,6 +666,20 @@
             // 
             this.ofdChoseFile.FileOk += new System.ComponentModel.CancelEventHandler(this.ofdChoseFile_FileOk);
             // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.label11.Location = new System.Drawing.Point(0, 468);
+            this.label11.Name = "label11";
+            this.label11.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.label11.Size = new System.Drawing.Size(281, 25);
+            this.label11.TabIndex = 38;
+            this.label11.Text = "Double Click Row For Updat/Delete";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // ProductList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -739,5 +755,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFilePath;
+        private System.Windows.Forms.Label label11;
     }
 }

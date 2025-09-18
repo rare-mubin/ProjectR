@@ -89,15 +89,15 @@
             this.pnlProductDetails2.ForeColor = System.Drawing.Color.White;
             this.pnlProductDetails2.Location = new System.Drawing.Point(411, -1);
             this.pnlProductDetails2.Name = "pnlProductDetails2";
-            this.pnlProductDetails2.Size = new System.Drawing.Size(800, 630);
+            this.pnlProductDetails2.Size = new System.Drawing.Size(390, 630);
             this.pnlProductDetails2.TabIndex = 1;
             // 
             // lblProductDescriptionValue
             // 
             this.lblProductDescriptionValue.BackColor = System.Drawing.Color.Transparent;
             this.lblProductDescriptionValue.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblProductDescriptionValue.ForeColor = System.Drawing.Color.White;
-            this.lblProductDescriptionValue.Location = new System.Drawing.Point(29, 383);
+            this.lblProductDescriptionValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.lblProductDescriptionValue.Location = new System.Drawing.Point(31, 383);
             this.lblProductDescriptionValue.Name = "lblProductDescriptionValue";
             this.lblProductDescriptionValue.Size = new System.Drawing.Size(308, 145);
             this.lblProductDescriptionValue.TabIndex = 26;
@@ -106,8 +106,9 @@
             // lblProductAmount
             // 
             this.lblProductAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblProductAmount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblProductAmount.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblProductAmount.ForeColor = System.Drawing.Color.White;
+            this.lblProductAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.lblProductAmount.Location = new System.Drawing.Point(32, 548);
             this.lblProductAmount.Name = "lblProductAmount";
             this.lblProductAmount.Size = new System.Drawing.Size(148, 37);
@@ -120,7 +121,7 @@
             this.lblProductStocksValue.AutoSize = true;
             this.lblProductStocksValue.BackColor = System.Drawing.Color.Transparent;
             this.lblProductStocksValue.Font = new System.Drawing.Font("Arial", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblProductStocksValue.ForeColor = System.Drawing.Color.White;
+            this.lblProductStocksValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.lblProductStocksValue.Location = new System.Drawing.Point(28, 309);
             this.lblProductStocksValue.Name = "lblProductStocksValue";
             this.lblProductStocksValue.Size = new System.Drawing.Size(165, 26);
@@ -132,7 +133,7 @@
             this.lblProductTypeValue.AutoSize = true;
             this.lblProductTypeValue.BackColor = System.Drawing.Color.Transparent;
             this.lblProductTypeValue.Font = new System.Drawing.Font("Arial", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblProductTypeValue.ForeColor = System.Drawing.Color.White;
+            this.lblProductTypeValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.lblProductTypeValue.Location = new System.Drawing.Point(28, 245);
             this.lblProductTypeValue.Name = "lblProductTypeValue";
             this.lblProductTypeValue.Size = new System.Drawing.Size(145, 26);
@@ -144,7 +145,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label7.ForeColor = System.Drawing.Color.Gray;
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.label7.Location = new System.Drawing.Point(29, 352);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(177, 22);
@@ -156,7 +157,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label6.ForeColor = System.Drawing.Color.Gray;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.label6.Location = new System.Drawing.Point(29, 288);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(139, 22);
@@ -168,7 +169,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label5.ForeColor = System.Drawing.Color.Gray;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.label5.Location = new System.Drawing.Point(29, 224);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(123, 22);
@@ -180,7 +181,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label4.ForeColor = System.Drawing.Color.Gray;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.label4.Location = new System.Drawing.Point(29, 160);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(158, 22);
@@ -192,7 +193,7 @@
             this.lblProductCategoryValue.AutoSize = true;
             this.lblProductCategoryValue.BackColor = System.Drawing.Color.Transparent;
             this.lblProductCategoryValue.Font = new System.Drawing.Font("Arial", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblProductCategoryValue.ForeColor = System.Drawing.Color.White;
+            this.lblProductCategoryValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.lblProductCategoryValue.Location = new System.Drawing.Point(28, 181);
             this.lblProductCategoryValue.Name = "lblProductCategoryValue";
             this.lblProductCategoryValue.Size = new System.Drawing.Size(189, 26);
@@ -204,7 +205,7 @@
             this.lblProductModelValue.AutoSize = true;
             this.lblProductModelValue.BackColor = System.Drawing.Color.Transparent;
             this.lblProductModelValue.Font = new System.Drawing.Font("Arial", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblProductModelValue.ForeColor = System.Drawing.Color.White;
+            this.lblProductModelValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.lblProductModelValue.Location = new System.Drawing.Point(28, 117);
             this.lblProductModelValue.Name = "lblProductModelValue";
             this.lblProductModelValue.Size = new System.Drawing.Size(157, 26);
@@ -216,7 +217,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.label1.Location = new System.Drawing.Point(29, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 22);
@@ -243,7 +244,7 @@
             this.lblProductNameValue.AutoSize = true;
             this.lblProductNameValue.BackColor = System.Drawing.Color.Transparent;
             this.lblProductNameValue.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblProductNameValue.ForeColor = System.Drawing.Color.White;
+            this.lblProductNameValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.lblProductNameValue.Location = new System.Drawing.Point(27, 50);
             this.lblProductNameValue.Name = "lblProductNameValue";
             this.lblProductNameValue.Size = new System.Drawing.Size(205, 35);
@@ -255,7 +256,7 @@
             this.lblProductName.AutoSize = true;
             this.lblProductName.BackColor = System.Drawing.Color.Transparent;
             this.lblProductName.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblProductName.ForeColor = System.Drawing.Color.Gray;
+            this.lblProductName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.lblProductName.Location = new System.Drawing.Point(29, 33);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(131, 22);

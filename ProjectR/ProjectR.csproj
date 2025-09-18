@@ -251,5 +251,8 @@
     <Folder Include="ProductImage\" />
     <Folder Include="ProfileImage\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connection.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

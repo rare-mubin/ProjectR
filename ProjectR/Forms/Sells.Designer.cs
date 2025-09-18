@@ -138,7 +138,7 @@
             // lblSalesmanID
             // 
             this.lblSalesmanID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalesmanID.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblSalesmanID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.lblSalesmanID.Location = new System.Drawing.Point(18, 49);
             this.lblSalesmanID.Name = "lblSalesmanID";
             this.lblSalesmanID.Size = new System.Drawing.Size(250, 21);
@@ -148,7 +148,7 @@
             // lblCustomerID
             // 
             this.lblCustomerID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomerID.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblCustomerID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.lblCustomerID.Location = new System.Drawing.Point(18, 84);
             this.lblCustomerID.Name = "lblCustomerID";
             this.lblCustomerID.Size = new System.Drawing.Size(250, 20);
@@ -158,7 +158,7 @@
             // lblTotalAmount
             // 
             this.lblTotalAmount.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAmount.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblTotalAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.lblTotalAmount.Location = new System.Drawing.Point(18, 154);
             this.lblTotalAmount.Name = "lblTotalAmount";
             this.lblTotalAmount.Size = new System.Drawing.Size(250, 24);
@@ -168,7 +168,7 @@
             // lblTimeAndDate
             // 
             this.lblTimeAndDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimeAndDate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblTimeAndDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.lblTimeAndDate.Location = new System.Drawing.Point(18, 117);
             this.lblTimeAndDate.Name = "lblTimeAndDate";
             this.lblTimeAndDate.Size = new System.Drawing.Size(250, 20);
@@ -178,7 +178,7 @@
             // lblTransactionID
             // 
             this.lblTransactionID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransactionID.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblTransactionID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.lblTransactionID.Location = new System.Drawing.Point(18, 15);
             this.lblTransactionID.Name = "lblTransactionID";
             this.lblTransactionID.Size = new System.Drawing.Size(250, 24);
@@ -346,7 +346,7 @@
             this.pnlSellsCart.Controls.Add(this.dgvMini);
             this.pnlSellsCart.Location = new System.Drawing.Point(812, 263);
             this.pnlSellsCart.Name = "pnlSellsCart";
-            this.pnlSellsCart.Padding = new System.Windows.Forms.Padding(1);
+            this.pnlSellsCart.Padding = new System.Windows.Forms.Padding(7);
             this.pnlSellsCart.Size = new System.Drawing.Size(283, 370);
             this.pnlSellsCart.TabIndex = 14;
             // 
@@ -382,7 +382,7 @@
             this.dgvMini.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvMini.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMini.EnableHeadersVisualStyles = false;
-            this.dgvMini.Location = new System.Drawing.Point(1, 1);
+            this.dgvMini.Location = new System.Drawing.Point(7, 7);
             this.dgvMini.Name = "dgvMini";
             this.dgvMini.ReadOnly = true;
             this.dgvMini.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -393,7 +393,7 @@
             this.dgvMini.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvMini.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvMini.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMini.Size = new System.Drawing.Size(281, 368);
+            this.dgvMini.Size = new System.Drawing.Size(269, 356);
             this.dgvMini.TabIndex = 1;
             // 
             // colProductNameT
@@ -435,7 +435,7 @@
             this.btnClear.FlatAppearance.BorderSize = 0;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.btnClear.Location = new System.Drawing.Point(7, 7);
             this.btnClear.Name = "btnClear";
             this.btnClear.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
