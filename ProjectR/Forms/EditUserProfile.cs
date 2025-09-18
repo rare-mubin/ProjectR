@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace ProjectR.Forms
     public partial class EditUserProfile : UserControl
     {
         private DataAccess Da {  get; set; }
+        internal static string destinationFilePath { get; set; }
         public EditUserProfile()
         {
             InitializeComponent();
@@ -25,6 +27,14 @@ namespace ProjectR.Forms
             this.dtpDOB.Text = MainWindow.LogInUser.Rows[0][3].ToString();
         }
 
+        private void EditUserProfile_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                this.ptbProfilePic.Image = Image.FromFile(MainWindow.LogInUser.Rows[0][7].ToString());
+            }
+            catch { }
+        }
         private void btnUpdateProfile_Click(object sender, EventArgs e)
         {
             try
@@ -35,17 +45,24 @@ namespace ProjectR.Forms
                 }
                 else
                 {
-                    var Query = "update UserList set UserName='" + this.txtUserName.Text + "',UserNID='" + this.txtNidNumber.Text + "',UserPhone='" + this.txtPhone.Text + "' where UserId='" + MainWindow.LogInUser.Rows[0][0].ToString() + "';";
+                    if (this.txtFilePath.Text != "")
+                    {
+                        updatePicture();
+                    }
+                    destinationFilePath = MainWindow.LogInUser.Rows[0][7].ToString();
+                    var Query = "update UserList set UserName='" + this.txtUserName.Text + "',UserNID='" + this.txtNidNumber.Text + "',UserPhone='" + this.txtPhone.Text + "', PicturePath ='" + destinationFilePath + "' where UserId='" + MainWindow.LogInUser.Rows[0][0].ToString() + "';";
                     MainWindow.SqlDataAccess.ExecuteQuery(Query);
                     
                     MessageBox.Show("Profile has been updated");
+
                     var query = $@"select UserList.UserId,
                                 UserList.UserPassword,
                                 UserList.Username,
                                 UserList.UserDOB,
                                 UserList.UserPhone,
                                 UserList.UserNID,
-                                RoleList.Role from 
+                                RoleList.Role,
+                                UserList.PicturePath from 
                                 UserList,RoleList 
                                 where UserList.UserId = '{MainWindow.LogInUser.Rows[0][0].ToString()}'  
                                 and UserList.UserId = RoleList.UserId;";
@@ -62,6 +79,29 @@ namespace ProjectR.Forms
             catch(Exception ex)
             {
                 MessageBox.Show("Error:"+ex.Message);
+            }
+        }
+
+        private void updatePicture()
+        {
+            //string sourceFilePath = this.ofdChoseFile.FileName;
+            string sourceFilePath = this.txtFilePath.Text;
+            string fileName = $"{MainWindow.LogInUser.Rows[0][0].ToString()}.png";
+            destinationFilePath = Path.Combine(@"..\..\ProfileImage", fileName);
+
+            string destinationDirectory = Path.GetDirectoryName(destinationFilePath);
+            if (!Directory.Exists(destinationDirectory))
+            {
+                Directory.CreateDirectory(destinationDirectory);
+            }
+
+            try
+            {
+                File.Copy(sourceFilePath, destinationFilePath, true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error copying file: {ex.Message}");
             }
         }
 
@@ -89,5 +129,7 @@ namespace ProjectR.Forms
         {
             this.txtFilePath.Text = this.ofdChoseFile.FileName;
         }
+
+        
     }
 }

@@ -32,6 +32,14 @@
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblUserNameHeader = new System.Windows.Forms.Label();
             this.dtp = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnChoosePicture = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtFilePath = new System.Windows.Forms.TextBox();
+            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.btnBackToUserProfile = new System.Windows.Forms.Button();
             this.txtNidNumber = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -41,20 +49,16 @@
             this.ldlNidNumber = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblUserDOB = new System.Windows.Forms.Label();
-            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
-            this.btnChoosePicture = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtFilePath = new System.Windows.Forms.TextBox();
             this.ofdChoseFile = new System.Windows.Forms.OpenFileDialog();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.ptbProfilePic = new System.Windows.Forms.PictureBox();
+            this.panel2.SuspendLayout();
             this.dtp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbProfilePic)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.ptbProfilePic);
             this.panel2.Location = new System.Drawing.Point(77, 48);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(190, 190);
@@ -79,7 +83,7 @@
             this.lblUserNameHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblUserNameHeader.Location = new System.Drawing.Point(326, 35);
             this.lblUserNameHeader.Name = "lblUserNameHeader";
-            this.lblUserNameHeader.Size = new System.Drawing.Size(369, 55);
+            this.lblUserNameHeader.Size = new System.Drawing.Size(499, 55);
             this.lblUserNameHeader.TabIndex = 0;
             this.lblUserNameHeader.Text = "User Name";
             // 
@@ -112,6 +116,86 @@
             this.dtp.Padding = new System.Windows.Forms.Padding(1);
             this.dtp.Size = new System.Drawing.Size(1094, 540);
             this.dtp.TabIndex = 4;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.panel6.Location = new System.Drawing.Point(501, 224);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1, 256);
+            this.panel6.TabIndex = 39;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.panel5.Location = new System.Drawing.Point(197, 415);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(602, 1);
+            this.panel5.TabIndex = 38;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.panel4.Location = new System.Drawing.Point(197, 345);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(602, 1);
+            this.panel4.TabIndex = 37;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.panel3.Location = new System.Drawing.Point(197, 276);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(602, 1);
+            this.panel3.TabIndex = 36;
+            // 
+            // btnChoosePicture
+            // 
+            this.btnChoosePicture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.btnChoosePicture.FlatAppearance.BorderSize = 0;
+            this.btnChoosePicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChoosePicture.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.btnChoosePicture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.btnChoosePicture.Location = new System.Drawing.Point(73, 174);
+            this.btnChoosePicture.Name = "btnChoosePicture";
+            this.btnChoosePicture.Size = new System.Drawing.Size(190, 21);
+            this.btnChoosePicture.TabIndex = 35;
+            this.btnChoosePicture.Text = "Choose";
+            this.btnChoosePicture.UseVisualStyleBackColor = false;
+            this.btnChoosePicture.Click += new System.EventHandler(this.btnChoosePicture_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.label10.Location = new System.Drawing.Point(103, 118);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(130, 15);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Choose Profile Picture";
+            // 
+            // txtFilePath
+            // 
+            this.txtFilePath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.txtFilePath.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFilePath.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtFilePath.ForeColor = System.Drawing.Color.White;
+            this.txtFilePath.Location = new System.Drawing.Point(73, 137);
+            this.txtFilePath.Name = "txtFilePath";
+            this.txtFilePath.Size = new System.Drawing.Size(190, 19);
+            this.txtFilePath.TabIndex = 34;
+            // 
+            // dtpDOB
+            // 
+            this.dtpDOB.CalendarMonthBackground = System.Drawing.SystemColors.WindowFrame;
+            this.dtpDOB.CustomFormat = "yyyy-MM-dd";
+            this.dtpDOB.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDOB.Location = new System.Drawing.Point(552, 430);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(244, 26);
+            this.dtpDOB.TabIndex = 16;
             // 
             // btnBackToUserProfile
             // 
@@ -226,89 +310,19 @@
             this.lblUserDOB.TabIndex = 2;
             this.lblUserDOB.Text = "Date Of Birth";
             // 
-            // dtpDOB
-            // 
-            this.dtpDOB.CalendarMonthBackground = System.Drawing.SystemColors.WindowFrame;
-            this.dtpDOB.CustomFormat = "yyyy-MM-dd";
-            this.dtpDOB.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDOB.Location = new System.Drawing.Point(552, 430);
-            this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(244, 26);
-            this.dtpDOB.TabIndex = 16;
-            // 
-            // btnChoosePicture
-            // 
-            this.btnChoosePicture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.btnChoosePicture.FlatAppearance.BorderSize = 0;
-            this.btnChoosePicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChoosePicture.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.btnChoosePicture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.btnChoosePicture.Location = new System.Drawing.Point(73, 174);
-            this.btnChoosePicture.Name = "btnChoosePicture";
-            this.btnChoosePicture.Size = new System.Drawing.Size(190, 21);
-            this.btnChoosePicture.TabIndex = 35;
-            this.btnChoosePicture.Text = "Choose";
-            this.btnChoosePicture.UseVisualStyleBackColor = false;
-            this.btnChoosePicture.Click += new System.EventHandler(this.btnChoosePicture_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label10.Location = new System.Drawing.Point(103, 118);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(130, 15);
-            this.label10.TabIndex = 33;
-            this.label10.Text = "Choose Profile Picture";
-            // 
-            // txtFilePath
-            // 
-            this.txtFilePath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txtFilePath.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFilePath.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtFilePath.ForeColor = System.Drawing.Color.White;
-            this.txtFilePath.Location = new System.Drawing.Point(73, 137);
-            this.txtFilePath.Name = "txtFilePath";
-            this.txtFilePath.Size = new System.Drawing.Size(190, 19);
-            this.txtFilePath.TabIndex = 34;
-            // 
             // ofdChoseFile
             // 
             this.ofdChoseFile.FileOk += new System.ComponentModel.CancelEventHandler(this.ofdChoseFile_FileOk);
             // 
-            // panel6
+            // ptbProfilePic
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.panel6.Location = new System.Drawing.Point(501, 224);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1, 256);
-            this.panel6.TabIndex = 39;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.panel5.Location = new System.Drawing.Point(197, 415);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(602, 1);
-            this.panel5.TabIndex = 38;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.panel4.Location = new System.Drawing.Point(197, 345);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(602, 1);
-            this.panel4.TabIndex = 37;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.panel3.Location = new System.Drawing.Point(197, 276);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(602, 1);
-            this.panel3.TabIndex = 36;
+            this.ptbProfilePic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptbProfilePic.Location = new System.Drawing.Point(0, 0);
+            this.ptbProfilePic.Name = "ptbProfilePic";
+            this.ptbProfilePic.Size = new System.Drawing.Size(190, 190);
+            this.ptbProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbProfilePic.TabIndex = 0;
+            this.ptbProfilePic.TabStop = false;
             // 
             // EditUserProfile
             // 
@@ -319,8 +333,11 @@
             this.Controls.Add(this.dtp);
             this.Name = "EditUserProfile";
             this.Size = new System.Drawing.Size(1100, 690);
+            this.Load += new System.EventHandler(this.EditUserProfile_Load);
+            this.panel2.ResumeLayout(false);
             this.dtp.ResumeLayout(false);
             this.dtp.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbProfilePic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -349,5 +366,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox ptbProfilePic;
     }
 }
