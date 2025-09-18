@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ptbProfilePic = new System.Windows.Forms.PictureBox();
             this.lblUserDOB = new System.Windows.Forms.Label();
             this.lblUserNameHeader = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -45,10 +46,9 @@
             this.ldlNidNumber = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblTotalSells = new System.Windows.Forms.Label();
-            this.ptbProfilePic = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbProfilePic)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -58,6 +58,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(190, 190);
             this.panel2.TabIndex = 3;
+            // 
+            // ptbProfilePic
+            // 
+            this.ptbProfilePic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptbProfilePic.Location = new System.Drawing.Point(0, 0);
+            this.ptbProfilePic.Name = "ptbProfilePic";
+            this.ptbProfilePic.Size = new System.Drawing.Size(190, 190);
+            this.ptbProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbProfilePic.TabIndex = 1;
+            this.ptbProfilePic.TabStop = false;
             // 
             // lblUserDOB
             // 
@@ -84,7 +94,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
@@ -145,7 +154,7 @@
             this.lblNidNumberDetails.BackColor = System.Drawing.Color.Transparent;
             this.lblNidNumberDetails.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNidNumberDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
-            this.lblNidNumberDetails.Location = new System.Drawing.Point(642, 292);
+            this.lblNidNumberDetails.Location = new System.Drawing.Point(594, 292);
             this.lblNidNumberDetails.Name = "lblNidNumberDetails";
             this.lblNidNumberDetails.Size = new System.Drawing.Size(195, 46);
             this.lblNidNumberDetails.TabIndex = 14;
@@ -156,7 +165,7 @@
             this.lblPhoneDetails.BackColor = System.Drawing.Color.Transparent;
             this.lblPhoneDetails.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhoneDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
-            this.lblPhoneDetails.Location = new System.Drawing.Point(642, 362);
+            this.lblPhoneDetails.Location = new System.Drawing.Point(594, 362);
             this.lblPhoneDetails.Name = "lblPhoneDetails";
             this.lblPhoneDetails.Size = new System.Drawing.Size(195, 46);
             this.lblPhoneDetails.TabIndex = 13;
@@ -167,7 +176,7 @@
             this.lblTotalSellsDetails.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalSellsDetails.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalSellsDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
-            this.lblTotalSellsDetails.Location = new System.Drawing.Point(642, 430);
+            this.lblTotalSellsDetails.Location = new System.Drawing.Point(594, 430);
             this.lblTotalSellsDetails.Name = "lblTotalSellsDetails";
             this.lblTotalSellsDetails.Size = new System.Drawing.Size(195, 46);
             this.lblTotalSellsDetails.TabIndex = 12;
@@ -178,7 +187,7 @@
             this.lblUserDOBDetails.BackColor = System.Drawing.Color.Transparent;
             this.lblUserDOBDetails.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserDOBDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
-            this.lblUserDOBDetails.Location = new System.Drawing.Point(642, 223);
+            this.lblUserDOBDetails.Location = new System.Drawing.Point(594, 223);
             this.lblUserDOBDetails.Name = "lblUserDOBDetails";
             this.lblUserDOBDetails.Size = new System.Drawing.Size(195, 46);
             this.lblUserDOBDetails.TabIndex = 11;
@@ -243,16 +252,6 @@
             this.lblTotalSells.TabIndex = 2;
             this.lblTotalSells.Text = "Total Sells";
             // 
-            // ptbProfilePic
-            // 
-            this.ptbProfilePic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ptbProfilePic.Location = new System.Drawing.Point(0, 0);
-            this.ptbProfilePic.Name = "ptbProfilePic";
-            this.ptbProfilePic.Size = new System.Drawing.Size(190, 190);
-            this.ptbProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbProfilePic.TabIndex = 1;
-            this.ptbProfilePic.TabStop = false;
-            // 
             // UserProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,8 +264,8 @@
             this.Size = new System.Drawing.Size(1100, 690);
             this.Load += new System.EventHandler(this.UserProfile_Load);
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbProfilePic)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

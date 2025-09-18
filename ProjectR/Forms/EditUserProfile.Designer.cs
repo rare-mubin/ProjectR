@@ -100,7 +100,6 @@
             // dtp
             // 
             this.dtp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
-            this.dtp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dtp.Controls.Add(this.panel6);
             this.dtp.Controls.Add(this.panel5);
             this.dtp.Controls.Add(this.panel4);

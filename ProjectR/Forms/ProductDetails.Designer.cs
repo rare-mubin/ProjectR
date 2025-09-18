@@ -96,7 +96,7 @@
             // 
             this.lblProductDescriptionValue.BackColor = System.Drawing.Color.Transparent;
             this.lblProductDescriptionValue.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblProductDescriptionValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.lblProductDescriptionValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.lblProductDescriptionValue.Location = new System.Drawing.Point(31, 383);
             this.lblProductDescriptionValue.Name = "lblProductDescriptionValue";
             this.lblProductDescriptionValue.Size = new System.Drawing.Size(308, 145);
@@ -105,7 +105,6 @@
             // 
             // lblProductAmount
             // 
-            this.lblProductAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblProductAmount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblProductAmount.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblProductAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
@@ -121,7 +120,7 @@
             this.lblProductStocksValue.AutoSize = true;
             this.lblProductStocksValue.BackColor = System.Drawing.Color.Transparent;
             this.lblProductStocksValue.Font = new System.Drawing.Font("Arial", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblProductStocksValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.lblProductStocksValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.lblProductStocksValue.Location = new System.Drawing.Point(28, 309);
             this.lblProductStocksValue.Name = "lblProductStocksValue";
             this.lblProductStocksValue.Size = new System.Drawing.Size(165, 26);
@@ -133,7 +132,7 @@
             this.lblProductTypeValue.AutoSize = true;
             this.lblProductTypeValue.BackColor = System.Drawing.Color.Transparent;
             this.lblProductTypeValue.Font = new System.Drawing.Font("Arial", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblProductTypeValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.lblProductTypeValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.lblProductTypeValue.Location = new System.Drawing.Point(28, 245);
             this.lblProductTypeValue.Name = "lblProductTypeValue";
             this.lblProductTypeValue.Size = new System.Drawing.Size(145, 26);
@@ -193,7 +192,7 @@
             this.lblProductCategoryValue.AutoSize = true;
             this.lblProductCategoryValue.BackColor = System.Drawing.Color.Transparent;
             this.lblProductCategoryValue.Font = new System.Drawing.Font("Arial", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblProductCategoryValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.lblProductCategoryValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.lblProductCategoryValue.Location = new System.Drawing.Point(28, 181);
             this.lblProductCategoryValue.Name = "lblProductCategoryValue";
             this.lblProductCategoryValue.Size = new System.Drawing.Size(189, 26);
@@ -205,7 +204,7 @@
             this.lblProductModelValue.AutoSize = true;
             this.lblProductModelValue.BackColor = System.Drawing.Color.Transparent;
             this.lblProductModelValue.Font = new System.Drawing.Font("Arial", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblProductModelValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.lblProductModelValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.lblProductModelValue.Location = new System.Drawing.Point(28, 117);
             this.lblProductModelValue.Name = "lblProductModelValue";
             this.lblProductModelValue.Size = new System.Drawing.Size(157, 26);
@@ -230,6 +229,7 @@
             this.btnAddToCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnAddToCart.FlatAppearance.BorderSize = 0;
             this.btnAddToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddToCart.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnAddToCart.ForeColor = System.Drawing.Color.White;
             this.btnAddToCart.Location = new System.Drawing.Point(225, 548);
             this.btnAddToCart.Name = "btnAddToCart";
@@ -244,7 +244,7 @@
             this.lblProductNameValue.AutoSize = true;
             this.lblProductNameValue.BackColor = System.Drawing.Color.Transparent;
             this.lblProductNameValue.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblProductNameValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.lblProductNameValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.lblProductNameValue.Location = new System.Drawing.Point(27, 50);
             this.lblProductNameValue.Name = "lblProductNameValue";
             this.lblProductNameValue.Size = new System.Drawing.Size(205, 35);
@@ -268,12 +268,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProjectR.Properties.Resources.usercontrolBackground;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.pnlProductDetails2);
             this.Controls.Add(this.pnlProductDetails1);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ProductDetails";
-            this.Size = new System.Drawing.Size(800, 630);
+            this.Size = new System.Drawing.Size(802, 632);
             this.pnlProductDetails1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbProductPicture)).EndInit();
             this.pnlProductDetails2.ResumeLayout(false);

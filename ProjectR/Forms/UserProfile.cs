@@ -48,6 +48,9 @@ namespace ProjectR.Forms
                 this.lblNidNumberDetails.Text = MainWindow.LogInUser.Rows[0][5].ToString();
                 this.lblPhoneDetails.Text = MainWindow.LogInUser.Rows[0][4].ToString();
                 this.lblUserRole.Text = MainWindow.LogInUser.Rows[0][6].ToString();
+
+                var dt = MainWindow.SqlDataAccess.ExecuteQueryTable($"select sum(TotalAmount) from TransactionList where SalesmanID = '{MainWindow.LogInUser.Rows[0][0].ToString()}'");
+                this.lblTotalSellsDetails.Text = dt.Rows[0][0].ToString() + " BDT";
             }
             catch (Exception ex)
             {
