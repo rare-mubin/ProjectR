@@ -37,6 +37,12 @@ namespace ProjectR.Forms
         {
             try
             {
+                this.ptbProfilePic.Image = Image.FromFile(MainWindow.LogInUser.Rows[0][7].ToString());
+            }
+            catch { }
+
+            try
+            {
                 this.lblUserNameHeader.Text = MainWindow.LogInUser.Rows[0][2].ToString();
                 this.lblUserDOBDetails.Text = MainWindow.LogInUser.Rows[0][3].ToString();
                 this.lblNidNumberDetails.Text = MainWindow.LogInUser.Rows[0][5].ToString();

@@ -13,8 +13,9 @@ namespace ProjectR.Forms
 {
     public partial class LogIn : UserControl
     {
-        private static bool txtUserIDClick = true, txtPassClick = true;
-        private const String DefaultTextBoxID = "Enter your User-Id";
+        private static bool txtUserIDClick { get; set; } = true;
+        private static bool txtPassClick {  get; set; }= true;
+        private const String DefaultTextBoxID  = "Enter your User-Id";
         private const String DefaultTextBoxPassword = "Enter your Password";
         private void DraggableWindows(Form a)
         {
@@ -96,7 +97,8 @@ namespace ProjectR.Forms
                                 UserList.UserDOB,
                                 UserList.UserPhone,
                                 UserList.UserNID,
-                                RoleList.Role from 
+                                RoleList.Role,
+                                UserList.PicturePath from 
                                 UserList,RoleList 
                                 where UserList.UserId = '{this.txtUserID.Text}' 
                                 and UserList.UserPassword = '{this.txtPassword.Text}' 
@@ -117,6 +119,12 @@ namespace ProjectR.Forms
                     ClearTxt();
                     txtPassClick = true;
                     txtUserIDClick = true;
+
+                    if (MainWindow.LogInUser.Rows[0][6].ToString() == "Admin")
+                    {
+                        MainWindow.AdminAccessOnlyBtn(true);
+                        return;
+                    }
                 }
                 else
                 {

@@ -35,26 +35,6 @@ namespace ProjectR.Forms
             homePage.Show();
         }
 
-        // Update Quantity
-        private void AddItem()
-        {
-            string sql = $"insert into TempCart VALUES ('{ProductId}','{ProductName}',1, {ProductPrice} , {ProductPrice}) ;";
-            string sql2 = $"select * from TempCart where ProductId = '{ProductId}'";
-            var dt = MainWindow.SqlDataAccess.ExecuteQueryTable(sql2);
-
-            if (dt.Rows.Count == 1)
-            {
-                int quantity = Convert.ToInt32(dt.Rows[0][2]);
-                quantity += 1;
-                int TotalAmount = Convert.ToInt32(ProductPrice) * quantity;
-
-                string sql3 = $"UPDATE TempCart SET ProductQuantity = {quantity}, TotalAmount = {TotalAmount} where ProductId = '{ProductId}'";
-                MainWindow.SqlDataAccess.ExecuteDMLQuery(sql3);
-                return;
-            }
-            MainWindow.SqlDataAccess.ExecuteDMLQuery(sql);
-        }
-
         // Fetch Data from TempCart
         private void LoadCartItems()
         {
@@ -212,14 +192,18 @@ namespace ProjectR.Forms
         // Load
         private void Checkout_Load(object sender, EventArgs e)
         {
-            this.UpdateTotalItems();
-            this.AutoIdGenerate();
-            this.dgvTempCart.ClearSelection();
-            this.UpdateTotalAmount();
-            string sql = "SELECT SUM(TotalAmount) FROM TempCart;";
-            var dt = Da.ExecuteQueryTable(sql);
-            double totalAmount = Convert.ToDouble(dt.Rows[0][0]);
-            this.lblTotaAfterDiscount.Text = $"{totalAmount} BDT";
+            try
+            {
+                this.UpdateTotalItems();
+                this.AutoIdGenerate();
+                this.dgvTempCart.ClearSelection();
+                string sql = "SELECT SUM(TotalAmount) FROM TempCart;";
+                var dt = Da.ExecuteQueryTable(sql);
+                double totalAmount = Convert.ToDouble(dt.Rows[0][0]);
+                this.lblTotaAfterDiscount.Text = $"{totalAmount} BDT";
+            }
+            catch { }
+            
         }
 
         // Label Minupulations
@@ -348,18 +332,14 @@ namespace ProjectR.Forms
                     string productId = row["ProductId"].ToString();
                     int quantity = Convert.ToInt32(row["ProductQuantity"]);
                     int unitPrice = Convert.ToInt32(row["ProductUnitPrice"]);
-
-                    // For each unit, create a separate row
-                    for (int i = 0; i < quantity; i++)
-                    {
+                    
                         string detailId = GenerateTransactionDetailId();
                         string insertSql = $@"
                                             INSERT INTO TransactionDetails
                                             (TransactionDetailId, TransactionId, ProductId, Quantity, UnitPrice)
-                                            VALUES ('{detailId}', '{transactionId}', '{productId}', 1, {unitPrice})";
+                                            VALUES ('{detailId}', '{transactionId}', '{productId}', {quantity}, {unitPrice})";
 
                         Da.ExecuteDMLQuery(insertSql);
-                    }
                 }
             }
             catch (Exception ex)

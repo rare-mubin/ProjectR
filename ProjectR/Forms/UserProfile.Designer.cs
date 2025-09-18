@@ -32,6 +32,10 @@
             this.lblUserDOB = new System.Windows.Forms.Label();
             this.lblUserNameHeader = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.lblNidNumberDetails = new System.Windows.Forms.Label();
             this.lblPhoneDetails = new System.Windows.Forms.Label();
             this.lblTotalSellsDetails = new System.Windows.Forms.Label();
@@ -41,15 +45,15 @@
             this.ldlNidNumber = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblTotalSells = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.ptbProfilePic = new System.Windows.Forms.PictureBox();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbProfilePic)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.ptbProfilePic);
             this.panel2.Location = new System.Drawing.Point(79, 38);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(190, 190);
@@ -103,6 +107,38 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(1);
             this.panel1.Size = new System.Drawing.Size(1094, 540);
             this.panel1.TabIndex = 2;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.panel6.Location = new System.Drawing.Point(506, 220);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1, 256);
+            this.panel6.TabIndex = 18;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.panel5.Location = new System.Drawing.Point(202, 411);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(613, 1);
+            this.panel5.TabIndex = 17;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.panel4.Location = new System.Drawing.Point(202, 341);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(613, 1);
+            this.panel4.TabIndex = 16;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.panel3.Location = new System.Drawing.Point(202, 272);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(613, 1);
+            this.panel3.TabIndex = 15;
             // 
             // lblNidNumberDetails
             // 
@@ -207,37 +243,15 @@
             this.lblTotalSells.TabIndex = 2;
             this.lblTotalSells.Text = "Total Sells";
             // 
-            // panel3
+            // ptbProfilePic
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.panel3.Location = new System.Drawing.Point(202, 272);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(613, 1);
-            this.panel3.TabIndex = 15;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.panel4.Location = new System.Drawing.Point(202, 341);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(613, 1);
-            this.panel4.TabIndex = 16;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.panel5.Location = new System.Drawing.Point(202, 411);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(613, 1);
-            this.panel5.TabIndex = 17;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.panel6.Location = new System.Drawing.Point(506, 220);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1, 256);
-            this.panel6.TabIndex = 18;
+            this.ptbProfilePic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptbProfilePic.Location = new System.Drawing.Point(0, 0);
+            this.ptbProfilePic.Name = "ptbProfilePic";
+            this.ptbProfilePic.Size = new System.Drawing.Size(190, 190);
+            this.ptbProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbProfilePic.TabIndex = 1;
+            this.ptbProfilePic.TabStop = false;
             // 
             // UserProfile
             // 
@@ -250,7 +264,9 @@
             this.Name = "UserProfile";
             this.Size = new System.Drawing.Size(1100, 690);
             this.Load += new System.EventHandler(this.UserProfile_Load);
+            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbProfilePic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -274,5 +290,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.PictureBox ptbProfilePic;
     }
 }

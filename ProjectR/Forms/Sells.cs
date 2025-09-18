@@ -13,12 +13,13 @@ namespace ProjectR.Forms
 {
     public partial class Sells : UserControl
     {
-        internal DataAccess Da {  get; set; }
+        internal DataAccess Da { get; set; }
+        internal static string getTransactionID {  get; set; }
 
         public Sells()
         {
             InitializeComponent();
-            Da=new DataAccess();
+            Da= MainWindow.SqlDataAccess;
             this.PopulateGridView();
             
         }
@@ -28,11 +29,15 @@ namespace ProjectR.Forms
         {
             try
             {
-                sql = "select ProductList.ProductName, TransactionDetails.Quantity, TransactionDetails.UnitPrice from ProductList , TransactionDetails , TransactionList WHERE ProductList.ProductId = TransactionDetails.ProductId AND TransactionList.TransactionID = TransactionDetails.TransactionId";
+                sql = $@"select ProductList.ProductName,
+                        TransactionDetails.Quantity, TransactionDetails.UnitPrice
+                        from TransactionDetails, ProductList  WHERE 
+                        TransactionDetails.TransactionId = '{getTransactionID}' 
+                        and ProductList.ProductId = TransactionDetails.ProductId;";
+
                 var ds = this.Da.ExecuteQuery(sql);
                 this.dgvMini.AutoGenerateColumns = false;
                 this.dgvMini.DataSource = ds.Tables[0];
-                //this.ClearAll();
             }
             catch (Exception ex)
             {
@@ -42,9 +47,16 @@ namespace ProjectR.Forms
 
         private void PopulateGridView(string sql = "select * from TransactionList;")
         {
+            try
+            {
             var ds = Da.ExecuteQuery(sql);
             this.dgvSellDetails.DataSource = ds.Tables[0];
             this.dgvSellDetails.AutoGenerateColumns = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error:{ex.Message}");
+            }
         }
 
         private void dgvSellDetails_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -60,6 +72,8 @@ namespace ProjectR.Forms
                     this.lblCustomerIDValue.Text = this.dgvSellDetails.SelectedRows[0].Cells["CustomerID"].Value.ToString();
                     this.lblTimeAndDateValue.Text = this.dgvSellDetails.SelectedRows[0].Cells["TimeAndDate"].Value.ToString();
                     this.lblTotalAmountValue.Text = this.dgvSellDetails.SelectedRows[0].Cells["TotalAmount"].Value.ToString();
+
+                    getTransactionID = this.lblTransactionIDValue.Text;
 
                     this.PopulateGridView2();
                 }
@@ -85,19 +99,22 @@ namespace ProjectR.Forms
             this.lblCustomerIDValue.Text = "";
             this.lblTimeAndDateValue.Text = "";
             this.lblTotalAmountValue.Text = "";
-
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-
             this.txtSearchSellers.Text = "Search Sells...";
             this.ClearAll();
             this.PopulateGridView();
             this.dgvSellDetails.ClearSelection();
             this.txtSearchSellers.Text = "Search Sells...";
-            
-            
+
+            try
+            {
+                var ds = this.Da.ExecuteQuery("select * from TransactionList where TransactionId = '' ");
+                this.dgvMini.DataSource = ds.Tables[0];
+            }
+            catch { }
         }
 
         private void Sells_Load(object sender, EventArgs e)

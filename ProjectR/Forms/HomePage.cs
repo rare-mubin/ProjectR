@@ -161,6 +161,11 @@ namespace ProjectR.Forms
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
+            if (dgvTempCartP.Rows.Count == 0)
+            {
+                return;
+            }
+
             Checkout NextPage = new Checkout();
             NextPage.Dock = DockStyle.Fill;
             MainWindow.MainWindowPanel.Controls.Clear();
@@ -195,6 +200,36 @@ namespace ProjectR.Forms
             pnlProductsP.Controls.Clear();
             pnlProductsP.Controls.Add(this.pnlProductType);
             storeProductPageName = "AllProduct";
+        }
+
+        private void btnChangeQuantity_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.dgvTempCart.SelectedRows.Count < 1)
+                {
+                    MessageBox.Show("Please select a row first to change quantity.");
+                    return;
+                }
+
+                var row = dgvTempCart.CurrentRow;
+                string productId = row.Cells["colProductId"].Value.ToString();
+                int unitPrice = Convert.ToInt32(row.Cells["colProductPriceHome"].Value);
+
+                int newQuantity = Convert.ToInt32(this.txtQuantity.Text);
+
+                int newTotalAmount = unitPrice * newQuantity;
+
+                string updateSql = $"UPDATE TempCart SET ProductQuantity = {newQuantity}, TotalAmount = {newTotalAmount} WHERE ProductId = '{productId}'";
+                MainWindow.SqlDataAccess.ExecuteDMLQuery(updateSql);
+
+                PopulateGridView();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating quantity: {ex.Message}");
+            }
         }
     }
 }
