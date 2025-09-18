@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ptbProfilePic = new System.Windows.Forms.PictureBox();
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblUserNameHeader = new System.Windows.Forms.Label();
             this.dtp = new System.Windows.Forms.Panel();
@@ -50,10 +51,9 @@
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblUserDOB = new System.Windows.Forms.Label();
             this.ofdChoseFile = new System.Windows.Forms.OpenFileDialog();
-            this.ptbProfilePic = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            this.dtp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbProfilePic)).BeginInit();
+            this.dtp.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -63,6 +63,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(190, 190);
             this.panel2.TabIndex = 5;
+            // 
+            // ptbProfilePic
+            // 
+            this.ptbProfilePic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptbProfilePic.Location = new System.Drawing.Point(0, 0);
+            this.ptbProfilePic.Name = "ptbProfilePic";
+            this.ptbProfilePic.Size = new System.Drawing.Size(190, 190);
+            this.ptbProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbProfilePic.TabIndex = 0;
+            this.ptbProfilePic.TabStop = false;
             // 
             // lblUserName
             // 
@@ -202,7 +212,7 @@
             this.btnBackToUserProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.btnBackToUserProfile.FlatAppearance.BorderSize = 0;
             this.btnBackToUserProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackToUserProfile.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToUserProfile.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackToUserProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.btnBackToUserProfile.Location = new System.Drawing.Point(880, 435);
             this.btnBackToUserProfile.Name = "btnBackToUserProfile";
@@ -216,7 +226,7 @@
             // 
             this.txtNidNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.txtNidNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNidNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNidNumber.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNidNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.txtNidNumber.Location = new System.Drawing.Point(552, 292);
             this.txtNidNumber.Multiline = true;
@@ -228,7 +238,7 @@
             // 
             this.txtPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.txtPhone.Location = new System.Drawing.Point(552, 362);
             this.txtPhone.Multiline = true;
@@ -240,7 +250,7 @@
             // 
             this.txtUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.txtUserName.Location = new System.Drawing.Point(552, 223);
             this.txtUserName.Multiline = true;
@@ -253,7 +263,7 @@
             this.btnUpdateProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
             this.btnUpdateProfile.FlatAppearance.BorderSize = 0;
             this.btnUpdateProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateProfile.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateProfile.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.btnUpdateProfile.Location = new System.Drawing.Point(880, 386);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
@@ -314,16 +324,6 @@
             // 
             this.ofdChoseFile.FileOk += new System.ComponentModel.CancelEventHandler(this.ofdChoseFile_FileOk);
             // 
-            // ptbProfilePic
-            // 
-            this.ptbProfilePic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ptbProfilePic.Location = new System.Drawing.Point(0, 0);
-            this.ptbProfilePic.Name = "ptbProfilePic";
-            this.ptbProfilePic.Size = new System.Drawing.Size(190, 190);
-            this.ptbProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbProfilePic.TabIndex = 0;
-            this.ptbProfilePic.TabStop = false;
-            // 
             // EditUserProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,9 +335,9 @@
             this.Size = new System.Drawing.Size(1100, 690);
             this.Load += new System.EventHandler(this.EditUserProfile_Load);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbProfilePic)).EndInit();
             this.dtp.ResumeLayout(false);
             this.dtp.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbProfilePic)).EndInit();
             this.ResumeLayout(false);
 
         }

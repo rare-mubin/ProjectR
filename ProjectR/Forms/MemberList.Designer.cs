@@ -54,6 +54,7 @@
             this.colMemberName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMemberPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMemberPoints = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label9 = new System.Windows.Forms.Label();
             this.pnlSidebarRight.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -79,6 +80,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.txtMemberPoints);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtMemberPhone);
@@ -94,11 +96,12 @@
             // txtMemberPoints
             // 
             this.txtMemberPoints.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txtMemberPoints.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtMemberPoints.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMemberPoints.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.txtMemberPoints.ForeColor = System.Drawing.Color.White;
             this.txtMemberPoints.Location = new System.Drawing.Point(26, 195);
             this.txtMemberPoints.Name = "txtMemberPoints";
-            this.txtMemberPoints.Size = new System.Drawing.Size(231, 26);
+            this.txtMemberPoints.Size = new System.Drawing.Size(231, 21);
             this.txtMemberPoints.TabIndex = 18;
             // 
             // label4
@@ -115,11 +118,12 @@
             // txtMemberPhone
             // 
             this.txtMemberPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txtMemberPhone.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtMemberPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMemberPhone.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.txtMemberPhone.ForeColor = System.Drawing.Color.White;
             this.txtMemberPhone.Location = new System.Drawing.Point(26, 134);
             this.txtMemberPhone.Name = "txtMemberPhone";
-            this.txtMemberPhone.Size = new System.Drawing.Size(231, 26);
+            this.txtMemberPhone.Size = new System.Drawing.Size(231, 21);
             this.txtMemberPhone.TabIndex = 16;
             // 
             // label3
@@ -136,11 +140,12 @@
             // txtMemberName
             // 
             this.txtMemberName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.txtMemberName.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtMemberName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMemberName.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.txtMemberName.ForeColor = System.Drawing.Color.White;
             this.txtMemberName.Location = new System.Drawing.Point(26, 68);
             this.txtMemberName.Name = "txtMemberName";
-            this.txtMemberName.Size = new System.Drawing.Size(231, 26);
+            this.txtMemberName.Size = new System.Drawing.Size(231, 21);
             this.txtMemberName.TabIndex = 14;
             // 
             // label2
@@ -387,6 +392,20 @@
             this.colMemberPoints.Name = "colMemberPoints";
             this.colMemberPoints.ReadOnly = true;
             // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.label9.Location = new System.Drawing.Point(0, 468);
+            this.label9.Name = "label9";
+            this.label9.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.label9.Size = new System.Drawing.Size(281, 25);
+            this.label9.TabIndex = 38;
+            this.label9.Text = "Double Click Row For Updat/Delete";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // MemberList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,5 +462,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMemberName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMemberPhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMemberPoints;
+        private System.Windows.Forms.Label label9;
     }
 }

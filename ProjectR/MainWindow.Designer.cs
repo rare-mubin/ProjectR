@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlTittlebar = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,6 +61,7 @@
             this.btnMyProfile = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTittlebar.SuspendLayout();
             this.pnlMain.SuspendLayout();
             this.pnlSideBarLeft.SuspendLayout();
@@ -73,6 +75,7 @@
             this.panel2.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -88,6 +91,7 @@
             // pnlTittlebar
             // 
             this.pnlTittlebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.pnlTittlebar.Controls.Add(this.pictureBox1);
             this.pnlTittlebar.Controls.Add(this.label1);
             this.pnlTittlebar.Controls.Add(this.panel1);
             this.pnlTittlebar.Controls.Add(this.btnMinimize);
@@ -100,13 +104,13 @@
             // 
             // label1
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Location = new System.Drawing.Point(32, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(123, 27);
+            this.label1.Size = new System.Drawing.Size(76, 27);
             this.label1.TabIndex = 4;
             this.label1.Text = "Rift Tech";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -512,6 +516,18 @@
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = global::ProjectR.Properties.Resources.connection;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(8, 3, 3, 3);
+            this.pictureBox1.Size = new System.Drawing.Size(32, 27);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -521,10 +537,11 @@
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pnlTittlebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(1, 1);
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainWindow";
+            this.Text = "Rift Tech";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.pnlTittlebar.ResumeLayout(false);
             this.pnlMain.ResumeLayout(false);
@@ -539,6 +556,7 @@
             this.panel2.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -577,5 +595,6 @@
         private System.Windows.Forms.Panel pnlIndicator3;
         private System.Windows.Forms.Panel pnlIndicator2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
