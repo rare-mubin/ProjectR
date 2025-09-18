@@ -22,17 +22,9 @@ namespace ProjectR.Forms
         private const String DefaultTextBoxNPassword = "Enter New Password";
         private const String DefaultTextBoxCPassword = "Enter New Password Again";
 
-        private UserControl LoginP {  get; set; }
-
         public ForgotPassword()
         {
             InitializeComponent();
-        }
-
-        public ForgotPassword(UserControl a) : this()
-        {
-            InitializeComponent();
-            this.LoginP = a;
         }
 
         private void txtUserID_Leave(object sender, EventArgs e)
@@ -209,10 +201,11 @@ namespace ProjectR.Forms
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.ClearTxt();
-            this.LoginP.Dock = DockStyle.Fill;
+            LogIn NextPage = new LogIn();
+            NextPage.Dock = DockStyle.Fill;
             MainWindow.MainWindowPanel.Controls.Clear();
-            MainWindow.MainWindowPanel.Controls.Add(this.LoginP);
-            this.LoginP.Show();
+            MainWindow.MainWindowPanel.Controls.Add(NextPage);
+            NextPage.Show();
         }
     }
 }

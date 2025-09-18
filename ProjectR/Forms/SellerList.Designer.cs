@@ -486,7 +486,6 @@
             "Admin",
             "Seller"});
             this.cmbUserRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.cmbUserRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUserRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbUserRole.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.cmbUserRole.ForeColor = System.Drawing.Color.White;
@@ -494,7 +493,7 @@
             this.cmbUserRole.Items.AddRange(new object[] {
             "Admin",
             "Salesman"});
-            this.cmbUserRole.Location = new System.Drawing.Point(26, 419);
+            this.cmbUserRole.Location = new System.Drawing.Point(26, 426);
             this.cmbUserRole.Name = "cmbUserRole";
             this.cmbUserRole.Size = new System.Drawing.Size(231, 28);
             this.cmbUserRole.TabIndex = 31;
