@@ -60,7 +60,6 @@ namespace ProjectR.Forms
                 this.txtPassword.Text = "";
                 txtPassClick = false;
             }
-
         }
 
         private void ckbShowPassword_CheckedChanged(object sender, EventArgs e)

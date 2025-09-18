@@ -105,6 +105,7 @@
             // 
             // lblProductAmount
             // 
+            this.lblProductAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblProductAmount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblProductAmount.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblProductAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));

@@ -103,6 +103,12 @@ namespace ProjectR.Forms
         {
             try
             {
+                if (this.txtUserId.Text == "A-001")
+                {
+                    MessageBox.Show("This User Can not Be Updated");
+                    return;
+                }
+
                 if (!this.IsValidToSave())
                 {
                     MessageBox.Show("PLEASE FILL ALL INFORMATION");
@@ -171,6 +177,12 @@ namespace ProjectR.Forms
         {
             try
             {
+                if (this.dgvSellerList.CurrentRow.Cells["colUserId"].Value.ToString() == "A-001")
+                {
+                    MessageBox.Show("This User Can not Be Deleted");
+                    return;
+                }
+
                 if (this.dgvSellerList.SelectedRows.Count < 1)
                 {
                     MessageBox.Show("Please select a row first to delete.", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Hand);
