@@ -215,7 +215,7 @@
             this.lblUserRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(169)))), ((int)(((byte)(183)))));
             this.lblUserRole.Location = new System.Drawing.Point(328, 103);
             this.lblUserRole.Name = "lblUserRole";
-            this.lblUserRole.Size = new System.Drawing.Size(130, 46);
+            this.lblUserRole.Size = new System.Drawing.Size(430, 46);
             this.lblUserRole.TabIndex = 9;
             this.lblUserRole.Text = "Admin";
             // 
