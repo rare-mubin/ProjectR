@@ -239,11 +239,11 @@
             // 
             this.txtMemberPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
             this.txtMemberPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMemberPhone.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtMemberPhone.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.txtMemberPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
             this.txtMemberPhone.Location = new System.Drawing.Point(19, 151);
             this.txtMemberPhone.Name = "txtMemberPhone";
-            this.txtMemberPhone.Size = new System.Drawing.Size(242, 17);
+            this.txtMemberPhone.Size = new System.Drawing.Size(242, 21);
             this.txtMemberPhone.TabIndex = 18;
             this.txtMemberPhone.TextChanged += new System.EventHandler(this.txtMemberPhone_TextChanged);
             // 

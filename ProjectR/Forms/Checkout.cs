@@ -283,16 +283,24 @@ namespace ProjectR.Forms
         // Transaction list Update
         private void UpdateTransactionList(string transactionId, string memberPhone, double redeemPoints, string paymentMethod)
         {
-            string sqlTotal = "SELECT SUM(TotalAmount) FROM TempCart;";
-            var dtTotal = Da.ExecuteQueryTable(sqlTotal);
-            double totalAmount = Convert.ToDouble(dtTotal.Rows[0][0]);
-            double finalAmount = Math.Max(0, totalAmount - redeemPoints);
-            string sql = $@"
+            try
+            {
+                string sqlTotal = "SELECT SUM(TotalAmount) FROM TempCart;";
+                var dtTotal = Da.ExecuteQueryTable(sqlTotal);
+                double totalAmount = Convert.ToDouble(dtTotal.Rows[0][0]);
+                double finalAmount = Math.Max(0, totalAmount - redeemPoints);
+                string sql = $@"
                         INSERT INTO TransactionList 
                         (TransactionId, SalesmanId, CustomerId, TimeAndDate, TotalAmount, PaymentOption)
                         VALUES 
                         ('{transactionId}', '{UserId}', '{memberPhone}', GETDATE(), {finalAmount}, '{paymentMethod}');";
-            Da.ExecuteDMLQuery(sql);
+                Da.ExecuteDMLQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " +ex.Message);
+            }
+
         }
 
         // Product list Update
@@ -338,13 +346,12 @@ namespace ProjectR.Forms
                     int quantity = Convert.ToInt32(row["ProductQuantity"]);
                     int unitPrice = Convert.ToInt32(row["ProductUnitPrice"]);
                     
-                        string detailId = GenerateTransactionDetailId();
-                        string insertSql = $@"
-                                            INSERT INTO TransactionDetails
-                                            (TransactionDetailId, TransactionId, ProductId, Quantity, UnitPrice)
-                                            VALUES ('{detailId}', '{transactionId}', '{productId}', {quantity}, {unitPrice})";
-
-                        Da.ExecuteDMLQuery(insertSql);
+                    string detailId = GenerateTransactionDetailId();
+                    string insertSql = $@"
+                                       INSERT INTO TransactionDetails
+                                       (TransactionDetailId, TransactionId, ProductId, Quantity, UnitPrice)
+                                       VALUES ('{detailId}', '{transactionId}', '{productId}', {quantity}, {unitPrice})";
+                    Da.ExecuteDMLQuery(insertSql);
                 }
             }
             catch (Exception ex)
@@ -455,6 +462,11 @@ namespace ProjectR.Forms
         {
             try
             {
+                if (this.txtMemberPhone.Text == "")
+                {
+                    return;
+                }
+
                 string sql = $"Select MemberPoints from MemberList WHERE MemberPhone = {this.txtMemberPhone.Text}";
                 var dt = Da.ExecuteQueryTable(sql);
                 if (dt.Rows.Count == 1)
