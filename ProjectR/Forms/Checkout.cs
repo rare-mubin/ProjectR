@@ -227,7 +227,7 @@ namespace ProjectR.Forms
                 lblTotalAmount.Text = totalAmount.ToString();
 
                 double redeemPoints = 0;
-                if (double.TryParse(txtMemberPoints.Text, out double points))
+                double points = Convert.ToDouble(this.txtMemberPoints.Text);                
                     redeemPoints = points;
 
                 double totalAfterDiscount = totalAmount - redeemPoints;
@@ -303,19 +303,25 @@ namespace ProjectR.Forms
                 string sql = "SELECT ProductId, ProductQuantity FROM TempCart";
                 var dt = Da.ExecuteQueryTable(sql);
 
-                foreach (DataRow row in dt.Rows)
+                int index = 0;
+                while (index < dt.Rows.Count)
                 {
+                    DataRow row = dt.Rows[index];
+
                     string productId = row["ProductId"].ToString();
                     int quantity = Convert.ToInt32(row["ProductQuantity"]);
-                    for (int i = 0; i < quantity; i++)
+
+                   for(int i = 0; i< quantity;i++)
                     {
+
                         string sqlUpdate = $@"
-                                            UPDATE ProductList 
-                                            SET ProductStock = ProductStock - 1 
-                                            WHERE ProductId = '{productId}'";
+                             UPDATE ProductList 
+                             SET ProductStock = ProductStock - 1 
+                             WHERE ProductId = '{productId}'";
 
                         Da.ExecuteDMLQuery(sqlUpdate);
                     }
+                    index++;
                 }
             }
             catch (Exception ex)
@@ -430,7 +436,7 @@ namespace ProjectR.Forms
 
                 string sqlTotal = "SELECT SUM(TotalAmount) FROM TempCart;";
                 var dtTotal = Da.ExecuteQueryTable(sqlTotal);
-                double totalAmount = dtTotal.Rows[0][0] == DBNull.Value ? 0 : Convert.ToDouble(dtTotal.Rows[0][0]);
+                double totalAmount = Convert.ToDouble(dtTotal.Rows[0][0]);
                 double finalAmount = Math.Max(0, totalAmount - redeemPoints);
 
                 UpdateTransactionList(transactionId, memberPhone, redeemPoints, paymentMethod);
