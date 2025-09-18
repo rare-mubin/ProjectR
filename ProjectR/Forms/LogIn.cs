@@ -147,7 +147,7 @@ namespace ProjectR.Forms
 
         private void btnForgotPass_Click(object sender, EventArgs e)
         {
-            ForgotPassword NextPage = new ForgotPassword();
+            ForgotPassword NextPage = new ForgotPassword(this);
             NextPage.Dock = DockStyle.Fill;
             MainWindow.MainWindowPanel.Controls.Clear();
             MainWindow.MainWindowPanel.Controls.Add(NextPage);

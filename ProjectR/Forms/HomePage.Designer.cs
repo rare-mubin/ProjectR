@@ -51,11 +51,11 @@
             this.pnlSidebarRight = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvTempCart = new System.Windows.Forms.DataGridView();
-            this.pnlProducts = new System.Windows.Forms.Panel();
             this.colProductNameHome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductQuantityHome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProductPriceHome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlProducts = new System.Windows.Forms.Panel();
             this.pnlProductType.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -398,17 +398,6 @@
             this.dgvTempCart.Size = new System.Drawing.Size(269, 481);
             this.dgvTempCart.TabIndex = 0;
             // 
-            // pnlProducts
-            // 
-            this.pnlProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.pnlProducts.Controls.Add(this.pnlProductType);
-            this.pnlProducts.Location = new System.Drawing.Point(5, 54);
-            this.pnlProducts.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlProducts.Name = "pnlProducts";
-            this.pnlProducts.Padding = new System.Windows.Forms.Padding(1);
-            this.pnlProducts.Size = new System.Drawing.Size(800, 630);
-            this.pnlProducts.TabIndex = 9;
-            // 
             // colProductNameHome
             // 
             this.colProductNameHome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -442,6 +431,17 @@
             this.colProductPriceHome.Name = "colProductPriceHome";
             this.colProductPriceHome.ReadOnly = true;
             this.colProductPriceHome.Width = 75;
+            // 
+            // pnlProducts
+            // 
+            this.pnlProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.pnlProducts.Controls.Add(this.pnlProductType);
+            this.pnlProducts.Location = new System.Drawing.Point(5, 54);
+            this.pnlProducts.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlProducts.Name = "pnlProducts";
+            this.pnlProducts.Padding = new System.Windows.Forms.Padding(1);
+            this.pnlProducts.Size = new System.Drawing.Size(800, 630);
+            this.pnlProducts.TabIndex = 9;
             // 
             // HomePage
             // 
