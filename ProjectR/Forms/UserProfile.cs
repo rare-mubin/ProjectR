@@ -29,7 +29,7 @@ namespace ProjectR.Forms
             EditUserProfile editUserProfile = new EditUserProfile();
 
             editUserProfile.Dock=DockStyle.Fill;
-            ChangeWindow(editUserProfile);
+            this.ChangeWindow(editUserProfile);
             editUserProfile.Show();
         }
 

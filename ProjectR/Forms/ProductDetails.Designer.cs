@@ -54,9 +54,10 @@
             // 
             this.pnlProductDetails1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
             this.pnlProductDetails1.Controls.Add(this.ptbProductPicture);
-            this.pnlProductDetails1.Location = new System.Drawing.Point(-1, -1);
+            this.pnlProductDetails1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlProductDetails1.Location = new System.Drawing.Point(0, 0);
             this.pnlProductDetails1.Name = "pnlProductDetails1";
-            this.pnlProductDetails1.Size = new System.Drawing.Size(800, 630);
+            this.pnlProductDetails1.Size = new System.Drawing.Size(800, 632);
             this.pnlProductDetails1.TabIndex = 0;
             // 
             // ptbProductPicture
@@ -86,10 +87,11 @@
             this.pnlProductDetails2.Controls.Add(this.btnAddToCart);
             this.pnlProductDetails2.Controls.Add(this.lblProductNameValue);
             this.pnlProductDetails2.Controls.Add(this.lblProductName);
+            this.pnlProductDetails2.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlProductDetails2.ForeColor = System.Drawing.Color.White;
-            this.pnlProductDetails2.Location = new System.Drawing.Point(411, -1);
+            this.pnlProductDetails2.Location = new System.Drawing.Point(412, 0);
             this.pnlProductDetails2.Name = "pnlProductDetails2";
-            this.pnlProductDetails2.Size = new System.Drawing.Size(390, 630);
+            this.pnlProductDetails2.Size = new System.Drawing.Size(390, 632);
             this.pnlProductDetails2.TabIndex = 1;
             // 
             // lblProductDescriptionValue
@@ -268,7 +270,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ProjectR.Properties.Resources.usercontrolBackground;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
             this.Controls.Add(this.pnlProductDetails2);
             this.Controls.Add(this.pnlProductDetails1);
             this.Margin = new System.Windows.Forms.Padding(0);

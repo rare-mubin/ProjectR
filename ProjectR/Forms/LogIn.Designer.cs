@@ -47,7 +47,7 @@
             // pnlMain
             // 
             this.pnlMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
-            this.pnlMain.BackgroundImage = global::ProjectR.Properties.Resources.main_panel;
+            this.pnlMain.BackgroundImage = global::ProjectR.Properties.Resources.BackgroundImage;
             this.pnlMain.Controls.Add(this.ckbShowPassword);
             this.pnlMain.Controls.Add(this.lblLoginValidation);
             this.pnlMain.Controls.Add(this.btnLogIn);

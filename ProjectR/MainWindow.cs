@@ -20,6 +20,7 @@ namespace ProjectR
         internal static DataTable LogInUser { get; set; }
         internal static Button MyProfile {  get; set; }
 
+        internal static Panel AdminAccessOnlyBtn1;
         internal static Panel AdminAccessOnlyBtn2;
         internal static Panel AdminAccessOnlyBtn3;
 
@@ -39,16 +40,10 @@ namespace ProjectR
             MainWindowPanel = this.pnlForms;
             SidePanel = this.pnlSideBarLeft;
             MyProfile = this.btnMyProfile;
+            AdminAccessOnlyBtn1 = this.pnlBtnAdminOnly1;
             AdminAccessOnlyBtn2 = this.pnlBtnAdminOnly2;
             AdminAccessOnlyBtn3 = this.pnlBtnAdminOnly3;
             this.ucLogIn = new LogIn(this);
-            this.ucUserProfile = new UserProfile();
-            this.ucSellerList = new SellerList();
-            this.ucProductList = new ProductList();
-            this.ucMemberList = new MemberList();
-            this.ucReportsDashboard = new ReportsDashboard();
-            this.ucSells = new Sells();
-            this.ucHomePage = new HomePage();
         }
 
         private void DraggableWindows()
@@ -162,6 +157,7 @@ namespace ProjectR
 
         internal static void AdminAccessOnlyBtn(bool a)
         {
+            AdminAccessOnlyBtn1.Visible = a;
             AdminAccessOnlyBtn2.Visible = a;
             AdminAccessOnlyBtn3.Visible = a;
         }

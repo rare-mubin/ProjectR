@@ -13,7 +13,7 @@ namespace ProjectR.Forms.ProductTypes.ProductsCards
     public partial class ProductCard : UserControl
     {
         internal string ProductId {  get; set; }
-        internal string ProductName {  get; set; }
+        internal string Productname {  get; set; }
         internal string ProductPrice {  get; set; }
 
         public ProductCard()
@@ -28,7 +28,7 @@ namespace ProjectR.Forms.ProductTypes.ProductsCards
             this.lblPrice.Text = productPrice;
             this.ProductId = productId;
             this.ptbProductImage.Image = Image.FromFile(picturePath);
-            this.ProductName = productName;
+            this.Productname = productName;
             this.ProductPrice = productPrice;
         }
 
@@ -68,7 +68,7 @@ namespace ProjectR.Forms.ProductTypes.ProductsCards
         // Add Method
         private void AddItem()
         {
-            string sql = $"insert into TempCart VALUES ('{ProductId}','{ProductName}',1, {ProductPrice} , {ProductPrice}) ;";
+            string sql = $"insert into TempCart VALUES ('{ProductId}','{Productname}',1, {ProductPrice} , {ProductPrice}) ;";
             string sql2 = $"select * from TempCart where ProductId = '{ProductId}'";
             var dt = MainWindow.SqlDataAccess.ExecuteQueryTable(sql2);
 

@@ -63,6 +63,26 @@ namespace ProjectR.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BackgroundImage {
+            get {
+                object obj = ResourceManager.GetObject("BackgroundImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap barchartbackground {
+            get {
+                object obj = ResourceManager.GetObject("barchartbackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap connection {
             get {
                 object obj = ResourceManager.GetObject("connection", resourceCulture);
@@ -86,16 +106,6 @@ namespace ProjectR.Properties {
         internal static System.Drawing.Bitmap Laptops {
             get {
                 object obj = ResourceManager.GetObject("Laptops", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap main_panel {
-            get {
-                object obj = ResourceManager.GetObject("main panel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
