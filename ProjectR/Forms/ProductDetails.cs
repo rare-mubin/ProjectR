@@ -15,7 +15,7 @@ namespace ProjectR.Forms
         internal DataAccess Da {  get; set; }
         private static string ProductId {  get; set; }
         //internal string ProductId { get; set; }
-        internal string ProductName { get; set; }
+        internal string Productname { get; set; }
         internal string ProductPrice { get; set; }
 
         public ProductDetails()
@@ -37,7 +37,7 @@ namespace ProjectR.Forms
             this.lblProductAmount.Text = ds.Tables[0].Rows[0][4].ToString()+" BDT";
             this.ptbProductPicture.Image = Image.FromFile(ds.Tables[0].Rows[0][8].ToString());
             this.lblProductDescriptionValue.Text = ds.Tables[0].Rows[0][7].ToString();
-            this.ProductName = this.lblProductNameValue.Text;
+            this.Productname = this.lblProductNameValue.Text;
             this.ProductPrice = ds.Tables[0].Rows[0][4].ToString();
         }
 

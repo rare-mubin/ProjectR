@@ -197,6 +197,9 @@
     <EmbeddedResource Include="Forms\ProductTypes\ProductsCards\ProductCard.resx">
       <DependentUpon>ProductCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportsDashboard.resx">
+      <DependentUpon>ReportsDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SellerList.resx">
       <DependentUpon>SellerList.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,6 +256,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\connection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barchartbackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackgroundImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usercontrolBackground.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

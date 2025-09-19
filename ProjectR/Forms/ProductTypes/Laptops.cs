@@ -91,7 +91,7 @@ namespace ProjectR.Forms.ProductTypes
         private void btnMacBook_Click(object sender, EventArgs e)
         {
             this.flpProducts.Controls.Clear();
-            this.query = "select * from ProductList Where ProductType = 'Laptop' and ProductCategory = 'MacBookLaptop';";
+            this.query = "select * from ProductList Where ProductType = 'Laptop' and ProductCategory = 'MacBook';";
             this.LoadProduct();
         }
     }
