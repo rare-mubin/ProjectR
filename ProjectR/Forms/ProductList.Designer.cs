@@ -144,7 +144,6 @@
             // cmbProductType
             // 
             this.cmbProductType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.cmbProductType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProductType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbProductType.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.cmbProductType.ForeColor = System.Drawing.Color.White;
@@ -298,7 +297,6 @@
             // cmbProductCategory
             // 
             this.cmbProductCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
-            this.cmbProductCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProductCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbProductCategory.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.cmbProductCategory.ForeColor = System.Drawing.Color.White;
