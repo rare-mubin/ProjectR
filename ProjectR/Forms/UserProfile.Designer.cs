@@ -250,7 +250,7 @@
             this.lblTotalSells.Name = "lblTotalSells";
             this.lblTotalSells.Size = new System.Drawing.Size(197, 46);
             this.lblTotalSells.TabIndex = 2;
-            this.lblTotalSells.Text = "Total Sells";
+            this.lblTotalSells.Text = "Total Sales";
             // 
             // UserProfile
             // 

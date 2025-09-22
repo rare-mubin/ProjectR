@@ -101,7 +101,6 @@ namespace ProjectR.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error copying file: {ex.Message}");
             }
         }
 

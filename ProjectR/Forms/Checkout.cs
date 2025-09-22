@@ -405,14 +405,6 @@ namespace ProjectR.Forms
                     string sqlUpdate = $"UPDATE MemberList SET MemberPoints = {newPoints} WHERE MemberPhone = '{memberPhone}'";
                     Da.ExecuteDMLQuery(sqlUpdate);
                 }
-                else
-                {
-                    double earnedPoints = Math.Floor(finalAmount / 100);
-                    string sqlInsert = $@"
-                                        INSERT INTO MemberList (MemberPhone, MemberPoints)
-                                        VALUES ('{memberPhone}', {earnedPoints});";
-                    Da.ExecuteDMLQuery(sqlInsert);
-                }
             }
             catch (Exception ex)
             {

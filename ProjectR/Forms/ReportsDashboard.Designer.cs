@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlBarchart = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -66,10 +67,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.lblSellerTotalSell = new System.Windows.Forms.Label();
+            this.lblSellerName = new System.Windows.Forms.Label();
+            this.lblSellerID = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.lblTotalSells = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.Label45 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -77,16 +81,13 @@
             this.label30 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.lblProductSells = new System.Windows.Forms.Label();
+            this.lblProductName = new System.Windows.Forms.Label();
+            this.lblProductId = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblProductId = new System.Windows.Forms.Label();
-            this.lblProductName = new System.Windows.Forms.Label();
-            this.lblProductSells = new System.Windows.Forms.Label();
-            this.lblSellerTotalSell = new System.Windows.Forms.Label();
-            this.lblSellerName = new System.Windows.Forms.Label();
-            this.lblSellerID = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblTotalSells = new System.Windows.Forms.Label();
             this.pnlBarchart.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel19.SuspendLayout();
@@ -129,6 +130,19 @@
             this.pnlBarchart.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.pnlBarchart.Size = new System.Drawing.Size(800, 630);
             this.pnlBarchart.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.label3.Location = new System.Drawing.Point(347, 26);
+            this.label3.Margin = new System.Windows.Forms.Padding(0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(230, 21);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Total Sales In last 4 Months";
             // 
             // label17
             // 
@@ -553,6 +567,45 @@
             this.panel10.Size = new System.Drawing.Size(281, 118);
             this.panel10.TabIndex = 1;
             // 
+            // lblSellerTotalSell
+            // 
+            this.lblSellerTotalSell.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblSellerTotalSell.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblSellerTotalSell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
+            this.lblSellerTotalSell.Location = new System.Drawing.Point(0, 81);
+            this.lblSellerTotalSell.Name = "lblSellerTotalSell";
+            this.lblSellerTotalSell.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.lblSellerTotalSell.Size = new System.Drawing.Size(281, 28);
+            this.lblSellerTotalSell.TabIndex = 7;
+            this.lblSellerTotalSell.Text = "Total Sells : ";
+            this.lblSellerTotalSell.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // lblSellerName
+            // 
+            this.lblSellerName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblSellerName.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblSellerName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
+            this.lblSellerName.Location = new System.Drawing.Point(0, 53);
+            this.lblSellerName.Name = "lblSellerName";
+            this.lblSellerName.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.lblSellerName.Size = new System.Drawing.Size(281, 28);
+            this.lblSellerName.TabIndex = 6;
+            this.lblSellerName.Text = "Name : ";
+            this.lblSellerName.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // lblSellerID
+            // 
+            this.lblSellerID.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblSellerID.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblSellerID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
+            this.lblSellerID.Location = new System.Drawing.Point(0, 25);
+            this.lblSellerID.Name = "lblSellerID";
+            this.lblSellerID.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.lblSellerID.Size = new System.Drawing.Size(281, 28);
+            this.lblSellerID.TabIndex = 5;
+            this.lblSellerID.Text = "Seller ID : ";
+            this.lblSellerID.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
             // label6
             // 
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
@@ -579,6 +632,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
             this.panel6.Controls.Add(this.lblTotalSells);
+            this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.Label45);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(1, 1);
@@ -586,19 +640,20 @@
             this.panel6.Size = new System.Drawing.Size(281, 118);
             this.panel6.TabIndex = 1;
             // 
-            // lblTotalSells
+            // label4
             // 
-            this.lblTotalSells.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotalSells.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblTotalSells.Font = new System.Drawing.Font("Arial", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblTotalSells.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
-            this.lblTotalSells.Location = new System.Drawing.Point(0, 25);
-            this.lblTotalSells.Margin = new System.Windows.Forms.Padding(0);
-            this.lblTotalSells.Name = "lblTotalSells";
-            this.lblTotalSells.Size = new System.Drawing.Size(281, 93);
-            this.lblTotalSells.TabIndex = 14;
-            this.lblTotalSells.Text = "0";
-            this.lblTotalSells.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label4.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label4.Location = new System.Drawing.Point(0, 90);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(281, 28);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "BDT";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Label45
             // 
@@ -609,7 +664,7 @@
             this.Label45.Name = "Label45";
             this.Label45.Size = new System.Drawing.Size(281, 25);
             this.Label45.TabIndex = 1;
-            this.Label45.Text = "Total Sells";
+            this.Label45.Text = "Total Sales";
             this.Label45.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // panel7
@@ -682,6 +737,45 @@
             this.panel8.Size = new System.Drawing.Size(281, 118);
             this.panel8.TabIndex = 1;
             // 
+            // lblProductSells
+            // 
+            this.lblProductSells.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblProductSells.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblProductSells.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
+            this.lblProductSells.Location = new System.Drawing.Point(0, 81);
+            this.lblProductSells.Name = "lblProductSells";
+            this.lblProductSells.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.lblProductSells.Size = new System.Drawing.Size(281, 28);
+            this.lblProductSells.TabIndex = 4;
+            this.lblProductSells.Text = "Total Sells : ";
+            this.lblProductSells.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // lblProductName
+            // 
+            this.lblProductName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblProductName.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblProductName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
+            this.lblProductName.Location = new System.Drawing.Point(0, 53);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.lblProductName.Size = new System.Drawing.Size(281, 28);
+            this.lblProductName.TabIndex = 3;
+            this.lblProductName.Text = "Name : ";
+            this.lblProductName.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // lblProductId
+            // 
+            this.lblProductId.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblProductId.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblProductId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
+            this.lblProductId.Location = new System.Drawing.Point(0, 25);
+            this.lblProductId.Name = "lblProductId";
+            this.lblProductId.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.lblProductId.Size = new System.Drawing.Size(281, 28);
+            this.lblProductId.TabIndex = 2;
+            this.lblProductId.Text = "Product ID : ";
+            this.lblProductId.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
             // label5
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -717,96 +811,19 @@
             this.panel2.Size = new System.Drawing.Size(1089, 44);
             this.panel2.TabIndex = 15;
             // 
-            // lblProductId
+            // lblTotalSells
             // 
-            this.lblProductId.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblProductId.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblProductId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
-            this.lblProductId.Location = new System.Drawing.Point(0, 25);
-            this.lblProductId.Name = "lblProductId";
-            this.lblProductId.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.lblProductId.Size = new System.Drawing.Size(281, 28);
-            this.lblProductId.TabIndex = 2;
-            this.lblProductId.Text = "Product ID : ";
-            this.lblProductId.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // lblProductName
-            // 
-            this.lblProductName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblProductName.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblProductName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
-            this.lblProductName.Location = new System.Drawing.Point(0, 53);
-            this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.lblProductName.Size = new System.Drawing.Size(281, 28);
-            this.lblProductName.TabIndex = 3;
-            this.lblProductName.Text = "Name : ";
-            this.lblProductName.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // lblProductSells
-            // 
-            this.lblProductSells.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblProductSells.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblProductSells.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
-            this.lblProductSells.Location = new System.Drawing.Point(0, 81);
-            this.lblProductSells.Name = "lblProductSells";
-            this.lblProductSells.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.lblProductSells.Size = new System.Drawing.Size(281, 28);
-            this.lblProductSells.TabIndex = 4;
-            this.lblProductSells.Text = "Total Sells : ";
-            this.lblProductSells.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // lblSellerTotalSell
-            // 
-            this.lblSellerTotalSell.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblSellerTotalSell.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblSellerTotalSell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
-            this.lblSellerTotalSell.Location = new System.Drawing.Point(0, 81);
-            this.lblSellerTotalSell.Name = "lblSellerTotalSell";
-            this.lblSellerTotalSell.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.lblSellerTotalSell.Size = new System.Drawing.Size(281, 28);
-            this.lblSellerTotalSell.TabIndex = 7;
-            this.lblSellerTotalSell.Text = "Total Sells : ";
-            this.lblSellerTotalSell.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // lblSellerName
-            // 
-            this.lblSellerName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblSellerName.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblSellerName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
-            this.lblSellerName.Location = new System.Drawing.Point(0, 53);
-            this.lblSellerName.Name = "lblSellerName";
-            this.lblSellerName.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.lblSellerName.Size = new System.Drawing.Size(281, 28);
-            this.lblSellerName.TabIndex = 6;
-            this.lblSellerName.Text = "Name : ";
-            this.lblSellerName.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // lblSellerID
-            // 
-            this.lblSellerID.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblSellerID.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblSellerID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
-            this.lblSellerID.Location = new System.Drawing.Point(0, 25);
-            this.lblSellerID.Name = "lblSellerID";
-            this.lblSellerID.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.lblSellerID.Size = new System.Drawing.Size(281, 28);
-            this.lblSellerID.TabIndex = 5;
-            this.lblSellerID.Text = "Seller ID : ";
-            this.lblSellerID.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
-            this.label3.Location = new System.Drawing.Point(347, 26);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(215, 21);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Total Sell In last 4 Months";
+            this.lblTotalSells.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalSells.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTotalSells.Font = new System.Drawing.Font("Arial", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblTotalSells.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(255)))));
+            this.lblTotalSells.Location = new System.Drawing.Point(0, 25);
+            this.lblTotalSells.Margin = new System.Windows.Forms.Padding(0);
+            this.lblTotalSells.Name = "lblTotalSells";
+            this.lblTotalSells.Size = new System.Drawing.Size(281, 65);
+            this.lblTotalSells.TabIndex = 15;
+            this.lblTotalSells.Text = "0";
+            this.lblTotalSells.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ReportsDashboard
             // 
@@ -897,7 +914,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblTotalProducts;
-        private System.Windows.Forms.Label lblTotalSells;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblOutOfStock;
         private System.Windows.Forms.Label lblProductSells;
         private System.Windows.Forms.Label lblProductName;
@@ -906,5 +923,6 @@
         private System.Windows.Forms.Label lblSellerName;
         private System.Windows.Forms.Label lblSellerID;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTotalSells;
     }
 }
