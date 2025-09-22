@@ -311,6 +311,7 @@
             this.txtQuantity.Size = new System.Drawing.Size(95, 18);
             this.txtQuantity.TabIndex = 0;
             this.txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
             // 
             // panel10
             // 

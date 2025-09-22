@@ -270,5 +270,13 @@ namespace ProjectR.Forms
                 txtSearchSellersClick = false;
             }
         }
+
+        private void txtUserPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

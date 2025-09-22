@@ -206,7 +206,7 @@ namespace ProjectR.Forms
         {
             try
             {
-                if(this.txtQuantity.Text == "0")
+                if (this.txtQuantity.Text == "0")
                 {
                     MessageBox.Show("Quantity can not be Zero");
                     return;
@@ -220,8 +220,16 @@ namespace ProjectR.Forms
                 var row = dgvTempCart.CurrentRow;
                 string productId = row.Cells["colProductId"].Value.ToString();
                 int unitPrice = Convert.ToInt32(row.Cells["colProductPriceHome"].Value);
-
                 int newQuantity = Convert.ToInt32(this.txtQuantity.Text);
+
+                string sql2 = $"select * from ProductList where ProductId = '{productId}'";
+                var dt = MainWindow.SqlDataAccess.ExecuteQueryTable(sql2);
+
+                if (newQuantity > Convert.ToInt32(dt.Rows[0][5]) || Convert.ToInt32(dt.Rows[0][5]) == 0)
+                {
+                    MessageBox.Show("Can not add to cart due to quantity is higher than Stock value");
+                    return;
+                }
 
                 int newTotalAmount = unitPrice * newQuantity;
 
@@ -234,6 +242,14 @@ namespace ProjectR.Forms
             catch (Exception ex)
             {
                 MessageBox.Show($"Error updating quantity: {ex.Message}");
+            }
+        }
+
+        private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

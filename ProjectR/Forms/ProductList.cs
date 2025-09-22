@@ -298,5 +298,13 @@ namespace ProjectR.Forms
         {
             this.txtFilePath.Text = this.ofdChoseFile.FileName;
         }
+
+        private void txtProductPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

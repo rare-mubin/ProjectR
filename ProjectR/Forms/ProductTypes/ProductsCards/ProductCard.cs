@@ -15,21 +15,24 @@ namespace ProjectR.Forms.ProductTypes.ProductsCards
         internal string ProductId {  get; set; }
         internal string Productname {  get; set; }
         internal string ProductPrice {  get; set; }
+        internal string ProductStocks { get; set; }
 
         public ProductCard()
         {
             InitializeComponent();
         }
-        public ProductCard(string productId,string productName, string productCategory, string productType , string productPrice ,string picturePath) : this()
+        public ProductCard(string productId,string productName, string productCategory, string productType , string productPrice,string Stocks, string picturePath) : this()
         {
             this.lblProductName.Text = productName;
             this.lblProductCategory.Text = productCategory;
             this.lblProductType.Text = productType;
             this.lblPrice.Text = productPrice;
+            this.lblProductStock.Text += Stocks;
             this.ProductId = productId;
             this.ptbProductImage.Image = Image.FromFile(picturePath);
             this.Productname = productName;
             this.ProductPrice = productPrice;
+            this.ProductStocks = Stocks;
         }
 
         private void pnlCard_Click(object sender, EventArgs e)
@@ -72,10 +75,22 @@ namespace ProjectR.Forms.ProductTypes.ProductsCards
             string sql2 = $"select * from TempCart where ProductId = '{ProductId}'";
             var dt = MainWindow.SqlDataAccess.ExecuteQueryTable(sql2);
 
+            int quantity = 0;
+
             if (dt.Rows.Count == 1)
             {
-                int quantity = Convert.ToInt32(dt.Rows[0][2]);
+                quantity = Convert.ToInt32(dt.Rows[0][2]);
                 quantity += 1;
+            }
+
+            if (quantity > Convert.ToInt32(this.ProductStocks) || Convert.ToInt32(this.ProductStocks) == 0)
+            {
+                MessageBox.Show("Can not add to cart due to quantity is higher than Stock value");
+                return;
+            }
+
+            if (dt.Rows.Count == 1)
+            {
                 int TotalAmount = Convert.ToInt32(ProductPrice) * quantity;
 
                 string sql3 = $"UPDATE TempCart SET ProductQuantity = {quantity}, TotalAmount = {TotalAmount} where ProductId = '{ProductId}'";

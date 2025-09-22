@@ -268,6 +268,7 @@
             this.txtNID.TabIndex = 6;
             this.txtNID.Text = "Enter your NID";
             this.txtNID.Click += new System.EventHandler(this.txtNID_Click);
+            this.txtNID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNID_KeyPress);
             this.txtNID.Leave += new System.EventHandler(this.txtNID_Leave);
             // 
             // label4
