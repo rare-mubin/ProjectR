@@ -441,6 +441,7 @@
             this.txtNewQuantity.Size = new System.Drawing.Size(119, 23);
             this.txtNewQuantity.TabIndex = 1;
             this.txtNewQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNewQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNewQuantity_KeyPress);
             // 
             // btnChangeQuantity
             // 

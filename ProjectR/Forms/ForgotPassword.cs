@@ -31,7 +31,6 @@ namespace ProjectR.Forms
 
         public ForgotPassword(UserControl a) : this()
         {
-            InitializeComponent();
             this.LoginP = a;
         }
 
@@ -213,6 +212,14 @@ namespace ProjectR.Forms
             MainWindow.MainWindowPanel.Controls.Clear();
             MainWindow.MainWindowPanel.Controls.Add(this.LoginP);
             this.LoginP.Show();
+        }
+
+        private void txtNID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -456,6 +456,7 @@
             this.txtUserNID.Name = "txtUserNID";
             this.txtUserNID.Size = new System.Drawing.Size(231, 21);
             this.txtUserNID.TabIndex = 34;
+            this.txtUserNID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUserPhone_KeyPress);
             // 
             // txtUserPassword
             // 
@@ -521,6 +522,7 @@
             this.txtUserPhone.Name = "txtUserPhone";
             this.txtUserPhone.Size = new System.Drawing.Size(231, 21);
             this.txtUserPhone.TabIndex = 28;
+            this.txtUserPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUserPhone_KeyPress);
             // 
             // label6
             // 

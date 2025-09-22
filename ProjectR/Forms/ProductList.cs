@@ -98,7 +98,6 @@ namespace ProjectR.Forms
         //Copy file 
         private void CopyFIle()
         {
-            //string sourceFilePath = this.ofdChoseFile.FileName;
             string sourceFilePath = this.txtFilePath.Text;
             string fileName = $"{this.txtProductId.Text}.png";
             destinationFilePath = Path.Combine(@"..\..\ProductImage", fileName);
@@ -115,7 +114,6 @@ namespace ProjectR.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error copying file: {ex.Message}");
             }
         }
 
@@ -297,6 +295,14 @@ namespace ProjectR.Forms
         private void ofdChoseFile_FileOk(object sender, CancelEventArgs e)
         {
             this.txtFilePath.Text = this.ofdChoseFile.FileName;
+        }
+
+        private void txtProductPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

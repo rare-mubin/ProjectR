@@ -232,6 +232,7 @@
             this.txtNidNumber.Name = "txtNidNumber";
             this.txtNidNumber.Size = new System.Drawing.Size(244, 40);
             this.txtNidNumber.TabIndex = 14;
+            this.txtNidNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNidNumber_KeyPress);
             // 
             // txtPhone
             // 
@@ -244,6 +245,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(244, 40);
             this.txtPhone.TabIndex = 13;
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // txtUserName
             // 

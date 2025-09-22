@@ -37,6 +37,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ptbProductImage = new System.Windows.Forms.PictureBox();
+            this.lblProductStock = new System.Windows.Forms.Label();
             this.pnlCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbProductImage)).BeginInit();
             this.SuspendLayout();
@@ -44,6 +45,7 @@
             // pnlCard
             // 
             this.pnlCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(47)))));
+            this.pnlCard.Controls.Add(this.lblProductStock);
             this.pnlCard.Controls.Add(this.lblProductName);
             this.pnlCard.Controls.Add(this.lblProductType);
             this.pnlCard.Controls.Add(this.btnAddToCart);
@@ -80,7 +82,7 @@
             this.lblProductType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblProductType.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblProductType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.lblProductType.Location = new System.Drawing.Point(86, 84);
+            this.lblProductType.Location = new System.Drawing.Point(86, 69);
             this.lblProductType.Name = "lblProductType";
             this.lblProductType.Size = new System.Drawing.Size(67, 12);
             this.lblProductType.TabIndex = 3;
@@ -109,7 +111,7 @@
             this.lblProductCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblProductCategory.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblProductCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.lblProductCategory.Location = new System.Drawing.Point(86, 56);
+            this.lblProductCategory.Location = new System.Drawing.Point(86, 47);
             this.lblProductCategory.Name = "lblProductCategory";
             this.lblProductCategory.Size = new System.Drawing.Size(89, 12);
             this.lblProductCategory.TabIndex = 2;
@@ -166,6 +168,19 @@
             this.ptbProductImage.TabStop = false;
             this.ptbProductImage.Click += new System.EventHandler(this.pnlCard_Click);
             // 
+            // lblProductStock
+            // 
+            this.lblProductStock.AutoSize = true;
+            this.lblProductStock.BackColor = System.Drawing.Color.Transparent;
+            this.lblProductStock.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblProductStock.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblProductStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.lblProductStock.Location = new System.Drawing.Point(87, 91);
+            this.lblProductStock.Name = "lblProductStock";
+            this.lblProductStock.Size = new System.Drawing.Size(42, 12);
+            this.lblProductStock.TabIndex = 8;
+            this.lblProductStock.Text = "Stock : ";
+            // 
             // ProductCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,5 +208,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Button btnAddToCart;
+        private System.Windows.Forms.Label lblProductStock;
     }
 }

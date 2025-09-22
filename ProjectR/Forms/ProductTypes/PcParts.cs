@@ -19,6 +19,7 @@ namespace ProjectR.Forms.ProductTypes
         internal string productType { get; set; }
         internal string productCategory { get; set; }
         internal string productPrice { get; set; }
+        internal string productStocks { get; set; }
         internal string picturePath { get; set; }
         internal string query { get; set; }
 
@@ -42,9 +43,10 @@ namespace ProjectR.Forms.ProductTypes
                     this.productCategory = ProductsTable.Rows[Counter][3].ToString();
                     this.productType = ProductsTable.Rows[Counter][2].ToString();
                     this.productPrice = ProductsTable.Rows[Counter][4].ToString();
+                    this.productStocks = ProductsTable.Rows[Counter][5].ToString();
                     this.picturePath = ProductsTable.Rows[Counter++][8].ToString();
 
-                    ProductCard card = new ProductCard(this.productId, this.productName, this.productCategory, this.productType, this.productPrice, this.picturePath);
+                    ProductCard card = new ProductCard(this.productId, this.productName, this.productCategory, this.productType, this.productPrice, this.productStocks, this.picturePath);
 
                     this.flpProducts.Controls.Add(card);
                 }

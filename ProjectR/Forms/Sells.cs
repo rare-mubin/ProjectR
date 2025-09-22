@@ -45,7 +45,7 @@ namespace ProjectR.Forms
             }
         }
 
-        private void PopulateGridView(string sql = "select * from TransactionList;")
+        private void PopulateGridView(string sql = "select * from TransactionList order by TimeAndDate;")
         {
             try
             {
@@ -103,11 +103,11 @@ namespace ProjectR.Forms
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            this.txtSearchSellers.Text = "Search Sells...";
+            this.txtSearchSellers.Text = "Search Transactios...";
             this.ClearAll();
             this.PopulateGridView();
             this.dgvSellDetails.ClearSelection();
-            this.txtSearchSellers.Text = "Search Sells...";
+            this.txtSearchSellers.Text = "Search Transactios...";
 
             try
             {
@@ -119,7 +119,7 @@ namespace ProjectR.Forms
 
         private void Sells_Load(object sender, EventArgs e)
         {
-            //this.dgvSellDetails.ClearSelection();
+            this.dgvSellDetails.ClearSelection();
         }
 
         
@@ -128,7 +128,7 @@ namespace ProjectR.Forms
         {
             if (this.txtSearchSellers.Text == "")
             {
-                this.txtSearchSellers.Text = "Search Sells...";
+                this.txtSearchSellers.Text = "Search Transactios...";
                 this.PopulateGridView();
                 this.dgvSellDetails.ClearSelection();
             }
@@ -136,7 +136,7 @@ namespace ProjectR.Forms
 
         private void txtSearchSellers_Click(object sender, EventArgs e)
         {
-            if (this.txtSearchSellers.Text == "Search Sells...")
+            if (this.txtSearchSellers.Text == "Search Transactios...")
             {
                 this.txtSearchSellers.Text = "";
                 this.PopulateGridView();

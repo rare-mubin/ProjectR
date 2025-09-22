@@ -74,6 +74,15 @@ namespace ProjectR.Forms
 
                 int newQuantity = Convert.ToInt32(this.txtNewQuantity.Text);
 
+                string sql2 = $"select * from ProductList where ProductId = '{productId}'";
+                var dt = MainWindow.SqlDataAccess.ExecuteQueryTable(sql2);
+
+                if (newQuantity > Convert.ToInt32(dt.Rows[0][5]) || Convert.ToInt32(dt.Rows[0][5]) == 0)
+                {
+                    MessageBox.Show("Can not add to cart due to quantity is higher than Stock value");
+                    return;
+                }
+
                 int newTotalAmount = unitPrice * newQuantity;
 
                 string updateSql = $"UPDATE TempCart SET ProductQuantity = {newQuantity}, TotalAmount = {newTotalAmount} WHERE ProductId = '{productId}'";
@@ -396,14 +405,6 @@ namespace ProjectR.Forms
                     string sqlUpdate = $"UPDATE MemberList SET MemberPoints = {newPoints} WHERE MemberPhone = '{memberPhone}'";
                     Da.ExecuteDMLQuery(sqlUpdate);
                 }
-                else
-                {
-                    double earnedPoints = Math.Floor(finalAmount / 100);
-                    string sqlInsert = $@"
-                                        INSERT INTO MemberList (MemberPhone, MemberPoints)
-                                        VALUES ('{memberPhone}', {earnedPoints});";
-                    Da.ExecuteDMLQuery(sqlInsert);
-                }
             }
             catch (Exception ex)
             {
@@ -485,6 +486,14 @@ namespace ProjectR.Forms
                 MessageBox.Show($"Error:{ex.Message}");
             }
 
+        }
+
+        private void txtNewQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

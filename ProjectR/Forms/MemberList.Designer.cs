@@ -141,6 +141,7 @@
             this.txtMemberPhone.Name = "txtMemberPhone";
             this.txtMemberPhone.Size = new System.Drawing.Size(231, 21);
             this.txtMemberPhone.TabIndex = 16;
+            this.txtMemberPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMemberPhone_KeyPress);
             // 
             // label3
             // 
