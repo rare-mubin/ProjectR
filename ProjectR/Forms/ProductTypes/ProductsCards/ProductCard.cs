@@ -60,14 +60,6 @@ namespace ProjectR.Forms.ProductTypes.ProductsCards
             }
         }
 
-        // Clear All
-        private void ClearAll()
-        {
-            
-
-            //this.AutoIdGenerate();
-        }
-
         // Add Method
         private void AddItem()
         {
