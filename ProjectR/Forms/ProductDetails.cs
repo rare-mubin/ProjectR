@@ -63,7 +63,7 @@ namespace ProjectR.Forms
         {
            try
             {
-                string sql = $"insert into TempCart VALUES ('{ProductId}','{ProductName}',1, {ProductPrice} , {ProductPrice}) ;";
+                string sql = $"insert into TempCart VALUES ('{ProductId}','{Productname}',1, {ProductPrice} , {ProductPrice}) ;";
                 string sql2 = $"select * from TempCart where ProductId = '{ProductId}'";
                 var dt = MainWindow.SqlDataAccess.ExecuteQueryTable(sql2);
 
