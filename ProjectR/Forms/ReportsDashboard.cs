@@ -94,17 +94,23 @@ namespace ProjectR.Forms
         private void ReportsDashboard_Load(object sender, EventArgs e)
         {
             string[] monthsName = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
-            string query = $@"SELECT
-                                    MONTH(TimeAndDate) AS MonthNumber,
-                                    SUM(TotalAmount) AS Total_Amount
-                                FROM
-                                    TransactionList
-                                WHERE
-                                    TimeAndDate >= DATEADD(MONTH, -4, GETDATE())
-                                GROUP BY
-                                    MONTH(TimeAndDate)
-                                ORDER BY
-                                    MonthNumber DESC;";
+            string query = $@"WITH Last4Months AS (
+                                        SELECT TOP 4
+                                            YEAR(TimeAndDate) AS Yr,
+                                            MONTH(TimeAndDate) AS Mn
+                                        FROM TransactionList
+                                        GROUP BY YEAR(TimeAndDate), MONTH(TimeAndDate)
+                                        ORDER BY YEAR(TimeAndDate) DESC, MONTH(TimeAndDate) DESC
+                                    )
+                                    SELECT
+                                        l.Mn AS MonthNumber,
+                                        SUM(t.TotalAmount) AS Total_Amount
+                                    FROM Last4Months l
+                                    JOIN TransactionList t
+                                        ON YEAR(t.TimeAndDate) = l.Yr
+                                        AND MONTH(t.TimeAndDate) = l.Mn
+                                    GROUP BY l.Yr, l.Mn
+                                    ORDER BY l.Yr DESC, l.Mn DESC;";
             try
             {
                 var da = MainWindow.SqlDataAccess.ExecuteQueryTable(query);
@@ -114,9 +120,21 @@ namespace ProjectR.Forms
                 this.lblMonth3.Text = monthsName[Convert.ToInt32(da.Rows[1][0]) - 1];
                 this.lblMonth4.Text = monthsName[Convert.ToInt32(da.Rows[0][0]) - 1];
 
-                var SqlTotalSellsIn4M = $@"SELECT sum(TotalAmount) as Total_Amount
-                                            FROM TransactionList
-                                            WHERE TimeAndDate >= DATEADD(MONTH, -4, GETDATE());";
+                var SqlTotalSellsIn4M = $@"SELECT SUM(t.TotalAmount) AS Total_Amount
+                                            FROM TransactionList t
+                                            WHERE EXISTS (
+                                                SELECT 1
+                                                FROM (
+                                                    SELECT TOP 4
+                                                        YEAR(TimeAndDate) AS Yr,
+                                                        MONTH(TimeAndDate) AS Mn
+                                                    FROM TransactionList
+                                                    GROUP BY YEAR(TimeAndDate), MONTH(TimeAndDate)
+                                                    ORDER BY YEAR(TimeAndDate) DESC, MONTH(TimeAndDate) DESC
+                                                ) m
+                                                WHERE YEAR(t.TimeAndDate) = m.Yr
+                                                  AND MONTH(t.TimeAndDate) = m.Mn
+                                            );";
 
                 double Month1Sells = Convert.ToInt32(da.Rows[0][1]);
                 double Month2Sells = Convert.ToInt32(da.Rows[1][1]);
